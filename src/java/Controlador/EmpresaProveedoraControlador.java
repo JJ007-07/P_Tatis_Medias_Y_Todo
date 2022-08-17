@@ -77,7 +77,7 @@ public class EmpresaProveedoraControlador extends HttpServlet {
                     request.setAttribute("MensajeError ", "El Producto no se actualizó correctamente");
                 }
 
-                request.getRequestDispatcher("ConsultarProducto.jsp").forward(request, response);
+                request.getRequestDispatcher("ConsultarProveedor.jsp").forward(request, response);
                 break;
 
             case 3: //Eliminar Registro 
@@ -89,25 +89,27 @@ public class EmpresaProveedoraControlador extends HttpServlet {
                     request.setAttribute("MensajeError ", "El Producto no se eliminó correctamente");
                 }
 
-                request.getRequestDispatcher("EliminarProducto.jsp").forward(request, response);
+                request.getRequestDispatcher("EliminarProveedor.jsp").forward(request, response);
                 break;
 
-            case 4: // consultarEmpresa
-               if (epDAO.consultarEmpresaProveedora())
-               {
+             case 4: // consultarproducto
+                EmpresaProveedoraVO ep = epDAO.consultarNombreEmpresa(NombreComercialEmpresaProveedora);
 
-                    request.setAttribute("EmpresaConsultada", epDAO);
+                if (ep != null) {
+
+                    request.setAttribute("EmpresaConsultada", ep);
                     request.setAttribute("MensajeExito", "Empresa Consultada");
-                    request.getRequestDispatcher("ActualizarEmpresa.jsp").forward(request, response);
+                    request.getRequestDispatcher("ActualizarProveedor.jsp").forward(request, response);
                 } else {
                     request.setAttribute("MensajeError", "La empresa no se encuentra registrada");
-                    request.getRequestDispatcher("ConsultarEmpresa.jsp").forward(request, response);
+                    request.getRequestDispatcher("ConsultarProveedor").forward(request, response);
 
                 }
 
                 break;
 
         }
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

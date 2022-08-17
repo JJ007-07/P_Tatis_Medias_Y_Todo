@@ -78,7 +78,9 @@
                                          <button type="submit" class="btn float-right login_btn" > Registrar Producto</button>
             
                                          
-                                         <button type="submit"  class="btn float-right login_btn"> <a href="ConsultarEmpresa.jsp"> Ver Empresas registrados </a> </button>
+                                         <button type="submit"  class="btn float-right login_btn"> <a href="ConsultarProveedor.jsp"> Ver Empresas registrados </a> </button>
+                                         <button type="submit"  class="btn float-right login_btn"> <a href="Menu.jsp"> Volver al menú </a> </button>
+                                        
                                         </div>
         </form>
                     <div class="tres"> 
