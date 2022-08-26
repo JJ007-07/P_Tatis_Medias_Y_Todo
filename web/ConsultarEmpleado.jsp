@@ -17,29 +17,30 @@
     </head>
   <body>
           <center>
-        <h1>Usuario</h1>
+        <h1>Empleado</h1>
         <form method="post" action="Empleado">
             <table>
                 <tr>
                     <th> Numero de documento
-                        <input type="text" name="textNumDoc" >
+                        <input type="number" name="textNumDoc" >
                         <button>Consultar </button>
+                        
                     </th>
                 </tr>
                  
              
             </table><br><br>
-            <input type="hidden"value="3"  name="opcion">
+            <input type="hidden" value="3"  name="opcion">
             
             
             
             
         </form><br><br>
                    <%
-        if (request.getAttribute("MensajeError")  !=null) {%>
-         ${MensajeError} 
+        if (request.getAttribute("mensajeError")  !=null) {%>
+         ${mensajeError} 
            <%  }  else {%>
-                   ${MensajeExito}
+                   ${mensajeExito}
                    <%}%><br><br>
                    
                       <form>
@@ -74,7 +75,7 @@
                                <td><%=empVO.getTipoDocEmpleado()%></td>
                                <td><%=empVO.getNumeroDocEmpleado()%></td>
                                <td><%=empVO.getTelefonoCelularEmpleado()%></td>
-                               <td><%=empVO.getDirrecionEmpleado()%></td>
+                               <td><%=empVO.getDirecionEmpleado()%></td>
                                <td><%=empVO.getCorreoEmpleado()%></td>
                                <td><%=empVO.getEstadoEmpleado()%></td>
                                <td><%=empVO.getIdUsuarioFK()%></td>

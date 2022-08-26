@@ -1,9 +1,10 @@
 <%-- 
-    Document   : registrarCliente
-    Created on : 16/08/2022, 06:08:59 PM
+    Document   : ActualizarCliente
+    Created on : 16/08/2022, 06:46:39 PM
     Author     : User
 --%>
 
+<%@page import="ModeloVO.ClienteVO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -20,51 +21,53 @@
 
 	<!--Custom styles-->
       
-  
       <link href="Estilos/estilos2.css" rel="stylesheet" type="text/css"/>
 </head>
-  
+      <%
+        if (request.getAttribute("clienteConsultado") != null) {
+            ClienteVO ClVO = (ClienteVO) request.getAttribute("clienteConsultado");
+      
+
+    %>
 <center>
 <body>
 
     <div class="contenedor">      
 
         <center>
-            <h1 class="titulo">Registrar Cliente</h1>
+            <h1 class="titulo">Actualizar Cliente</h1>
         <form method="post" action="Cliente">
             <table>
                 
                 <tr>
                    
+                <div class="campos">ID Cliente</div>
+                <input type="Number" name="TextId" value="<%=ClVO.getIdCliente()%>" readonly><br><br>
+                
+               
                 <div class="campos">Nombre Cliente</div>
-                <input type="text" name="TextNombre"><br><br>
+                <input type="text" name="TextNombre"value="<%=ClVO.getNombreCliente()%>"><br><br>
                         
                     <div class="campos"> Apellido Cliente</div>
-                    <input type="text" name="TextApellido"><br><br>
+                    <input type="text" name="TextApellido"value="<%=ClVO.getApellidoCliente()%>"><br><br>
                                        
-                    
-                    
-                     <div class="campos">  Tipo Documento</div>
-                     <select name="TextTipo">
-                        <option>Seleccione una opción</option>
-                       <option>CC</option>
-                       <option>CE</option>
-                    </select> <br> <br>
+                    <div class="campos">  Tipo Documento</div>
+                    <input type="text" name="TextTipo"readonly="" value="<%=ClVO.getTipoDocCliente()%>"><br><br>
                     
                       <div class="campos">  Numero Documento</div>
-                     <input type="number" name="TextNumDoc"><br><br>
+                      <input type="number" name="TextNumDoc" readonly=""value="<%=ClVO.getNumeroDocCliente()%>"><br><br>
                   
                      <div class="campos">  Telefono Cliente</div>
-                     <input type="number" name="TextTelefono"><br><br>
+                     <input type="number" name="TextTelefono"value="<%=ClVO.getTelefonoCliente()%>"><br><br>
                     
                      <div class="campos"> Direccion Cliente</div>
-                    <input type="text" name="TextDir"><br><br>
+                     <input type="text" name="TextDir"value="<%=ClVO.getDirecionCliente()%>"><br><br>
                     
                       <div class="campos">  Correo Cliente</div>
-                      <input type="email" name="TextCorreo"><br><br>
+                      <input type="email" name="TextCorreo"value="<%=ClVO.getCorreoCliente()%>"><br><br>
                     
                       <div class="campos">  Estado Cliente</div>
-                      <input type="text" name="TextEstado"><br><br>
+                      <input type="text" name="TextEstado"value="<%=ClVO.getEstadoCliente()%>"><br><br>
                     
                     
                 </tr>
@@ -76,8 +79,8 @@
            
       
         <div class="form-group">	
-        <input type="hidden" value="1" name="opcion" class="btn float-right login_btn">
-        <button type="submit" class="btn float-right login_btn" > Registrarse</button>
+        <input type="hidden" value="2" name="opcion" class="btn float-right login_btn">
+        <button type="submit" class="btn float-right login_btn" > Actualizar</button>
         </div>
         </form>
                    
@@ -94,7 +97,7 @@
                                          <%}else {%>
                                         ${mensajeExito}  
                                         <%}%>
-                                        
+                                        <%}%>
                     </div>
     </body>
     </center>

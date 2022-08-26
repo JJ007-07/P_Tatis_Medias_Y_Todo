@@ -95,14 +95,15 @@ public class EmpleadoDAO extends ConexionDB implements Crud {
     @Override
     public boolean actualizarRegistro() {
        try {
-            sql = "UPDATE empleado SET NombreEmpleado='?',ApellidoEmpleado='?',TelefonoCelularEmpleado='?',DirecionEmpleado='?',CorreoEmpleado='?',EstadoEmpleado='?',IdUsuarioFK='?' WHERE IdEmpleado=?";            puente = conexion.prepareStatement(sql);
-             puente.setString(1, NombreEmpleado);
+            sql = "UPDATE empleado SET NombreEmpleado=?,ApellidoEmpleado=?,TelefonoCelularEmpleado=?,DirecionEmpleado=?,CorreoEmpleado=?,EstadoEmpleado=? WHERE IdEmpleado=?";            
+            puente = conexion.prepareCall(sql);
+            puente.setString(1, NombreEmpleado);
             puente.setString(2, ApellidoEmpleado);
-            puente.setString(3, TipoDocEmpleado);
+            puente.setString(3, TelefonoCelularEmpleado);
             puente.setString(4, DirecionEmpleado);
             puente.setString(5, CorreoEmpleado);
             puente.setString(6, EstadoEmpleado);
-              puente.setString(7, IdEmpleado);
+            puente.setString(7, IdEmpleado);
             puente.executeUpdate();
             operacion = true;
 
@@ -134,14 +135,14 @@ public class EmpleadoDAO extends ConexionDB implements Crud {
             operacion = true;
 
         } catch (SQLException e) {
-            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(EmpleadoDAO.class.getName()).log(Level.SEVERE, null, e);
         } finally {
 
             try {
                 this.cerrarConexion();
 
             } catch (Exception e) {
-                Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, e);
+                Logger.getLogger(EmpleadoDAO.class.getName()).log(Level.SEVERE, null, e);
 
             }
 
@@ -154,7 +155,7 @@ public class EmpleadoDAO extends ConexionDB implements Crud {
 
         EmpleadoVO empVO = null;
         try {
-            sql = "select * from empleado WHERE NumeroDocEmpleado= ?";
+            sql = "select * from empleado WHERE NumeroDocEmpleado=?";
             conexion = this.obtenerConexion();
             puente = conexion.prepareStatement(sql);
             puente.setString(1, NumeroDocEmpleado);

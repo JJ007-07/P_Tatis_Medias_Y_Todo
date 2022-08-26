@@ -36,40 +36,42 @@
     <div class="contenedor">      
 
         <center>
-            <h1 class="titulo">Registrar Empleado</h1>
+            <h1 class="titulo">Actualizar Empleado</h1>
         <form method="post" action="Empleado">
             <table>
                 
                 <tr>
-                    <div class="campos">Id Empleado</div>
-                    <input type="text"  name="textId" readonly=""><br><br>
+        
                     
+                <div class="campos">Codigo Empleado</div>
+                <input type="text"  name="textId" value="<%=empVO.getIdEmpleado()%>"><br><br>
+                
                 <div class="campos">Nombre Empleado</div>
-                <input type="text"  name="textNombre"><br><br>
+                <input type="text"  name="textNombre" value="<%=empVO.getNombreEmpleado()%>"><br><br>
                         
                     <div class="campos"> Apellido Empleado </div>
-                    <input type="text" name="textApellido"><br><br>
+                    <input type="text" name="textApellido" value="<%=empVO.getApellidoEmpleado()%>"><br><br>
                                        
                     <div class="campos">  Tipo Documento</div>
-                    <input type="text" name="textTipo"><br><br>
+                    <input type="text" name="textTipo" value="<%=empVO.getTipoDocEmpleado()%>"><br><br>
                     
                       <div class="campos">  Numero Documento</div>
-                     <input type="number" name="textNumDoc"><br><br>
+                      <input type="number" name="textNumDoc" readonly="" value="<%=empVO.getNumeroDocEmpleado()%>"><br><br>
                   
                      <div class="campos">  Telefono Empleado</div>
-                     <input type="number" name="textTelefono" readonly=""><br><br>
+                     <input type="number" name="textTelefono" value="<%=empVO.getTelefonoCelularEmpleado()%>"><br><br>
                     
                      <div class="campos"> Direccion Empleado</div>
-                     <input type="text" name="textDireccion" readonly=""><br><br>
+                     <input type="text" name="textDireccion" value="<%=empVO.getDirecionEmpleado()%>"><br><br>
                     
                       <div class="campos">  Correo Empleado</div>
-                      <input type="email" name="textCorreo" readonly=""><br><br>
+                      <input type="email" name="textCorreo" value="<%=empVO.getCorreoEmpleado()%>"><br><br>
                     
                       <div class="campos">  Estado Empleado</div>
-                      <input type="text" name="textEstado" readonly=""><br><br>
+                      <input type="text" name="textEstado" value="<%=empVO.getEstadoEmpleado()%>"><br><br>
                     
                       <div class="campos">IdUsuario</div>
-                      <input type="text" name="textUsuario" readonly=""><br><br>
+                      <input type="text" name="textUsuario" readonly="" value="<%=empVO.getIdUsuarioFK()%>"><br><br>
                     
                 </tr>
                 
@@ -98,7 +100,7 @@
                                          <%}else {%>
                                         ${MensajeExito}  
                                         <%}%>
-                                        
+                                        <%}%>
                     </div>
     </body>
     </center>

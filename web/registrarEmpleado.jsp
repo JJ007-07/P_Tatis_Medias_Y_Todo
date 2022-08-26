@@ -42,9 +42,13 @@
                         
                     <div class="campos"> Apellido Empleado </div>
                     <input type="text" name="textApellido"><br><br>
-                                       
-                    <div class="campos">  Tipo Documento</div>
-                    <input type="text" name="textTipo"><br><br>
+                  
+                     <div class="campos">  Tipo Documento</div>
+                     <select name="textTipo">
+                        <option>Seleccione una opción</option>
+                       <option>CC</option>
+                       <option>CE</option>
+                    </select> <br> <br>
                     
                       <div class="campos">  Numero Documento</div>
                      <input type="number" name="textNumDoc"><br><br>
