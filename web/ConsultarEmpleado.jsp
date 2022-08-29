@@ -7,6 +7,9 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="ModeloDAO.EmpleadoDAO"%>
 <%@page import="ModeloVO.EmpleadoVO"%>
+<%@page import="ModeloVO.UsuarioVO"%> 
+<%@page import="ModeloDAO.UsuarioDAO"%> 
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -68,6 +71,7 @@
                                        empVO =listaEmpleado.get(i);
                                    
                            %>
+                          
                            <tr>
                                <td><%=empVO.getIdEmpleado()%></td>
                                <td><%=empVO.getNombreEmpleado()%></td>

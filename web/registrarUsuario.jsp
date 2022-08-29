@@ -38,7 +38,7 @@
                 <tr>
                    
                 <div class="campos">Nombre </div>
-                <input type="text" name="textUsuario"><br><br>
+                <input type="email" required="" name="textUsuario"><br><br>
                         
                     <div class="campos"> Contraseña </div>
                     

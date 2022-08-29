@@ -5,9 +5,11 @@
  */
 package Controlador;
 
+import ModeloDAO.RolDAO;
 import ModeloDAO.UsuarioDAO;
 import ModeloVO.UsuarioVO;
 import java.io.IOException;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -102,7 +104,7 @@ public class UsuarioControlador extends HttpServlet {
                     miSesion.setAttribute("datosUsuario", usuVO);
                     miSesion.setAttribute("idUsuario", usuVO.getIdUsuario());
                     request.getRequestDispatcher("Menu.jsp").forward(request, response);
-
+          
                 } else {
 
                     request.setAttribute("mensajeExito", "<center><h2>Datos de ingreso incorrectos</h2></center>");

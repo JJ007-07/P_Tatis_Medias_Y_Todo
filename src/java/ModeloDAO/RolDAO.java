@@ -25,6 +25,7 @@ public class RolDAO extends ConexionDB{
     private PreparedStatement puente;
     private ResultSet mensajero;
     private String sql;
+    
 public ArrayList<RolVO> listar() {
         ArrayList<RolVO> listaRol = new ArrayList<>();
         try {
@@ -49,5 +50,50 @@ public ArrayList<RolVO> listar() {
         }
         return listaRol;
     }
+
+ public  ArrayList<String>Listar(String usuLogin){
+       ArrayList<String>listaRoles = new ArrayList<String>();
+     
+        try {
+            
+            conexion =this. obtenerConexion();
+            
+            sql="SELECT usuario.USUID, rol.ROLTIPO FROM rol INNER JOIN usuario_rol ON rol.ROLID=usuario_rol.ROLID INNER JOIN usuario ON usuario_rol.USUID=usuario.USUID WHERE usuario.USULOGIN=?";
+            puente = conexion.prepareStatement(sql);
+            puente.setString(1, usuLogin);
+            mensajero= puente. executeQuery();
+            while (mensajero.next()) {
+                
+                String usuId = mensajero.getString(1);
+                String rolTipo = mensajero.getString(2);
+                 listaRoles.add(usuId);
+                 listaRoles.add(rolTipo);
+            }
+             
+             
+      } catch (SQLException e) {
+           Logger.getLogger(RolDAO.class.getName()).log(Level.SEVERE,null, e);
+        }finally{
+            
+            try {
+                this.cerrarConexion();
+                
+            } catch (SQLException e) {
+                Logger.getLogger(RolDAO.class.getName()).log(Level.SEVERE,null, e);
+       
+            }
+        
+        } 
+        
+        return listaRoles ;
     
+       
+     } 
+
+    public ArrayList<String> listaRol(String NombreUsuario) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+          
+
+
 }

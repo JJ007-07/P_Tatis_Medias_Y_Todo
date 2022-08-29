@@ -182,7 +182,7 @@ public class ClienteDAO extends ConexionDB implements Crud{
         ArrayList<ClienteVO> listaCliente = new ArrayList<>();
         try {
             conexion = this.obtenerConexion();
-            sql = "select * from Cliente";
+            sql = "SELECT e.IdEmpleado,e.NombreEmpleado,e.ApellidoEmpleado, e.TipoDocEmpleado, e.NumeroDocEmpleado,e.TelefonoCelularEmpleado,e.DirecionEmpleado,e.CorreoEmpleado,e.EstadoEmpleado,u.NombreUsuario from empleado e INNER JOIN usuario u on e.IdUsuarioFK=u.IdUsuario";
             puente = conexion.prepareStatement(sql);
             mensajero = puente.executeQuery();
 
@@ -198,5 +198,8 @@ public class ClienteDAO extends ConexionDB implements Crud{
         }
         return listaCliente;
     }
+    
+    
+    
     
 }
