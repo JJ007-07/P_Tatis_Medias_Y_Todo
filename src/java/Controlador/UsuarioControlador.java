@@ -92,25 +92,29 @@ public class UsuarioControlador extends HttpServlet {
 
                 }
                 break;
-
-            case 4: //Iniciar sesion
-
+                
+                case 4://Inicio de sesion
                 if (usuDAO.iniciarSesion(NombreUsuario, PasswordUsuario)) {
+                    
+                    HttpSession miSesion=request.getSession(true);
+                    usuVO=new UsuarioVO(IdUsuario, NombreUsuario, PasswordUsuario, EstadoUsuario, IdrolFK);
+                    miSesion.setAttribute("datosUsuario", NombreUsuario);
+                    RolDAO rDAO = RolDAO;
+                    String
+                    ("rol",rol);   
+                    request.getRequestDispatcher("roles.jsp").forward(request, response);
+                    
+                   
 
-                    HttpSession miSesion = request.getSession(true);
-                    UsuarioDAO USUD = new UsuarioDAO(usuVO);
-                    UsuarioVO use = USUD.consultarUsuario(NombreUsuario, PasswordUsuario);
-                    usuVO = new UsuarioVO(IdUsuario, NombreUsuario, PasswordUsuario, IdrolFK, EstadoUsuario);
-                    miSesion.setAttribute("datosUsuario", usuVO);
-                    miSesion.setAttribute("idUsuario", usuVO.getIdUsuario());
-                    request.getRequestDispatcher("Menu.jsp").forward(request, response);
-          
                 } else {
-
-                    request.setAttribute("mensajeExito", "<center><h2>Datos de ingreso incorrectos</h2></center>");
+                    request.setAttribute("mensajeError", "Datos de ingreso incorrectos");
                     request.getRequestDispatcher("index.jsp").forward(request, response);
                 }
                 break;
+                
+                
+                
+                
 
             case 5: //Eliminar Registro
                 if (usuDAO.eliminarRegistro()) {

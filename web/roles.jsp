@@ -1,17 +1,12 @@
-<%-- 
-    Document   : roles
-    Created on : 29/08/2022, 01:15:15 PM
-    Author     : SENA
---%>
+<%
+    if (rol.equals="1"){
+            request.getRequestDispatcher("menu.jsp").forward(request, response) ;
+        }
+    if(rol.equals="2"){
+            request.getRequestDispatcher("Vendedor.jsp").forward(request, response) ;
+    }
+    if(rol.equals="3"){
+            request.getRequestDispatcher("Comprador.jsp").forward(request, response) ;
+    }
+%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
-</html>
