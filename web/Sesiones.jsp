@@ -24,14 +24,14 @@
     
     
      <% 
-     HttpSession miSesion =(HttpSession)request.getSession();
+     HttpSession sesion =(HttpSession)request.getSession();
      String Usuario="";
-    if (miSesion.getAttribute("datosUsuario")==null) {
+    if (sesion.getAttribute("datosUsuario")==null) {
          request.getRequestDispatcher("Login.jsp").forward(request, response);
             
         }else{
         
-        UsuarioVO usuVO= (UsuarioVO)miSesion.getAttribute("datosUsuario");
+        UsuarioVO usuVO= (UsuarioVO)sesion.getAttribute("datosUsuario");
         Usuario = usuVO.getNombreUsuario();
         
     

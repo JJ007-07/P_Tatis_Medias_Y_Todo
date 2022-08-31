@@ -40,13 +40,14 @@ public class EmpresaProveedoraControlador extends HttpServlet {
         String DireccionEmpresaProveedora=request.getParameter("txtDireccion");
         String TelefonoEmpresaProveedora=request.getParameter("txtTelefono");
         String Numeropago=request.getParameter("txtNumero");
+        String EstadoEmpresaProveedora=request.getParameter("txtEstado");
        
         
         
         int opcion= Integer.parseInt(request.getParameter("opcion"));
         
         //2¿ Quién tien elos datos de forma segura ? VO
-        EmpresaProveedoraVO epVO= new EmpresaProveedoraVO(IdEmpresaProveedora, NitEmpresaProveedora, RazonSocialEmpresaProveedora, NombreComercialEmpresaProveedora, DireccionEmpresaProveedora, TelefonoEmpresaProveedora, Numeropago);
+        EmpresaProveedoraVO epVO= new EmpresaProveedoraVO(IdEmpresaProveedora, NitEmpresaProveedora, RazonSocialEmpresaProveedora, NombreComercialEmpresaProveedora, DireccionEmpresaProveedora, TelefonoEmpresaProveedora, Numeropago,EstadoEmpresaProveedora);
         
         //3¿Quién hace las operaciones? DAO
                 
@@ -57,7 +58,7 @@ public class EmpresaProveedoraControlador extends HttpServlet {
           //Administrar operaciones
         switch (opcion) {
 
-           case 1: //Agregar Registro 
+           case 1: //Agregar proveedor
                 if (epDAO.agregarRegistro()) {
 
                     request.setAttribute("MensajeExito", "<center=red><h2>La empresa se registró correctamente</h2></center>");
@@ -74,25 +75,25 @@ public class EmpresaProveedoraControlador extends HttpServlet {
                     request.setAttribute("MensajeExito ", "La empresa se actualizó correctamente");
 
                 } else {
-                    request.setAttribute("MensajeError ", "El Producto no se actualizó correctamente");
+                    request.setAttribute("MensajeError ", "La empresa no se actualizó correctamente");
                 }
 
                 request.getRequestDispatcher("ConsultarProveedor.jsp").forward(request, response);
                 break;
 
-            case 3: //Eliminar Registro 
+            case 3: //Eliminar Proveedor
                 if (epDAO.eliminarRegistro()) {
 
-                    request.setAttribute("MensajeExito ", "El Producto se eliminó correctamente");
+                    request.setAttribute("MensajeExito ", "La empresa se eliminó correctamente");
 
                 } else {
-                    request.setAttribute("MensajeError ", "El Producto no se eliminó correctamente");
+                    request.setAttribute("MensajeError ", "La empresa no se eliminó correctamente");
                 }
 
                 request.getRequestDispatcher("EliminarProveedor.jsp").forward(request, response);
                 break;
 
-             case 4: // consultarproducto
+             case 4: // consultarproveedor
                 EmpresaProveedoraVO ep = epDAO.consultarNombreEmpresa(NombreComercialEmpresaProveedora);
 
                 if (ep != null) {
@@ -102,7 +103,7 @@ public class EmpresaProveedoraControlador extends HttpServlet {
                     request.getRequestDispatcher("ActualizarProveedor.jsp").forward(request, response);
                 } else {
                     request.setAttribute("MensajeError", "La empresa no se encuentra registrada");
-                    request.getRequestDispatcher("ConsultarProveedor").forward(request, response);
+                    request.getRequestDispatcher("ConsultarProveedor.jsp").forward(request, response);
 
                 }
 

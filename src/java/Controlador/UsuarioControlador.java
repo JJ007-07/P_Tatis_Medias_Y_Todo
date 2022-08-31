@@ -5,7 +5,7 @@
  */
 package Controlador;
 
-import ModeloDAO.RolDAO;
+import ModeloDAO.RolDAO2;
 import ModeloDAO.UsuarioDAO;
 import ModeloVO.UsuarioVO;
 import java.io.IOException;
@@ -42,11 +42,11 @@ public class UsuarioControlador extends HttpServlet {
         String NombreUsuario = request.getParameter("textUsuario");
         String PasswordUsuario = request.getParameter("textClave");
         String EstadoUsuario = request.getParameter("textEstado");
-        String IdrolFK = request.getParameter("textRol");
+        
         int opcion = Integer.parseInt(request.getParameter("opcion"));
 
         //2. ¿Quién tiene los datos de forma segura? VO
-        UsuarioVO usuVO = new UsuarioVO(IdUsuario, NombreUsuario, PasswordUsuario, EstadoUsuario, IdrolFK);
+        UsuarioVO usuVO = new UsuarioVO(IdUsuario, NombreUsuario, PasswordUsuario, EstadoUsuario);
 
         //3. ¿Quién hace las operaciones? DAO
         UsuarioDAO usuDAO = new UsuarioDAO(usuVO);
@@ -65,6 +65,7 @@ public class UsuarioControlador extends HttpServlet {
                 }
                 request.getRequestDispatcher("registrarUsuario.jsp").forward(request, response);
                 break;
+                
             case 2:  //Actualizar REgistro
                 if (usuDAO.actualizarRegistro()) {
 
@@ -96,25 +97,24 @@ public class UsuarioControlador extends HttpServlet {
                 case 4://Inicio de sesion
                 if (usuDAO.iniciarSesion(NombreUsuario, PasswordUsuario)) {
                     
-                    HttpSession miSesion=request.getSession(true);
-                    usuVO=new UsuarioVO(IdUsuario, NombreUsuario, PasswordUsuario, EstadoUsuario, IdrolFK);
-                    miSesion.setAttribute("datosUsuario", NombreUsuario);
-                    RolDAO rDAO = RolDAO;
-                    String
-                    ("rol",rol);   
-                    request.getRequestDispatcher("roles.jsp").forward(request, response);
+                    HttpSession sesion=request.getSession(true);
+                    usuVO= new UsuarioVO(IdUsuario, NombreUsuario, PasswordUsuario, EstadoUsuario);
+                    sesion.setAttribute("datosUsuario", usuVO);
                     
-                   
+                RolDAO2 rolD = new RolDAO2();
+                    String rol = rolD.seleccionarRol (NombreUsuario, PasswordUsuario);
+                    sesion.setAttribute("rol", rol);
+                    request.getRequestDispatcher("roles.jsp").forward(request, response);
 
                 } else {
-                    request.setAttribute("mensajeError", "Datos de ingreso incorrectos");
-                    request.getRequestDispatcher("index.jsp").forward(request, response);
+
+                    request.setAttribute("mensajeExito", "<center><h2>Datos de ingreso incorrectos</h2></center>");
+                    request.getRequestDispatcher("Login.jsp").forward(request, response);
                 }
                 break;
                 
                 
-                
-                
+             
 
             case 5: //Eliminar Registro
                 if (usuDAO.eliminarRegistro()) {

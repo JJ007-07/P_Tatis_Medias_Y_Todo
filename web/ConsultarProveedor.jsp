@@ -71,6 +71,9 @@
                                 <tr>
                                     <th class="text-center">Razon Social</th>
                                     <th class="text-center">Nombre Empresa</th>
+                                    <th class="text-center">Estado Empresa</th>
+                                    <th class="text-center">Acciones</th>
+                                    
                                     
                                 </tr>
                             </thead>
@@ -84,6 +87,8 @@
                             <tr>
                                 <td class="text-center"><%= rs.getString("RazonSocialEmpresaProveedora")%></td>
                                 <td class="text-center"><%= rs.getString("NombreComercialEmpresaProveedora")%></td>
+                                 <td class="text-center"><%= rs.getString("EstadoEmpresaProveedora")%></td>
+                                
                                 
 
                                 
@@ -102,7 +107,7 @@
 
 
 
-            <%
+             <%
                 if (request.getAttribute("MensajeError") != null) {%>
 
             ${MensajeError}
@@ -111,7 +116,6 @@
 
 
             <% }%>
-
 
 
     </center>

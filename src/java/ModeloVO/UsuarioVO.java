@@ -11,28 +11,18 @@ package ModeloVO;
  */
 public class UsuarioVO {
 
-    private String IdUsuario, NombreUsuario, PasswordUsuario, IdrolFK, EstadoUsuario;
+    private String IdUsuario, NombreUsuario, PasswordUsuario,EstadoUsuario;
 
-    public UsuarioVO(String IdUsuario, String NombreUsuario, String PasswordUsuario, String EstadoUsuario, String IdrolFK) {
+    public UsuarioVO(String IdUsuario, String NombreUsuario, String PasswordUsuario, String EstadoUsuario) {
         this.IdUsuario = IdUsuario;
         this.NombreUsuario = NombreUsuario;
         this.PasswordUsuario = PasswordUsuario;
         this.EstadoUsuario = EstadoUsuario;
-        this.IdrolFK = IdrolFK;
+      
     }
 
-    public UsuarioVO(String string, String string0, String string1, String string2) {
+    public UsuarioVO(String string, String string0, String string1) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-  
-
-    public String getIdrolFK() {
-        return IdrolFK;
-    }
-
-    public void setIdrolFK(String IdrolFK) {
-        this.IdrolFK = IdrolFK;
     }
 
     public UsuarioVO() {

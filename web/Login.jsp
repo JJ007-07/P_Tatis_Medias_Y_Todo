@@ -50,20 +50,20 @@
                             <div class="wrap-login100-form-btn">
                                 <div class="login100-form-bgbtn"></div>
                                 <button type="submit" class="login100-form-btn">
-                                    Hecho
+                                    Ingresar
                                 </button>
                                 <input type="hidden" value="4" name="opcion">
                             </div>
                         </div>
-
-                    </form>
-                    <%
+ <%
 
                         if (request.getAttribute("mensajeError") != null) {%>
                     ${mensajeError}
                     <% } else {%>
                     ${mensajeExito}
                     <%}%>
+                    </form>
+                   
                 </div>
             </div>
         </div>

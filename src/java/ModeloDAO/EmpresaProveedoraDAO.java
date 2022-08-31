@@ -44,7 +44,7 @@ public class EmpresaProveedoraDAO extends ConexionDB implements Crud {
             mensajero= puente. executeQuery();
             while (mensajero.next()) {
                 
-                EmpresaProveedoraVO epVO= new EmpresaProveedoraVO(mensajero.getString(1), mensajero.getString(2), mensajero.getString(3), mensajero.getString(4), mensajero.getString(5), mensajero.getString(6), mensajero.getString(7));
+                EmpresaProveedoraVO epVO= new EmpresaProveedoraVO(mensajero.getString(1), mensajero.getString(2), mensajero.getString(3), mensajero.getString(4), mensajero.getString(5), mensajero.getString(6), mensajero.getString(7),mensajero.getString(8));
                  listaEmpresa.add(epVO);
             }
              
@@ -68,7 +68,7 @@ public class EmpresaProveedoraDAO extends ConexionDB implements Crud {
        
      } 
  private String IdEmpresaProveedora="", NitEmpresaProveedora="",RazonSocialEmpresaProveedora="",NombreComercialEmpresaProveedora="",DireccionEmpresaProveedora="",
-TelefonoEmpresaProveedora="",Numeropago="";
+TelefonoEmpresaProveedora="",Numeropago="",EstadoEmpresaProveedora="";
   
   //2.metodo contructor para recibir  datos del VO
   
@@ -92,6 +92,7 @@ TelefonoEmpresaProveedora="",Numeropago="";
             DireccionEmpresaProveedora =epVO.getDireccionEmpresaProveedora() ;
             TelefonoEmpresaProveedora =epVO.getTelefonoEmpresaProveedora() ;
             Numeropago =epVO.getNumeropago();
+            EstadoEmpresaProveedora=epVO.getEstadoEmpresaProveedora();
           
 
             
@@ -107,7 +108,7 @@ TelefonoEmpresaProveedora="",Numeropago="";
     @Override
     public boolean agregarRegistro() {
         try {
-            sql="insert into empresaproveedora (NitEmpresaProveedora,RazonSocialEmpresaProveedora,NombreComercialEmpresaProveedora,DireccionEmpresaProveedora,TelefonoEmpresaProveedora,Numeropago) values(?,?,?,?,?,?)";
+            sql="insert into empresaproveedora (NitEmpresaProveedora,RazonSocialEmpresaProveedora,NombreComercialEmpresaProveedora,DireccionEmpresaProveedora,TelefonoEmpresaProveedora,Numeropago,EstadoEmpresaProveedora) values(?,?,?,?,?,?,?)";
             puente = conexion.prepareCall(sql);
             puente.setString(1,NitEmpresaProveedora);
             puente.setString(2,RazonSocialEmpresaProveedora);
@@ -115,6 +116,7 @@ TelefonoEmpresaProveedora="",Numeropago="";
             puente.setString(4,DireccionEmpresaProveedora);
             puente.setString(5,TelefonoEmpresaProveedora );
             puente.setString(6,Numeropago);
+            puente.setString(7,EstadoEmpresaProveedora);
            
             
             puente.executeUpdate();
@@ -142,7 +144,7 @@ TelefonoEmpresaProveedora="",Numeropago="";
     public boolean actualizarRegistro() {
         try {
             sql="update empresaproveedora SET NitEmpresaProveedora=?,RazonSocialEmpresaProveedora=?,NombreComercialEmpresaProveedora=?,DireccionEmpresaProveedora=?,"
-                    + "TelefonoEmpresaProveedora=?,Numeropago=? WHERE Idempresaproveedora=?";
+                    + "TelefonoEmpresaProveedora=?,Numeropago=?, EstadoEmpresaProveedora=? WHERE Idempresaproveedora=?";
             puente = conexion.prepareCall(sql);
             puente.setString(1,NitEmpresaProveedora);
             puente.setString(2,RazonSocialEmpresaProveedora );
@@ -150,7 +152,8 @@ TelefonoEmpresaProveedora="",Numeropago="";
             puente.setString(4,DireccionEmpresaProveedora);
             puente.setString(5,TelefonoEmpresaProveedora );
             puente.setString(6,Numeropago);
-            puente.setString(7,IdEmpresaProveedora);
+            puente.setString(7,EstadoEmpresaProveedora);
+            puente.setString(8,IdEmpresaProveedora);
          
             
             puente.executeUpdate();
@@ -255,7 +258,7 @@ TelefonoEmpresaProveedora="",Numeropago="";
             mensajero= puente.executeQuery();
             if(mensajero.next()) {
                 
-                epVO= new EmpresaProveedoraVO(mensajero.getString(1),mensajero.getString(2),mensajero.getString(3),mensajero.getString(4),mensajero.getString(5), mensajero.getString(6), mensajero.getString(7));
+                epVO= new EmpresaProveedoraVO(mensajero.getString(1),mensajero.getString(2),mensajero.getString(3),mensajero.getString(4),mensajero.getString(5), mensajero.getString(6), mensajero.getString(7),mensajero.getString(8));
                 
             }
              

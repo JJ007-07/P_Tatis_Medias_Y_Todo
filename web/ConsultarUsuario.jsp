@@ -48,7 +48,7 @@
                                <th>IdUsuario</th>
                                <th>NombreUsuario</th>
                                <th>EstadoUsuario</th>
-                                <th>IdRolFK</th>
+                           
                                  
                           
                              
@@ -65,7 +65,7 @@
                                <td><%=usuVO.getIdUsuario()%></td>
                                <td><%=usuVO.getNombreUsuario()%></td>
                                <td><%=usuVO.getEstadoUsuario()%></td>
-                               <td><%=usuVO.getIdrolFK()%></td>
+                              
                             
                                
                                

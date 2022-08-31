@@ -58,6 +58,13 @@
                    
                 <div class="campos">Numero de pago</div>
                 <input type="text" name="txtNumero"><br><br>
+                
+                <div class="campos"> Estado del Provedor</div>
+                     <select name="txtEstado">
+                        <option>Seleccione una opción</option>
+                       <option>Activo</option>
+                       <option>Inactivo</option>
+                    </select> <br> <br>
                    
 
                 

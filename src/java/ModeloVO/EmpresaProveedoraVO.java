@@ -11,20 +11,7 @@ package ModeloVO;
  */
 public class EmpresaProveedoraVO {
     private String IdEmpresaProveedora, NitEmpresaProveedora,RazonSocialEmpresaProveedora,NombreComercialEmpresaProveedora,DireccionEmpresaProveedora,
-TelefonoEmpresaProveedora,Numeropago;
-
-    public EmpresaProveedoraVO(String IdEmpresaProveedora, String NitEmpresaProveedora, String RazonSocialEmpresaProveedora, String NombreComercialEmpresaProveedora, String DireccionEmpresaProveedora, String TelefonoEmpresaProveedora, String Numeropago) {
-        this.IdEmpresaProveedora = IdEmpresaProveedora;
-        this.NitEmpresaProveedora = NitEmpresaProveedora;
-        this.RazonSocialEmpresaProveedora = RazonSocialEmpresaProveedora;
-        this.NombreComercialEmpresaProveedora = NombreComercialEmpresaProveedora;
-        this.DireccionEmpresaProveedora = DireccionEmpresaProveedora;
-        this.TelefonoEmpresaProveedora = TelefonoEmpresaProveedora;
-        this.Numeropago = Numeropago;
-    }
-
-    public EmpresaProveedoraVO() {
-    }
+TelefonoEmpresaProveedora,Numeropago,EstadoEmpresaProveedora;
 
     public String getIdEmpresaProveedora() {
         return IdEmpresaProveedora;
@@ -81,5 +68,27 @@ TelefonoEmpresaProveedora,Numeropago;
     public void setNumeropago(String Numeropago) {
         this.Numeropago = Numeropago;
     }
-    
+
+    public String getEstadoEmpresaProveedora() {
+        return EstadoEmpresaProveedora;
+    }
+
+    public void setEstadoEmpresaProveedora(String EstadoEmpresaProveedora) {
+        this.EstadoEmpresaProveedora = EstadoEmpresaProveedora;
+    }
+
+    public EmpresaProveedoraVO(String IdEmpresaProveedora, String NitEmpresaProveedora, String RazonSocialEmpresaProveedora, String NombreComercialEmpresaProveedora, String DireccionEmpresaProveedora, String TelefonoEmpresaProveedora, String Numeropago, String EstadoEmpresaProveedora) {
+        this.IdEmpresaProveedora = IdEmpresaProveedora;
+        this.NitEmpresaProveedora = NitEmpresaProveedora;
+        this.RazonSocialEmpresaProveedora = RazonSocialEmpresaProveedora;
+        this.NombreComercialEmpresaProveedora = NombreComercialEmpresaProveedora;
+        this.DireccionEmpresaProveedora = DireccionEmpresaProveedora;
+        this.TelefonoEmpresaProveedora = TelefonoEmpresaProveedora;
+        this.Numeropago = Numeropago;
+        this.EstadoEmpresaProveedora = EstadoEmpresaProveedora;
+    }
+
+    public EmpresaProveedoraVO() {
+    }
+
 }

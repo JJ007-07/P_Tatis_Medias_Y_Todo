@@ -49,15 +49,7 @@
                     <div class="campos"> Estado Usuario</div>
                     
                     <input type="text" name="textEstado"><br><br>
-                    <select name="textRol">
-                    <option>Seleccione Rol</option>
-                    <%
-                        RolDAO rolDAO = new RolDAO();
-                        for(RolVO rolVO: rolDAO.listar()){
-                    %> 
-                    <option value="<%=rolVO.getIdRol()%>"><%=rolVO.getNombreRol()%></option>
-                   <%}%>
-                    </select><br><br>
+                    
                 </tr>
                 
                  </div>
@@ -79,7 +71,7 @@
           <div class="tres"> 
                          
                                          <% 
-                                         if  (request.getAttribute("MensajeError") !=null) {%>
+                                         if(request.getAttribute("MensajeError") !=null) {%>
                                          ${MensajeError}           
                
                                          <%}else {%>

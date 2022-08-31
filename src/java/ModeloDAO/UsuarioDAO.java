@@ -29,7 +29,7 @@ public class UsuarioDAO extends ConexionDB implements Crud {
 
     private boolean operacion = false;
     private String sql;
-    private String IdUsuario = "", NombreUsuario = "", PasswordUsuario = "",  EstadoUsuario = "",IdrolFK = "";
+    private String IdUsuario = "", NombreUsuario = "", PasswordUsuario = "",  EstadoUsuario = "";
 
     //2.metodo contructor para recibir  datos del VO
     public UsuarioDAO(UsuarioVO usuVO) {
@@ -44,7 +44,7 @@ public class UsuarioDAO extends ConexionDB implements Crud {
             NombreUsuario = usuVO.getNombreUsuario();
             PasswordUsuario = usuVO.getPasswordUsuario();
             EstadoUsuario = usuVO.getEstadoUsuario();
-            IdrolFK = usuVO.getIdrolFK();
+            
 
         } catch (Exception e) {
 
@@ -56,12 +56,11 @@ public class UsuarioDAO extends ConexionDB implements Crud {
     @Override
     public boolean agregarRegistro() {
         try {
-            sql = "insert into usuario(NombreUsuario,PasswordUsuario,EstadoUsuario,IdrolFK) values (?,?,?,?)";
+            sql = "insert into usuario(NombreUsuario,PasswordUsuario,EstadoUsuario) values (?,?,?)";
             puente = conexion.prepareCall(sql);
             puente.setString(1, NombreUsuario);
             puente.setString(2, PasswordUsuario);
             puente.setString(3, EstadoUsuario);
-            puente.setString(4, IdrolFK);
             puente.executeUpdate();
             operacion = true;
 
@@ -149,7 +148,7 @@ public class UsuarioDAO extends ConexionDB implements Crud {
             puente.setString(1, NombreUsuario);
             mensajero = puente.executeQuery();
             if (mensajero.next()) {
-                usuVO = new UsuarioVO(mensajero.getString(1), mensajero.getString(2), mensajero.getString(3), mensajero.getString(4), mensajero.getString(5));
+                usuVO = new UsuarioVO(mensajero.getString(1), mensajero.getString(2), mensajero.getString(3), mensajero.getString(4));
             }
 
         } catch (SQLException e) {
@@ -177,7 +176,7 @@ public class UsuarioDAO extends ConexionDB implements Crud {
             mensajero = puente.executeQuery();
 
             while (mensajero.next()) {
-                UsuarioVO usuVO = new UsuarioVO(mensajero.getString(1), mensajero.getString(2), mensajero.getString(3), mensajero.getString(4),mensajero.getString(5));
+                UsuarioVO usuVO = new UsuarioVO(mensajero.getString(1), mensajero.getString(2), mensajero.getString(3), mensajero.getString(4));
 
                 listaUsuario.add(usuVO);
             }
@@ -229,7 +228,7 @@ public class UsuarioDAO extends ConexionDB implements Crud {
             mensajero = puente.executeQuery();
             if (mensajero.next()) {
 
-                usuVO = new UsuarioVO(mensajero.getString(1), mensajero.getString(2), mensajero.getString(3), mensajero.getString(4), mensajero.getString(5));
+                usuVO = new UsuarioVO(mensajero.getString(1), mensajero.getString(2), mensajero.getString(3), mensajero.getString(4));
 
             }
 

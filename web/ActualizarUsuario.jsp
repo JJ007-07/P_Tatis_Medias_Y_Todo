@@ -62,7 +62,7 @@
 
                     <input type="Text" name="textEstado" value="<%=usuVO.getEstadoUsuario()%>"><br><br>
                     
-                    <input type="Text" readonly=""name="textRol" Value="<%=usuVO.getIdrolFK()%>">
+                   
                    
                     </select><br><br>
                     </tr>

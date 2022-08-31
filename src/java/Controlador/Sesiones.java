@@ -33,10 +33,10 @@ public class Sesiones extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        HttpSession miSesion=request.getSession();
-        miSesion.removeAttribute("datosUsuario");
-        miSesion.invalidate();
-        request.getRequestDispatcher("index.jsp").forward(request, response);    
+        HttpSession sesion=request.getSession();
+        sesion.removeAttribute("datosUsuario");
+        sesion.invalidate();
+        request.getRequestDispatcher("Login.jsp").forward(request, response);    
                 
     }
 

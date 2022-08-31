@@ -11,7 +11,7 @@ package ModeloVO;
  */
 public class RolVO {
     
-        private String IdRol,NombreRol;
+        private String IdRol,TipoRol;
 
     public String getIdRol() {
         return IdRol;
@@ -21,17 +21,17 @@ public class RolVO {
         this.IdRol = IdRol;
     }
 
-    public String getNombreRol() {
-        return NombreRol;
+    public String getTipoRol() {
+        return TipoRol;
     }
 
-    public void setNombreRol(String NombreRol) {
-        this.NombreRol = NombreRol;
+    public void setTipoRol(String TipoRol) {
+        this.TipoRol = TipoRol;
     }
     
-    public RolVO(String IdRol, String NombreRol) {
+    public RolVO(String IdRol, String TipoRol) {
         this.IdRol = IdRol;
-        this.NombreRol = NombreRol;
+        this.TipoRol = TipoRol;
     }
 
     public RolVO() {

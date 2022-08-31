@@ -45,7 +45,7 @@
                     
                     
                      <div class="campos">  Tipo Documento</div>
-                     <select name="TextTipo">
+                     <select name="txtEstado">
                         <option>Seleccione una opción</option>
                        <option>CC</option>
                        <option>CE</option>

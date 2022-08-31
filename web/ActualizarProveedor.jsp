@@ -48,28 +48,34 @@
 
                     
                     <tr>
-                        Codigo de barras<br>
+                        NIT Empresa<br>
                     <input type="text" readonly read name="txtNit" value="<%=epVO.getNitEmpresaProveedora()%>"><br><br>
 
 
-                    Referencia<br>
+                    Razon Social<br>
                     <input type="text" readonly read name="txtRazon" value="<%=epVO.getRazonSocialEmpresaProveedora()%>"><br><br>
 
 
-                    Descripción<br>
+                    Nombre Comercial<br>
 
-                    <input type="text"  readonly read name="txtNombreC" value="<%=epVO.getNombreComercialEmpresaProveedora()%>"><br><br>
+                    <input type="text"  name="txtNombreC" value="<%=epVO.getNombreComercialEmpresaProveedora()%>"><br><br>
 
-                    Stock Disponible<br>
+                    Dirección<br>
 
                     <input type="text" name="txtDireccion" value="<%=epVO.getDireccionEmpresaProveedora()%>"><br><br>
 
-                    Precio Por unidad<br>
+                    Telefono<br>
                     <input type="number" name="txtTelefono" value="<%=epVO.getTelefonoEmpresaProveedora()%>"><br><br>
 
-                    Estado Producto<br>
+                    Numero de pago<br>
 
                     <input type="text" name="txtNumero" value="<%=epVO.getNumeropago()%>"><br><br>
+                   
+                    
+                     Estado<br>
+
+                    <input type="text" name="txtEstado" value="<%=epVO.getEstadoEmpresaProveedora()%>"><br><br>
+                   
 
                     </tr>
 
