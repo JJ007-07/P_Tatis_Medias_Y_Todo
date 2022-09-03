@@ -80,6 +80,7 @@ public class UsuarioDAO extends ConexionDB implements Crud {
 
         return operacion;
     }
+    
 
     @Override
     public boolean actualizarRegistro() {
@@ -252,5 +253,31 @@ public class UsuarioDAO extends ConexionDB implements Crud {
 
     public UsuarioDAO() {
     }
+    
+    /**public void cambiarVigencia(UsuarioVO UsuVO) throws Exception{
+        try{
+      
+        sql = "update Usuario set EstadoUsuario = "
+                + (UsuVO.getEstadoUsuario()== true ? "1" : "0")
+                + "where IdUsuario =" + UsuVO.getIdUsuario();
+     puente = conexion.prepareStatement(sql);
+     mensajero = puente.executeQuery();
+                    }
+ catch (SQLException e) {
+            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, e);
+        } finally {
 
-}
+            try {
+                this.cerrarConexion();
+
+            } catch (SQLException e) {
+                Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, e);
+
+            }
+
+        }
+
+        return UsuVO;*/
+
+    }
+
