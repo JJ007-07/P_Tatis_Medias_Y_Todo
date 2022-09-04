@@ -19,7 +19,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="js/CheckPassword.js" type="text/javascript"></script>
-    <link href="css/CheckPassword.css" rel="stylesheet" type="text/css"/>
+    <link href="Estilos/CheckPassword.css" rel="stylesheet" type="text/css"/>
     
 </head>
   
@@ -42,20 +42,50 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="fa fa-user"></i></span>
                                             </div>
-                                            <input ID="txtFirstName"  name="textUsuario" Class="form-control" type="Email"/>
+                                            
+
+                                            <input ID="txtEmail"  name="textUsuario" required Class="form-control" type="Email"/>
                                         </div>
                                     </div>
                                     
                                    
                                     <div class="form-group">
-                                        <label>Contraseña</label>
+                                        <label >Contraseña</label>
+
                                         <div class="input-group">
+                                            
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="fa fa-lock"></i></span>
                                             </div>
-                                            <input ID="txtPassword" name="textClave" type="Password" Class="form-control"/>
+                                            <input ID="txtPassword" name="textClave" required type="Password" class="form-control password1" placeholder=""/>      
+                                            
                                         </div>
+                                        <span class="fa fa-fw fa-eye password-icon show-password"></span>
                                         <div id="strengthMessage"></div>
+                                        <script>
+  window.addEventListener("load", function() {
+ 
+    // icono para poder interaccionar con el elemento
+    showPassword = document.querySelector('.show-password');
+    showPassword.addEventListener('click', () => {
+ 
+      // elementos input de tipo password
+      password1 = document.querySelector('.password1');
+  
+ 
+      if ( password1.type === "text" ) {
+        password1.type = "password"
+        
+        showPassword.classList.remove('fa-eye-slash');
+      } else {
+        password1.type = "text"
+       
+        showPassword.classList.toggle("fa-eye-slash");
+      }
+  })
+});
+</script>
+                                        
                                     </div>
                                     <div class="form-group">
                                         <label>Estado</label>
@@ -63,7 +93,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class=" fa fa-user"></i></span>
                                             </div>
-                                            <input ID="txtEstado" name="textEstado" type="text" Class="form-control"/>
+                                            <input ID="txtEstado" name="textEstado" required type="text" Class="form-control"/>
                                         </div>
                                     </div>
                                     <div class="form-group">

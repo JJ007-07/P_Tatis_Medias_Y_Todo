@@ -26,9 +26,9 @@ import java.util.logging.Logger;
  *
  * @author SENA
  */
-public class RolDAO2 extends ConexionDB{
+public class USUROLDAO extends ConexionDB{
 
-    public RolDAO2() {
+    public USUROLDAO() {
     }
     
     //Declarar variables y/o objetos
@@ -56,7 +56,7 @@ String rolU = "";
             }
 
         } catch (SQLException e) {
-            Logger.getLogger(RolDAO2.class.getName()).log(Level.SEVERE, null, e);
+            Logger.getLogger(USUROLDAO.class.getName()).log(Level.SEVERE, null, e);
 
         }
         return rolU;

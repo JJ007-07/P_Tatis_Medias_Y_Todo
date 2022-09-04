@@ -5,8 +5,10 @@
  */
 package Controlador;
 
-import ModeloDAO.RolDAO2;
+import ModeloDAO.RolDAO;
+import ModeloDAO.USUROLDAO;
 import ModeloDAO.UsuarioDAO;
+import ModeloVO.RolVO;
 import ModeloVO.UsuarioVO;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -42,15 +44,15 @@ public class UsuarioControlador extends HttpServlet {
         String NombreUsuario = request.getParameter("textUsuario");
         String PasswordUsuario = request.getParameter("textClave");
         String EstadoUsuario = request.getParameter("textEstado");
-        
+        String IdRol = request.getParameter("txtrol");
         int opcion = Integer.parseInt(request.getParameter("opcion"));
 
         //2. ¿Quién tiene los datos de forma segura? VO
         UsuarioVO usuVO = new UsuarioVO(IdUsuario, NombreUsuario, PasswordUsuario, EstadoUsuario);
-
+        RolVO rolVO = new RolVO (IdRol);
         //3. ¿Quién hace las operaciones? DAO
         UsuarioDAO usuDAO = new UsuarioDAO(usuVO);
-
+        RolDAO rolVo = new RolDAO(rolVO);
         //4. Administrar  Operaciones
         switch (opcion) {
 
@@ -101,7 +103,7 @@ public class UsuarioControlador extends HttpServlet {
                     usuVO= new UsuarioVO(IdUsuario, NombreUsuario, PasswordUsuario, EstadoUsuario);
                     sesion.setAttribute("datosUsuario", usuVO);
                     
-                RolDAO2 rolD = new RolDAO2();
+                USUROLDAO rolD = new USUROLDAO();
                     String rol = rolD.seleccionarRol (NombreUsuario, PasswordUsuario);
                     sesion.setAttribute("rol", rol);
                     request.getRequestDispatcher("roles.jsp").forward(request, response);

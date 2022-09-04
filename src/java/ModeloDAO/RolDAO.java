@@ -25,6 +25,13 @@ public class RolDAO extends ConexionDB{
     private PreparedStatement puente;
     private ResultSet mensajero;
     private String sql;
+
+    public RolDAO(RolVO rolVO) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public RolDAO() {
+    }
     
     
     

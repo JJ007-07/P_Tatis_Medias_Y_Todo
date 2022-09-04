@@ -13,6 +13,10 @@ public class RolVO {
     
         private String IdRol,TipoRol;
 
+    public RolVO(String IdRol) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public String getIdRol() {
         return IdRol;
     }
@@ -36,5 +40,7 @@ public class RolVO {
 
     public RolVO() {
     }
+
+  
     
 }

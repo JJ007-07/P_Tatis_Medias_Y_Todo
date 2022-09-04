@@ -67,7 +67,7 @@ public final class ConsultarUsuario_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("    </head>\n");
       out.write("  <body>\n");
       out.write("          <center>\n");
-      out.write("              <h1>Usuario</h1></center>\n");
+      out.write("              <h1>Usuario</h1>\n");
       out.write("         ");
 
             //CONECTANOD A LA BASE DE DATOS:
@@ -80,22 +80,20 @@ public final class ConsultarUsuario_jsp extends org.apache.jasper.runtime.HttpJs
 
       out.write("\n");
       out.write(" <div class=\"container\">            \n");
-      out.write("            <button type=\"button\" class=\"btn btn-success btn-lg\" data-toggle=\"modal\" data-target=\"#myModal\">New Add</button>\n");
+      out.write("            \n");
+      out.write("             <a  class=\"btn btn-success\" href=\"registrarUsuario.jsp\">Nuevo Registro</a>  \n");
       out.write("            <div style=\"padding-left: 800px\">                  \n");
       out.write("               <div  class=\"container buscar\">\n");
       out.write("                 <form class=\"form\">\n");
       out.write("                <input type=\"text\" name=\"txtbuscar\">\n");
       out.write("                <input type=\"submit\" value=\"Buscar\">\n");
-      out.write("            </form>\n");
+      out.write("            </form></center>\n");
       out.write("                         ");
  
 String nombuscar=request.getParameter("txtbuscar");
 if(nombuscar!=null){
     smt=con.obtenerConexion().createStatement();
-    rs=smt.executeQuery("select* from Usuario where NumeroDocUsuario LIKE "+"'%"+nombuscar+"%'OR NombreUsuario LIKE"+"'%"+nombuscar+"%' OR EstadoUsuario LIKE"+"'%"+nombuscar+"%'");
-    
-    
-    
+    rs=smt.executeQuery("select* from Usuario where NombreUsuario LIKE"+"'%"+nombuscar+"%' OR EstadoUsuario LIKE"+"'%"+nombuscar+"%'");
 }else{
     System.err.print("Error");
 }
@@ -105,15 +103,15 @@ if(nombuscar!=null){
       out.write("        <for<div class=\"container\">               \n");
       out.write("            <!--<a  class=\"btn btn-success\" href=\"Agregar.jsp\">Nuevo Registro</a> Esto es Cuando se Crea un nuevo Archivo Agregar.jsp -->         \n");
       out.write("             <table class=\"table table-bordered\"  id=\"tablaDatos\">\n");
-      out.write("                    <thead>\n");
+      out.write("                 <thead>\n");
       out.write("                        <tr>\n");
       out.write("                            <th class=\"text-center\">Id </th>\n");
       out.write("                            <th class=\"text-center\">Nombres</th>\n");
       out.write("                            <th class=\"text-center\">Estado</th>\n");
       out.write("                                 <th class=\"text-center\">Acciones</th>\n");
       out.write("                        </tr>\n");
-      out.write("                    </thead>\n");
-      out.write("                    <tbody id=\"tbodys\">\n");
+      out.write("                        </thead>\n");
+      out.write("v                    <tbody id=\"tbodys\">\n");
       out.write("                        ");
 
                             while (rs.next()) {
@@ -125,8 +123,7 @@ if(nombuscar!=null){
       out.write("</td>\n");
       out.write("                             <td class=\"text-center\">");
       out.print( rs.getString("NombreUsuario"));
-      out.write("</td>\n");
-      out.write("                                                \n");
+      out.write("</td>                                                \n");
       out.write("                            <td class=\"text-center\">");
       out.print( rs.getString("EstadoUsuario"));
       out.write("</td>\n");
@@ -134,17 +131,19 @@ if(nombuscar!=null){
       out.write("                                \n");
       out.write("                                <!-- <input type=\"hidden\" value=\"<//%= rs.getInt(\"Id_Usuario\")%>\" id=\"Editar\"/>\n");
       out.write("                                <input type=\"submit\" class=\"btn btn-warning\" data-toggle=\"modal\" data-target=\"#myModal1\" value=\"Editar\"/>  -->\n");
-      out.write("                                <a href=\"ActualizarUsuario.jsp?IdCliente=");
+      out.write("                                <a href=\"ActualizarUsuario.jsp?IdUsuario=");
       out.print( rs.getInt("IdUsuario"));
       out.write("\" class=\"btn btn-primary\">Editar</a>\n");
-      out.write("                                <a href=\"EliminarUsuario.jsp?IdCliente=");
+      out.write("                                <a href=\"EliminarUsuario.jsp?IdUsuario=");
       out.print( rs.getInt("IdUsuario"));
       out.write("\" class=\"btn btn-danger\">Delete</a>\n");
       out.write("                            </td>\n");
-      out.write("                        </tr>\n");
+      out.write("                            </tr>\n");
       out.write("                        ");
 }
       out.write("\n");
+      out.write("                       \n");
+      out.write("                        \n");
       out.write("                </table>\n");
       out.write("                       \n");
       out.write("        <script src=\"js/jquery.js\" type=\"text/javascript\"></script>             \n");

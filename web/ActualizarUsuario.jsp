@@ -36,7 +36,7 @@
     <%
         if (request.getAttribute("usuarioConsultado") != null) {
             UsuarioVO usuVO = (UsuarioVO) request.getAttribute("usuarioConsultado");
-      
+            RolVO roVO =(RolVO) request.getAttribute("usuarioConsultado");
 
     %>
     <center>
@@ -62,7 +62,19 @@
 
                     <input type="Text" name="textEstado" value="<%=usuVO.getEstadoUsuario()%>"><br><br>
                     
-                   
+                    <div class="campos">Categoría</div>
+                    
+                    <select name="txtrol">
+                        <option>Seleccione una opción</option>
+                        <%
+                            RolDAO roDAO = new RolDAO();
+                            for(RolVO rolVO : roDAO.listar()) {
+                         %>
+                         <option value="<%=rolVO.getIdRol()%>"><%=rolVO.getTipoRol()%></option>
+                                 
+                                 
+                          <%}%>       
+                    </select> <br> <br>
                    
                     </select><br><br>
                     </tr>
