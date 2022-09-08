@@ -5,7 +5,6 @@ import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 import ModeloVO.EmpresaProveedoraVO;
 import ModeloDAO.EmpresaProveedoraDAO;
-import ModeloVO.UsuarioVO;
 
 public final class registrarPedido_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -13,11 +12,6 @@ public final class registrarPedido_jsp extends org.apache.jasper.runtime.HttpJsp
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
 
   private static java.util.List<String> _jspx_dependants;
-
-  static {
-    _jspx_dependants = new java.util.ArrayList<String>(1);
-    _jspx_dependants.add("/Sesiones.jsp");
-  }
 
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
 
@@ -55,101 +49,33 @@ public final class registrarPedido_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("\n");
       out.write("\n");
       out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("<!DOCTYPE html>\n");
-      out.write("\n");
-      out.write("<html>\n");
-      out.write("    <head>\n");
-      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <title>JSP Page</title>\n");
-      out.write("    </head>\n");
-      out.write("    \n");
-      out.write("    ");
-
-        response.setHeader("Pragma", "No-cache");
-        response.setHeader("Cache-control", "no-cache, no-store,must-revalidate");
-        response.setDateHeader("Expires", 0);
-       
-        
-        
-      out.write("\n");
-      out.write("    \n");
-      out.write("    \n");
-      out.write("     ");
- 
-     HttpSession sesion =(HttpSession)request.getSession();
-     String Usuario="";
-    if (sesion.getAttribute("datosUsuario")==null) {
-         request.getRequestDispatcher("Login.jsp").forward(request, response);
-            
-        }else{
-        
-        UsuarioVO usuVO= (UsuarioVO)sesion.getAttribute("datosUsuario");
-        Usuario = usuVO.getNombreUsuario();
-        
-    
-    
-    }
-        
-        
-        
-        
-      out.write("\n");
-      out.write("        \n");
-      out.write("        \n");
-      out.write("    <body>\n");
-      out.write("        <div class=\"card-header\">\n");
-      out.write("            \n");
-      out.write("        <h1>Bienvenido: ");
-      out.print(Usuario);
-      out.write("</h1>\n");
-      out.write("        <form method=\"post\" action=\"Sesiones\">\n");
-      out.write("            \n");
-      out.write("        </div>\n");
-      out.write("            \n");
-      out.write("            \n");
-      out.write("            \n");
-      out.write("           <div class=\"botones\">                       \n");
-      out.write("            <input type=\"submit\" value=\"Cerrar Sesion\">  \n");
-      out.write("            </div>\n");
-      out.write("            \n");
-      out.write("            \n");
-      out.write("            \n");
-      out.write("        </form>\n");
-      out.write("        \n");
-      out.write("        </div><br><br>\n");
-      out.write("        \n");
-      out.write("        \n");
-      out.write("    </body>\n");
-      out.write("</html>\n");
-      out.write("\n");
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
       out.write("        <title>JSP Page</title>\n");
-      out.write("    </head>\n");
-      out.write("    <body>\n");
-      out.write("       <center>\n");
-      out.write("        <h1>Registrar Pedido</h1>\n");
-      out.write("        <form method=\"post\" action=\"Pedido\">\n");
-      out.write("            <table>\n");
-      out.write("                <tr> No.Factura<br>\n");
-      out.write("                <input type=\"text\" name=\"txtNumeroFacturaPedido\"><br>\n");
-      out.write("                </tr>\n");
-      out.write("                <tr>Fecha Pedido<br>\n");
-      out.write("                <input type=\"date\" name=\"txtFechaPedido\"><br>\n");
-      out.write("                </tr>\n");
-      out.write("                <tr>Fecha Recibido<br>\n");
-      out.write("                <input type=\"date\" name=\"txtFechaRecibido\"><br>\n");
-      out.write("                </tr>\n");
-      out.write("                <tr>Fecha Vencimiento pago<br>\n");
-      out.write("                <input type=\"date\" name=\"txtFechaVencimientoPago\"><br>\n");
-      out.write("                </tr>\n");
-      out.write("                <tr>Id Empresa Proveedora<br>\n");
-      out.write("                 <select name=\"txtIdEmpresaProveedora\">\n");
+      out.write("        <script src=\"js/validar.js\" ></script>\n");
+      out.write("        </head>\n");
+      out.write(" <body>\n");
+      out.write("<center>\n");
+      out.write("<h1>Registrar Pedido</h1>\n");
+      out.write("<form method=\"post\" action=\"Pedido\"  onsubmit=\"return validar();\">\n");
+      out.write("    <table>\n");
+      out.write("    \n");
+      out.write("    <tr> No.Factura<br>\n");
+      out.write("    <input type=\"text\"  id=\"NumeroFacturaPedido\" name=\"txtNumeroFacturaPedido\" ><br>\n");
+      out.write("    </tr>\n");
+      out.write("    <tr>Fecha Pedido<br>\n");
+      out.write("    <input type=\"date\"  id=\"FechaPedido\" name=\"txtFechaPedido\"><br>\n");
+      out.write("    </tr>\n");
+      out.write("    <tr>Fecha Recibido<br>\n");
+      out.write("    <input type=\"date\" id=\"FechaRecibido\" name=\"txtFechaRecibido\"><br>\n");
+      out.write("    </tr>\n");
+      out.write("    <tr>Fecha Vencimiento pago<br>\n");
+      out.write("    <input type=\"date\" id=\"FechaVencimientoPago\" name=\"txtFechaVencimientoPago\"><br>\n");
+      out.write("    </tr>\n");
+      out.write("    <tr>Id Empresa Proveedora<br>\n");
+      out.write("   <select name=\"txtIdEmpresaProveedora\">\n");
       out.write("                        <option>Seleccione una opción</option>\n");
       out.write("                        ");
 
@@ -168,52 +94,50 @@ public final class registrarPedido_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("                          ");
 }
       out.write("       \n");
-      out.write("                    </select> <br> <br>\n");
+      out.write("           </tr><br>\n");
+      out.write("    <tr>IVA<br>\n");
+      out.write("    <input type=\"number\" id=\"IVA\" name=\"txtIVA\"><br>\n");
+      out.write("    </tr>\n");
+      out.write("    <tr>Descuento <br>\n");
+      out.write("   <input type=\"number\" Id=\"Descuento\" name=\"txtDescuento\"><br>\n");
+      out.write("    </tr>\n");
+      out.write("    <tr>Estado Pedido<br>\n");
+      out.write("    <select Id=\"EstadoPedido\" name=\"txtEstadoPedido\" >\n");
+      out.write("    <option>Seleccione una opción</option>\n");
+      out.write("    <option>Entregado</option>\n");
+      out.write("    <option>Pago</option>\n");
+      out.write("    </select> <br> <br>\n");
+      out.write("    </tr>\n");
+      out.write("    </table><br>\n");
+      out.write("    <button>Registrar pedido</button>\n");
+      out.write("    <input type=\"hidden\"value=\"1\"  name=\"opcion\">\n");
       out.write("\n");
-      out.write("                </tr>\n");
-      out.write("                <tr>IVA<br>\n");
-      out.write("                <input type=\"number\" name=\"txtIVA\"><br>\n");
-      out.write("                </tr>\n");
-      out.write("                <tr>Descuento <br>\n");
-      out.write("                <input type=\"number\" name=\"txtDescuento\"><br>\n");
-      out.write("                </tr>\n");
-      out.write("                <tr>Estado Pedido<br>\n");
-      out.write("                <select name=\"txtEstadoPedido\">\n");
-      out.write("                    <option>Seleccione una opción</option>\n");
-      out.write("                <option>Entregado</option>\n");
-      out.write("                <option>Pago</option>\n");
-      out.write("                </select> <br> <br>\n");
-      out.write("                </tr>\n");
-      out.write("            </table><br>\n");
-      out.write("            <button>Registrar pedido</button>\n");
-      out.write("            <input type=\"hidden\"value=\"1\"  name=\"opcion\">\n");
-      out.write("            \n");
-      out.write("             <button type=\"submit\"  class=\"btn float-right login_btn\"> <a href=\"ConsultarPedido.jsp\"> Ver Pedidos registrados </a> </button>\n");
-      out.write("                                        \n");
-      out.write("            \n");
-      out.write("        </form><BR>\n");
-      out.write("        ");
+      out.write("    <button type=\"submit\"  class=\"btn float-right login_btn\"> <a href=\"ConsultarPedido.jsp\"> Ver Pedidos registrados </a> </button>\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("    </form><BR>\n");
+      out.write("                            ");
 
-        if (request.getAttribute("MensajeError")  !=null) {
+            if (request.getAttribute("MensajeError") != null) {
       out.write("\n");
-      out.write("         ");
+      out.write("                            ");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${mensajeError}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write(" \n");
-      out.write("           ");
-  }  else {
+      out.write("                            ");
+  } else {
       out.write("\n");
-      out.write("                   ");
+      out.write("                            ");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${MensajeExito}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("\n");
-      out.write("                   ");
+      out.write("                            ");
 }
       out.write("\n");
-      out.write("        \n");
-      out.write("        \n");
-      out.write("       \n");
-      out.write("       </center>\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("\n");
+      out.write("    </center>\n");
       out.write("    </body>\n");
-      out.write("</html>\n");
+      out.write("    </html>\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

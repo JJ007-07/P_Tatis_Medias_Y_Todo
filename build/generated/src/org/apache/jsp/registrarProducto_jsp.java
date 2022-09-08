@@ -7,7 +7,6 @@ import ModeloVO.EmpresaProveedoraVO;
 import ModeloDAO.EmpresaProveedoraDAO;
 import ModeloVO.CategoriaVO;
 import ModeloDAO.CategoriaDAO;
-import ModeloVO.UsuarioVO;
 
 public final class registrarProducto_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -15,11 +14,6 @@ public final class registrarProducto_jsp extends org.apache.jasper.runtime.HttpJ
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
 
   private static java.util.List<String> _jspx_dependants;
-
-  static {
-    _jspx_dependants = new java.util.ArrayList<String>(1);
-    _jspx_dependants.add("/Sesiones.jsp");
-  }
 
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
 
@@ -58,76 +52,6 @@ public final class registrarProducto_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("\n");
       out.write("\n");
       out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("<!DOCTYPE html>\n");
-      out.write("\n");
-      out.write("<html>\n");
-      out.write("    <head>\n");
-      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <title>JSP Page</title>\n");
-      out.write("    </head>\n");
-      out.write("    \n");
-      out.write("    ");
-
-        response.setHeader("Pragma", "No-cache");
-        response.setHeader("Cache-control", "no-cache, no-store,must-revalidate");
-        response.setDateHeader("Expires", 0);
-       
-        
-        
-      out.write("\n");
-      out.write("    \n");
-      out.write("    \n");
-      out.write("     ");
- 
-     HttpSession sesion =(HttpSession)request.getSession();
-     String Usuario="";
-    if (sesion.getAttribute("datosUsuario")==null) {
-         request.getRequestDispatcher("Login.jsp").forward(request, response);
-            
-        }else{
-        
-        UsuarioVO usuVO= (UsuarioVO)sesion.getAttribute("datosUsuario");
-        Usuario = usuVO.getNombreUsuario();
-        
-    
-    
-    }
-        
-        
-        
-        
-      out.write("\n");
-      out.write("        \n");
-      out.write("        \n");
-      out.write("    <body>\n");
-      out.write("        <div class=\"card-header\">\n");
-      out.write("            \n");
-      out.write("        <h1>Bienvenido: ");
-      out.print(Usuario);
-      out.write("</h1>\n");
-      out.write("        <form method=\"post\" action=\"Sesiones\">\n");
-      out.write("            \n");
-      out.write("        </div>\n");
-      out.write("            \n");
-      out.write("            \n");
-      out.write("            \n");
-      out.write("           <div class=\"botones\">                       \n");
-      out.write("            <input type=\"submit\" value=\"Cerrar Sesion\">  \n");
-      out.write("            </div>\n");
-      out.write("            \n");
-      out.write("            \n");
-      out.write("            \n");
-      out.write("        </form>\n");
-      out.write("        \n");
-      out.write("        </div><br><br>\n");
-      out.write("        \n");
-      out.write("        \n");
-      out.write("    </body>\n");
-      out.write("</html>\n");
       out.write("\n");
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");

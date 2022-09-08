@@ -29,7 +29,7 @@ public class PedidoDAO extends ConexionDB implements Crud{
   private String sql;
   
   private String IdPedido="",NumeroFacturaPedido="", FechaPedido="", FechaRecibido="", FechaVencimientoPago="",
-          IdEmpresaProveedoraFK="",Subtotal="",IVA="",TotalPedido="",Descuento="",EstadoPedido="";
+          IdEmpresaProveedoraFK="",IVA="",Descuento="",EstadoPedido="";
   
   public PedidoDAO(PedidoVO PVO){
       super();

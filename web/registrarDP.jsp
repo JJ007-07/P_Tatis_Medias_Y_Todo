@@ -9,23 +9,24 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="js/validarDP.js"></script>
         <title>Registrar</title>
     </head>
     <body>
         <center>
         <h1>Registrar Detalle Pedido</h1>
-        <form method="post" action="DetallePedido" onsubmit="validarFormulario()">
+        <form method="post" action="DetallePedido" onsubmit="return validarDP();">
             <table>
                 <tr>Id pedido FK<br>
-                <input type="number" id="textIdPedidoFK" name="textIdPedidoFK"><br>
+                <input type="number" id="IdPedidoFK" name="textIdPedidoFK"><br>
                 <tr>Id Producto FK<br>
-                <input type="number" id="textIdProductoFK" name="textIdProductoFK"><br>
+                <input type="number" id="IdProductoFK" name="textIdProductoFK"><br>
                 </tr>
                 <tr>Precio Unidad<br>
-                <input type="number" id="textPrecio" name="textPrecio"><br>
+                <input type="number" id="PrecioUnitario" name="textPrecio"><br>
                 </tr>
                 <tr>Cantidad<br>
-                <input type="number" id="textCantidad"  name="textCantidad"><br>
+                <input type="number" id="Cantidad"  name="textCantidad"><br>
                 </tr>
             </table><br>
             <button>Registrar detalle pedido</button>
