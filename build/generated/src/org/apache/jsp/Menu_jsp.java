@@ -148,7 +148,7 @@ public final class Menu_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                <a class=\"logo\" href=\"#\">\r\n");
       out.write("\r\n");
       out.write("                    <img src=\"IMG/Log.svg\" width=\"45\" height=\"45\" class=\"d-inline-block align-top\" alt=\"\">\r\n");
-      out.write("                    SICDIGC\r\n");
+      out.write("                    JyK \r\n");
       out.write("                </a>\r\n");
       out.write("\r\n");
       out.write("                ");

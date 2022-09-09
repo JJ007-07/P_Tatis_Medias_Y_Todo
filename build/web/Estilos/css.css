@@ -10,108 +10,118 @@ and open the template in the editor.
 
 /* Made with love by Mutiullah Samim*/
 
-@import url('https://fonts.googleapis.com/css?family=Numans');
-@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500&display=swap');
 
-html,body{
-background-image: url('https://www.10wallpaper.com/wallpaper/1366x768/1206/black_infiniti-luxury_cars_wallpaper_1366x768.jpg');
-background-size: cover;
-background-repeat: no-repeat;
-height: 100%;
-font-family: 'Numans', sans-serif;
+* {
+	box-sizing: border-box;
 }
 
-.container{
-height: 100%;
-align-content: center;
+body {
+	background-color: #9b59b6;
+	font-family: 'Open Sans', sans-serif;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	margin: 0;
 }
 
-.card{
-height: 450px;
-margin-top: auto;
-margin-bottom: auto;
-width: 400px;
-background-color: rgba(0,0,0,0.5) !important;
+.container {
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+	overflow: hidden;
+	width: 400px;
+	max-width: 100%;
 }
 
-.social_icon span{
-font-size: 60px;
-margin-left: 10px;
-color: #FFC312;
+.header {
+	border-bottom: 1px solid #f0f0f0;
+	background-color: #f7f7f7;
+	padding: 20px 40px;
 }
 
-.social_icon span:hover{
-color: white;
-cursor: pointer;
+.header h2 {
+	margin: 0;
 }
 
-.card-header h1{
-color: white;
-font-family:'Lobster', cursive;
-text-align: center;
+.form {
+	padding: 30px 40px;	
 }
 
-.social_icon{
-position: absolute;
-right: 20px;
-top: -45px;
+.form-control {
+	margin-bottom: 10px;
+	padding-bottom: 20px;
+	position: relative;
 }
 
-.input-group-prepend span{
-width: 50px;
-background-color: #FFC312;
-color: black;
-border:0 !important;
+.form-control label {
+	display: inline-block;
+	margin-bottom: 5px;
 }
 
-input:focus{
-outline: 0 0 0 0  !important;
-box-shadow: 0 0 0 0 !important;
-
+.form-control input {
+	border: 2px solid #f0f0f0;
+	border-radius: 4px;
+	display: block;
+	font-family: inherit;
+	font-size: 14px;
+	padding: 10px;
+	width: 100%;
 }
 
-.remember{
-color: white;
+.form-control input:focus {
+	outline: 0;
+	border-color: #777;
 }
 
-.remember input
-{
-width: 20px;
-height: 20px;
-margin-left: 15px;
-margin-right: 5px;
+.form-control.success input {
+	border-color: #2ecc71;
 }
 
-.login_btn{
-color: black;
-background-color: #FFC312;
-width: 200px;
+.form-control.error input {
+	border-color: #e74c3c;
 }
 
-.login_btn:hover{
-color: black;
-background-color: white;
+.form-control i {
+	visibility: hidden;
+	position: absolute;
+	top: 40px;
+	right: 10px;
 }
 
-.links{
-color: white;
+.form-control.success i.fa-check-circle {
+	color: #2ecc71;
+	visibility: visible;
 }
 
-.links a{
-margin-left: 4px;
+.form-control.error i.fa-exclamation-circle {
+	color: #e74c3c;
+	visibility: visible;
 }
 
-
-.uno{
-  color:white;
-  font-family: 'Lobster', cursive;
-      
+.form-control small {
+	color: #e74c3c;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	visibility: hidden;
 }
 
+.form-control.error small {
+	visibility: visible;
+}
 
-.tres{
-     font-family: 'Lobster', cursive;
-     color:white;
-     text-align: center;
-    
+.form button {
+	background-color: #8e44ad;
+	border: 2px solid #8e44ad;
+	border-radius: 4px;
+	color: #fff;
+	display: block;
+	font-family: inherit;
+	font-size: 16px;
+	padding: 10px;
+	margin-top: 20px;
+	width: 100%;
 }

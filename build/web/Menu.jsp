@@ -32,7 +32,7 @@
                 <a class="logo" href="#">
 
                     <img src="IMG/Log.svg" width="45" height="45" class="d-inline-block align-top" alt="">
-                    SICDIGC
+                    JyK 
                 </a>
 
                 <%--<div class="menu">
