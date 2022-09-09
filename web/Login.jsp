@@ -12,30 +12,28 @@
     </head>
     <body>
         <div>
-            
-            <img src="IMG/Logo.png" alt="Logo del sistemas" class="imagen"/>
+            <img src="IMG/./Logo.png" alt="Logo del SI" class="imagen"/>
             <div class="FormularioCont">
                 <h1 class="H1">INICIAR SESIÓN</h1>
-                <form class="Formulario" method="post" action="Usuario">
-                    
+                <form class="Formulario" method="post" action="">
                     <input class="emailtxt" type="text" name="textUsuario" placeholder="  Correo Electronico" required>
                     <br>
                     <br>
-                    <input class="passwordtxt" type="password" name="textClave" placeholder="  Contraseña" required>
+                    <input class="passwordtxt" type="password" name="textClave" placeholder="  Clave" required>
                     <br>
                     <br>
                     <br>
                     <button type="submit" class="buttonbtn">INGRESAR</button>
                     <input type="hidden" value="4" name="opcion">
                     <br>
-                    <p><a href=registrarUsuario.jsp class="Texto1">Registrarse</a><a href="ConsultarUsuario.jsp" class="Texto2">¿Contraseña olvidada?</a></p>
+                    <p><a href=registrarUsuario.jsp class="Texto1">Registrarse</a><a href="ConsultarUsuario.jsp" class="Texto2">¿Clave olvidada?</a></p>
                     <br>
-                    <%if (request.getAttribute("mensajeError") != null) {%>
-                    ${mensajeError}
-                    <% } else {%>
-                    ${mensajeExito}
-                    <%}%>
                 </form>
+                <%if (request.getAttribute("mensajeError") != null) {%>
+                ${mensajeError}
+                <% } else {%>
+                ${mensajeExito}
+                <%}%>
             </div>
         </div>
     </body>

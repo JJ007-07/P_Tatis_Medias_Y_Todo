@@ -56,38 +56,38 @@ public final class Login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    </head>\r\n");
       out.write("    <body>\r\n");
       out.write("        <div>\r\n");
-      out.write("            <img src=\"IMG/LOGO.jpeg\" alt=\"Logo del local\" class=\"Imagen\">\r\n");
+      out.write("            <img src=\"./Logo.png\" alt=\"Logo del sistemas\" class=\"imagen\"/>\r\n");
       out.write("            <div class=\"FormularioCont\">\r\n");
       out.write("                <h1 class=\"H1\">INICIAR SESIÓN</h1>\r\n");
-      out.write("                <form class=\"Formulario\" method=\"post\" action=\"Usuario\">\r\n");
+      out.write("                <form class=\"Formulario\" method=\"post\" action=\"\">\r\n");
       out.write("                    <input class=\"emailtxt\" type=\"text\" name=\"textUsuario\" placeholder=\"  Correo Electronico\" required>\r\n");
       out.write("                    <br>\r\n");
       out.write("                    <br>\r\n");
-      out.write("                    <input class=\"passwordtxt\" type=\"password\" name=\"textClave\" placeholder=\"  Contraseña\" required>\r\n");
+      out.write("                    <input class=\"passwordtxt\" type=\"password\" name=\"textClave\" placeholder=\"  Clave\" required>\r\n");
       out.write("                    <br>\r\n");
       out.write("                    <br>\r\n");
       out.write("                    <br>\r\n");
       out.write("                    <button type=\"submit\" class=\"buttonbtn\">INGRESAR</button>\r\n");
       out.write("                    <input type=\"hidden\" value=\"4\" name=\"opcion\">\r\n");
       out.write("                    <br>\r\n");
-      out.write("                    <p><a href=registrarUsuario.jsp class=\"Texto1\">Registrarse</a><a href=\"#\" class=\"Texto2\">¿Contraseña olvidada?</a></p>\r\n");
+      out.write("                    <p><a href=registrarUsuario.jsp class=\"Texto1\">Registrarse</a><a href=\"ConsultarUsuario.jsp\" class=\"Texto2\">¿Clave olvidada?</a></p>\r\n");
       out.write("                    <br>\r\n");
-      out.write("                    ");
+      out.write("                </form>\r\n");
+      out.write("                ");
 if (request.getAttribute("mensajeError") != null) {
       out.write("\r\n");
-      out.write("                    ");
+      out.write("                ");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${mensajeError}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("\r\n");
-      out.write("                    ");
+      out.write("                ");
  } else {
       out.write("\r\n");
-      out.write("                    ");
+      out.write("                ");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${mensajeExito}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("\r\n");
-      out.write("                    ");
+      out.write("                ");
 }
       out.write("\r\n");
-      out.write("                </form>\r\n");
       out.write("            </div>\r\n");
       out.write("        </div>\r\n");
       out.write("    </body>\r\n");
