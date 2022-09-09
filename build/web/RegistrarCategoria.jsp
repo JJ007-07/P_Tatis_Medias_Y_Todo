@@ -19,9 +19,6 @@
 
         <!--Fontawesome CDN-->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-
-        <!--Custom styles-->
-
         <link href="Estilos/estilos2.css" rel="stylesheet" type="text/css"/>
         <script src="js/validarC.js" type="text/javascript"></script>
     </head>
@@ -51,7 +48,7 @@
                         </table><br>
                         <div class="form-group">	
                             <input type="hidden" value="1" name="opcion" class="btn float-right login_btn">
-                            <button type="submit" class="btn float-right login_btn" > Registrar Categoría</button>
+                            <button type="submit" class="btn float-right login_btn" >Registrar Categoría</button>
 
 
                             <button type="submit"  class="btn float-right login_btn"> <a href="ConsultarCategoria.jsp"> Ver Categorias Regitradas</a> </button>
@@ -66,15 +63,9 @@
                         <%}else {%>
                         ${MensajeExito}  
                         <%}%>
-
                     </div>
-
                 </center>
-
             </div>
-
-
-
         </body>
     </center>
 </html>
