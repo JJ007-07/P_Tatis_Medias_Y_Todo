@@ -15,7 +15,7 @@
             <img src="IMG/./Logo.png" alt="Logo del SI" class="imagen"/>
             <div class="FormularioCont">
                 <h1 class="H1">INICIAR SESIÓN</h1>
-                <form class="Formulario" method="post" action="">
+                <form class="Formulario" method="post" action="Usuario">
                     <input class="emailtxt" type="text" name="textUsuario" placeholder="  Correo Electronico" required>
                     <br>
                     <br>
