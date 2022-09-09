@@ -85,7 +85,7 @@ if(nombuscar!=null){
                              <td><%= rs.getString("TipoDocEmpleado")%></td>
                              <td class="text-center"><%= rs.getString("NumeroDocEmpleado")%></td>
                              <td><%= rs.getString("TelefonoCelularEmpleado")%></td>
-                             <td><%= rs.getString("DirrecionEmpleado")%></td>
+                             <td><%= rs.getString("DireccionEmpleado")%></td>
                              <td><%= rs.getString("CorreoEmpleado")%></td>
                              <td><%= rs.getString("EstadoEmpleado")%></td>
                              <td><%= rs.getString("IdUsuarioFK")%></td>

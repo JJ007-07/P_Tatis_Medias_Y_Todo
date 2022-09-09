@@ -37,8 +37,9 @@
     
             
         %>
-        <div class="container">            
-            <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">New Add</button>
+        <div class="container">       
+            <a href="registrarCliente.jsp">
+                <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal" >Registrar</button></a>
             <div style="padding-left: 800px">                  
                <div  class="container buscar">
                  <form class="form">
