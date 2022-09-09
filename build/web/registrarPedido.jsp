@@ -20,7 +20,7 @@
 <h1>Registrar Pedido</h1>
 <form method="post" action="Pedido"  onsubmit="return validar();">
     <table>
-    
+   
     <tr> No.Factura<br>
     <input type="text"  id="NumeroFacturaPedido" name="txtNumeroFacturaPedido" ><br>
     </tr>

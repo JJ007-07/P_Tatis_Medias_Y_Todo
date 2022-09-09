@@ -70,7 +70,7 @@ public final class Login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    <button type=\"submit\" class=\"buttonbtn\">INGRESAR</button>\r\n");
       out.write("                    <input type=\"hidden\" value=\"4\" name=\"opcion\">\r\n");
       out.write("                    <br>\r\n");
-      out.write("                    <p><a href=registrarUsuario.jsp class=\"Texto1\">Registrarse</a><a href=\"ConsultarUsuario.jsp\" class=\"Texto2\">¿Contraseña olvidada?</a></p>\r\n");
+      out.write("                    <p><a href=registrarUsuario.jsp class=\"Texto1\">Registrarse</a><a href=\"#\" class=\"Texto2\">¿Contraseña olvidada?</a></p>\r\n");
       out.write("                    <br>\r\n");
       out.write("                    ");
 if (request.getAttribute("mensajeError") != null) {

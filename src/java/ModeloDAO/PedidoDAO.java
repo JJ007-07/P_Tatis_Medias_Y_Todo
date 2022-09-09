@@ -55,16 +55,17 @@ public class PedidoDAO extends ConexionDB implements Crud{
     @Override
     public boolean agregarRegistro() {
          try {
-            sql="insert into pedido(NumeroFacturaPedido,FechaPedido,FechaRecibido,FechaVencimientoPago,IdEmpresaProveedoraFK,IVA,Descuento,EstadoPedido) values(?,?,?,?,?,?,?,?)";
+            sql="insert into pedido(IdPedido,NumeroFacturaPedido,FechaPedido,FechaRecibido,FechaVencimientoPago,IdEmpresaProveedoraFK,IVA,Descuento,EstadoPedido) values(?,?,?,?,?,?,?,?,?)";
             puente = conexion.prepareCall(sql);
-            puente.setString(1, NumeroFacturaPedido );
-            puente.setString(2, FechaPedido);
-            puente.setString(3, FechaRecibido );
-            puente.setString(4, FechaVencimientoPago );
-            puente.setString(5, IdEmpresaProveedoraFK );
-            puente.setString(6, IVA );
-            puente.setString(7, Descuento );
-            puente.setString(8, EstadoPedido );
+            puente.setString(1, IdPedido);
+            puente.setString(2, NumeroFacturaPedido );
+            puente.setString(3, FechaPedido);
+            puente.setString(4, FechaRecibido );
+            puente.setString(5, FechaVencimientoPago );
+            puente.setString(6, IdEmpresaProveedoraFK );
+            puente.setString(7, IVA );
+            puente.setString(8, Descuento );
+            puente.setString(9, EstadoPedido );
                    
             puente.executeUpdate();
             operacion= true;

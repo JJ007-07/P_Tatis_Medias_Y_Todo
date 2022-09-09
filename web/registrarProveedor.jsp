@@ -24,6 +24,7 @@
 	<!--Custom styles-->
       
       <link href="Estilos/estilos2.css" rel="stylesheet" type="text/css"/>
+      <script src="js/validarPR.js" type="text/javascript"></script>
 </head>
   
 <center>
@@ -33,35 +34,35 @@
 
         <center>
             <h1 class="titulo">Registrar Empresas Proveedoras</h1>
-        <form method="post" action="EmpresaProveedora">
+            <form method="post" action="EmpresaProveedora" onsubmit="return validarPR();">
             <table>
                 
                 <tr>
                    
                 <div class="campos">Nit Empresa</div>
-                <input type="number" name="txtNit"><br><br>
+                <input type="number"  id="NitEmpresaProveedora" name="txtNit"><br><br>
                         
                     <div class="campos"> Razon social Empresa </div>
                     
-                    <input type="text" name="txtRazon"><br><br>
+                    <input type="text" id="RazonSocialEmpresaProveedora" name="txtRazon"><br><br>
                     
                     <div class="campos">Nombre Comercial Empresa</div>
                     
-                <input type="text" name="txtNombreC"><br><br>
+                    <input type="text" id="NombreComercialEmpresaProveedora" name="txtNombreC"><br><br>
                     
                     <div class="campos">Direccion De empresa</div>
                     
-                    <input type="text" name="txtDireccion"><br><br>
+                    <input type="text" id="DireccionEmpresaProveedora" name="txtDireccion"><br><br>
                     
                     
                       <div class="campos">Telefono Empresa</div>
-                <input type="number" name="txtTelefono"><br><br>
+                      <input type="number" id="TelefonoEmpresaProveedora" name="txtTelefono"><br><br>
                    
                 <div class="campos">Numero de pago</div>
-                <input type="text" name="txtNumero"><br><br>
+                <input type="text" id="Numeropago" name="txtNumero"><br><br>
                 
                 <div class="campos"> Estado del Provedor</div>
-                     <select name="txtEstado">
+                <select name="txtEstado" id="EstadoEmpresaProveedora">
                         <option>Seleccione una opción</option>
                        <option>Activo</option>
                        <option>Inactivo</option>

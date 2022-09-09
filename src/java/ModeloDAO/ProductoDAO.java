@@ -72,17 +72,19 @@ public class ProductoDAO extends ConexionDB implements Crud{
     @Override
     public boolean agregarRegistro() {
         try {
-            sql="insert into Producto (CodigoDeBarrasProducto,ReferenciaProducto,DescripcionProducto,StockProducto,PrecioUnitario,"
-                    + "EstadoProducto,IdCategoriaFK,IdEmpresaProveedoraFK) values(?,?,?,?,?,?,?,?)";
+            sql="insert into Producto (IdProducto,CodigoDeBarrasProducto,ReferenciaProducto,DescripcionProducto,StockProducto,PrecioUnitario,"
+                    + "EstadoProducto,IdCategoriaFK,IdEmpresaProveedoraFK) values(?,?,?,?,?,?,?,?,?)";
             puente = conexion.prepareCall(sql);
-            puente.setString(1,CodigoDeBarrasProducto);
-            puente.setString(2,ReferenciaProducto );
-            puente.setString(3,DescripcionProducto);
-            puente.setString(4,StockProducto);
-            puente.setString(5,PrecioUnitario );
-            puente.setString(6,EstadoProducto);
-            puente.setString(7,IdCategoriaFK);
-            puente.setString(8,IdEmpresaProveedoraFK);
+           
+            puente.setString(1,IdProducto);
+            puente.setString(2,CodigoDeBarrasProducto);
+            puente.setString(3,ReferenciaProducto );
+            puente.setString(4,DescripcionProducto);
+            puente.setString(5,StockProducto);
+            puente.setString(6,PrecioUnitario );
+            puente.setString(7,EstadoProducto);
+            puente.setString(8,IdCategoriaFK);
+            puente.setString(9,IdEmpresaProveedoraFK);
             
             
             

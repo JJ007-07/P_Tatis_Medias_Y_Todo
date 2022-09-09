@@ -26,6 +26,7 @@
 	<!--Custom styles-->
       
       <link href="Estilos/estilos2.css" rel="stylesheet" type="text/css"/>
+      <script src="js/validarP.js" type="text/javascript"></script>
 </head>
   
 <center>
@@ -35,37 +36,39 @@
 
         <center>
             <h1 class="titulo">Registrar Producto</h1>
-        <form method="post" action="Producto">
+            <form method="post" action="Producto" onsubmit="return validarP(); ">
             <table>
                 
                 <tr>
                    
+              
+                
                 <div class="campos">Codigo De barras Producto</div>
-                <input type="text" name="txtcodigoB"><br><br>
+                <input type="text" id="CodigoDeBarrasProducto" name="txtcodigoB"><br><br>
                         
                     <div class="campos"> Referencia</div>
                     
-                    <input type="text" name="txtreferencia"><br><br>
+                    <input type="text" id="ReferenciaProducto" name="txtreferencia"><br><br>
                     
                     <div class="campos">Descripcion de Producto</div>
                     
-                <input type="text" name="txtdescripcion"><br><br>
+                    <input type="text" id="DescripcionProducto" name="txtdescripcion"><br><br>
                     
                     <div class="campos">Stock Dsiponible</div>
                     
-                    <input type="number" name="txtstock"><br><br>
+                    <input type="number" id="StockProducto"name="txtstock"><br><br>
                     
                     
                       <div class="campos">Precio Unitario Producto</div>
-                <input type="number" name="txtprecio"><br><br>
+                      <input type="number" id="PrecioUnitario" name="txtprecio"><br><br>
                    
                 <div class="campos">Estado del producto</div>
-                <input type="text" name="txtestado"><br><br>
+                <input type="text" id="EstadoProducto" name="txtestado"><br><br>
                    
 
               <div class="campos">Categoría</div>
                     
-                    <select name="txtcategoria">
+              <select name="txtcategoria" id="IdCategoriaFK">
                         <option>Seleccione una opción</option>
                         <%
                             CategoriaDAO catDAO = new CategoriaDAO();
@@ -80,7 +83,7 @@
                     
                     <div class="campos">Empresa</div>
                     
-                    <select name="txtempresa">
+                    <select name="txtempresa" id="IdEmpresaProveedoraFK">
                         <option>Seleccione una opción</option>
                         <%
                             EmpresaProveedoraDAO epDAO = new EmpresaProveedoraDAO();

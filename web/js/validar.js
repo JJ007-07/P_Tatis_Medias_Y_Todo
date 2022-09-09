@@ -19,8 +19,7 @@ function validar()
     EstadoPedido = document.getElementById("EstadoPedido").value;
     
 
- 
-    
+
     if (NumeroFacturaPedido===""){
         alert("El campo No.Factura está vacio");
         return false;
@@ -29,7 +28,7 @@ function validar()
         alert("El campo FechaPedido está vacio");
         return false;
     }
-    if(FechaRecibido===""){
+  else  if(FechaRecibido===""){
          alert("El Fecha Recibido está vacio");
         return false;
     }

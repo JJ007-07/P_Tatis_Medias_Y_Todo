@@ -108,15 +108,16 @@ TelefonoEmpresaProveedora="",Numeropago="",EstadoEmpresaProveedora="";
     @Override
     public boolean agregarRegistro() {
         try {
-            sql="insert into empresaproveedora (NitEmpresaProveedora,RazonSocialEmpresaProveedora,NombreComercialEmpresaProveedora,DireccionEmpresaProveedora,TelefonoEmpresaProveedora,Numeropago,EstadoEmpresaProveedora) values(?,?,?,?,?,?,?)";
+            sql="insert into empresaproveedora (IdEmpresaProveedora,NitEmpresaProveedora,RazonSocialEmpresaProveedora,NombreComercialEmpresaProveedora,DireccionEmpresaProveedora,TelefonoEmpresaProveedora,Numeropago,EstadoEmpresaProveedora) values(?,?,?,?,?,?,?,?)";
             puente = conexion.prepareCall(sql);
-            puente.setString(1,NitEmpresaProveedora);
-            puente.setString(2,RazonSocialEmpresaProveedora);
-            puente.setString(3,NombreComercialEmpresaProveedora);
-            puente.setString(4,DireccionEmpresaProveedora);
-            puente.setString(5,TelefonoEmpresaProveedora );
-            puente.setString(6,Numeropago);
-            puente.setString(7,EstadoEmpresaProveedora);
+           puente.setString(1,IdEmpresaProveedora);
+            puente.setString(2,NitEmpresaProveedora);
+            puente.setString(3,RazonSocialEmpresaProveedora);
+            puente.setString(4,NombreComercialEmpresaProveedora);
+            puente.setString(5,DireccionEmpresaProveedora);
+            puente.setString(6,TelefonoEmpresaProveedora );
+            puente.setString(7,Numeropago);
+            puente.setString(8,EstadoEmpresaProveedora);
            
             
             puente.executeUpdate();

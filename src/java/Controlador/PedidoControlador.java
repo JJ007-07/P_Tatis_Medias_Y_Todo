@@ -59,7 +59,7 @@ public class PedidoControlador extends HttpServlet {
             case 1: //Agregar Registro 
                 if (PDAO.agregarRegistro()) {
 
-                    request.setAttribute("MensajeExito", "<center=red><h2>El Pedido se ha registrado correctamente</h2></center>");
+                    request.setAttribute("MensajeExito", "El Pedido se ha registrado correctamente");
 
                 } else {
                     request.setAttribute("MensajeError", "El pedido no se ha registrado correctamente");

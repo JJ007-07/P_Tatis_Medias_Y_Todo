@@ -26,7 +26,7 @@
                     <button type="submit" class="buttonbtn">INGRESAR</button>
                     <input type="hidden" value="4" name="opcion">
                     <br>
-                    <p><a href=registrarUsuario.jsp class="Texto1">Registrarse</a><a href="ConsultarUsuario.jsp" class="Texto2">¿Contraseña olvidada?</a></p>
+                    <p><a href=registrarUsuario.jsp class="Texto1">Registrarse</a><a href="#" class="Texto2">¿Contraseña olvidada?</a></p>
                     <br>
                     <%if (request.getAttribute("mensajeError") != null) {%>
                     ${mensajeError}

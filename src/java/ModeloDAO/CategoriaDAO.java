@@ -106,9 +106,10 @@ public class CategoriaDAO extends ConexionDB implements Crud{
     @Override
     public boolean agregarRegistro() {
         try {
-            sql="insert into Categoria (NombreCategoria) values(?)";
+            sql="insert into Categoria (IdCategoria,NombreCategoria) values(?,?)";
             puente = conexion.prepareCall(sql);
-            puente.setString(1,NombreCategoria );
+            puente.setString(1,IdCategoria );
+            puente.setString(2, NombreCategoria);
             
             
             puente.executeUpdate();
