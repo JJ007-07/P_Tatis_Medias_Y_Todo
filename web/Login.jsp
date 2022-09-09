@@ -12,10 +12,12 @@
     </head>
     <body>
         <div>
-            <img src="IMG/LOGO.jpeg" alt="Logo del local" class="Imagen">
+            
+            <img src="IMG/Logo.png" alt="Logo del sistemas" class="imagen"/>
             <div class="FormularioCont">
                 <h1 class="H1">INICIAR SESIÓN</h1>
                 <form class="Formulario" method="post" action="Usuario">
+                    
                     <input class="emailtxt" type="text" name="textUsuario" placeholder="  Correo Electronico" required>
                     <br>
                     <br>
@@ -26,7 +28,7 @@
                     <button type="submit" class="buttonbtn">INGRESAR</button>
                     <input type="hidden" value="4" name="opcion">
                     <br>
-                    <p><a href=registrarUsuario.jsp class="Texto1">Registrarse</a><a href="#" class="Texto2">¿Contraseña olvidada?</a></p>
+                    <p><a href=registrarUsuario.jsp class="Texto1">Registrarse</a><a href="ConsultarUsuario.jsp" class="Texto2">¿Contraseña olvidada?</a></p>
                     <br>
                     <%if (request.getAttribute("mensajeError") != null) {%>
                     ${mensajeError}
