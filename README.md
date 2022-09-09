@@ -1,5 +1,5 @@
 <h1 align="center">SISTEMA DE INFORMACIÓN PARA EL CARGUE, DESCARGUE DE INVENTARIO Y LA GENERACIÓN DE COMPROBANTE DE VENTA DEL LOCAL COMERCIAL TATIS MEDIAS & TODO</h1>
-<h1 align="left">Languages and Tools</h1>
+<h1 align="left">Languages And Tools</h1>
 <div align="left">
 <a href="https://www.java.com/es/" target="_blank" rel="noreferrer"> <img src="https://1000marcas.net/wp-content/uploads/2020/11/Java-logo.png" alt="bootstrap" width="20%" height="20%"/></a> 
 <a href="https://www.mysql.com/" target="_blank" rel="noreferrer"> <img src="https://d1.awsstatic.com/asset-repository/products/amazon-rds/1024px-MySQL.ff87215b43fd7292af172e2a5d9b844217262571.png" alt="bootstrap" width="20%" height="20%"/></a>
