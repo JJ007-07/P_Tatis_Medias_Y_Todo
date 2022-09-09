@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bienvenido</title>
     <link href="Estilos/css4.css" rel="stylesheet" type="text/css"/>
-    <link href="Estilos/estilos2.css" rel="stylesheet" type="text/css"/>
+    <link href="Estilos/Estilos3.css" rel="stylesheet" type="text/css"/>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>

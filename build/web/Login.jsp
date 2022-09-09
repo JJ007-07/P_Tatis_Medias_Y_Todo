@@ -1,83 +1,40 @@
-<%-- 
-    Document   : registrarUsuario
-    Created on : 02/08/2022, 12:00:05 AM
-    Author     : James
---%>
 <%@page import="ModeloVO.UsuarioVO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="es">
     <head>
-             
-              <link href="Estilos/estilos2.css" rel="stylesheet" type="text/css"/>
-
-        <title>Login</title>
-<!-- CSS only -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="./Estilos/StyleLogin.css">
+        <title>Iniciar Sesion</title>
     </head>
-    <center>
-         <div class="contenedor">      
-
     <body>
-
-        <div class="limiter">
-            <div class="container-login100" style="background-image: url('./IMG/bg-01.jpg');">
-                <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
-                    <form class="login100-form validate-form" method="post" action="Usuario">
-                        <span class="login100-form-title p-b-49">
-                            <br><br>
-                            Iniciar Sesión<br><br>
-                        </span>
-
-                        <div class="wrap-input100 validate-input m-b-23" data-validate = "Usuario Obligatorio">
-                            <span class="label-input100">Usuario</span>
-                            <input class="input100" type="text" name="textUsuario" placeholder="Ingresar Usuario" required>
-                            <span class="focus-input100" data-symbol="&#xf206;"></span>
-                        </div><br><br>
-
-                        <div class="wrap-input100 validate-input" data-validate="Contraseña Obligatorio">
-                            <span class="label-input100">Contraseña</span>
-                            <input class="input100" type="password" name="textClave" placeholder="Ingresar Contraseña" required>
-                            <span class="focus-input100" data-symbol="&#xf190;"></span>
-                        </div><br><br>
-
-                        <div class="text-right p-t-8 p-b-31">
-                            <a href="ConsultarUsuario.jsp">
-                                ¿Contraseña olvidada?
-                            </a>
-                            
-                            <div class="text-right p-t-8 p-b-31">
-                                <a href=registrarUsuario.jsp>
-                                Registrarse
-                            </a>
-                        </div><br><br>
-
-                        <div class="container-login100-form-btn">
-                            <div class="wrap-login100-form-btn">
-                                <div class="login100-form-bgbtn"></div>
-                                <button type="submit" class="login100-form-btn">
-                                    Ingresar
-                                </button>
-                                <input type="hidden" value="4" name="opcion">
-                            </div>
-                        </div>
- <%
-
-                        if (request.getAttribute("mensajeError") != null) {%>
+        <div>
+            <img src="IMG/LOGO.jpeg" alt="Logo del local" class="Imagen">
+            <div class="FormularioCont">
+                <h1 class="H1">INICIAR SESIÓN</h1>
+                <form class="Formulario" method="post" action="Usuario">
+                    <input class="emailtxt" type="text" name="textUsuario" placeholder="  Correo Electronico" required>
+                    <br>
+                    <br>
+                    <input class="passwordtxt" type="password" name="textClave" placeholder="  Contraseña" required>
+                    <br>
+                    <br>
+                    <br>
+                    <button type="submit" class="buttonbtn">INGRESAR</button>
+                    <input type="hidden" value="4" name="opcion">
+                    <br>
+                    <p><a href=registrarUsuario.jsp class="Texto1">Registrarse</a><a href="ConsultarUsuario.jsp" class="Texto2">¿Contraseña olvidada?</a></p>
+                    <br>
+                    <%if (request.getAttribute("mensajeError") != null) {%>
                     ${mensajeError}
                     <% } else {%>
                     ${mensajeExito}
                     <%}%>
-                    </form>
-                   
-                </div>
+                </form>
             </div>
         </div>
-
-
-        <div id="dropDownSelect1"></div>
-        </center>
-
     </body>
-    
-  </div>
 </html>
