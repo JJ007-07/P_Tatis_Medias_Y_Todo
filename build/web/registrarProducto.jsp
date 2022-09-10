@@ -23,7 +23,7 @@
             class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;"
             alt="Sample photo">
             <div class="card-body p-4 p-md-5">
-                <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Información de Registro</h3>
+                <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Información de Registro Productos</h3>
 
         <form class="px-md-2" method="post" action="Producto" onsubmit="return validarP();">
 
@@ -33,27 +33,27 @@
             </div>
 
             <div class="form-outline mb-4">
-                <input type="text" id="ReferenciaProducto" name="txtreferencia" class="form-control" />
+                <input maxlength="15" type="text" id="ReferenciaProducto" name="txtreferencia" class="form-control" />
                 <label class="form-label" for="form3Example1q">Referencia</label>
             </div>
 
             <div class="form-outline mb-4">
-                <input type="text" id="DescripcionProducto" name="txtdescripcion" class="form-control" />
+                <input maxlength="80" type="text" id="DescripcionProducto" name="txtdescripcion" class="form-control" />
                 <label class="form-label" for="form3Example1q">Descripción</label>
             </div>
 
             <div class="form-outline mb-4">
-                <input type="number" id="StockProducto" name="txtstock" class="form-control" />
+                <input max="200" type="number" id="StockProducto" name="txtstock" class="form-control" />
                 <label class="form-label" for="form3Example1q">Stock Disponible</label>
             </div>
 
             <div class="form-outline mb-4">
-                <input type="number" id="PrecioUnitario" name="txtprecio" class="form-control" />
+                <input max="100000" type="number" id="PrecioUnitario" name="txtprecio" class="form-control" />
                 <label class="form-label" for="form3Example1q">Precio Unitario Producto</label>
             </div>
 
             <div class="form-outline mb-4">
-                <input type="text" id="EstadoProducto" name="txtestado" class="form-control" />
+                <input maxlength="20" type="text" id="EstadoProducto" name="txtestado" class="form-control" />
                 <label class="form-label" for="form3Example1q">Estado del producto</label>
             </div>
 
@@ -88,7 +88,7 @@
             <div>   
                 <input type="hidden" value="1" name="opcion">
                 <button type="submit" class="btn btn-success btn-lg mb-1">Registrar Producto</button>
-                <button type="submit" class="btn btn-primary btn-lg" style="margin-bottom: 4px;"><a href="ConsultarProducto.jsp" style="color: #FFFFFF; text-decoration: none;">Ver Productos registrados</a></button>
+                <button type="submit" class="btn btn-primary btn-lg" style="margin-bottom: 4px;"><a href="ConsultarProducto.jsp" style="color: #FFFFFF; text-decoration: none;">Ver Productos Registrados</a></button>
             </div>
 
         </form>
@@ -97,15 +97,14 @@
       </div>
     </div>
   </div>
-</section>
-
-        <%
+<%
             if (request.getAttribute("MensajeError") != null) {%>
         ${MensajeError}           
 
         <%} else {%>
         ${MensajeExito}  
         <%}%>
+</section>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
     </body>
 </html>

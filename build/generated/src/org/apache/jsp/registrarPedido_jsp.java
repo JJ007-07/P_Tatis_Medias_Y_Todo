@@ -55,7 +55,7 @@ public final class registrarPedido_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
       out.write("        <title>JSP Page</title>\r\n");
       out.write("        <script src=\"js/validar.js\" ></script>\r\n");
-      out.write("        </head>\r\n");
+      out.write("    </head>\r\n");
       out.write(" <body>\r\n");
       out.write("<center>\r\n");
       out.write("<h1>Registrar Pedido</h1>\r\n");

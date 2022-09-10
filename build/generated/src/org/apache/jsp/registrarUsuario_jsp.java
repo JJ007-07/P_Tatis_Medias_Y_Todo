@@ -50,7 +50,6 @@ public final class registrarUsuario_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("\r\n");
       out.write("<!DOCTYPE html>\r\n");
       out.write("<html lang=\"en\">\r\n");
-<<<<<<< HEAD
       out.write("<head>\r\n");
       out.write("\t <meta charset=\"UTF-8\">\r\n");
       out.write("    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n");
@@ -70,7 +69,6 @@ public final class registrarUsuario_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("\r\n");
       out.write("                \r\n");
       out.write("<section class=\"vh-100\" style=\"background-color: #eee;\">\r\n");
-=======
       out.write("    <head>\r\n");
       out.write("        <meta charset=\"UTF-8\">\r\n");
       out.write("        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n");
@@ -88,7 +86,6 @@ public final class registrarUsuario_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("    </head>\r\n");
       out.write("    <body>\r\n");
       out.write("        <section class=\"vh-100\" style=\"background-color: #eee;\">\r\n");
->>>>>>> 0ccebee79b70dff729ca8be80fd7dfec14122f8f
       out.write("  <div class=\"container h-100\">\r\n");
       out.write("    <div class=\"row d-flex justify-content-center align-items-center h-100\">\r\n");
       out.write("      <div class=\"col-lg-12 col-xl-11\">\r\n");
@@ -97,7 +94,6 @@ public final class registrarUsuario_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("            <div class=\"row justify-content-center\">\r\n");
       out.write("              <div class=\"col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1\">\r\n");
       out.write("\r\n");
-<<<<<<< HEAD
       out.write("                <p class=\"text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4\">Registrarse </p>\r\n");
       out.write("\r\n");
       out.write("                <form class=\"mx-1 mx-md-4\"method=\"post\" action=\"Usuario\" >\r\n");
@@ -215,7 +211,6 @@ public final class registrarUsuario_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("</html>\r\n");
       out.write("\r\n");
       out.write("    ");
-=======
       out.write("                <p class=\"text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4\">Sign up</p>\r\n");
       out.write("\r\n");
       out.write("\r\n");
@@ -389,7 +384,6 @@ public final class registrarUsuario_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("</body>\r\n");
       out.write("</center>\r\n");
       out.write("</html>");
->>>>>>> 0ccebee79b70dff729ca8be80fd7dfec14122f8f
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;

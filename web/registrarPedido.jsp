@@ -14,7 +14,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
         <script src="js/validar.js" ></script>
-        </head>
+    </head>
  <body>
 <center>
 <h1>Registrar Pedido</h1>

@@ -70,7 +70,7 @@ public final class registrarProducto_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("            class=\"w-100\" style=\"border-top-left-radius: .3rem; border-top-right-radius: .3rem;\"\r\n");
       out.write("            alt=\"Sample photo\">\r\n");
       out.write("            <div class=\"card-body p-4 p-md-5\">\r\n");
-      out.write("                <h3 class=\"mb-4 pb-2 pb-md-0 mb-md-5 px-md-2\">Información de Registro</h3>\r\n");
+      out.write("                <h3 class=\"mb-4 pb-2 pb-md-0 mb-md-5 px-md-2\">Información de Registro Productos</h3>\r\n");
       out.write("\r\n");
       out.write("        <form class=\"px-md-2\" method=\"post\" action=\"Producto\" onsubmit=\"return validarP();\">\r\n");
       out.write("\r\n");
@@ -80,17 +80,17 @@ public final class registrarProducto_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("            </div>\r\n");
       out.write("\r\n");
       out.write("            <div class=\"form-outline mb-4\">\r\n");
-      out.write("                <input type=\"text\" id=\"ReferenciaProducto\" name=\"txtreferencia\" class=\"form-control\" />\r\n");
+      out.write("                <input maxlength=\"15\" type=\"text\" id=\"ReferenciaProducto\" name=\"txtreferencia\" class=\"form-control\" />\r\n");
       out.write("                <label class=\"form-label\" for=\"form3Example1q\">Referencia</label>\r\n");
       out.write("            </div>\r\n");
       out.write("\r\n");
       out.write("            <div class=\"form-outline mb-4\">\r\n");
-      out.write("                <input type=\"text\" id=\"DescripcionProducto\" name=\"txtdescripcion\" class=\"form-control\" />\r\n");
+      out.write("                <input maxlength=\"80\" type=\"text\" id=\"DescripcionProducto\" name=\"txtdescripcion\" class=\"form-control\" />\r\n");
       out.write("                <label class=\"form-label\" for=\"form3Example1q\">Descripción</label>\r\n");
       out.write("            </div>\r\n");
       out.write("\r\n");
       out.write("            <div class=\"form-outline mb-4\">\r\n");
-      out.write("                <input type=\"number\" id=\"StockProducto\" name=\"txtstock\" class=\"form-control\" />\r\n");
+      out.write("                <input max=\"4\" type=\"number\" id=\"StockProducto\" name=\"txtstock\" class=\"form-control\" />\r\n");
       out.write("                <label class=\"form-label\" for=\"form3Example1q\">Stock Disponible</label>\r\n");
       out.write("            </div>\r\n");
       out.write("\r\n");
@@ -100,7 +100,7 @@ public final class registrarProducto_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("            </div>\r\n");
       out.write("\r\n");
       out.write("            <div class=\"form-outline mb-4\">\r\n");
-      out.write("                <input type=\"text\" id=\"EstadoProducto\" name=\"txtestado\" class=\"form-control\" />\r\n");
+      out.write("                <input maxlength=\"20\" type=\"text\" id=\"EstadoProducto\" name=\"txtestado\" class=\"form-control\" />\r\n");
       out.write("                <label class=\"form-label\" for=\"form3Example1q\">Estado del producto</label>\r\n");
       out.write("            </div>\r\n");
       out.write("\r\n");
@@ -153,7 +153,7 @@ public final class registrarProducto_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("            <div>   \r\n");
       out.write("                <input type=\"hidden\" value=\"1\" name=\"opcion\">\r\n");
       out.write("                <button type=\"submit\" class=\"btn btn-success btn-lg mb-1\">Registrar Producto</button>\r\n");
-      out.write("                <button type=\"submit\" class=\"btn btn-primary btn-lg\" style=\"margin-bottom: 4px;\"><a href=\"ConsultarProducto.jsp\" style=\"color: #FFFFFF; text-decoration: none;\">Ver Productos registrados</a></button>\r\n");
+      out.write("                <button type=\"submit\" class=\"btn btn-primary btn-lg\" style=\"margin-bottom: 4px;\"><a href=\"ConsultarProducto.jsp\" style=\"color: #FFFFFF; text-decoration: none;\">Ver Productos Registrados</a></button>\r\n");
       out.write("            </div>\r\n");
       out.write("\r\n");
       out.write("        </form>\r\n");
@@ -162,9 +162,6 @@ public final class registrarProducto_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("      </div>\r\n");
       out.write("    </div>\r\n");
       out.write("  </div>\r\n");
-      out.write("</section>\r\n");
-      out.write("\r\n");
-      out.write("        ");
 
             if (request.getAttribute("MensajeError") != null) {
       out.write("\r\n");
@@ -181,6 +178,7 @@ public final class registrarProducto_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("        ");
 }
       out.write("\r\n");
+      out.write("</section>\r\n");
       out.write("<script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8\" crossorigin=\"anonymous\"></script>\r\n");
       out.write("    </body>\r\n");
       out.write("</html>");
