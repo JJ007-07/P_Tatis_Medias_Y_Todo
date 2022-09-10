@@ -98,7 +98,7 @@ public final class ConsultarEmpleado_jsp extends org.apache.jasper.runtime.HttpJ
 String nombuscar=request.getParameter("txtbuscar");
 if(nombuscar!=null){
     smt=con.obtenerConexion().createStatement();
-    rs=smt.executeQuery("select* from empleado where NombreEmpleado LIKE"+"'%"+nombuscar+"%' OR ApellidoEmpleado LIKE"+"'%"+nombuscar+"%' OR TipoDocEmpleado LIKE"+"'%"+nombuscar+"%' OR NumeroDocEmpleado LIKE"+"'%"+nombuscar+"%' OR TelefonoCelularEmpleado LIKE"+"'%"+nombuscar+"%' OR DirrecionEmpleado LIKE"+"'%"+nombuscar+"%' OR CorreoEmpleado LIKE"+"'%"+nombuscar+"%' OR EstadoEmpleado LIKE"+"'%"+nombuscar+"%'");
+    rs=smt.executeQuery("select* from empleado where NombreEmpleado LIKE"+"'%"+nombuscar+"%' OR ApellidoEmpleado LIKE"+"'%"+nombuscar+"%' OR TipoDocEmpleado LIKE"+"'%"+nombuscar+"%' OR NumeroDocEmpleado LIKE"+"'%"+nombuscar+"%' OR TelefonoCelularEmpleado LIKE"+"'%"+nombuscar+"%' OR DireccionEmpleado LIKE"+"'%"+nombuscar+"%' OR CorreoEmpleado LIKE"+"'%"+nombuscar+"%' OR EstadoEmpleado LIKE"+"'%"+nombuscar+"%'");
 
 }else{
     System.err.print("Error");
@@ -169,10 +169,11 @@ if(nombuscar!=null){
       out.write("                                <input type=\"submit\" class=\"btn btn-warning\" data-toggle=\"modal\" data-target=\"#myModal1\" value=\"Editar\"/>  -->\r\n");
       out.write("                                <a href=\"ActualizarEmpleado.jsp?IdEmpleado=");
       out.print( rs.getInt("IdEmpleado"));
-      out.write("\" class=\"btn btn-primary\">Editar</a>\r\n");
-      out.write("                                <a href=\"EliminarEmpleado.jsp?IdEmpleado=");
+      out.write("\" ><img src=\"IMG/Actualizar.png\" width=\"60px\" height=\"60px\"/></a>\r\n");
+      out.write("                                                                <a href=\"EliminarEmpleado.jsp?IdEmpleado=");
       out.print( rs.getInt("IdEmpleado"));
-      out.write("\" class=\"btn btn-danger\">Delete</a>\r\n");
+      out.write("\" > <img src=\"IMF/Eliminar.png\" width=\"60px\" height=\"60px\"/></a>\r\n");
+      out.write("                               \r\n");
       out.write("                            </td>\r\n");
       out.write("                        </tr>\r\n");
       out.write("                        ");

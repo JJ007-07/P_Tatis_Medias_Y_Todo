@@ -17,7 +17,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-     <link href="Estilos/estilos2.css" rel="stylesheet" type="text/css"/>
+        <link href="Estilos/estilos2.css" rel="stylesheet" type="text/css"/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
       <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <title>Pedido</title>
@@ -76,17 +76,20 @@ if(nombuscar!=null){
                             <td class="text-center"><%= rs.getInt("IdPedido")%></td>
                              <td class="text-center"><%= rs.getString("NumeroFacturaPedido")%></td>
                              <td class="text-center"><%= rs.getString("FechaPedido")%></td>
-                            <td><%= rs.getString("FechaRecibido")%></td>
+                            <td class="text-center"><%= rs.getString("FechaRecibido")%></td>
                             <td class="text-center"><%= rs.getString("FechaVencimientoPago")%></td>
-                             <td><%= rs.getString("IdEmpresaProveedoraFK")%></td>
-                              <td><%= rs.getString("IVA")%></td>
-                               <td><%= rs.getString("EstadoPedido")%></td>
+                             <td class="text-center"><%= rs.getString("IdEmpresaProveedoraFK")%></td>
+                              <td class="text-center"><%= rs.getString("IVA")%></td>
+                               <td class="text-center"><%= rs.getString("EstadoPedido")%></td>
                             <td class="text-center">
                                 
                                 <!-- <input type="hidden" value="<//%= rs.getInt("IdPedido")%>" id="Editar"/>
                                 <input type="submit" class="btn btn-warning" data-toggle="modal" data-target="#myModal1" value="Editar"/>  -->
-                                <a href="actualizarPedido.jsp?IdPedido=<%= rs.getInt("IdPedido")%>" class="btn btn-primary">Editar</a>
-                                <a href="EliminarPedido.jsp?IdPedido=<%= rs.getInt("IdPedido")%>" class="btn btn-danger">Delete</a>
+                                <a href="actualizarPedido.jsp?IdPedido=<%= rs.getInt("IdPedido")%>"> <img src="IMG/Actualizar.png" width="60px" height="60px"/></a>
+                          
+                           
+                                <a href="EliminarPedido.jsp?IdPedido=<%= rs.getInt("IdPedido")%>" ><img src="IMG/Eliminar.png"width="60px" height="60px" /></a>
+                               
                             </td>
                         </tr>
                         <%}%>

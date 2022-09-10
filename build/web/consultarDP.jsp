@@ -4,6 +4,10 @@
     Author     : Alexis
 --%>
 
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="Util.ConexionDB"%>
+<%@page import="Util.ConexionDB"%>
 <%@page import="ModeloDAO.DetallePDAO"%>
 <%@page import="java.util.ArrayList"%>
 
@@ -12,65 +16,80 @@
 <!DOCTYPE html>
 <html>
     <head>
+         <link href="Estilos/estilos2.css" rel="stylesheet" type="text/css"/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+       <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <title>JSP Page</title>
     </head>
     <body>
     <center>
         <h1>Detalle Pedido</h1>
-        <form method="post" action="DetallePedido">
-            <table>
-                <tr>
-                    <th> Id Pedido
-                        <input type="number" name="textIdPedidoFK" >
-                        <button>Consultar  detalle Pedido</button>
-                    </th>
-                </tr>
+        <%
+    ConexionDB con = new ConexionDB();
+    Statement smt;
+    ResultSet rs;
+    smt = con.obtenerConexion().createStatement();
+    rs = smt.executeQuery("select * from detalle_pedido");
+    %>
+    
+     <div style="padding-left: 800px">    
+             <div  class="container buscar">
+                 <center>
+                 <form class="form" >
+                <input type="text" name="txtbuscar">
+                <input type="submit" value="Buscar">
+                 </form></center></center>
+                 <% 
+String nombuscar=request.getParameter("txtbuscar");
+if(nombuscar!=null){
+    smt=con.obtenerConexion().createStatement();
+    rs=smt.executeQuery("select* from detalle_pedido where IdPedidoFK LIKE"+"'%"+nombuscar+"%' OR IdProductoFK LIKE"+"'%"+nombuscar+"%' OR PrecioUnitario LIKE"+"'%"+nombuscar+"%' OR Cantidad  LIKE"+"'%"+nombuscar+"%' ");
+
+}else{
+    System.err.print("Error");
+}
+                 %>
+        <div class="container">               
+            <a  class="btn btn-success" href="registrarDP.jsp">Nuevo Registro</a>         
+             <table class="table table-bordered"  id="tablaDatos">
+                    <thead>
+                        <tr>
+                            <th class="text-center">Id Pedido FK </th>
+                            <th class="text-center">Id Producto FK</th>
+                            <th class="text-center">Precio Unitario</th>
+                            <th class="text-center">Cantidad</th>
+                              <th class="text-center">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbodys">
+                        <%
+                            while (rs.next()) {
+                        %>
+                        <tr>
+                            <td class="text-center"><%= rs.getInt("IdPedidoFK")%></td>
+                             <td class="text-center"><%= rs.getString("IdProductoFK")%></td>
+                             <td class="text-center"><%= rs.getString("PrecioUnitario")%></td>
+                            <td class="text-center"><%= rs.getString("Cantidad")%></td>
+                  
+                            <td class="text-center">
+                                
+                                <!-- <input type="hidden" value="<//%= rs.getInt("IdPedido")%>" id="Editar"/>
+                                <input type="submit" class="btn btn-warning" data-toggle="modal" data-target="#myModal1" value="Editar"/>  -->
+                                <a href="ActualizarDP.jsp?IdPedidoFK=<%= rs.getInt("IdPedidoFK")%>" ><img src="IMG/Actualizar.png" width="60px" height="60px"/></a>
+                          
+                                
+                                <a href="eliminarDP.jsp?IdPedidoFK=<%= rs.getInt("IdPedidoFK")%>" ><img src="IMG/Eliminar.png"width="60px" height="60px" /></a>
+                               
+                            </td>
+                        </tr>
+                        <%}%>
+                </table>
+                       
+        <script src="js/jquery.js" type="text/javascript"></script>             
+        <script src="js/bootstrap.min.js" type="text/javascript"></script>        
                  
              
-            </table><br><br>
-            <input type="hidden"value="4"  name="opcion">
-                              <%
-        if (request.getAttribute("MensajeError")  !=null) {%>
-         ${MensajeError} 
-           <%  }  else {%>
-                   ${MensajeExito}
-                   <%}%><br><br>
-                   
-                      <form>
-                       <table border="1">
-                           <tr>
-                               <th>IdPedidoFK</th>
-                               <th>IdProductoFK</th>
-                               <th>Preciounitario</th>
-                                <th>cantidad</th>
-                                 
-                          
-                             
-                           </tr>
-                           <%
-                               DetallePedidoVO  DPVO= new DetallePedidoVO();
-                               DetallePDAO DPDAO= new DetallePDAO();
-                               ArrayList<DetallePedidoVO> Listadetallepedido=DPDAO.listar();
-                               for (int i = 0; i < Listadetallepedido .size(); i++) {
-                                       DPVO =Listadetallepedido.get(i);
-                                   
-                           %>
-                           <tr>
-                               <td><%=DPVO.getIdPedidoFK()%></td>
-                               <td><%=DPVO.getIdProductoFK()%></td>
-                               <td><%=DPVO.getPrecioUnitario()%></td>
-                               <td><%=DPVO.getCantidad()%></td>
-
-                               
-                               
-                           </tr>
-                           <%}%>
-                       </table>
-                   </form>
-          </center>
-    </body>
-          
+           
 </html>
 
     </body>

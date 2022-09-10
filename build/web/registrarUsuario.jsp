@@ -9,7 +9,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD
+
 <head>
 	 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,7 +33,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
         <script src="js/CheckPassword.js" type="text/javascript"></script>
         <link href="Estilos/CheckPassword.css" rel="stylesheet" type="text/css"/>
-<<<<<<< HEAD
+
 </head>
 
                 
