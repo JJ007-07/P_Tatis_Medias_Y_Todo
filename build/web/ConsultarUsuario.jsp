@@ -35,7 +35,7 @@
  <div class="container">            
             
              <a  class="btn btn-success" href="registrarUsuario.jsp">Nuevo Registro</a>  
-            <div style="padding-left: 800px">                  
+            <div style="padding-left: 600px">                  
                <div  class="container buscar">
                  <form class="form">
                 <input type="text" name="txtbuscar">
@@ -74,8 +74,8 @@ v                    <tbody id="tbodys">
                                 
                                 <!-- <input type="hidden" value="<//%= rs.getInt("Id_Usuario")%>" id="Editar"/>
                                 <input type="submit" class="btn btn-warning" data-toggle="modal" data-target="#myModal1" value="Editar"/>  -->
-                                <a href="ActualizarUsuario.jsp?IdUsuario=<%= rs.getInt("IdUsuario")%>" class="btn btn-primary">Editar</a>
-                                <a href="EliminarUsuario.jsp?IdUsuario=<%= rs.getInt("IdUsuario")%>" class="btn btn-danger">Delete</a>
+                                <a href="ActualizarUsuario.jsp?IdUsuario=<%= rs.getInt("IdUsuario")%>"><img src="IMG/Actualizar.png" width="60px" height="60px"/></a>
+                                <a href="EliminarUsuario.jsp?IdUsuario=<%= rs.getInt("IdUsuario")%>" ><img src="IMG/Eliminar.png" width="60px" height="60px"/></a>
                             </td>
                             </tr>
                         <%}%>

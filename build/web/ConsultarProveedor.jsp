@@ -20,7 +20,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Login Page</title>
+        <title>Consultar Proveedor</title>
         <!--Made with love by Mutiullah Samim -->
 
         <!--Bootsrap 4 CDN-->
@@ -95,8 +95,8 @@ if(nombuscar!=null){
                                 
                                 <!-- <input type="hidden" value="<//%= rs.getInt("IdPedido")%>" id="Editar"/>
                                 <input type="submit" class="btn btn-warning" data-toggle="modal" data-target="#myModal1" value="Editar"/>  -->
-                                <a href="ActualizarProveedor.jsp?IdEmpresaProveedora=<%= rs.getInt("IdEmpresaProveedora")%>" class="btn btn-primary">Editar</a>
-                                <a href="Eliminar.jsp?IdEmpresaProveedora=<%= rs.getInt("IdEmpresaProveedora")%>" class="btn btn-danger">Delete</a>
+                                <a href="ActualizarProveedor.jsp?IdEmpresaProveedora=<%= rs.getInt("IdEmpresaProveedora")%>" ><img src="IMG/Actualizar.png" width="60px" height="60px"/></a>
+                                <a href="Eliminar.jsp?IdEmpresaProveedora=<%= rs.getInt("IdEmpresaProveedora")%>" ><img src="IMG/Eliminar.png" width="60px" height="60px"/></a>
                             </td>
                         </tr>
                         <%}%>
