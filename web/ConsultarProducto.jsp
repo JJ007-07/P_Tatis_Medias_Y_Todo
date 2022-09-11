@@ -6,135 +6,111 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="ModeloVO.ProductoVO"%>
 <%@page import="ModeloDAO.ProductoDAO"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-
-
-<!DOCTYPE html>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-
-<!------ Include the above in your HEAD tag ---------->
-
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Login Page</title>
-        <!--Made with love by Mutiullah Samim -->
-
-        <!--Bootsrap 4 CDN-->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-        <!--Fontawesome CDN-->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-
-        <!--Custom styles-->
-        <link href="Estilos/estilos2.css" rel="stylesheet" type="text/css"/>
-
-    </head>
-
-    <body>
-
-    <center>
-        <div>
-
-            <h1>Consultar Producto</h1>
-  <%
-    ConexionDB con = new ConexionDB();
+<%@page import="java.sql.*"%>
+<%
+    Connection con;
+    String url = "jdbc:mysql://localhost:3306/tatis_media_y_todo";
+    String Driver = "com.mysql.jdbc.Driver";
+    String user = "root";
+    String clave = "";
+    Class.forName(Driver);
+    con = DriverManager.getConnection(url, user, clave);
     Statement smt;
     ResultSet rs;
-    smt = con.obtenerConexion().createStatement();
+    smt = con.createStatement();
     rs = smt.executeQuery("select * from producto");
 %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Consultar Producto</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
     </head>
-    <body>
-    <center>
-         
-            <div style="padding-left: 800px">    
-             <div  class="container buscar">
-                 <center>
-                 <form class="form">
-                <input type="text" name="txtbuscar">
-                <input type="submit" value="Buscar">
-                 </form></center></center>
-                 <% 
-String nombuscar=request.getParameter("txtbuscar");
-if(nombuscar!=null){
-    smt=con.obtenerConexion().createStatement();
-    rs=smt.executeQuery("select* from producto where CodigoDeBarrasProducto LIKE"+"'%"+nombuscar+"%' OR ReferenciaProducto  LIKE"+"'%"+nombuscar+"%' OR DescripcionProducto LIKE"+"'%"+nombuscar+"%' OR StockProducto  LIKE"+"'%"+nombuscar+"%' OR  PrecioUnitario LIKE"+"'%"+nombuscar+"%'");
+    <body style="background-color: #8fc4b7;">
+        <section class="h-100 h-custom">
+            <div class="container py-5 h-100">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col-lg-8 col-xl-6">
+                        <div class="card rounded-3">
+                            <img src="https://www.ecommercenews.pe/wp-content/uploads/2017/07/tienda-online.png" class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;" alt="Sample photo">
+                            <div class="card-body p-4 p-md-5">
+                                <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Consultar Información De Los Productos</h3>
+                                <form method="post" action="Producto">
+                                    <div class="form-outline mb-4">
+                                        <input max="100000" type="text" name="txtcodigoB" class="form-control" required>
+                                        <label class="form-label" for="form3Example1q">Codigo De Barras Del Producto</label>
+                                    </div>
+                                    <div>   
+                                        <div class="form-outline mb-4">
 
-}else{
-    System.err.print("Error");
-}
-                 %>
+                                            <!-- Button trigger modal -->
+                                            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal">
+                                                Ver Datos
+                                            </button>
 
-            
-
-                    <div class="container">               
-                         <a  class="btn btn-success" href="registrarProducto.jsp">Nuevo Registro</a>
-                        <table class="table table-bordered"  id="tablaDatos">
-                            <thead>
-                                <tr>
-                                    <th class="text-center">Codigos Disponibles</th>
-                                    <th class="text-center">Referencia</th>
-                                    <th class="text-center">Descripcion</th>
-                                    <th class="text-center">Stock disponible</th>
-                                    <th class="text-center">Precio por unidad</th>
-                                    <th class="text-center">Acciones</th>
-                                </tr>
-                            </thead>
-                            <tbody id="tbodys">
-                            <br><br><br>
-
-                            <%
-                                while (rs.next()) {
-                            %>
-
-                            <tr>
-                                <td class="text-center"><%= rs.getString("CodigoDeBarrasProducto")%></td>
-                                <td class="text-center"><%= rs.getString("ReferenciaProducto")%></td>
-                                <td class="text-center"><%= rs.getString("DescripcionProducto")%></td>
-                                 <td class="text-center"><%= rs.getString("StockProducto")%></td>
-                                  <td class="text-center"><%= rs.getString("PrecioUnitario")%></td>
-
-                        <td class="text-center">
-                                
-                                <!-- <input type="hidden" value="<//%= rs.getInt("IdPedido")%>" id="Editar"/>
-                                <input type="submit" class="btn btn-warning" data-toggle="modal" data-target="#myModal1" value="Editar"/>  -->
-                                <a href="ActuaizarProducto.jsp?IdProducto=<%= rs.getInt("IdProducto")%>" ><img src="IMG/Actualizar.png" width="60px" height="60px"/></a>
-                                
-                                <a href=".jsp?IdProducto=<%= rs.getInt("IdProducto")%>"><img src="IMG/Eliminar.png" width="60px" height="60px"/>
-                                </a>
-                            </td>
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="container">               
+                                                                <table class="table table-bordered"  id="tablaDatos">
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th class="text-center">CORREO ELECTRONICO</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody id="tbodys">
 
 
-                            </tr>
-                            <%}%>
-                        </table>    
-                    </div>   
+                                                                        <%
+                                                                            while (rs.next()) {
+                                                                        %>
 
+                                                                        <tr>
+                                                                            <td class="text-center"><%= rs.getString("CodigoDeBarrasProducto")%></td>
 
-                </form>
+                                                                        </tr>
+                                                                        <%}%>
+                                                                </table>    
+                                                            </div>  
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--<a aria-current="page" href="" data-toggle="modal" data-target="#editarPerfilModal">Ver Datos Generales</a>-->
+                                        </div>
+                                        <button class="btn btn-primary btn-lg">Consultar</button>
+                                        <input type="hidden" value="4" name="opcion">
+                                        </form>
+                                        <%if (request.getAttribute("MensajeError") != null) {%>
+                                        ${MensajeError}
+                                        <% } else {%>
+                                        ${MensajeExito}
+                                        <%}%>        
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-
-
-
-            <%
-                if (request.getAttribute("MensajeError") != null) {%>
-
-            ${MensajeError}
-            <% } else { %>
-            ${MensajeExito}
-
-
-            <% }%>
-
-
-
-    </center>
-</body>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        </section>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
 </html>

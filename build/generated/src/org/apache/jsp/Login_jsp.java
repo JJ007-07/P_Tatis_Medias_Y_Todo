@@ -56,7 +56,6 @@ public final class Login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    </head>\r\n");
       out.write("    <body>\r\n");
       out.write("        <div>\r\n");
-<<<<<<< HEAD
       out.write("            \r\n");
       out.write("            <img src=\"IMG/Logo.png\" alt=\"Logo del sistemas\" class=\"imagen\"/>\r\n");
       out.write("            <div class=\"FormularioCont\">\r\n");
@@ -67,12 +66,10 @@ public final class Login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("            <div class=\"FormularioCont\">\r\n");
       out.write("                <h1 class=\"H1\">INICIAR SESIÓN</h1>\r\n");
       out.write("                <form class=\"Formulario\" method=\"post\" action=\"\">\r\n");
-=======
       out.write("            <img src=\"IMG/./Logo.png\" alt=\"Logo del SI\" class=\"imagen\"/>\r\n");
       out.write("            <div class=\"FormularioCont\">\r\n");
       out.write("                <h1 class=\"H1\">INICIAR SESIÓN</h1>\r\n");
       out.write("                <form class=\"Formulario\" method=\"post\" action=\"Usuario\">\r\n");
->>>>>>> b93e8efef3ae99481490b00763baa0b882a561ed
       out.write("                    <input class=\"emailtxt\" type=\"text\" name=\"textUsuario\" placeholder=\"  Correo Electronico\" required>\r\n");
       out.write("                    <br>\r\n");
       out.write("                    <br>\r\n");
@@ -83,10 +80,7 @@ public final class Login_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    <button type=\"submit\" class=\"buttonbtn\">INGRESAR</button>\r\n");
       out.write("                    <input type=\"hidden\" value=\"4\" name=\"opcion\">\r\n");
       out.write("                    <br>\r\n");
-<<<<<<< HEAD
       out.write("                    <p><a href=registrarUsuario.jsp class=\"Texto1\">Registrarse</a><a href=\"ConsultarUsuario.jsp\" class=\"Texto2\">¿Contraseña olvidada?</a></p>\r\n");
-=======
->>>>>>> b93e8efef3ae99481490b00763baa0b882a561ed
       out.write("                    <p><a href=registrarUsuario.jsp class=\"Texto1\">Registrarse</a><a href=\"ConsultarUsuario.jsp\" class=\"Texto2\">¿Clave olvidada?</a></p>\r\n");
       out.write("                    <br>\r\n");
       out.write("                </form>\r\n");
