@@ -9,21 +9,13 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-	 <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Usuario</title>
-    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
-=======
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Usuario</title>
+        <title>Registro</title>
         <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
->>>>>>> 0ccebee79b70dff729ca8be80fd7dfec14122f8f
+
         <link href="Estilos/estilos.css" rel="stylesheet" type="text/css"/>
 
         <link href="css/default.min.css" rel="stylesheet" type="text/css"/>
@@ -86,7 +78,7 @@
                     <label class="form-check-label" for="form2Example3">
                   <div class="form-check d-flex justify-content-center mb-5">
                     
-                      I agree all statements in <a href="#!">Terms of service</a>
+                      Estoy de acuerdo con<a href="#!">los terminos y condiciones</a>
                     
                   </div></label>
 
@@ -160,40 +152,7 @@ if(form.textClave.length == 0 ) {
     return true;
   }
 </script>
- <script>
-    function validarfor(){
-=======
-    </head>
-    <body>
-        <main>
-            <h1 class="titulo">Registrar Usuario</h1>
 
-
-            <form class="formulario" id="formulario" name="fmrUsuarios" method="post" action="Usuario" onSubmit="return validarfor(); checkForm(this); return false;"   >
-
-                <!-- Grupo: Correo Electronico -->
-                <div class="formulario__grupo" id="grupo__correo">
-                    <label for="correo" class="formulario__label">Usuario</label>
-                    <div class="formulario__grupo-input">
-                        <input type="email" class="formulario__input" name="textUsuario" id="mail" placeholder="correo@correo.com">
-                        <i class="formulario__validacion-estado fas fa-times-circle"></i>
-                    </div>
-
-                </div>
-
-                <!-- Grupo: Contraseña -->
-
-                <div class="formulario__grupo" id="grupo__password" Onkeypress="enterEnviar(event);">
-                    <label for="password" class="formulario__label">Contraseña</label>
-                    <div class="formulario__grupo-input">
-                        <input type="password" class="formulario__input password1"  name="textClave" id="txtPassword" placeholder=""/>
-
-                        <span class="fa fa-fw fa-eye password-icon show-password"></span>
-                        <div id="strengthMessage"></div>
-                    </div>
-
-
-                </div>
                 <script>
                     window.addEventListener("load", function () {
 
@@ -245,57 +204,15 @@ if(form.textClave.length == 0 ) {
 
 
 
-                <!-- Grupo: Terminos y Condiciones -->
-                <div class="formulario__grupo" id="grupo__terminos">
-                    <label class="formulario__label">
-                        <input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">
-                        Acepto los Terminos y Condiciones
-                    </label>
-                </div>
+               
 
-                <div class="formulario__mensaje" id="formulario__mensaje">
-                    <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>
-                </div>
-
-                <div class="formulario__grupo formulario__grupo-btn-enviar">
-                    <input type="hidden" value="1" name="opcion" class="btn float-right login_btn">
-                    <button type="submit" class="formulario__btn"onclick="validarContraseña()" >Registrar</button>
-                    <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado exitosamente!</p>
-                </div>
-
-        </main>
+                
     </form>
-
->>>>>>> 0ccebee79b70dff729ca8be80fd7dfec14122f8f
 
 </div>
 
-<div class="tres"> 
 
-<<<<<<< HEAD
-if ( !expr.test(correo) ){                                                            //COMPRUEBA MAIL
-    alert("Error: La dirección de correo " + correo + " es incorrecta.");
-    return false;
-}
-    }
-    function validar() {
-        //obteniendo el valor que se puso en campo text del formulario
-        correo = document.getElementById("mail").value;
-       
-        //la condición
-        if (correo.length === 0) {
-            return false;
-        }
-        
-         if (correo.length === 0 || /^\s+$/.test(correo)) {
-     alert('El Correo esta vacio!');
-     return false;
- }
- 
-        return true;
-    }
- 
-    </script>            
+         
  <div class="tres"> 
                          
                                          <% 
@@ -307,20 +224,7 @@ if ( !expr.test(correo) ){                                                      
                                         <%}%>
                                         
      </div>
-</body>
-</html>
 
-    
-=======
-    <%
-                                             if (request.getAttribute("MensajeError") != null) {%>
-    ${MensajeError}           
-
-    <%} else {%>
-    ${MensajeExito}  
-    <%}%>
-
-</div>
 
 
 <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
@@ -357,4 +261,3 @@ if ( !expr.test(correo) ){                                                      
 </body>
 </center>
 </html>
->>>>>>> 0ccebee79b70dff729ca8be80fd7dfec14122f8f

@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
         <script src="js/nav.js" type="text/javascript"></script>
-
+        <link href="Estilos/boton.css" rel="stylesheet" type="text/css"/>
         <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 
     </head>
@@ -21,9 +21,7 @@
     <body>
 
         <div class="wrapper hover_collapse">
-            <div class="botones">                       
-                <input type="submit" value="Cerrar Sesion">  
-            </div>
+            
             <div class="top_navbar">
                 <a class="logo" href="#">
 
@@ -59,7 +57,18 @@
                             </a>
                         </li>
                         
-
+                         <li>
+                            
+                                  <form method="post" action="Sesiones">
+                                
+                                      <a href="">    
+                                <span class="icon"><i class="fa fa-sign-out"></i></span>
+                                <span class="text"> 
+                                      <button >Cerrar</button></span>
+                                    </a>
+                               </form>
+       
+                        </li>
 
                     </ul>
                 </div>

@@ -50,40 +50,13 @@ public final class registrarUsuario_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("\r\n");
       out.write("<!DOCTYPE html>\r\n");
       out.write("<html lang=\"en\">\r\n");
-<<<<<<< HEAD
-=======
-      out.write("\r\n");
->>>>>>> b93e8efef3ae99481490b00763baa0b882a561ed
-      out.write("<head>\r\n");
-      out.write("\t <meta charset=\"UTF-8\">\r\n");
-      out.write("    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n");
-      out.write("    <title>Usuario</title>\r\n");
-      out.write("    <link rel=\"stylesheet\" href=\"https://necolas.github.io/normalize.css/8.0.1/normalize.css\">\r\n");
-      out.write("    <link href=\"https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap\" rel=\"stylesheet\"> \r\n");
-<<<<<<< HEAD
-      out.write("        <link href=\"Estilos/estilos.css\" rel=\"stylesheet\" type=\"text/css\"/>\r\n");
-      out.write("\r\n");
-      out.write("        <link href=\"css/default.min.css\" rel=\"stylesheet\" type=\"text/css\"/>\r\n");
-      out.write("        <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css\">\r\n");
-      out.write("    <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css\">\r\n");
-      out.write("    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js\"></script>\r\n");
-      out.write("    <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js\"></script>\r\n");
-      out.write("        <script src=\"js/CheckPassword.js\" type=\"text/javascript\"></script>\r\n");
-      out.write("        <link href=\"Estilos/CheckPassword.css\" rel=\"stylesheet\" type=\"text/css\"/>\r\n");
-      out.write("</head>\r\n");
-      out.write("\r\n");
-      out.write("                \r\n");
-      out.write("<section class=\"vh-100\" style=\"background-color: #eee;\">\r\n");
-=======
-      out.write("=======\r\n");
->>>>>>> b93e8efef3ae99481490b00763baa0b882a561ed
       out.write("    <head>\r\n");
       out.write("        <meta charset=\"UTF-8\">\r\n");
       out.write("        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n");
-      out.write("        <title>Usuario</title>\r\n");
+      out.write("        <title>Registro</title>\r\n");
       out.write("        <link rel=\"stylesheet\" href=\"https://necolas.github.io/normalize.css/8.0.1/normalize.css\">\r\n");
       out.write("        <link href=\"https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap\" rel=\"stylesheet\"> \r\n");
-      out.write(">>>>>>> 0ccebee79b70dff729ca8be80fd7dfec14122f8f\r\n");
+      out.write("\r\n");
       out.write("        <link href=\"Estilos/estilos.css\" rel=\"stylesheet\" type=\"text/css\"/>\r\n");
       out.write("\r\n");
       out.write("        <link href=\"css/default.min.css\" rel=\"stylesheet\" type=\"text/css\"/>\r\n");
@@ -93,17 +66,11 @@ public final class registrarUsuario_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("        <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js\"></script>\r\n");
       out.write("        <script src=\"js/CheckPassword.js\" type=\"text/javascript\"></script>\r\n");
       out.write("        <link href=\"Estilos/CheckPassword.css\" rel=\"stylesheet\" type=\"text/css\"/>\r\n");
-<<<<<<< HEAD
-      out.write("    </head>\r\n");
-      out.write("    <body>\r\n");
-      out.write("        <section class=\"vh-100\" style=\"background-color: #eee;\">\r\n");
-=======
       out.write("\r\n");
       out.write("</head>\r\n");
       out.write("\r\n");
       out.write("                \r\n");
       out.write("<section class=\"vh-100\" style=\"background-color: #eee;\">\r\n");
->>>>>>> b93e8efef3ae99481490b00763baa0b882a561ed
       out.write("  <div class=\"container h-100\">\r\n");
       out.write("    <div class=\"row d-flex justify-content-center align-items-center h-100\">\r\n");
       out.write("      <div class=\"col-lg-12 col-xl-11\">\r\n");
@@ -204,34 +171,6 @@ public final class registrarUsuario_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("  })\r\n");
       out.write("});\r\n");
       out.write("</script> \r\n");
-<<<<<<< HEAD
-      out.write(" <div class=\"tres\"> \r\n");
-      out.write("                         \r\n");
-      out.write("                                         ");
- 
-                                         if(request.getAttribute("MensajeError") !=null) {
-      out.write("\r\n");
-      out.write("                                         ");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${MensajeError}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("           \r\n");
-      out.write("               \r\n");
-      out.write("                                         ");
-}else {
-      out.write("\r\n");
-      out.write("                                        ");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${MensajeExito}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("  \r\n");
-      out.write("                                        ");
-}
-      out.write("\r\n");
-      out.write("                                        \r\n");
-      out.write("     </div>\r\n");
-      out.write("</body>\r\n");
-      out.write("</html>\r\n");
-      out.write("\r\n");
-      out.write("    ");
-      out.write("                <p class=\"text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4\">Sign up</p>\r\n");
-=======
       out.write("<script> \r\n");
       out.write("function checkPassword(valor){\r\n");
       out.write("    var myregex = /^(?=.\\d)(?=.[a-z])(?=.*[A-Z]).{8,}$/; \r\n");
@@ -254,41 +193,7 @@ public final class registrarUsuario_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("    return true;\r\n");
       out.write("  }\r\n");
       out.write("</script>\r\n");
-      out.write(" <script>\r\n");
-      out.write("    function validarfor(){\r\n");
-      out.write("=======\r\n");
-      out.write("    </head>\r\n");
-      out.write("    <body>\r\n");
-      out.write("        <main>\r\n");
-      out.write("            <h1 class=\"titulo\">Registrar Usuario</h1>\r\n");
->>>>>>> b93e8efef3ae99481490b00763baa0b882a561ed
       out.write("\r\n");
-      out.write("\r\n");
-      out.write("            <form class=\"formulario\" id=\"formulario\" name=\"fmrUsuarios\" method=\"post\" action=\"Usuario\" onSubmit=\"return validarfor(); checkForm(this); return false;\"   >\r\n");
-      out.write("\r\n");
-      out.write("                <!-- Grupo: Correo Electronico -->\r\n");
-      out.write("                <div class=\"formulario__grupo\" id=\"grupo__correo\">\r\n");
-      out.write("                    <label for=\"correo\" class=\"formulario__label\">Usuario</label>\r\n");
-      out.write("                    <div class=\"formulario__grupo-input\">\r\n");
-      out.write("                        <input type=\"email\" class=\"formulario__input\" name=\"textUsuario\" id=\"mail\" placeholder=\"correo@correo.com\">\r\n");
-      out.write("                        <i class=\"formulario__validacion-estado fas fa-times-circle\"></i>\r\n");
-      out.write("                    </div>\r\n");
-      out.write("\r\n");
-      out.write("                </div>\r\n");
-      out.write("\r\n");
-      out.write("                <!-- Grupo: Contraseña -->\r\n");
-      out.write("\r\n");
-      out.write("                <div class=\"formulario__grupo\" id=\"grupo__password\" Onkeypress=\"enterEnviar(event);\">\r\n");
-      out.write("                    <label for=\"password\" class=\"formulario__label\">Contraseña</label>\r\n");
-      out.write("                    <div class=\"formulario__grupo-input\">\r\n");
-      out.write("                        <input type=\"password\" class=\"formulario__input password1\"  name=\"textClave\" id=\"txtPassword\" placeholder=\"\"/>\r\n");
-      out.write("\r\n");
-      out.write("                        <span class=\"fa fa-fw fa-eye password-icon show-password\"></span>\r\n");
-      out.write("                        <div id=\"strengthMessage\"></div>\r\n");
-      out.write("                    </div>\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("                </div>\r\n");
       out.write("                <script>\r\n");
       out.write("                    window.addEventListener(\"load\", function () {\r\n");
       out.write("\r\n");
@@ -348,49 +253,13 @@ public final class registrarUsuario_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("                    </label>\r\n");
       out.write("                </div>\r\n");
       out.write("\r\n");
-      out.write("                <div class=\"formulario__mensaje\" id=\"formulario__mensaje\">\r\n");
-      out.write("                    <p><i class=\"fas fa-exclamation-triangle\"></i> <b>Error:</b> Por favor rellena el formulario correctamente. </p>\r\n");
-      out.write("                </div>\r\n");
-      out.write("\r\n");
-      out.write("                <div class=\"formulario__grupo formulario__grupo-btn-enviar\">\r\n");
-      out.write("                    <input type=\"hidden\" value=\"1\" name=\"opcion\" class=\"btn float-right login_btn\">\r\n");
-      out.write("                    <button type=\"submit\" class=\"formulario__btn\"onclick=\"validarContraseña()\" >Registrar</button>\r\n");
-      out.write("                    <p class=\"formulario__mensaje-exito\" id=\"formulario__mensaje-exito\">Formulario enviado exitosamente!</p>\r\n");
-      out.write("                </div>\r\n");
-      out.write("\r\n");
-      out.write("        </main>\r\n");
+      out.write("                \r\n");
       out.write("    </form>\r\n");
-      out.write("\r\n");
-      out.write(">>>>>>> 0ccebee79b70dff729ca8be80fd7dfec14122f8f\r\n");
       out.write("\r\n");
       out.write("</div>\r\n");
       out.write("\r\n");
-      out.write("<div class=\"tres\"> \r\n");
       out.write("\r\n");
-      out.write("<<<<<<< HEAD\r\n");
-      out.write("if ( !expr.test(correo) ){                                                            //COMPRUEBA MAIL\r\n");
-      out.write("    alert(\"Error: La dirección de correo \" + correo + \" es incorrecta.\");\r\n");
-      out.write("    return false;\r\n");
-      out.write("}\r\n");
-      out.write("    }\r\n");
-      out.write("    function validar() {\r\n");
-      out.write("        //obteniendo el valor que se puso en campo text del formulario\r\n");
-      out.write("        correo = document.getElementById(\"mail\").value;\r\n");
-      out.write("       \r\n");
-      out.write("        //la condición\r\n");
-      out.write("        if (correo.length === 0) {\r\n");
-      out.write("            return false;\r\n");
-      out.write("        }\r\n");
-      out.write("        \r\n");
-      out.write("         if (correo.length === 0 || /^\\s+$/.test(correo)) {\r\n");
-      out.write("     alert('El Correo esta vacio!');\r\n");
-      out.write("     return false;\r\n");
-      out.write(" }\r\n");
-      out.write(" \r\n");
-      out.write("        return true;\r\n");
-      out.write("    }\r\n");
-      out.write(" \r\n");
-      out.write("    </script>            \r\n");
+      out.write("         \r\n");
       out.write(" <div class=\"tres\"> \r\n");
       out.write("                         \r\n");
       out.write("                                         ");
@@ -412,30 +281,7 @@ public final class registrarUsuario_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("\r\n");
       out.write("                                        \r\n");
       out.write("     </div>\r\n");
-      out.write("</body>\r\n");
-      out.write("</html>\r\n");
       out.write("\r\n");
-      out.write("    \r\n");
-      out.write("=======\r\n");
-      out.write("    ");
-
-                                             if (request.getAttribute("MensajeError") != null) {
-      out.write("\r\n");
-      out.write("    ");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${MensajeError}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("           \r\n");
-      out.write("\r\n");
-      out.write("    ");
-} else {
-      out.write("\r\n");
-      out.write("    ");
-      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${MensajeExito}", java.lang.String.class, (PageContext)_jspx_page_context, null));
-      out.write("  \r\n");
-      out.write("    ");
-}
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("</div>\r\n");
       out.write("\r\n");
       out.write("\r\n");
       out.write("<script src=\"https://kit.fontawesome.com/2c36e9b7b1.js\" crossorigin=\"anonymous\"></script>\r\n");
@@ -471,12 +317,7 @@ public final class registrarUsuario_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("</script>                            \r\n");
       out.write("</body>\r\n");
       out.write("</center>\r\n");
-<<<<<<< HEAD
       out.write("</html>");
-=======
-      out.write("</html>\r\n");
-      out.write(">>>>>>> 0ccebee79b70dff729ca8be80fd7dfec14122f8f\r\n");
->>>>>>> b93e8efef3ae99481490b00763baa0b882a561ed
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){
         out = _jspx_out;
