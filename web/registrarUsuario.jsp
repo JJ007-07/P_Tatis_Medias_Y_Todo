@@ -78,7 +78,7 @@
                     <label class="form-check-label" for="form2Example3">
                   <div class="form-check d-flex justify-content-center mb-5">
                     
-                      Estoy de acuerdo con<a href="#!">los terminos y condiciones</a>
+                      Estoy de acuerdo con <a href="#!">los terminos y condiciones</a>
                     
                   </div></label>
 
@@ -198,13 +198,11 @@ if(form.textClave.length == 0 ) {
                         return true;
                     }
                 </script>
-                </script>
+                
                 <!-- Grupo: Estado oculto -->
                 <input type="hidden" readonly read value="Activo" name="textEstado"><br><br>
 
 
-
-               
 
                 
     </form>

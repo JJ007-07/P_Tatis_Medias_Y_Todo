@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/User/Desktop/proyecto/Proyecto_2022/web/Menu.jsp</file>
             <file>file:/C:/Users/User/Desktop/proyecto/Proyecto_2022/web/registrarProducto.jsp</file>
             <file>file:/C:/Users/User/Desktop/proyecto/Proyecto_2022/src/java/ModeloDAO/USUROLDAO.java</file>
@@ -12,6 +13,9 @@
             <file>file:/C:/Users/User/Desktop/proyecto/Proyecto_2022/web/Estilos/boton.css</file>
             <file>file:/C:/Users/User/Desktop/proyecto/Proyecto_2022/web/registrarUsuario.jsp</file>
             <file>file:/C:/Users/User/Desktop/proyecto/Proyecto_2022/web/Registroasig.jsp</file>
+=======
+            <file>file:/C:/Users/juanb/Desktop/Repositorio/Proyecto_2022/web/ConsultarProducto.jsp</file>
+>>>>>>> 08578790af23c3f2308f66e081a16842ef1f489f
         </group>
     </open-files>
 </project-private>
