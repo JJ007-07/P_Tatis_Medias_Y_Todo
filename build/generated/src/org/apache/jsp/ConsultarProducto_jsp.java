@@ -3,6 +3,7 @@ package org.apache.jsp;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
+import Util.ConexionDB;
 import java.sql.Statement;
 import java.sql.ResultSet;
 import java.sql.DriverManager;
@@ -49,7 +50,7 @@ public final class ConsultarProducto_jsp extends org.apache.jasper.runtime.HttpJ
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
-      out.write("%@page import=\"Util.ConexionDB\"%>\r\n");
+      out.write("\r\n");
       out.write("\r\n");
       out.write("\r\n");
       out.write("\r\n");

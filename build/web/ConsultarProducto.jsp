@@ -7,6 +7,7 @@
 <%@page import="ModeloVO.ProductoVO"%>
 <%@page import="ModeloDAO.ProductoDAO"%>
 <%@page import="java.sql.*"%>
+<%@include file='Sesiones.jsp' %>   
 <%
     Connection con;
     String url = "jdbc:mysql://localhost:3306/tatis_media_y_todo";
