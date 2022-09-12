@@ -20,7 +20,7 @@
                 <tr>
                     <th>Id Usuario
                         <input type="text" name="textId" >
-                        <button>Eliminar</button>
+                        <button onclick="return confirm('¿Estas seguro de  eliminar este Usuario')">Eliminar</button>
                         <input type="hidden"value="5"  name="opcion">
                     </th>
                 </tr>

@@ -83,7 +83,7 @@
       
         <div class="form-group">	
         <input type="hidden" value="2" name="opcion" class="btn float-right login_btn">
-        <button type="submit" class="btn float-right login_btn" > Registrarse</button>
+        <button type="submit" class="btn float-right login_btn" onclick="return confirm('¿Estas seguro de actualizar el empleado')"> Registrarse</button>
         </div>
         </form>
                    

@@ -17,7 +17,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Jsp Page</title>
+        <title>Actualizar </title>
         <!--Made with love by Mutiullah Samim -->
 
         <!--Bootsrap 4 CDN-->
@@ -40,7 +40,7 @@
     %>
     <center>
         <body>
-            <h1>Actualizar Producto</h1>
+            <h1>Actualizar Proveredor</h1>
             <form method="post" action="EmpresaProveedora">
                 <table>
                     
@@ -81,7 +81,7 @@
 
 
                 </table><br>
-                <button> Actualizar Infomrmación</button>
+                <button onclick="return confirm('¿Estas seguro de actualizar este proveedor?')"> Actualizar Infomrmación</button>
                 <input type="hidden" value="2" name="opcion">
 
 

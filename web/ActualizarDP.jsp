@@ -42,8 +42,9 @@
                 </th>
                 </tr>
             </table><br>
-             <button>Actualizar</button>
+             
             <input type="hidden" value="2" name="opcion">
+            <button onclick="return confirm('¿Estas seguro de actualizar este detalle pedido?')">Actualizar</button>
 </form><br><br></center>
 
 

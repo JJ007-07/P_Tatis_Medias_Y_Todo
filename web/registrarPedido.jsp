@@ -59,7 +59,7 @@
     </select> <br> <br>
     </tr>
     </table><br>
-    <button>Registrar pedido</button>
+    <button onclick="return confirm('¿Estas seguro de registrar el pedido?')" >Registrar pedido</button>
     <input type="hidden"value="1"  name="opcion">
 
     <button type="submit"  class="btn float-right login_btn"> <a href="ConsultarPedido.jsp"> Ver Pedidos registrados </a> </button>

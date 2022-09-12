@@ -87,7 +87,7 @@
             <br>
             <div>   
                 <input type="hidden" value="1" name="opcion">
-                <button type="submit" class="btn btn-success btn-lg mb-1">Registrar Producto</button>
+                <button type="submit" class="btn btn-success btn-lg mb-1" onclick="return confirm('¿Estas seguro de  registrar el producto?')" >Registrar Producto</button>
                 <button type="submit" class="btn btn-primary btn-lg" style="margin-bottom: 4px;"><a href="ConsultarProducto.jsp" style="color: #FFFFFF; text-decoration: none;">Ver Productos registrados</a></button>
             </div>
 

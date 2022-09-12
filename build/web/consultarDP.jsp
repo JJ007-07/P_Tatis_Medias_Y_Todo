@@ -1,96 +1,56 @@
 <%-- 
-    Document   : consultarDP
-    Created on : 9/08/2022, 08:29:20 PM
+    Document   : ConsultarPedido
+    Created on : 6/08/2022, 07:02:53 PM
     Author     : Alexis
 --%>
 
+<%@page import="Util.ConexionDB"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
-<%@page import="Util.ConexionDB"%>
-<%@page import="Util.ConexionDB"%>
-<%@page import="ModeloDAO.DetallePDAO"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.Connection"%>
 <%@page import="java.util.ArrayList"%>
-
-<%@page import="ModeloVO.DetallePedidoVO"%>
+<%@page import="ModeloVO.PedidoVO"%>
+<%@page import="ModeloDAO.PedidoDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
     <head>
-         <link href="Estilos/estilos2.css" rel="stylesheet" type="text/css"/>
+    <center>  <h1> consultar detalle Pedido</h1></center>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-       <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <title>JSP Page</title>
-    </head>
-    <body>
-    <center>
-        <h1>Detalle Pedido</h1>
-        <%
-    ConexionDB con = new ConexionDB();
-    Statement smt;
-    ResultSet rs;
-    smt = con.obtenerConexion().createStatement();
-    rs = smt.executeQuery("select * from detalle_pedido");
-    %>
-    
-     <div style="padding-left: 800px">    
-             <div  class="container buscar">
-                 <center>
-                 <form class="form" >
-                <input type="text" name="txtbuscar">
-                <input type="submit" value="Buscar">
-                 </form></center></center>
-                 <% 
-String nombuscar=request.getParameter("txtbuscar");
-if(nombuscar!=null){
-    smt=con.obtenerConexion().createStatement();
-    rs=smt.executeQuery("select* from detalle_pedido where IdPedidoFK LIKE"+"'%"+nombuscar+"%' OR IdProductoFK LIKE"+"'%"+nombuscar+"%' OR PrecioUnitario LIKE"+"'%"+nombuscar+"%' OR Cantidad  LIKE"+"'%"+nombuscar+"%' ");
-
-}else{
-    System.err.print("Error");
-}
-                 %>
-        <div class="container">               
-            <a  class="btn btn-success" href="registrarDP.jsp">Nuevo Registro</a>         
-             <table class="table table-bordered"  id="tablaDatos">
-                    <thead>
-                        <tr>
-                            <th class="text-center">Id Pedido FK </th>
-                            <th class="text-center">Id Producto FK</th>
-                            <th class="text-center">Precio Unitario</th>
-                            <th class="text-center">Cantidad</th>
-                              <th class="text-center">Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tbodys">
-                        <%
-                            while (rs.next()) {
-                        %>
-                        <tr>
-                            <td class="text-center"><%= rs.getInt("IdPedidoFK")%></td>
-                             <td class="text-center"><%= rs.getString("IdProductoFK")%></td>
-                             <td class="text-center"><%= rs.getString("PrecioUnitario")%></td>
-                            <td class="text-center"><%= rs.getString("Cantidad")%></td>
-                  
-                            <td class="text-center">
-                                
-                                <!-- <input type="hidden" value="<//%= rs.getInt("IdPedido")%>" id="Editar"/>
-                                <input type="submit" class="btn btn-warning" data-toggle="modal" data-target="#myModal1" value="Editar"/>  -->
-                                <a href="ActualizarDP.jsp?IdPedidoFK=<%= rs.getInt("IdPedidoFK")%>" ><img src="IMG/Actualizar.png" width="60px" height="60px"/></a>
-                          
-                                
-                                <a href="eliminarDP.jsp?IdPedidoFK=<%= rs.getInt("IdPedidoFK")%>" ><img src="IMG/Eliminar.png"width="60px" height="60px" /></a>
-                               
-                            </td>
-                        </tr>
-                        <%}%>
-                </table>
-                       
-        <script src="js/jquery.js" type="text/javascript"></script>             
-        <script src="js/bootstrap.min.js" type="text/javascript"></script>        
+       
+        <title>Detalle Pedido consultar</title>
+        <body>
+   <form method="post" action="DetallePedido">
+  
+       <table>
+                <tr>
+                    <th> Id detalle pedido FK
+                        <input type="number" name="textIdPedidoFK" >
+                        <button onclick="return confirm('¿Estas seguro de  consultar el detalle pedido ?')">Consultar Detalle Pedido</button>
+                    </th>
+                </tr>
                  
              
-           
-</html>
-
-    </body>
+            </table><br><br>
+            <input type="hidden"value="4"  name="opcion">
+            <a href="DatosDP.jsp">Consulta General</a>
+             <a href="ModalDP.jsp">Consulta Id Disponibles</a>
+        
+          
+            
+            
+        </form><br><br>
+        <% if (request.getAttribute("MensajeError")  !=null) {%>
+         ${MensajeError} 
+           <%  }  else {%>
+                   ${MensajeExito}
+                   <%}%><br><br>
+                   
+                   <form><center>
+                       
+             
+</head>
+</body>
 </html>

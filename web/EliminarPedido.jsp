@@ -18,9 +18,9 @@
         <form method="post" action="Pedido">
             <table>
                 <tr>
-                    <th>No.Factura
-                        <input type="text" name="txtNumeroFacturaPedido" >
-                        <button>Eliminar</button>
+                    <th>Pedido
+                        <input type="text" name="txtPedido" >
+                        <button onclick="return confirm('Estas seguro de Eliminar este Pedido')">Eliminar</button>
                     </th>
                 </tr>
                  

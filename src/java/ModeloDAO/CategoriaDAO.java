@@ -35,7 +35,7 @@ public class CategoriaDAO extends ConexionDB implements Crud{
   
   
   private String sql;  
-  
+  private String IdCategoria="",NombreCategoria="";
     
      public  ArrayList<CategoriaVO>Listar(){
        ArrayList<CategoriaVO>listaCategoria = new ArrayList<>();
@@ -72,7 +72,7 @@ public class CategoriaDAO extends ConexionDB implements Crud{
        
      }
 
-    private String IdCategoria="",NombreCategoria="";
+ 
   
   //2.metodo contructor para recibir  datos del VO
   
@@ -97,7 +97,7 @@ public class CategoriaDAO extends ConexionDB implements Crud{
             
         } catch (Exception e) {
             
-            Logger.getLogger(EmpresaProveedoraDAO.class.getName()).log(Level.SEVERE,null, e);
+            Logger.getLogger(CategoriaDAO.class.getName()).log(Level.SEVERE,null, e);
         }
     }
 
@@ -136,7 +136,7 @@ public class CategoriaDAO extends ConexionDB implements Crud{
     @Override
     public boolean actualizarRegistro() {
         try {
-            sql="update categoria SET IdCategoria=?,NombreCategoria=? WHERE IdCategoria=?";
+            sql="update categoria SET NombreCategoria=? WHERE IdCategoria=?";
             puente = conexion.prepareCall(sql);
             
             puente.setString(1,NombreCategoria);
@@ -195,46 +195,32 @@ public class CategoriaDAO extends ConexionDB implements Crud{
         
     }
     
-public boolean consultarcategoria(){
-{
-        
+public CategoriaVO consultarCategoria(String IdCategoria) {
+
+        CategoriaVO catVO = null;
         try {
-            conexion =this. obtenerConexion();
-            sql="select * from EmpresaProveedora where IdEmpresaProveedora=?";
-            puente = conexion.prepareCall(sql);
-            puente.setString(1,NombreCategoria);
-            puente.setString(2,IdCategoria);
-      
-            mensajero= puente. executeQuery();
+            sql = "select * from Categoria WHERE IdCategoria=?";
+            conexion = this.obtenerConexion();
+            puente = conexion.prepareStatement(sql);
+            puente.setString(1, IdCategoria);
+            mensajero = puente.executeQuery();
             if (mensajero.next()) {
-                
-                operacion=true;
-                    
-                }
-            
-        } catch (Exception e) {
-        }finally{
-            
+                catVO = new CategoriaVO(mensajero.getString(1), mensajero.getString(2));
+            }
+
+        } catch (SQLException e) {
+            Logger.getLogger(CategoriaDAO.class.getName()).log(Level.SEVERE, null, e);
+        } finally {
+
             try {
                 this.cerrarConexion();
-                
-            } catch (Exception e) {
-                Logger.getLogger(CategoriaDAO.class.getName()).log(Level.SEVERE,null, e);
-       
+            } catch (SQLException e) {
+                Logger.getLogger(CategoriaDAO.class.getName()).log(Level.SEVERE, null, e);
+
             }
-        
-        } 
-        
-        return operacion;
-    
 
-
-}
+        }
+        return catVO;
+    }
         
-}
-    
-}
-
-    
-    
-  
+}  

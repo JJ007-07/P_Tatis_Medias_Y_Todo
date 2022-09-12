@@ -215,6 +215,32 @@ public class PedidoDAO extends ConexionDB implements Crud{
         }
         return listaPedido;
     }
+      public ArrayList<PedidoVO> listarp() {
+        ArrayList<PedidoVO> listaIdPedido = new ArrayList<>();
+        try {
+            conexion = this.obtenerConexion();
+            sql = "select IdPedido from pedido";
+            puente = conexion.prepareStatement(sql);
+            mensajero = puente.executeQuery();
+
+            while (mensajero.next()) {
+                  PedidoVO PVO = new PedidoVO(mensajero.getString(1), mensajero.getString(2), mensajero.getString(3),mensajero.getString(4),mensajero.getString(5),mensajero.getString(6),
+                    mensajero.getString(7), mensajero.getString(8), mensajero.getString(9));
+
+                listaIdPedido.add(PVO);
+            }
+        } catch (SQLException e) {
+            Logger.getLogger(PedidoDAO.class.getName()).log(Level.SEVERE, null, e);
+        } finally {
+            try {
+                this.cerrarConexion();
+            } catch (Exception e) {
+                Logger.getLogger(PedidoDAO.class.getName()).log(Level.SEVERE, null, e);
+
+            }
+        }
+        return listaIdPedido;
+    }
 }
     
     

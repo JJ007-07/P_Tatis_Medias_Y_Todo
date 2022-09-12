@@ -29,8 +29,9 @@
                 <input type="number" id="Cantidad"  name="textCantidad"><br>
                 </tr>
             </table><br>
-            <button>Registrar detalle pedido</button>
+            
             <input type="hidden"value="1"  name="opcion" >
+            <button onclick="return confirm('¿Estas seguro de  registrar este pedido')">Registrar detalle pedido</button>
         </form><br>
         <%
         if (request.getAttribute("MensajeError")  !=null) {%>

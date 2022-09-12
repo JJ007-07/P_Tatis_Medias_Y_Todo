@@ -81,7 +81,7 @@
 
 
                 </table><br>
-                <button> Actualizar Usuario</button>
+                <button onclick="return confirm('¿Estas seguro de actualizar el usuario?')"> Actualizar Usuario</button>
                 <input type="hidden" value="2" name="opcion">
 
 

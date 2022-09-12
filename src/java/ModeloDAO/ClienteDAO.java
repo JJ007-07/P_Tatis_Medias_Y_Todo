@@ -31,7 +31,7 @@ public class ClienteDAO extends ConexionDB implements Crud{
 
     private boolean operacion = false;
     private String sql;
-    private String IdCliente="",NombreCliente="",ApellidoCliente="",TipoDocCliente="",NumeroDocCliente="",TelefonoCliente="",DirecionCliente="",CorreoCliente="",EstadoCliente="";
+    private String IdCliente="",NombreCliente="",ApellidoCliente="",TipoDocCliente="",NumeroDocCliente="",TelefonoCliente="",DireccionCliente="",CorreoCliente="",EstadoCliente="";
 
     public ClienteDAO() {
     }
@@ -49,7 +49,7 @@ public class ClienteDAO extends ConexionDB implements Crud{
             TipoDocCliente=ClVO.getTipoDocCliente();
             NumeroDocCliente=ClVO.getNumeroDocCliente();
             TelefonoCliente=ClVO.getTelefonoCliente();
-            DirecionCliente=ClVO.getDirecionCliente();
+            DireccionCliente=ClVO.getDirecionCliente();
             CorreoCliente=ClVO.getCorreoCliente();
             EstadoCliente=ClVO.getEstadoCliente();
             
@@ -69,7 +69,7 @@ public class ClienteDAO extends ConexionDB implements Crud{
             puente.setString(3, TipoDocCliente);
             puente.setString(4, NumeroDocCliente);
             puente.setString(5, TelefonoCliente);
-            puente.setString(6, DirecionCliente);
+            puente.setString(6, DireccionCliente);
             puente.setString(7, CorreoCliente);
             puente.setString(8, EstadoCliente);
               puente.executeUpdate();
@@ -93,12 +93,12 @@ public class ClienteDAO extends ConexionDB implements Crud{
     @Override
     public boolean actualizarRegistro() {
         try {
-             sql = "UPDATE cliente SET NombreCliente=?,ApellidoCliente=?,TelefonoCliente=?,DirecionCliente=?,CorreoCliente=?,EstadoCliente=? WHERE IdCliente=?";
+             sql = "UPDATE cliente SET NombreCliente=?,ApellidoCliente=?,TelefonoCliente=?,DireccionCliente=?,CorreoCliente=?,EstadoCliente=? WHERE IdCliente=?";
             puente = conexion.prepareCall(sql);
             puente.setString(1, NombreCliente);
             puente.setString(2, ApellidoCliente);
             puente.setString(3, TelefonoCliente);
-            puente.setString(4, DirecionCliente);
+            puente.setString(4, DireccionCliente);
             puente.setString(5, CorreoCliente);
             puente.setString(6, EstadoCliente);
             puente.setString(7, IdCliente);

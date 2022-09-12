@@ -29,7 +29,7 @@ public class EmpleadoDAO extends ConexionDB implements Crud {
 
     private boolean operacion = false;
     private String sql;
-    private String IdEmpleado="",NombreEmpleado="",ApellidoEmpleado="",TipoDocEmpleado="",NumeroDocEmpleado="",TelefonoCelularEmpleado="",DirecionEmpleado="",CorreoEmpleado="",EstadoEmpleado="",IdUsuarioFK="";
+    private String IdEmpleado="",NombreEmpleado="",ApellidoEmpleado="",TipoDocEmpleado="",NumeroDocEmpleado="",TelefonoCelularEmpleado="",DireccionEmpleado="",CorreoEmpleado="",EstadoEmpleado="",IdUsuarioFK="";
     
       public EmpleadoDAO(EmpleadoVO empVO) {
         super();
@@ -45,7 +45,7 @@ public class EmpleadoDAO extends ConexionDB implements Crud {
         TipoDocEmpleado = empVO.getTipoDocEmpleado();
         NumeroDocEmpleado = empVO.getNumeroDocEmpleado();
         TelefonoCelularEmpleado = empVO.getTelefonoCelularEmpleado();
-        DirecionEmpleado = empVO.getDirecionEmpleado();
+        DireccionEmpleado = empVO.getDirecionEmpleado();
         CorreoEmpleado = empVO.getCorreoEmpleado();
         EstadoEmpleado = empVO.getEstadoEmpleado();
         IdUsuarioFK = empVO.getIdUsuarioFK(); 
@@ -68,7 +68,7 @@ public class EmpleadoDAO extends ConexionDB implements Crud {
             puente.setString(3,TipoDocEmpleado);
             puente.setString(4,NumeroDocEmpleado);
             puente.setString(5,TelefonoCelularEmpleado);
-            puente.setString(6,DirecionEmpleado);
+            puente.setString(6,DireccionEmpleado);
             puente.setString(7,CorreoEmpleado);
             puente.setString(8,EstadoEmpleado);
             puente.setString(9,IdUsuarioFK);
@@ -95,12 +95,12 @@ public class EmpleadoDAO extends ConexionDB implements Crud {
     @Override
     public boolean actualizarRegistro() {
        try {
-            sql = "UPDATE empleado SET NombreEmpleado=?,ApellidoEmpleado=?,TelefonoCelularEmpleado=?,DirecionEmpleado=?,CorreoEmpleado=?,EstadoEmpleado=? WHERE IdEmpleado=?";            
+            sql = "UPDATE empleado SET NombreEmpleado=?,ApellidoEmpleado=?,TelefonoCelularEmpleado=?,DireccionEmpleado=?,CorreoEmpleado=?,EstadoEmpleado=? WHERE IdEmpleado=?";            
             puente = conexion.prepareCall(sql);
             puente.setString(1, NombreEmpleado);
             puente.setString(2, ApellidoEmpleado);
             puente.setString(3, TelefonoCelularEmpleado);
-            puente.setString(4, DirecionEmpleado);
+            puente.setString(4, DireccionEmpleado);
             puente.setString(5, CorreoEmpleado);
             puente.setString(6, EstadoEmpleado);
             puente.setString(7, IdEmpleado);

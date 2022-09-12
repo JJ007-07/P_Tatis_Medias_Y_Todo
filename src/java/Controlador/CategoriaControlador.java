@@ -88,19 +88,19 @@ public class CategoriaControlador extends HttpServlet {
                 request.getRequestDispatcher("EliminarCategoria.jsp").forward(request, response);
                 break;
 
-            case 4: // consultarVehiculo
-               if (catDAO.consultarcategoria())
-               {
+            case 4:
 
-                    request.setAttribute("CategoriaConsultada", catDAO);
-                    request.setAttribute("MensajeExito", "Categoria Consultada");
+                CategoriaVO cat = catDAO.consultarCategoria(IdCategoria);
+                if (cat != null) {
+
+                    request.setAttribute("CategoriaConsultada", cat);
                     request.getRequestDispatcher("ActualizarCategoria.jsp").forward(request, response);
                 } else {
-                    request.setAttribute("MensajeError", "La categoria no se encuentra registrada");
+
+                    request.setAttribute("mensajeError", "<center><h2>Categía No existe!</center></h2>");
                     request.getRequestDispatcher("ConsultarCategoria.jsp").forward(request, response);
 
                 }
-
                 break;
 
         }

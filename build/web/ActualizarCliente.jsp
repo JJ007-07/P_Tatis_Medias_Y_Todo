@@ -22,6 +22,8 @@
 	<!--Custom styles-->
       
       <link href="Estilos/estilos2.css" rel="stylesheet" type="text/css"/>
+      <link href="css/default.min.css" rel="stylesheet" type="text/css"/>
+      <link href="css/alertify.min.css" rel="stylesheet" type="text/css"/>
 </head>
       <%
         if (request.getAttribute("clienteConsultado") != null) {
@@ -80,7 +82,8 @@
       
         <div class="form-group">	
         <input type="hidden" value="2" name="opcion" class="btn float-right login_btn">
-        <button type="submit" class="btn float-right login_btn" > Actualizar</button>
+
+    <button type="submit" class="btn float-right login_btn"  onclick="return confirm('¿Estas seguro de actualizar el cliente?')" >  Actualizar</button>
         </div>
         </form>
                    
@@ -99,6 +102,7 @@
                                         <%}%>
                                         <%}%>
                     </div>
+
     </body>
     </center>
-</html>
+</html

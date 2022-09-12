@@ -171,10 +171,12 @@ if(nombuscar!=null){
       out.write("                                <input type=\"submit\" class=\"btn btn-warning\" data-toggle=\"modal\" data-target=\"#myModal1\" value=\"Editar\"/>  -->\r\n");
       out.write("                                <a href=\"ActuaizarProducto.jsp?IdProducto=");
       out.print( rs.getInt("IdProducto"));
-      out.write("\" class=\"btn btn-primary\">Editar</a>\r\n");
+      out.write("\" ><img src=\"IMG/Actualizar.png\" width=\"60px\" height=\"60px\"/></a>\r\n");
+      out.write("                                \r\n");
       out.write("                                <a href=\".jsp?IdProducto=");
       out.print( rs.getInt("IdProducto"));
-      out.write("\" class=\"btn btn-danger\">Delete</a>\r\n");
+      out.write("\"><img src=\"IMG/Eliminar.png\" width=\"60px\" height=\"60px\"/>\r\n");
+      out.write("                                </a>\r\n");
       out.write("                            </td>\r\n");
       out.write("\r\n");
       out.write("\r\n");

@@ -19,7 +19,7 @@
                 <tr>
                     <th>Id pedido
                         <input type="number" name="textIdPedidoFK" >
-                        <button>Eliminar</button>
+                        <button  onclick="return confirm('¿Estas seguro de  eliminar este detalle pedido?')">Eliminar</button>
                     </th>
                 </tr>
                  

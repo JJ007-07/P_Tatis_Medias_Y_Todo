@@ -84,7 +84,7 @@
             </table><br>
                                          <div class="form-group">	
                                          <input type="hidden" value="1" name="opcion" class="btn float-right login_btn">
-                                         <button type="submit" class="btn float-right login_btn" > Registrar Producto</button>
+                                         <button type="submit" class="btn float-right login_btn" onclick="return confirm('¿Estas seguro de registrar este proveedor?')"  > Registrar Producto</button>
             
                                          
                                          <button type="submit"  class="btn float-right login_btn"> <a href="ConsultarProveedor.jsp"> Ver Empresas registrados </a> </button>

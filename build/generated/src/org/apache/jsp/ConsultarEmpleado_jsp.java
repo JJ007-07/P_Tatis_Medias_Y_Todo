@@ -74,123 +74,42 @@ public final class ConsultarEmpleado_jsp extends org.apache.jasper.runtime.HttpJ
       out.write(" \r\n");
       out.write("          <center>\r\n");
       out.write("        <h1>Empleado</h1>\r\n");
-      out.write("         ");
-
-    ConexionDB con = new ConexionDB();
-    Statement smt;
-    ResultSet rs;
-    smt = con.obtenerConexion().createStatement();
-    rs = smt.executeQuery("select * from Empleado");
-
-      out.write("\r\n");
-      out.write("   <body>\r\n");
-      out.write("        <center>\r\n");
-      out.write("         \r\n");
-      out.write("            <div style=\"padding-left: 800px\">    \r\n");
-      out.write("             <div  class=\"container buscar\">\r\n");
-      out.write("                 <center>\r\n");
-      out.write("                 <form class=\"form\">\r\n");
-      out.write("                <input type=\"text\" name=\"txtbuscar\">\r\n");
-      out.write("                <input type=\"submit\" value=\"Buscar\">\r\n");
-      out.write("                 </form></center></center>\r\n");
-      out.write("                 ");
- 
-String nombuscar=request.getParameter("txtbuscar");
-if(nombuscar!=null){
-    smt=con.obtenerConexion().createStatement();
-    rs=smt.executeQuery("select* from empleado where NombreEmpleado LIKE"+"'%"+nombuscar+"%' OR ApellidoEmpleado LIKE"+"'%"+nombuscar+"%' OR TipoDocEmpleado LIKE"+"'%"+nombuscar+"%' OR NumeroDocEmpleado LIKE"+"'%"+nombuscar+"%' OR TelefonoCelularEmpleado LIKE"+"'%"+nombuscar+"%' OR DireccionEmpleado LIKE"+"'%"+nombuscar+"%' OR CorreoEmpleado LIKE"+"'%"+nombuscar+"%' OR EstadoEmpleado LIKE"+"'%"+nombuscar+"%'");
-
-}else{
-    System.err.print("Error");
-}
-                 
-      out.write("\r\n");
-      out.write("                     \r\n");
-      out.write("        </div>\r\n");
-      out.write("                  <div class=\"container\">               \r\n");
-      out.write("            <a  class=\"btn btn-success\" href=\"registrarEmpleado.jsp\">Nuevo Registro</a>         \r\n");
-      out.write("             <table class=\"table table-bordered\"  id=\"tablaDatos\">\r\n");
-      out.write("                    <thead>\r\n");
-      out.write("                        <tr>\r\n");
-      out.write("                            <th class=\"text-center\">IdEmpleado</th>\r\n");
-      out.write("                            <th class=\"text-center\">NombreEmpleado</th>\r\n");
-      out.write("                            <th class=\"text-center\">ApellidoEmpleado</th>\r\n");
-      out.write("                            <th class=\"text-center\">TipoDocumento</th>\r\n");
-      out.write("                            <th class=\"text-center\">NumeroDocumento</th>\r\n");
-      out.write("                            <th class=\"text-center\">Telefono</th>\r\n");
-      out.write("                            <th class=\"text-center\">Direccion</th>\r\n");
-      out.write("                            <th class=\"text-center\">Correo Electronico</th>\r\n");
-      out.write("                            <th class=\"text-center\">Estado</th>\r\n");
-      out.write("                            <th class=\"text-center\">IdUsuarioFK</th>\r\n");
-      out.write("                            <th class=\"text-center\">Acciones</th>\r\n");
-      out.write("                        </tr>\r\n");
-      out.write("                    </thead>\r\n");
-      out.write("                    <tbody id=\"tbodys\">\r\n");
-      out.write("                        ");
-
-                            while (rs.next()) {
-                        
-      out.write("\r\n");
-      out.write("                        <tr>\r\n");
-      out.write("                             \r\n");
-      out.write("                             <td class=\"text-center\">");
-      out.print( rs.getInt("IdEmpleado"));
-      out.write("</td>\r\n");
-      out.write("                             <td class=\"text-center\">");
-      out.print( rs.getString("NombreEmpleado"));
-      out.write("</td>\r\n");
-      out.write("                             <td class=\"text-center\">");
-      out.print( rs.getString("ApellidoEmpleado"));
-      out.write("</td>\r\n");
-      out.write("                             <td>");
-      out.print( rs.getString("TipoDocEmpleado"));
-      out.write("</td>\r\n");
-      out.write("                             <td class=\"text-center\">");
-      out.print( rs.getString("NumeroDocEmpleado"));
-      out.write("</td>\r\n");
-      out.write("                             <td>");
-      out.print( rs.getString("TelefonoCelularEmpleado"));
-      out.write("</td>\r\n");
-      out.write("                             <td>");
-      out.print( rs.getString("DireccionEmpleado"));
-      out.write("</td>\r\n");
-      out.write("                             <td>");
-      out.print( rs.getString("CorreoEmpleado"));
-      out.write("</td>\r\n");
-      out.write("                             <td>");
-      out.print( rs.getString("EstadoEmpleado"));
-      out.write("</td>\r\n");
-      out.write("                             <td>");
-      out.print( rs.getString("IdUsuarioFK"));
-      out.write("</td>\r\n");
-      out.write("                            <td class=\"text-center\">\r\n");
-      out.write("                                \r\n");
-      out.write("                                <!-- <input type=\"hidden\" value=\"<//%= rs.getInt(\"IdPedido\")%>\" id=\"Editar\"/>\r\n");
-      out.write("                                <input type=\"submit\" class=\"btn btn-warning\" data-toggle=\"modal\" data-target=\"#myModal1\" value=\"Editar\"/>  -->\r\n");
-      out.write("                                <a href=\"ActualizarEmpleado.jsp?IdEmpleado=");
-      out.print( rs.getInt("IdEmpleado"));
-      out.write("\" ><img src=\"IMG/Actualizar.png\" width=\"60px\" height=\"60px\"/></a>\r\n");
-      out.write("                                                                <a href=\"EliminarEmpleado.jsp?IdEmpleado=");
-      out.print( rs.getInt("IdEmpleado"));
-      out.write("\" > <img src=\"IMF/Eliminar.png\" width=\"60px\" height=\"60px\"/></a>\r\n");
-      out.write("                               \r\n");
-      out.write("                            </td>\r\n");
-      out.write("                        </tr>\r\n");
-      out.write("                        ");
-}
-      out.write("\r\n");
-      out.write("                </table>\r\n");
-      out.write("                       \r\n");
-      out.write("        <script src=\"js/jquery.js\" type=\"text/javascript\"></script>             \r\n");
-      out.write("        <script src=\"js/bootstrap.min.js\" type=\"text/javascript\"></script>        \r\n");
+      out.write("       \r\n");
       out.write("                    \r\n");
-      out.write("      ");
+      out.write("      <form method=\"post\" action=\"Empleado\">\r\n");
+      out.write("            <table>\r\n");
+      out.write("                <tr>\r\n");
+      out.write("                    <th> Numero de documento\r\n");
+      out.write("                        <input type=\"number\" name=\"textNumDoc\" >\r\n");
+      out.write("                        <button>Consultar </button>\r\n");
+      out.write("                        \r\n");
+      out.write("                    </th>\r\n");
+      out.write("                </tr>\r\n");
+      out.write("                 \r\n");
+      out.write("             \r\n");
+      out.write("            </table><br><br>\r\n");
+      out.write("            <input type=\"hidden\" value=\"3\"  name=\"opcion\">\r\n");
+      out.write("             <a href=\"DatosEmpleado.jsp\">Consulta General</a>\r\n");
+      out.write("             <a href=\"ModalEmpleado.jsp\">Consulta No.Cedula Disponibles</a>\r\n");
+      out.write("            \r\n");
+      out.write("             ");
+ if (request.getAttribute("mensajeError")  !=null) {
       out.write("\r\n");
+      out.write("         ");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${mensajeError}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write(" \r\n");
+      out.write("           ");
+  }  else {
+      out.write("\r\n");
+      out.write("                   ");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${mensajeExito}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\r\n");
+      out.write("                   ");
+}
+      out.write("<br><br>\r\n");
+      out.write("                   \r\n");
       out.write("            \r\n");
-      out.write("            \r\n");
-      out.write("            \r\n");
-      out.write("            \r\n");
-      out.write("        \r\n");
+      out.write("      </form>  \r\n");
       out.write("          </center>\r\n");
       out.write("    </body>\r\n");
       out.write("</html>\r\n");
