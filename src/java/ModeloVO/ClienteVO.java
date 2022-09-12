@@ -11,7 +11,7 @@ package ModeloVO;
  */
 public class ClienteVO {
         
-        private String IdCliente,NombreCliente,ApellidoCliente,TipoDocCliente,NumeroDocCliente,TelefonoCliente,DirecionCliente,CorreoCliente,EstadoCliente;
+        private String IdCliente,NombreCliente,ApellidoCliente,TipoDocCliente,NumeroDocCliente,TelefonoCliente,DireccionCliente,CorreoCliente,EstadoCliente;
 
         public String getIdCliente() {
         return IdCliente;
@@ -54,11 +54,11 @@ public class ClienteVO {
     }
 
     public String getDirecionCliente() {
-        return DirecionCliente;
+        return DireccionCliente;
     }
 
     public void setDirecionCliente(String DirecionCliente) {
-        this.DirecionCliente = DirecionCliente;
+        this.DireccionCliente = DirecionCliente;
     }
 
     public String getCorreoCliente() {
@@ -87,7 +87,7 @@ public class ClienteVO {
         this.TipoDocCliente = TipoDocCliente;
         this.NumeroDocCliente = NumeroDocCliente;
         this.TelefonoCliente = TelefonoCliente;
-        this.DirecionCliente = DirecionCliente;
+        this.DireccionCliente = DirecionCliente;
         this.CorreoCliente = CorreoCliente;
         this.EstadoCliente = EstadoCliente;
     }

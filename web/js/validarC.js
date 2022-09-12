@@ -6,9 +6,9 @@
 
 
   function validarC(){
-                        var NombreCategoria;
+  var NombreCategoria;
                         
-                        NombreCategoria=document.getElementById("NombreCategoria");
+   NombreCategoria = document.getElementById("NombreCategoria").value;
                         
                         
     if (NombreCategoria===""){

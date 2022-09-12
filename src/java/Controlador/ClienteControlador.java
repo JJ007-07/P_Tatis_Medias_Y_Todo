@@ -39,12 +39,12 @@ public class ClienteControlador extends HttpServlet {
         String TipoDocCliente = request.getParameter("TextTipo");
         String NumeroDocCliente = request.getParameter("TextNumDoc");
         String TelefonoCliente = request.getParameter("TextTelefono");
-        String DirecionCliente = request.getParameter("TextDir");
+        String DireccionCliente = request.getParameter("TextDir");
         String CorreoCliente = request.getParameter("TextCorreo");
         String EstadoCliente = request.getParameter("TextEstado");
         int opcion = Integer.parseInt(request.getParameter("opcion"));    
         
-        ClienteVO ClVO = new ClienteVO(IdCliente, NombreCliente, ApellidoCliente, TipoDocCliente, NumeroDocCliente, TelefonoCliente, DirecionCliente, CorreoCliente, EstadoCliente);
+        ClienteVO ClVO = new ClienteVO(IdCliente, NombreCliente, ApellidoCliente, TipoDocCliente, NumeroDocCliente, TelefonoCliente, DireccionCliente, CorreoCliente, EstadoCliente);
         
         ClienteDAO ClDAO = new ClienteDAO(ClVO);
         switch (opcion) {

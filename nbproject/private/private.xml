@@ -2,6 +2,15 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/jtgt2/OneDrive/Documentos/NetBeansProjects/Repositorio/Proyecto_2022/src/java/ModeloDAO/ClienteDAO.java</file>
+            <file>file:/C:/Users/jtgt2/OneDrive/Documentos/NetBeansProjects/Repositorio/Proyecto_2022/web/registrarEmpleado.jsp</file>
+            <file>file:/C:/Users/jtgt2/OneDrive/Documentos/NetBeansProjects/Repositorio/Proyecto_2022/web/registrarCliente.jsp</file>
+            <file>file:/C:/Users/jtgt2/OneDrive/Documentos/NetBeansProjects/Repositorio/Proyecto_2022/src/java/Controlador/ClienteControlador.java</file>
+            <file>file:/C:/Users/jtgt2/OneDrive/Documentos/NetBeansProjects/Repositorio/Proyecto_2022/src/java/ModeloVO/VentaVO.java</file>
+            <file>file:/C:/Users/jtgt2/OneDrive/Documentos/NetBeansProjects/Repositorio/Proyecto_2022/src/java/ModeloVO/UsuarioVO.java</file>
+            <file>file:/C:/Users/jtgt2/OneDrive/Documentos/NetBeansProjects/Repositorio/Proyecto_2022/web/js/validarCl.js</file>
+            <file>file:/C:/Users/jtgt2/OneDrive/Documentos/NetBeansProjects/Repositorio/Proyecto_2022/src/java/ModeloVO/ClienteVO.java</file>
+        </group>
     </open-files>
 </project-private>

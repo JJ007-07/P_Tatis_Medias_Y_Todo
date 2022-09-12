@@ -5,7 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@include file="Sesiones.jsp"%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -15,8 +15,8 @@
     </head>
     <body>
         <h1>Registrar Venta</h1>
-        
-        <div class="d-flex">
+        <form method="post" action="Cliente">
+             <div class="d-flex">
             <div class="col-sm-4">
                 <div class="card">
                     <div class="card-body">
@@ -28,13 +28,21 @@
                              <input type="text" name="TextNumDoc" class="form-control" placeholder="No de documento">
                              <input type="submit"  value="buscar" class="btn btn-outline-info">
                             <input type="hidden" value="3" name="opcion">
-                              
-                            </div>
+                             </div>
                             <div class="col-sm-8">
                                  <input type="text" name="TextNombre" class="form-control col-sm-4"
 
                             </div>
                         </div>
+       
+            
+      
+            </form>
+                        
+                        
+                        
+                        
+                        
                         <div class="form-group">
                             <label>Datos Producto</label>
                         </div>

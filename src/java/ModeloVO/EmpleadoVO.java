@@ -11,7 +11,7 @@ package ModeloVO;
  */
 public class EmpleadoVO {
 
-    private String IdEmpleado, NombreEmpleado, ApellidoEmpleado, TipoDocEmpleado, NumeroDocEmpleado, TelefonoCelularEmpleado, DirecionEmpleado, CorreoEmpleado, EstadoEmpleado, IdUsuarioFK;
+    private String IdEmpleado, NombreEmpleado, ApellidoEmpleado, TipoDocEmpleado, NumeroDocEmpleado, TelefonoCelularEmpleado, DireccionEmpleado, CorreoEmpleado, EstadoEmpleado, IdUsuarioFK;
     
      public EmpleadoVO(String IdEmpleado, String NombreEmpleado, String ApellidoEmpleado, String TipoDocEmpleado, String NumeroDocEmpleado, String TelefonoCelularEmpleado, String DirecionEmpleado, String CorreoEmpleado, String EstadoEmpleado, String IdUsuarioFK) {
         this.IdEmpleado = IdEmpleado;
@@ -20,7 +20,7 @@ public class EmpleadoVO {
         this.TipoDocEmpleado = TipoDocEmpleado;
         this.NumeroDocEmpleado = NumeroDocEmpleado;
         this.TelefonoCelularEmpleado = TelefonoCelularEmpleado;
-        this.DirecionEmpleado = DirecionEmpleado;
+        this.DireccionEmpleado = DirecionEmpleado;
         this.CorreoEmpleado = CorreoEmpleado;
         this.EstadoEmpleado = EstadoEmpleado;
         this.IdUsuarioFK = IdUsuarioFK;
@@ -84,11 +84,11 @@ public class EmpleadoVO {
     }
 
     public String getDirecionEmpleado() {
-        return DirecionEmpleado;
+        return DireccionEmpleado;
     }
 
     public void setDirecionEmpleado(String DirecionEmpleado) {
-        this.DirecionEmpleado = DirecionEmpleado;
+        this.DireccionEmpleado = DirecionEmpleado;
     }
 
     public String getCorreoEmpleado() {

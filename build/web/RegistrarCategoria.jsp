@@ -5,7 +5,7 @@
 --%>
 
 <%@page import="ModeloVO.EmpresaProveedoraVO"%>
-<%@page import="ModeloDAO.EmpresaProveedoraDAO"%>z
+<%@page import="ModeloDAO.EmpresaProveedoraDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -21,6 +21,7 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
         <link href="Estilos/estilos2.css" rel="stylesheet" type="text/css"/>
         <script src="js/validarC.js" type="text/javascript"></script>
+       
     </head>
 
     <center>
@@ -57,15 +58,17 @@
                     <div class="tres"> 
 
                         <%
-                                             if (request.getAttribute("MensajeError") != null) {%>
+                        if (request.getAttribute("MensajeError") !=null) {%>
                         ${MensajeError}           
 
-                        <%}else {%>
+                        <% }else {%>
                         ${MensajeExito}  
                         <%}%>
                     </div>
                 </center>
             </div>
+             
+             
         </body>
     </center>
 </html>

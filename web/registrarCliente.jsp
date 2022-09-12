@@ -23,6 +23,7 @@
       
   
       <link href="Estilos/estilos2.css" rel="stylesheet" type="text/css"/>
+      <script src="js/validarCl.js" type="text/javascript"></script>
 </head>
   
 <center>
@@ -32,40 +33,38 @@
 
         <center>
             <h1 class="titulo">Registrar Cliente</h1>
-        <form method="post" action="Cliente">
+            <form method="post" action="Cliente" onsubmit="return validarCl();">
             <table>
                 
                 <tr>
                    
                 <div class="campos">Nombre Cliente</div>
-                <input type="text" name="TextNombre"><br><br>
+                <input type="text" id="Nombrecliente" name="TextNombre"><br><br>
                         
                     <div class="campos"> Apellido Cliente</div>
-                    <input type="text" name="TextApellido"><br><br>
-                                       
-                    
-                    
-                     <div class="campos">  Tipo Documento</div>
-                     <select name="txtEstado">
+                    <input type="text" id="ApellidoCliente" name="TextApellido"><br><br>
+
+                    <div class="campos">  Tipo Documento</div>
+                    <select name="TextTipo" id="TipoDocCliente">
                         <option>Seleccione una opción</option>
                        <option>CC</option>
                        <option>CE</option>
                     </select> <br> <br>
                     
                       <div class="campos">  Numero Documento</div>
-                     <input type="number" name="TextNumDoc"><br><br>
+                      <input type="number"  id="NumeroDocCliente" name="TextNumDoc"><br><br>
                   
                      <div class="campos">  Telefono Cliente</div>
-                     <input type="number" name="TextTelefono"><br><br>
+                     <input type="number" id="TelefonoCliente" name="TextTelefono"><br><br>
                     
                      <div class="campos"> Direccion Cliente</div>
-                    <input type="text" name="TextDir"><br><br>
+                     <input type="text" id="Direccioncliente" name="TextDir"><br><br>
                     
                       <div class="campos">  Correo Cliente</div>
-                      <input type="email" name="TextCorreo"><br><br>
+                      <input type="email" id="CorreoCliente" name="TextCorreo"><br><br>
                     
                       <div class="campos">  Estado Cliente</div>
-                      <input type="text" name="TextEstado"><br><br>
+                      <input type="text" id="EstadoCliente" name="TextEstado"><br><br>
                     
                     
                 </tr>

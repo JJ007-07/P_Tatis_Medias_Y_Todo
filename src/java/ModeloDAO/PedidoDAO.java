@@ -57,7 +57,7 @@ public class PedidoDAO extends ConexionDB implements Crud{
          try {
             sql="insert into pedido(IdPedido,NumeroFacturaPedido,FechaPedido,FechaRecibido,FechaVencimientoPago,IdEmpresaProveedoraFK,IVA,Descuento,EstadoPedido) values(?,?,?,?,?,?,?,?,?)";
             puente = conexion.prepareCall(sql);
-            puente.setString(1, IdPedido);
+             puente.setString(1, IdPedido );
             puente.setString(2, NumeroFacturaPedido );
             puente.setString(3, FechaPedido);
             puente.setString(4, FechaRecibido );

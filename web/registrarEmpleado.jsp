@@ -24,6 +24,7 @@
 	<!--Custom styles-->
       
       <link href="Estilos/estilos2.css" rel="stylesheet" type="text/css"/>
+      <script src="js/validarE.js" type="text/javascript"></script>
 </head>
   
 <center>
@@ -33,40 +34,40 @@
 
         <center>
             <h1 class="titulo">Registrar Empleado</h1>
-        <form method="post" action="Empleado">
+            <form method="post" action="Empleado" onsubmit="return validarE(); ">
             <table>
                 
                 <tr>
                    
                 <div class="campos">Nombre Empleado</div>
-                <input type="text" name="textNombre"><br><br>
+                <input type="text" id="NombreEmpleado" name="textNombre"><br><br>
                         
                     <div class="campos"> Apellido Empleado </div>
-                    <input type="text" name="textApellido"><br><br>
+                    <input type="text"  id="ApellidoEmpleado" name="textApellido"><br><br>
                   
                      <div class="campos">  Tipo Documento</div>
-                     <select name="textTipo">
+                     <select name="textTipo"  id="TipoDocEmpleado">
                         <option>Seleccione una opción</option>
                        <option>CC</option>
                        <option>CE</option>
                     </select> <br> <br>
                     
                       <div class="campos">  Numero Documento</div>
-                     <input type="number" name="textNumDoc"><br><br>
+                      <input type="number"  id="NumeroDocEmpleado" name="textNumDoc"><br><br>
                   
                      <div class="campos">  Telefono Empleado</div>
-                     <input type="number" name="textTelefono"><br><br>
+                     <input type="number" id="TelefonoCelularEmpleado" name="textTelefono"><br><br>
                     
                      <div class="campos"> Direccion Empleado</div>
-                    <input type="text" name="textDireccion"><br><br>
+                     <input type="text" id="DireccionEmpleado" name="textDireccion"><br><br>
                     
                       <div class="campos">  Correo Empleado</div>
-                      <input type="email" name="textCorreo"><br><br>
+                      <input type="email" id="CorreoEmpleado" name="textCorreo"><br><br>
                     
                       <div class="campos">  Estado Empleado</div>
-                      <input type="text" name="textEstado"><br><br>
+                      <input type="text" id="EstadoEmpleado" name="textEstado"><br><br>
                     
-                    <select name="textUsuario">
+                      <select name="textUsuario" id="IdUsuarioFK">
                     <option>Seleccione Usuario</option>
                     <%
                         UsuarioDAO usuDAO = new UsuarioDAO();

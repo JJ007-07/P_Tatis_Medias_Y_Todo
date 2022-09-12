@@ -29,7 +29,7 @@ public class EmpleadoDAO extends ConexionDB implements Crud {
 
     private boolean operacion = false;
     private String sql;
-    private String IdEmpleado="",NombreEmpleado="",ApellidoEmpleado="",TipoDocEmpleado="",NumeroDocEmpleado="",TelefonoCelularEmpleado="",DirecionEmpleado="",CorreoEmpleado="",EstadoEmpleado="",IdUsuarioFK="";
+    private String IdEmpleado="",NombreEmpleado="",ApellidoEmpleado="",TipoDocEmpleado="",NumeroDocEmpleado="",TelefonoCelularEmpleado="",DireccionEmpleado="",CorreoEmpleado="",EstadoEmpleado="",IdUsuarioFK="";
     
       public EmpleadoDAO(EmpleadoVO empVO) {
         super();
@@ -45,7 +45,7 @@ public class EmpleadoDAO extends ConexionDB implements Crud {
         TipoDocEmpleado = empVO.getTipoDocEmpleado();
         NumeroDocEmpleado = empVO.getNumeroDocEmpleado();
         TelefonoCelularEmpleado = empVO.getTelefonoCelularEmpleado();
-        DirecionEmpleado = empVO.getDirecionEmpleado();
+        DireccionEmpleado = empVO.getDirecionEmpleado();
         CorreoEmpleado = empVO.getCorreoEmpleado();
         EstadoEmpleado = empVO.getEstadoEmpleado();
         IdUsuarioFK = empVO.getIdUsuarioFK(); 
@@ -53,7 +53,7 @@ public class EmpleadoDAO extends ConexionDB implements Crud {
         } catch (Exception e) {
 
             Logger.getLogger(EmpleadoDAO.class.getName()).log(Level.SEVERE, null, e);
-        }
+        } 
 
     }
       
@@ -61,17 +61,19 @@ public class EmpleadoDAO extends ConexionDB implements Crud {
     @Override
     public boolean agregarRegistro() {
         try {
-            sql = "INSERT INTO empleado( NombreEmpleado,ApellidoEmpleado,TipoDocEmpleado,NumeroDocEmpleado,TelefonoCelularEmpleado,DirecionEmpleado,CorreoEmpleado,EstadoEmpleado,IdUsuarioFK) VALUES (?,?,?,?,?,?,?,?,?)";
+            sql = "INSERT INTO empleado(IdEmpleado,NombreEmpleado,ApellidoEmpleado,TipoDocEmpleado,NumeroDocEmpleado,TelefonoCelularEmpleado,DireccionEmpleado,CorreoEmpleado,EstadoEmpleado,IdUsuarioFK) VALUES (?,?,?,?,?,?,?,?,?,?)";
             puente = conexion.prepareCall(sql);
-            puente.setString(1,NombreEmpleado);
-            puente.setString(2,ApellidoEmpleado);
-            puente.setString(3,TipoDocEmpleado);
-            puente.setString(4,NumeroDocEmpleado);
-            puente.setString(5,TelefonoCelularEmpleado);
-            puente.setString(6,DirecionEmpleado);
-            puente.setString(7,CorreoEmpleado);
-            puente.setString(8,EstadoEmpleado);
-            puente.setString(9,IdUsuarioFK);
+            puente.setString(1,IdEmpleado);
+            puente.setString(2,NombreEmpleado);
+            puente.setString(3,ApellidoEmpleado);
+            puente.setString(4,TipoDocEmpleado);
+            puente.setString(5,NumeroDocEmpleado);
+            puente.setString(6,TelefonoCelularEmpleado);
+            puente.setString(7,DireccionEmpleado);
+            puente.setString(8,CorreoEmpleado);
+            puente.setString(9,EstadoEmpleado);
+            puente.setString(10,IdUsuarioFK);
+            
             puente.executeUpdate();
             operacion = true;
 
@@ -100,7 +102,7 @@ public class EmpleadoDAO extends ConexionDB implements Crud {
             puente.setString(1, NombreEmpleado);
             puente.setString(2, ApellidoEmpleado);
             puente.setString(3, TelefonoCelularEmpleado);
-            puente.setString(4, DirecionEmpleado);
+            puente.setString(4, DireccionEmpleado);
             puente.setString(5, CorreoEmpleado);
             puente.setString(6, EstadoEmpleado);
             puente.setString(7, IdEmpleado);

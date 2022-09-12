@@ -109,7 +109,7 @@ public class CategoriaDAO extends ConexionDB implements Crud{
             sql="insert into Categoria (IdCategoria,NombreCategoria) values(?,?)";
             puente = conexion.prepareCall(sql);
             puente.setString(1,IdCategoria );
-            puente.setString(2, NombreCategoria);
+            puente.setString(2,NombreCategoria);
             
             
             puente.executeUpdate();
@@ -195,43 +195,33 @@ public class CategoriaDAO extends ConexionDB implements Crud{
         
     }
     
-public boolean consultarcategoria(){
-{
-        
+   public CategoriaVO consultarCategoria(String IdCategoria) {
+
+        CategoriaVO catVO = null;
         try {
-            conexion =this. obtenerConexion();
-            sql="select * from EmpresaProveedora where IdEmpresaProveedora=?";
-            puente = conexion.prepareCall(sql);
-            puente.setString(1,NombreCategoria);
-            puente.setString(2,IdCategoria);
-      
-            mensajero= puente. executeQuery();
+            sql = "select * from Categoria WHERE IdCategoria=?";
+            conexion = this.obtenerConexion();
+            puente = conexion.prepareStatement(sql);
+            puente.setString(1, IdCategoria);
+            mensajero = puente.executeQuery();
             if (mensajero.next()) {
-                
-                operacion=true;
-                    
-                }
-            
-        } catch (Exception e) {
-        }finally{
-            
+                catVO = new CategoriaVO(mensajero.getString(1), mensajero.getString(2));
+            }
+
+        } catch (SQLException e) {
+            Logger.getLogger(CategoriaDAO.class.getName()).log(Level.SEVERE, null, e);
+        } finally {
+
             try {
                 this.cerrarConexion();
-                
-            } catch (Exception e) {
-                Logger.getLogger(CategoriaDAO.class.getName()).log(Level.SEVERE,null, e);
-       
+            } catch (SQLException e) {
+                Logger.getLogger(CategoriaDAO.class.getName()).log(Level.SEVERE, null, e);
+
             }
-        
-        } 
-        
-        return operacion;
-    
 
-
-}
-        
-}
+        }
+        return catVO;
+    }
     
 }
 

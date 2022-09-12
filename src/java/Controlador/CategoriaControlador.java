@@ -55,7 +55,7 @@ public class CategoriaControlador extends HttpServlet {
             case 1: //Agregar Registro 
                 if (catDAO.agregarRegistro()) {
 
-                    request.setAttribute("MensajeExito", "<center=red><h2>La categoría se registró correctamente</h2></center>");
+                    request.setAttribute("MensajeExito", "<center><h2>La categoría se registró correctamente</h2></center>");
 
                 } else {
                     request.setAttribute("MensajeError", "La categoría no se registró correctamente");
@@ -67,10 +67,10 @@ public class CategoriaControlador extends HttpServlet {
             case 2: //Actualizar Registro 
                 if (catDAO.actualizarRegistro()) {
 
-                    request.setAttribute("MensajeExito ", "La categoría se actualizó correctamente");
+                    request.setAttribute("MensajeExito", "La categoría se actualizó correctamente");
 
                 } else {
-                    request.setAttribute("MensajeError ", "La categoría no se actualizó correctamente");
+                    request.setAttribute("MensajeError", "La categoría no se actualizó correctamente");
                 }
 
                 request.getRequestDispatcher("ConsultarCategoria.jsp").forward(request, response);
@@ -87,20 +87,21 @@ public class CategoriaControlador extends HttpServlet {
 
                 request.getRequestDispatcher("EliminarCategoria.jsp").forward(request, response);
                 break;
+     
+                case 4:
 
-            case 4: // consultarVehiculo
-               if (catDAO.consultarcategoria())
-               {
+                CategoriaVO cat = catDAO.consultarCategoria(IdCategoria);
+                if (cat != null) {
 
-                    request.setAttribute("CategoriaConsultada", catDAO);
-                    request.setAttribute("MensajeExito", "Categoria Consultada");
+                    request.setAttribute("categoria consultada", cat);
+                    request.setAttribute("mensajeExito", "<center><h2>Categoría Consultada</center></h2>");
                     request.getRequestDispatcher("ActualizarCategoria.jsp").forward(request, response);
                 } else {
-                    request.setAttribute("MensajeError", "La categoria no se encuentra registrada");
+
+                    request.setAttribute("mensajeError", "<center><h2>Categía No existe!</center></h2>");
                     request.getRequestDispatcher("ConsultarCategoria.jsp").forward(request, response);
 
                 }
-
                 break;
 
         }
