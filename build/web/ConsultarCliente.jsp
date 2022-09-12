@@ -4,7 +4,7 @@
     Author     : User
 --%>
 
-<%@page import="java.sql.PreparedStatement"%>
+<<%@page import="java.sql.PreparedStatement"%>
 <%@page import="Util.ConexionDB"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.Statement"%>
@@ -37,9 +37,8 @@
     
             
         %>
-        <div class="container">       
-            <a href="registrarCliente.jsp">
-                <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal" >Registrar</button></a>
+        <div class="container">            
+            <button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#myModal">New Add</button>
             <div style="padding-left: 800px">                  
                <div  class="container buscar">
                  <form class="form">
@@ -90,8 +89,8 @@ if(nombuscar!=null){
                                 
                                 <!-- <input type="hidden" value="<//%= rs.getInt("Id_Usuario")%>" id="Editar"/>
                                 <input type="submit" class="btn btn-warning" data-toggle="modal" data-target="#myModal1" value="Editar"/>  -->
-                                <a href="ActualizarCliente.jsp?IdCliente=<%= rs.getInt("IdCliente")%>" class="btn btn-primary">Editar</a>
-                                <a href="EliminarCliente.jsp?IdCliente=<%= rs.getInt("IdCliente")%>" class="btn btn-danger">Delete</a>
+                                <a href="ActualizarCliente.jsp?IdCliente=<%= rs.getInt("IdCliente")%>" ><img src="IMG/Actualizar.png" width="60px" height="60px"/></a>
+                                <a href="EliminarCliente.jsp?IdCliente=<%= rs.getInt("IdCliente")%>" ><img src="IMG/Eliminar.png" width="60px" height="60px"/></a>
                             </td>
                         </tr>
                         <%}%>

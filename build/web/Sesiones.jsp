@@ -12,6 +12,13 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
+        <link href="Estilos/Estilos3.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <script src="js/nav.js" type="text/javascript"></script>
+        <link href="Estilos/boton.css" rel="stylesheet" type="text/css"/>
+        <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
     </head>
     
     <%
@@ -47,20 +54,8 @@
         <div class="card-header">
             
         <h1>Bienvenido: <%=Usuario%></h1>
-        <form method="post" action="Sesiones">
-            
         </div>
-            
-            
-            
-           <div class="botones">                       
-            <input type="submit" value="Cerrar Sesion">  
-            </div>
-            
-            
-            
-        </form>
-        
+      
         </div><br><br>
         
         

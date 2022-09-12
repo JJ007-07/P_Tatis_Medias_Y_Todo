@@ -43,6 +43,7 @@ public final class registrarPedido_jsp extends org.apache.jasper.runtime.HttpJsp
       _jspx_out = out;
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
+<<<<<<< HEAD
       out.write("\n");
       out.write("\n");
       out.write("\n");
@@ -79,6 +80,43 @@ public final class registrarPedido_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("                <select name=\"txtIdEmpresaProveedora\" id=\"IdEmpresaProveedoraFK\">\n");
       out.write("                    <option>Seleccione una opción</option>\n");
       out.write("                    ");
+=======
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("<!DOCTYPE html>\r\n");
+      out.write("<html>\r\n");
+      out.write("    <head>\r\n");
+      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
+      out.write("        <title>JSP Page</title>\r\n");
+      out.write("        <script src=\"js/validar.js\" ></script>\r\n");
+      out.write("    </head>\r\n");
+      out.write(" <body>\r\n");
+      out.write("<center>\r\n");
+      out.write("<h1>Registrar Pedido</h1>\r\n");
+      out.write("<form method=\"post\" action=\"Pedido\"  onsubmit=\"return validar();\">\r\n");
+      out.write("    <table>\r\n");
+      out.write("   \r\n");
+      out.write("    <tr> No.Factura<br>\r\n");
+      out.write("    <input type=\"text\"  id=\"NumeroFacturaPedido\" name=\"txtNumeroFacturaPedido\" ><br>\r\n");
+      out.write("    </tr>\r\n");
+      out.write("    <tr>Fecha Pedido<br>\r\n");
+      out.write("    <input type=\"date\"  id=\"FechaPedido\" name=\"txtFechaPedido\"><br>\r\n");
+      out.write("    </tr>\r\n");
+      out.write("    <tr>Fecha Recibido<br>\r\n");
+      out.write("    <input type=\"date\" id=\"FechaRecibido\" name=\"txtFechaRecibido\"><br>\r\n");
+      out.write("    </tr>\r\n");
+      out.write("    <tr>Fecha Vencimiento pago<br>\r\n");
+      out.write("    <input type=\"date\" id=\"FechaVencimientoPago\" name=\"txtFechaVencimientoPago\"><br>\r\n");
+      out.write("    </tr>\r\n");
+      out.write("    <tr>Id Empresa Proveedora<br>\r\n");
+      out.write("   <select name=\"txtIdEmpresaProveedora\">\r\n");
+      out.write("                        <option>Seleccione una opción</option>\r\n");
+      out.write("                        ");
+>>>>>>> c3d391752be8db99b3ebb7d42776e63b99314b2f
 
                         EmpresaProveedoraDAO epDAO = new EmpresaProveedoraDAO();
                         for (EmpresaProveedoraVO epVO : epDAO.Listar()) {

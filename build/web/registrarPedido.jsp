@@ -13,6 +13,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+<<<<<<< HEAD
         
         <script src="js/validar.js" type="text/javascript"></script>
     </head>
@@ -54,6 +55,30 @@
                     </tr>
                     <tr>Estado Pedido<br>
                     <select Id="EstadoPedido" name="txtEstadoPedido" >
+=======
+        <script src="js/validar.js" ></script>
+    </head>
+ <body>
+<center>
+<h1>Registrar Pedido</h1>
+<form method="post" action="Pedido"  onsubmit="return validar();">
+    <table>
+   
+    <tr> No.Factura<br>
+    <input type="text"  id="NumeroFacturaPedido" name="txtNumeroFacturaPedido" ><br>
+    </tr>
+    <tr>Fecha Pedido<br>
+    <input type="date"  id="FechaPedido" name="txtFechaPedido"><br>
+    </tr>
+    <tr>Fecha Recibido<br>
+    <input type="date" id="FechaRecibido" name="txtFechaRecibido"><br>
+    </tr>
+    <tr>Fecha Vencimiento pago<br>
+    <input type="date" id="FechaVencimientoPago" name="txtFechaVencimientoPago"><br>
+    </tr>
+    <tr>Id Empresa Proveedora<br>
+   <select name="txtIdEmpresaProveedora">
+>>>>>>> c3d391752be8db99b3ebb7d42776e63b99314b2f
                         <option>Seleccione una opción</option>
                         <option>Entregado</option>
                         <option>Pago</option>

@@ -11,8 +11,10 @@
 package ModeloDAO;
 
 
+import ModeloVO.RolVO;
 import ModeloVO.USUROLVO;
 import Util.ConexionDB;
+import Util.Crud;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -26,7 +28,7 @@ import java.util.logging.Logger;
  *
  * @author SENA
  */
-public class USUROLDAO extends ConexionDB{
+public class USUROLDAO extends ConexionDB implements Crud{
 
     public USUROLDAO() {
     }
@@ -39,6 +41,28 @@ public class USUROLDAO extends ConexionDB{
 
     private Boolean operacion = false;
     private String sql;
+
+   private String IdUsuario="",IdRol="";
+   
+     public USUROLDAO(USUROLVO urVO) {
+        super();
+
+        //3. Conectarse 
+        try {
+            conexion = this.obtenerConexion();
+
+            //Traer al DAO los datos del VO para hecer la operación.
+            IdUsuario = urVO.getIdUsuario();
+        IdRol = urVO.getIdRol();
+        
+
+        } catch (Exception e) {
+
+            Logger.getLogger(USUROLDAO.class.getName()).log(Level.SEVERE, null, e);
+        }
+
+    }
+   
  public String seleccionarRol(String NombreUsuario, String PasswordUsuario){
 
 String rolU = "";
@@ -61,5 +85,45 @@ String rolU = "";
         }
         return rolU;
     }
+
+    @Override
+    public boolean agregarRegistro() {
+        try {
+            sql = "INSERT INTO `usuario_rol`(`IdUsuario`, `IdRol`) VALUES (?,?)";
+            puente = conexion.prepareCall(sql);
+            puente.setString(1,IdUsuario);
+            puente.setString(2,IdRol);
+         
+            puente.executeUpdate();
+            operacion = true;
+
+        } catch (SQLException e) {
+            Logger.getLogger(USUROLDAO.class.getName()).log(Level.SEVERE, null, e);
+        } finally {
+
+            try {
+                this.cerrarConexion();
+
+            } catch (Exception e) {
+                Logger.getLogger(USUROLDAO.class.getName()).log(Level.SEVERE, null, e);
+
+            }
+
+        }
+
+        return operacion;
+    }
+
+    @Override
+    public boolean actualizarRegistro() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean eliminarRegistro() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+
 
 }
