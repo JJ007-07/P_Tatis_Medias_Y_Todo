@@ -86,7 +86,7 @@
 
                   <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                       <input type="hidden" value="1" name="opcion" >
-                    <button type="submit" class="btn btn-primary btn-lg">Registrar</button>
+                    <button type="submit" class="btn btn-primary btn-lg" onclick="return confirm('¿Estas seguro de  registrar el usuario?')" >Registrar</button>
                   </div>
 
                 </form>

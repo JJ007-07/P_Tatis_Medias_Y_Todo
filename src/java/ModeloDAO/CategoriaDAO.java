@@ -35,7 +35,7 @@ public class CategoriaDAO extends ConexionDB implements Crud{
   
   
   private String sql;  
-  
+  private String IdCategoria="",NombreCategoria="";
     
      public  ArrayList<CategoriaVO>Listar(){
        ArrayList<CategoriaVO>listaCategoria = new ArrayList<>();
@@ -72,7 +72,7 @@ public class CategoriaDAO extends ConexionDB implements Crud{
        
      }
 
-    private String IdCategoria="",NombreCategoria="";
+ 
   
   //2.metodo contructor para recibir  datos del VO
   
@@ -97,7 +97,7 @@ public class CategoriaDAO extends ConexionDB implements Crud{
             
         } catch (Exception e) {
             
-            Logger.getLogger(EmpresaProveedoraDAO.class.getName()).log(Level.SEVERE,null, e);
+            Logger.getLogger(CategoriaDAO.class.getName()).log(Level.SEVERE,null, e);
         }
     }
 
@@ -136,7 +136,7 @@ public class CategoriaDAO extends ConexionDB implements Crud{
     @Override
     public boolean actualizarRegistro() {
         try {
-            sql="update categoria SET IdCategoria=?,NombreCategoria=? WHERE IdCategoria=?";
+            sql="update categoria SET NombreCategoria=? WHERE IdCategoria=?";
             puente = conexion.prepareCall(sql);
             
             puente.setString(1,NombreCategoria);
@@ -195,7 +195,11 @@ public class CategoriaDAO extends ConexionDB implements Crud{
         
     }
     
+<<<<<<< HEAD
    public CategoriaVO consultarCategoria(String IdCategoria) {
+=======
+public CategoriaVO consultarCategoria(String IdCategoria) {
+>>>>>>> 4ef559569ef0ba8104b738277f2c23c5d715abce
 
         CategoriaVO catVO = null;
         try {
@@ -222,9 +226,14 @@ public class CategoriaDAO extends ConexionDB implements Crud{
         }
         return catVO;
     }
+<<<<<<< HEAD
     
 }
 
     
     
   
+=======
+        
+}  
+>>>>>>> 4ef559569ef0ba8104b738277f2c23c5d715abce

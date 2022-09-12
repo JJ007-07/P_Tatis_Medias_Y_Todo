@@ -74,7 +74,7 @@
 
 
                 </table><br>
-                <button> Actualizar Producto</button>
+                <button onclick="return confirm('¿Estas seguro de actualizar este producto?')"> Actualizar Producto</button>
                 <input type="hidden" value="2" name="opcion">
 
 

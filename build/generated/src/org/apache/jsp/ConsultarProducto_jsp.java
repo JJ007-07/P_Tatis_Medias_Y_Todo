@@ -137,8 +137,28 @@ public final class ConsultarProducto_jsp extends org.apache.jasper.runtime.HttpJ
       out.print( rs.getString("CodigoDeBarrasProducto"));
       out.write("</td>\r\n");
       out.write("\r\n");
+<<<<<<< HEAD
       out.write("                                                                        </tr>\r\n");
       out.write("                                                                        ");
+=======
+      out.write("                        <td class=\"text-center\">\r\n");
+      out.write("                                \r\n");
+      out.write("                                <!-- <input type=\"hidden\" value=\"<//%= rs.getInt(\"IdPedido\")%>\" id=\"Editar\"/>\r\n");
+      out.write("                                <input type=\"submit\" class=\"btn btn-warning\" data-toggle=\"modal\" data-target=\"#myModal1\" value=\"Editar\"/>  -->\r\n");
+      out.write("                                <a href=\"ActuaizarProducto.jsp?IdProducto=");
+      out.print( rs.getInt("IdProducto"));
+      out.write("\" ><img src=\"IMG/Actualizar.png\" width=\"60px\" height=\"60px\"/></a>\r\n");
+      out.write("                                \r\n");
+      out.write("                                <a href=\".jsp?IdProducto=");
+      out.print( rs.getInt("IdProducto"));
+      out.write("\"><img src=\"IMG/Eliminar.png\" width=\"60px\" height=\"60px\"/>\r\n");
+      out.write("                                </a>\r\n");
+      out.write("                            </td>\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("                            </tr>\r\n");
+      out.write("                            ");
+>>>>>>> 4ef559569ef0ba8104b738277f2c23c5d715abce
 }
       out.write("\r\n");
       out.write("                                                                </table>    \r\n");

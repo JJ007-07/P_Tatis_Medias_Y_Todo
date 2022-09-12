@@ -63,6 +63,7 @@ public class EmpleadoDAO extends ConexionDB implements Crud {
         try {
             sql = "INSERT INTO empleado(IdEmpleado,NombreEmpleado,ApellidoEmpleado,TipoDocEmpleado,NumeroDocEmpleado,TelefonoCelularEmpleado,DireccionEmpleado,CorreoEmpleado,EstadoEmpleado,IdUsuarioFK) VALUES (?,?,?,?,?,?,?,?,?,?)";
             puente = conexion.prepareCall(sql);
+<<<<<<< HEAD
             puente.setString(1,IdEmpleado);
             puente.setString(2,NombreEmpleado);
             puente.setString(3,ApellidoEmpleado);
@@ -74,6 +75,17 @@ public class EmpleadoDAO extends ConexionDB implements Crud {
             puente.setString(9,EstadoEmpleado);
             puente.setString(10,IdUsuarioFK);
             
+=======
+            puente.setString(1,NombreEmpleado);
+            puente.setString(2,ApellidoEmpleado);
+            puente.setString(3,TipoDocEmpleado);
+            puente.setString(4,NumeroDocEmpleado);
+            puente.setString(5,TelefonoCelularEmpleado);
+            puente.setString(6,DireccionEmpleado);
+            puente.setString(7,CorreoEmpleado);
+            puente.setString(8,EstadoEmpleado);
+            puente.setString(9,IdUsuarioFK);
+>>>>>>> 4ef559569ef0ba8104b738277f2c23c5d715abce
             puente.executeUpdate();
             operacion = true;
 
@@ -97,7 +109,7 @@ public class EmpleadoDAO extends ConexionDB implements Crud {
     @Override
     public boolean actualizarRegistro() {
        try {
-            sql = "UPDATE empleado SET NombreEmpleado=?,ApellidoEmpleado=?,TelefonoCelularEmpleado=?,DirecionEmpleado=?,CorreoEmpleado=?,EstadoEmpleado=? WHERE IdEmpleado=?";            
+            sql = "UPDATE empleado SET NombreEmpleado=?,ApellidoEmpleado=?,TelefonoCelularEmpleado=?,DireccionEmpleado=?,CorreoEmpleado=?,EstadoEmpleado=? WHERE IdEmpleado=?";            
             puente = conexion.prepareCall(sql);
             puente.setString(1, NombreEmpleado);
             puente.setString(2, ApellidoEmpleado);

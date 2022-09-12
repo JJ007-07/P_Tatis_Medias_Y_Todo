@@ -90,11 +90,20 @@ public class CategoriaControlador extends HttpServlet {
      
                 case 4:
 
+<<<<<<< HEAD
                 CategoriaVO cat = catDAO.consultarCategoria(IdCategoria);
                 if (cat != null) {
 
                     request.setAttribute("categoria consultada", cat);
                     request.setAttribute("mensajeExito", "<center><h2>Categoría Consultada</center></h2>");
+=======
+            case 4:
+
+                CategoriaVO cat = catDAO.consultarCategoria(IdCategoria);
+                if (cat != null) {
+
+                    request.setAttribute("CategoriaConsultada", cat);
+>>>>>>> 4ef559569ef0ba8104b738277f2c23c5d715abce
                     request.getRequestDispatcher("ActualizarCategoria.jsp").forward(request, response);
                 } else {
 

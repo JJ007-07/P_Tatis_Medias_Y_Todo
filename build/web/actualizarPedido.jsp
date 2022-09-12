@@ -7,6 +7,7 @@
 <%@page import="ModeloVO.PedidoVO"%>
 <%@include file="Sesiones.jsp"%>
 
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,7 +15,7 @@
         <title>Actualizar</title>
     </head>
     <body>
-     
+   
         <%
         if(request.getAttribute("PedidoConsultado") != null)
 {
@@ -39,7 +40,7 @@
                      Fecha Vencimiento Pago<br>
                     <input type="date" readonly read name="txtFechaVencimientoPago" value="<%= PVO.getFechaVencimientoPago()%>"><br><br>
                       Id Empresa Proveedora<br>
-                    <input type="number" name="txtIdEmpresaProveedora" value="<%= PVO.getIdEmpresaProveedoraFK()%>"><br><br>
+                      <input type="number" name="txtIdEmpresaProveedora" value="<%= PVO.getIdEmpresaProveedoraFK()%>"><br><br>
                       IVA<br>
                       <input type="number" name="txtIVA" value="<%= PVO.getIVA()%>"><br><br>
                       Descuento<br>
@@ -53,7 +54,7 @@
                 </th>
                 </tr>
             </table><br>
-             <button>Actualizar</button>
+             <button onclick="return confirm('¿Estas seguro de  actualizar este pedido')">Actualizar</button>
             <input type="hidden" value="2" name="opcion">
 </form><br><br></center>
 

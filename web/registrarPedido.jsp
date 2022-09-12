@@ -60,6 +60,7 @@
  
 
                         <option>Seleccione una opción</option>
+<<<<<<< HEAD
                         <option>Entregado</option>
                         <option>Pago</option>
                     </select> <br> <br>
@@ -67,6 +68,33 @@
                     </table><br>
                     <button>Registrar pedido</button>
                     <input type="hidden"value="1"  name="opcion">
+=======
+                        <%
+                            EmpresaProveedoraDAO epDAO = new EmpresaProveedoraDAO();
+                            for(EmpresaProveedoraVO epVO : epDAO.Listar()) {
+                         %>
+                         <option value="<%=epVO.getIdEmpresaProveedora()%>"><%=epVO.getRazonSocialEmpresaProveedora()%></option>
+                                 
+                                 
+                          <%}%>       
+           </tr><br>
+    <tr>IVA<br>
+    <input type="number" id="IVA" name="txtIVA"><br>
+    </tr>
+    <tr>Descuento <br>
+   <input type="number" Id="Descuento" name="txtDescuento"><br>
+    </tr>
+    <tr>Estado Pedido<br>
+    <select Id="EstadoPedido" name="txtEstadoPedido" >
+    <option>Seleccione una opción</option>
+    <option>Entregado</option>
+    <option>Pago</option>
+    </select> <br> <br>
+    </tr>
+    </table><br>
+    <button onclick="return confirm('¿Estas seguro de registrar el pedido?')" >Registrar pedido</button>
+    <input type="hidden"value="1"  name="opcion">
+>>>>>>> 4ef559569ef0ba8104b738277f2c23c5d715abce
 
                     <button type="submit"  class="btn float-right login_btn"> <a href="ConsultarPedido.jsp"> Ver Pedidos registrados </a> </button>
 

@@ -20,7 +20,7 @@
                 <tr>
                     <th>No.Documento
                         <input type="text" name="TextNumDoc" >
-                        <button>Eliminar</button>
+                        <button onclick="return confirm('¿Estas seguro de eliminar el cliente?')" >Eliminar</button>
                         <input type="hidden"value="4"  name="opcion">
                     </th>
                 </tr>

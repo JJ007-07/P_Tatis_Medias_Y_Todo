@@ -74,6 +74,7 @@ public final class ConsultarEmpleado_jsp extends org.apache.jasper.runtime.HttpJ
       out.write(" \r\n");
       out.write("          <center>\r\n");
       out.write("        <h1>Empleado</h1>\r\n");
+<<<<<<< HEAD
       out.write("         ");
 
     ConexionDB con = new ConexionDB();
@@ -189,14 +190,44 @@ if(nombuscar!=null){
       out.write("                       \r\n");
       out.write("        <script src=\"js/jquery.js\" type=\"text/javascript\"></script>             \r\n");
       out.write("        <script src=\"js/bootstrap.min.js\" type=\"text/javascript\"></script>        \r\n");
+=======
+      out.write("       \r\n");
+>>>>>>> 4ef559569ef0ba8104b738277f2c23c5d715abce
       out.write("                    \r\n");
-      out.write("      ");
+      out.write("      <form method=\"post\" action=\"Empleado\">\r\n");
+      out.write("            <table>\r\n");
+      out.write("                <tr>\r\n");
+      out.write("                    <th> Numero de documento\r\n");
+      out.write("                        <input type=\"number\" name=\"textNumDoc\" >\r\n");
+      out.write("                        <button>Consultar </button>\r\n");
+      out.write("                        \r\n");
+      out.write("                    </th>\r\n");
+      out.write("                </tr>\r\n");
+      out.write("                 \r\n");
+      out.write("             \r\n");
+      out.write("            </table><br><br>\r\n");
+      out.write("            <input type=\"hidden\" value=\"3\"  name=\"opcion\">\r\n");
+      out.write("             <a href=\"DatosEmpleado.jsp\">Consulta General</a>\r\n");
+      out.write("             <a href=\"ModalEmpleado.jsp\">Consulta No.Cedula Disponibles</a>\r\n");
+      out.write("            \r\n");
+      out.write("             ");
+ if (request.getAttribute("mensajeError")  !=null) {
       out.write("\r\n");
+      out.write("         ");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${mensajeError}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write(" \r\n");
+      out.write("           ");
+  }  else {
+      out.write("\r\n");
+      out.write("                   ");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${mensajeExito}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+      out.write("\r\n");
+      out.write("                   ");
+}
+      out.write("<br><br>\r\n");
+      out.write("                   \r\n");
       out.write("            \r\n");
-      out.write("            \r\n");
-      out.write("            \r\n");
-      out.write("            \r\n");
-      out.write("        \r\n");
+      out.write("      </form>  \r\n");
       out.write("          </center>\r\n");
       out.write("    </body>\r\n");
       out.write("</html>\r\n");

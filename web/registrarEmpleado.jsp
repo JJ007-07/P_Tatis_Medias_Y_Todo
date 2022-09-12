@@ -86,7 +86,7 @@
       
         <div class="form-group">	
         <input type="hidden" value="1" name="opcion" class="btn float-right login_btn">
-        <button type="submit" class="btn float-right login_btn" > Registrarse</button>
+        <button type="submit" class="btn float-right login_btn"onclick="return confirm('¿Estas seguro de  hacer este registro?')" > Registrarse</button>
         </div>
         </form>
                    
