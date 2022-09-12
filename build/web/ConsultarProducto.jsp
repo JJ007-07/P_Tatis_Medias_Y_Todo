@@ -58,7 +58,7 @@
                                                 <div class="modal-dialog" role="document">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
-                                                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                            <h5 class="modal-title" id="exampleModalLabel">Información Disponible</h5>
                                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                 <span aria-hidden="true">&times;</span>
                                                             </button>
@@ -68,7 +68,7 @@
                                                                 <table class="table table-bordered"  id="tablaDatos">
                                                                     <thead>
                                                                         <tr>
-                                                                            <th class="text-center">CORREO ELECTRONICO</th>
+                                                                            <th class="text-center">CODIGOS DE BARRAS</th>
                                                                         </tr>
                                                                     </thead>
                                                                     <tbody id="tbodys">
@@ -87,8 +87,7 @@
                                                             </div>  
                                                         </div>
                                                         <div class="modal-footer">
-                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
                                                         </div>
                                                     </div>
                                                 </div>

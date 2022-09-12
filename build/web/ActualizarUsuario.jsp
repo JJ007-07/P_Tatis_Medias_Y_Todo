@@ -1,9 +1,3 @@
-<%-- 
-    Document   : ActualizarUsuario
-    Created on : 12/08/2022, 05:41:14 PM
-    Author     : User
---%>
-
 <%@page import="ModeloVO.UsuarioVO"%>
 <%@page import="ModeloVO.RolVO"%>
 <%@page import="ModeloDAO.RolDAO"%>

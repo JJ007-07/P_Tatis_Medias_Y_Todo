@@ -29,7 +29,7 @@ public class UsuarioDAO extends ConexionDB implements Crud {
 
     private boolean operacion = false;
     private String sql;
-    private String IdUsuario = "", NombreUsuario = "", PasswordUsuario = "",  EstadoUsuario = "";
+    private String IdUsuario = "", NombreUsuario = "", PasswordUsuario = "", EstadoUsuario = "";
 
     //2.metodo contructor para recibir  datos del VO
     public UsuarioDAO(UsuarioVO usuVO) {
@@ -44,7 +44,6 @@ public class UsuarioDAO extends ConexionDB implements Crud {
             NombreUsuario = usuVO.getNombreUsuario();
             PasswordUsuario = usuVO.getPasswordUsuario();
             EstadoUsuario = usuVO.getEstadoUsuario();
-            
 
         } catch (Exception e) {
 
@@ -80,7 +79,6 @@ public class UsuarioDAO extends ConexionDB implements Crud {
 
         return operacion;
     }
-    
 
     @Override
     public boolean actualizarRegistro() {
@@ -88,7 +86,7 @@ public class UsuarioDAO extends ConexionDB implements Crud {
             sql = "UPDATE usuario SET NombreUsuario =?,PasswordUsuario=?,EstadoUsuario=? WHERE IdUsuario= ?";
             puente = conexion.prepareStatement(sql);
             puente.setString(1, NombreUsuario);
-             puente.setString(2, PasswordUsuario);  
+            puente.setString(2, PasswordUsuario);
             puente.setString(3, EstadoUsuario);
             puente.setString(4, IdUsuario);
             puente.executeUpdate();
@@ -253,31 +251,26 @@ public class UsuarioDAO extends ConexionDB implements Crud {
 
     public UsuarioDAO() {
     }
-    
-    /**public void cambiarVigencia(UsuarioVO UsuVO) throws Exception{
-        try{
-      
-        sql = "update Usuario set EstadoUsuario = "
-                + (UsuVO.getEstadoUsuario()== true ? "1" : "0")
-                + "where IdUsuario =" + UsuVO.getIdUsuario();
-     puente = conexion.prepareStatement(sql);
-     mensajero = puente.executeQuery();
-                    }
- catch (SQLException e) {
-            Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, e);
-        } finally {
 
-            try {
-                this.cerrarConexion();
-
-            } catch (SQLException e) {
-                Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, e);
-
-            }
-
-        }
-
-        return UsuVO;*/
-
-    }
-
+    /**
+     * public void cambiarVigencia(UsuarioVO UsuVO) throws Exception{ try{
+     *
+     * sql = "update Usuario set EstadoUsuario = " + (UsuVO.getEstadoUsuario()==
+     * true ? "1" : "0") + "where IdUsuario =" + UsuVO.getIdUsuario(); puente =
+     * conexion.prepareStatement(sql); mensajero = puente.executeQuery(); }
+     * catch (SQLException e) {
+     * Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, e);
+     * } finally {
+     *
+     * try { this.cerrarConexion();
+     *
+     * } catch (SQLException e) {
+     * Logger.getLogger(UsuarioDAO.class.getName()).log(Level.SEVERE, null, e);
+     *
+     * }
+     *
+     * }
+     *
+     * return UsuVO;
+     */
+}

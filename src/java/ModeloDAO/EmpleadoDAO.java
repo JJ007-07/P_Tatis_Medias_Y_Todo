@@ -29,9 +29,9 @@ public class EmpleadoDAO extends ConexionDB implements Crud {
 
     private boolean operacion = false;
     private String sql;
-    private String IdEmpleado="",NombreEmpleado="",ApellidoEmpleado="",TipoDocEmpleado="",NumeroDocEmpleado="",TelefonoCelularEmpleado="",DireccionEmpleado="",CorreoEmpleado="",EstadoEmpleado="",IdUsuarioFK="";
-    
-      public EmpleadoDAO(EmpleadoVO empVO) {
+    private String IdEmpleado = "", NombreEmpleado = "", ApellidoEmpleado = "", TipoDocEmpleado = "", NumeroDocEmpleado = "", TelefonoCelularEmpleado = "", DireccionEmpleado = "", CorreoEmpleado = "", EstadoEmpleado = "", IdUsuarioFK = "";
+
+    public EmpleadoDAO(EmpleadoVO empVO) {
         super();
 
         //3. Conectarse 
@@ -40,52 +40,47 @@ public class EmpleadoDAO extends ConexionDB implements Crud {
 
             //Traer al DAO los datos del VO para hecer la operación.
             IdEmpleado = empVO.getIdEmpleado();
-        NombreEmpleado = empVO.getNombreEmpleado();
-        ApellidoEmpleado = empVO.getApellidoEmpleado();
-        TipoDocEmpleado = empVO.getTipoDocEmpleado();
-        NumeroDocEmpleado = empVO.getNumeroDocEmpleado();
-        TelefonoCelularEmpleado = empVO.getTelefonoCelularEmpleado();
-        DireccionEmpleado = empVO.getDirecionEmpleado();
-        CorreoEmpleado = empVO.getCorreoEmpleado();
-        EstadoEmpleado = empVO.getEstadoEmpleado();
-        IdUsuarioFK = empVO.getIdUsuarioFK(); 
+            NombreEmpleado = empVO.getNombreEmpleado();
+            ApellidoEmpleado = empVO.getApellidoEmpleado();
+            TipoDocEmpleado = empVO.getTipoDocEmpleado();
+            NumeroDocEmpleado = empVO.getNumeroDocEmpleado();
+            TelefonoCelularEmpleado = empVO.getTelefonoCelularEmpleado();
+            DireccionEmpleado = empVO.getDirecionEmpleado();
+            CorreoEmpleado = empVO.getCorreoEmpleado();
+            EstadoEmpleado = empVO.getEstadoEmpleado();
+            IdUsuarioFK = empVO.getIdUsuarioFK();
 
         } catch (Exception e) {
 
             Logger.getLogger(EmpleadoDAO.class.getName()).log(Level.SEVERE, null, e);
-        } 
+        }
 
     }
-      
-      
+
     @Override
     public boolean agregarRegistro() {
         try {
             sql = "INSERT INTO empleado(IdEmpleado,NombreEmpleado,ApellidoEmpleado,TipoDocEmpleado,NumeroDocEmpleado,TelefonoCelularEmpleado,DireccionEmpleado,CorreoEmpleado,EstadoEmpleado,IdUsuarioFK) VALUES (?,?,?,?,?,?,?,?,?,?)";
             puente = conexion.prepareCall(sql);
-<<<<<<< HEAD
-            puente.setString(1,IdEmpleado);
-            puente.setString(2,NombreEmpleado);
-            puente.setString(3,ApellidoEmpleado);
-            puente.setString(4,TipoDocEmpleado);
-            puente.setString(5,NumeroDocEmpleado);
-            puente.setString(6,TelefonoCelularEmpleado);
-            puente.setString(7,DireccionEmpleado);
-            puente.setString(8,CorreoEmpleado);
-            puente.setString(9,EstadoEmpleado);
-            puente.setString(10,IdUsuarioFK);
-            
-=======
-            puente.setString(1,NombreEmpleado);
-            puente.setString(2,ApellidoEmpleado);
-            puente.setString(3,TipoDocEmpleado);
-            puente.setString(4,NumeroDocEmpleado);
-            puente.setString(5,TelefonoCelularEmpleado);
-            puente.setString(6,DireccionEmpleado);
-            puente.setString(7,CorreoEmpleado);
-            puente.setString(8,EstadoEmpleado);
-            puente.setString(9,IdUsuarioFK);
->>>>>>> 4ef559569ef0ba8104b738277f2c23c5d715abce
+            puente.setString(1, IdEmpleado);
+            puente.setString(2, NombreEmpleado);
+            puente.setString(3, ApellidoEmpleado);
+            puente.setString(4, TipoDocEmpleado);
+            puente.setString(5, NumeroDocEmpleado);
+            puente.setString(6, TelefonoCelularEmpleado);
+            puente.setString(7, DireccionEmpleado);
+            puente.setString(8, CorreoEmpleado);
+            puente.setString(9, EstadoEmpleado);
+            puente.setString(10, IdUsuarioFK);
+            puente.setString(1, NombreEmpleado);
+            puente.setString(2, ApellidoEmpleado);
+            puente.setString(3, TipoDocEmpleado);
+            puente.setString(4, NumeroDocEmpleado);
+            puente.setString(5, TelefonoCelularEmpleado);
+            puente.setString(6, DireccionEmpleado);
+            puente.setString(7, CorreoEmpleado);
+            puente.setString(8, EstadoEmpleado);
+            puente.setString(9, IdUsuarioFK);
             puente.executeUpdate();
             operacion = true;
 
@@ -108,8 +103,8 @@ public class EmpleadoDAO extends ConexionDB implements Crud {
 
     @Override
     public boolean actualizarRegistro() {
-       try {
-            sql = "UPDATE empleado SET NombreEmpleado=?,ApellidoEmpleado=?,TelefonoCelularEmpleado=?,DireccionEmpleado=?,CorreoEmpleado=?,EstadoEmpleado=? WHERE IdEmpleado=?";            
+        try {
+            sql = "UPDATE empleado SET NombreEmpleado=?,ApellidoEmpleado=?,TelefonoCelularEmpleado=?,DireccionEmpleado=?,CorreoEmpleado=?,EstadoEmpleado=? WHERE IdEmpleado=?";
             puente = conexion.prepareCall(sql);
             puente.setString(1, NombreEmpleado);
             puente.setString(2, ApellidoEmpleado);
@@ -141,7 +136,7 @@ public class EmpleadoDAO extends ConexionDB implements Crud {
 
     @Override
     public boolean eliminarRegistro() {
-       try {
+        try {
             sql = "delete from Empleado where NumeroDocEmpleado=?";
             puente = conexion.prepareCall(sql);
             puente.setString(1, NumeroDocEmpleado);
@@ -175,7 +170,7 @@ public class EmpleadoDAO extends ConexionDB implements Crud {
             puente.setString(1, NumeroDocEmpleado);
             mensajero = puente.executeQuery();
             if (mensajero.next()) {
-                empVO = new EmpleadoVO(mensajero.getString(1), mensajero.getString(2), mensajero.getString(3), mensajero.getString(4), mensajero.getString(5),mensajero.getString(6), mensajero.getString(7), mensajero.getString(8), mensajero.getString(9),mensajero.getString(10));
+                empVO = new EmpleadoVO(mensajero.getString(1), mensajero.getString(2), mensajero.getString(3), mensajero.getString(4), mensajero.getString(5), mensajero.getString(6), mensajero.getString(7), mensajero.getString(8), mensajero.getString(9), mensajero.getString(10));
             }
 
         } catch (SQLException e) {
@@ -193,9 +188,7 @@ public class EmpleadoDAO extends ConexionDB implements Crud {
         return empVO;
     }
 
-    
-    
-       public ArrayList<EmpleadoVO> listar() {
+    public ArrayList<EmpleadoVO> listar() {
 
         ArrayList<EmpleadoVO> listaEmpleado = new ArrayList<>();
         try {
@@ -205,7 +198,7 @@ public class EmpleadoDAO extends ConexionDB implements Crud {
             mensajero = puente.executeQuery();
 
             while (mensajero.next()) {
-                EmpleadoVO empVO = new EmpleadoVO(mensajero.getString(1), mensajero.getString(2), mensajero.getString(3), mensajero.getString(4), mensajero.getString(5),mensajero.getString(6), mensajero.getString(7), mensajero.getString(8), mensajero.getString(9), mensajero.getString(10));
+                EmpleadoVO empVO = new EmpleadoVO(mensajero.getString(1), mensajero.getString(2), mensajero.getString(3), mensajero.getString(4), mensajero.getString(5), mensajero.getString(6), mensajero.getString(7), mensajero.getString(8), mensajero.getString(9), mensajero.getString(10));
 
                 listaEmpleado.add(empVO);
             }
@@ -217,9 +210,7 @@ public class EmpleadoDAO extends ConexionDB implements Crud {
         return listaEmpleado;
     }
 
-  
-
     public EmpleadoDAO() {
     }
-    
+
 }

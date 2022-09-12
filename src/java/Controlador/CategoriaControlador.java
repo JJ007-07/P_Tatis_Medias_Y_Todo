@@ -10,7 +10,7 @@ import ModeloVO.CategoriaVO;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet; 
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -33,23 +33,19 @@ public class CategoriaControlador extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
-        
-        String IdCategoria=request.getParameter("txtid");
-        String NombreCategoria=request.getParameter("txtNombre");
-        
-        int opcion= Integer.parseInt(request.getParameter("opcion"));
-        
+
+        String IdCategoria = request.getParameter("txtid");
+        String NombreCategoria = request.getParameter("txtNombre");
+
+        int opcion = Integer.parseInt(request.getParameter("opcion"));
+
         //2¿ Quién tien elos datos de forma segura ? VO
-        CategoriaVO catVO= new CategoriaVO(IdCategoria, NombreCategoria);
-        
+        CategoriaVO catVO = new CategoriaVO(IdCategoria, NombreCategoria);
+
         //3¿Quién hace las operaciones? DAO
-                
-         CategoriaDAO catDAO = new CategoriaDAO(catVO);
-         
-         
-         
-          //Administrar operaciones
+        CategoriaDAO catDAO = new CategoriaDAO(catVO);
+
+        //Administrar operaciones
         switch (opcion) {
 
             case 1: //Agregar Registro 
@@ -87,27 +83,17 @@ public class CategoriaControlador extends HttpServlet {
 
                 request.getRequestDispatcher("EliminarCategoria.jsp").forward(request, response);
                 break;
-     
-                case 4:
 
-<<<<<<< HEAD
-                CategoriaVO cat = catDAO.consultarCategoria(IdCategoria);
-                if (cat != null) {
-
-                    request.setAttribute("categoria consultada", cat);
-                    request.setAttribute("mensajeExito", "<center><h2>Categoría Consultada</center></h2>");
-=======
             case 4:
 
                 CategoriaVO cat = catDAO.consultarCategoria(IdCategoria);
                 if (cat != null) {
 
                     request.setAttribute("CategoriaConsultada", cat);
->>>>>>> 4ef559569ef0ba8104b738277f2c23c5d715abce
+                    request.setAttribute("mensajeExito", "<center><h2>Categoria consultada</center></h2>");
                     request.getRequestDispatcher("ActualizarCategoria.jsp").forward(request, response);
                 } else {
-
-                    request.setAttribute("mensajeError", "<center><h2>Categía No existe!</center></h2>");
+                    request.setAttribute("mensajeError", "<center><h2>Categoria No existe!</center></h2>");
                     request.getRequestDispatcher("ConsultarCategoria.jsp").forward(request, response);
 
                 }

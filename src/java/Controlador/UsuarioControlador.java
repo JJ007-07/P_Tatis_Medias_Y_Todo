@@ -42,7 +42,7 @@ public class UsuarioControlador extends HttpServlet {
         String NombreUsuario = request.getParameter("textUsuario");
         String PasswordUsuario = request.getParameter("textClave");
         String EstadoUsuario = request.getParameter("textEstado");
-        
+
         int opcion = Integer.parseInt(request.getParameter("opcion"));
 
         //2. ¿Quién tiene los datos de forma segura? VO
@@ -65,7 +65,7 @@ public class UsuarioControlador extends HttpServlet {
                 }
                 request.getRequestDispatcher("registrarUsuario.jsp").forward(request, response);
                 break;
-                
+
             case 2:  //Actualizar REgistro
                 if (usuDAO.actualizarRegistro()) {
 
@@ -87,22 +87,21 @@ public class UsuarioControlador extends HttpServlet {
                     request.setAttribute("mensajeExito", "<center><h2>Usuario consultado</center></h2>");
                     request.getRequestDispatcher("ActualizarUsuario.jsp").forward(request, response);
                 } else {
-
                     request.setAttribute("mensajeError", "<center><h2>El Usuario NO existe!</center></h2>");
                     request.getRequestDispatcher("ConsultarUsuario.jsp").forward(request, response);
 
                 }
                 break;
-                
-                case 4://Inicio de sesion
+
+            case 4://Inicio de sesion
                 if (usuDAO.iniciarSesion(NombreUsuario, PasswordUsuario)) {
-                    
-                    HttpSession sesion=request.getSession(true);
-                    usuVO= new UsuarioVO(IdUsuario, NombreUsuario, PasswordUsuario, EstadoUsuario);
+
+                    HttpSession sesion = request.getSession(true);
+                    usuVO = new UsuarioVO(IdUsuario, NombreUsuario, PasswordUsuario, EstadoUsuario);
                     sesion.setAttribute("datosUsuario", usuVO);
-                    
-                RolDAO2 rolD = new RolDAO2();
-                    String rol = rolD.seleccionarRol (NombreUsuario, PasswordUsuario);
+
+                    RolDAO2 rolD = new RolDAO2();
+                    String rol = rolD.seleccionarRol(NombreUsuario, PasswordUsuario);
                     sesion.setAttribute("rol", rol);
                     request.getRequestDispatcher("roles.jsp").forward(request, response);
 
@@ -112,9 +111,6 @@ public class UsuarioControlador extends HttpServlet {
                     request.getRequestDispatcher("Login.jsp").forward(request, response);
                 }
                 break;
-                
-                
-             
 
             case 5: //Eliminar Registro
                 if (usuDAO.eliminarRegistro()) {

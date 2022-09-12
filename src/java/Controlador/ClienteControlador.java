@@ -32,7 +32,7 @@ public class ClienteControlador extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-            
+
         String IdCliente = request.getParameter("TextId");
         String NombreCliente = request.getParameter("TextNombre");
         String ApellidoCliente = request.getParameter("TextApellido");
@@ -42,10 +42,10 @@ public class ClienteControlador extends HttpServlet {
         String DireccionCliente = request.getParameter("TextDir");
         String CorreoCliente = request.getParameter("TextCorreo");
         String EstadoCliente = request.getParameter("TextEstado");
-        int opcion = Integer.parseInt(request.getParameter("opcion"));    
-        
+        int opcion = Integer.parseInt(request.getParameter("opcion"));
+
         ClienteVO ClVO = new ClienteVO(IdCliente, NombreCliente, ApellidoCliente, TipoDocCliente, NumeroDocCliente, TelefonoCliente, DireccionCliente, CorreoCliente, EstadoCliente);
-        
+
         ClienteDAO ClDAO = new ClienteDAO(ClVO);
         switch (opcion) {
 
@@ -74,7 +74,7 @@ public class ClienteControlador extends HttpServlet {
 
             case 3:
 
-                ClienteVO cli =  ClDAO.consultarDocumento(NumeroDocCliente);
+                ClienteVO cli = ClDAO.consultarDocumento(NumeroDocCliente);
                 if (cli != null) {
 
                     request.setAttribute("clienteConsultado", cli);
@@ -88,8 +88,6 @@ public class ClienteControlador extends HttpServlet {
                 }
                 break;
 
-           
-
             case 4: //Eliminar Registro
                 if (ClDAO.eliminarRegistro()) {
                     request.setAttribute("mensajeExito", "El Cliente se elimino correctamente ");
@@ -101,9 +99,6 @@ public class ClienteControlador extends HttpServlet {
         }
 
     }
-
-
-
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

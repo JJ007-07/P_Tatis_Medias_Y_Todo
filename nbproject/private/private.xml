@@ -1,22 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-            <file>file:/C:/Users/User/Desktop/proyecto/Proyecto_2022/src/java/ModeloDAO/RolDAO2.java</file>
-            <file>file:/C:/Users/User/Desktop/proyecto/Proyecto_2022/web/Registroasig.jsp</file>
-            <file>file:/C:/Users/User/Desktop/proyecto/Proyecto_2022/web/ConsultarProducto.jsp</file>
-            <file>file:/C:/Users/User/Desktop/proyecto/Proyecto_2022/web/ModalProducto.jsp</file>
-            <file>file:/C:/Users/User/Desktop/proyecto/Proyecto_2022/web/Menu.jsp</file>
-            <file>file:/C:/Users/User/Desktop/Proyecto/Proyecto_2022/src/java/Controlador/UsuarioControlador.java</file>
-            <file>file:/C:/Users/User/Desktop/proyecto/Proyecto_2022/build/generated/src/org/apache/jsp/registrarUsuario_jsp.java</file>
-            <file>file:/C:/Users/User/Desktop/proyecto/Proyecto_2022/web/registrarUsuario.jsp</file>
-            <file>file:/C:/Users/User/Desktop/proyecto/Proyecto_2022/web/Login.jsp</file>
-=======
-            <file>file:/C:/Users/Alexis/Desktop/Repo/Proyecto_2022/web/EliminarCliente.jsp</file>
-            <file>file:/C:/Users/Alexis/Desktop/Repo/Proyecto_2022/web/registrarProducto.jsp</file>
-            <file>file:/C:/Users/Alexis/Desktop/Repo/Proyecto_2022/web/DatosPedido.jsp</file>
->>>>>>> 4ef559569ef0ba8104b738277f2c23c5d715abce
+            <file>file:/C:/Users/juanb/Desktop/Repositorio/Proyecto_2022/src/java/ModeloDAO/UsuarioDAO.java</file>
+            <file>file:/C:/Users/juanb/Desktop/Repositorio/Proyecto_2022/src/java/Controlador/UsuarioControlador.java</file>
+            <file>file:/C:/Users/juanb/Desktop/Repositorio/Proyecto_2022/web/ConsultarUsuario.jsp</file>
         </group>
     </open-files>
 </project-private>

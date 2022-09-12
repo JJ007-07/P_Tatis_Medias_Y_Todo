@@ -64,7 +64,6 @@ public class ClienteDAO extends ConexionDB implements Crud{
         try {
               sql = "INSERT INTO cliente(IdCliente,NombreCliente,ApellidoCliente,TipoDocCliente,NumeroDocCliente,TelefonoCliente,DireccionCliente,CorreoCliente,EstadoCliente) VALUES (?,?,?,?,?,?,?,?,?)";
             puente = conexion.prepareCall(sql);
-<<<<<<< HEAD
             puente.setString(1, IdCliente);
             puente.setString(2, NombreCliente);
             puente.setString(3, ApellidoCliente);
@@ -76,7 +75,6 @@ public class ClienteDAO extends ConexionDB implements Crud{
             puente.setString(9, EstadoCliente);
             
             puente.executeUpdate();
-=======
             puente.setString(1, NombreCliente);
             puente.setString(2, ApellidoCliente);
             puente.setString(3, TipoDocCliente);
@@ -86,7 +84,6 @@ public class ClienteDAO extends ConexionDB implements Crud{
             puente.setString(7, CorreoCliente);
             puente.setString(8, EstadoCliente);
               puente.executeUpdate();
->>>>>>> 4ef559569ef0ba8104b738277f2c23c5d715abce
             operacion = true;
         } catch (SQLException e) {
             Logger.getLogger(ClienteDAO.class.getName()).log(Level.SEVERE, null, e);

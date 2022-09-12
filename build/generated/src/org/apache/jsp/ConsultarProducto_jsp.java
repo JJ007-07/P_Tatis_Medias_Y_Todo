@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import ModeloVO.ProductoVO;
 import ModeloDAO.ProductoDAO;
 import java.sql.*;
+import ModeloVO.UsuarioVO;
 
 public final class ConsultarProducto_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -19,6 +20,11 @@ public final class ConsultarProducto_jsp extends org.apache.jasper.runtime.HttpJ
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
 
   private static java.util.List<String> _jspx_dependants;
+
+  static {
+    _jspx_dependants = new java.util.ArrayList<String>(1);
+    _jspx_dependants.add("/Sesiones.jsp");
+  }
 
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
 
@@ -59,6 +65,72 @@ public final class ConsultarProducto_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("\r\n");
       out.write("\r\n");
       out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("\r\n");
+      out.write("<!DOCTYPE html>\r\n");
+      out.write("\r\n");
+      out.write("<html>\r\n");
+      out.write("    <head>\r\n");
+      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
+      out.write("        <title>JSP Page</title>\r\n");
+      out.write("        <link href=\"https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap\" rel=\"stylesheet\"> \r\n");
+      out.write("        <link href=\"Estilos/Estilos3.css\" rel=\"stylesheet\" type=\"text/css\"/>\r\n");
+      out.write("        <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css\" integrity=\"sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\" />\r\n");
+      out.write("\r\n");
+      out.write("        <script src=\"js/nav.js\" type=\"text/javascript\"></script>\r\n");
+      out.write("        <link href=\"Estilos/boton.css\" rel=\"stylesheet\" type=\"text/css\"/>\r\n");
+      out.write("        <script src=\"https://kit.fontawesome.com/b99e675b6e.js\"></script>\r\n");
+      out.write("    </head>\r\n");
+      out.write("    \r\n");
+      out.write("    ");
+
+        response.setHeader("Pragma", "No-cache");
+        response.setHeader("Cache-control", "no-cache, no-store,must-revalidate");
+        response.setDateHeader("Expires", 0);
+       
+        
+        
+      out.write("\r\n");
+      out.write("    \r\n");
+      out.write("    \r\n");
+      out.write("     ");
+ 
+     HttpSession sesion =(HttpSession)request.getSession();
+     String Usuario="";
+    if (sesion.getAttribute("datosUsuario")==null) {
+         request.getRequestDispatcher("Login.jsp").forward(request, response);
+            
+        }else{
+        
+        UsuarioVO usuVO= (UsuarioVO)sesion.getAttribute("datosUsuario");
+        Usuario = usuVO.getNombreUsuario();
+        
+    
+    
+    }
+        
+        
+        
+        
+      out.write("\r\n");
+      out.write("        \r\n");
+      out.write("        \r\n");
+      out.write("    <body>\r\n");
+      out.write("        <div class=\"card-header\">\r\n");
+      out.write("            \r\n");
+      out.write("        <h1>Bienvenido: ");
+      out.print(Usuario);
+      out.write("</h1>\r\n");
+      out.write("        </div>\r\n");
+      out.write("      \r\n");
+      out.write("        </div><br><br>\r\n");
+      out.write("        \r\n");
+      out.write("        \r\n");
+      out.write("    </body>\r\n");
+      out.write("</html>\r\n");
+      out.write("   \r\n");
 
     Connection con;
     String url = "jdbc:mysql://localhost:3306/tatis_media_y_todo";
@@ -110,7 +182,7 @@ public final class ConsultarProducto_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("                                                <div class=\"modal-dialog\" role=\"document\">\r\n");
       out.write("                                                    <div class=\"modal-content\">\r\n");
       out.write("                                                        <div class=\"modal-header\">\r\n");
-      out.write("                                                            <h5 class=\"modal-title\" id=\"exampleModalLabel\">Modal title</h5>\r\n");
+      out.write("                                                            <h5 class=\"modal-title\" id=\"exampleModalLabel\">Información Disponible</h5>\r\n");
       out.write("                                                            <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\r\n");
       out.write("                                                                <span aria-hidden=\"true\">&times;</span>\r\n");
       out.write("                                                            </button>\r\n");
@@ -120,7 +192,7 @@ public final class ConsultarProducto_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("                                                                <table class=\"table table-bordered\"  id=\"tablaDatos\">\r\n");
       out.write("                                                                    <thead>\r\n");
       out.write("                                                                        <tr>\r\n");
-      out.write("                                                                            <th class=\"text-center\">CORREO ELECTRONICO</th>\r\n");
+      out.write("                                                                            <th class=\"text-center\">CODIGOS DE BARRAS</th>\r\n");
       out.write("                                                                        </tr>\r\n");
       out.write("                                                                    </thead>\r\n");
       out.write("                                                                    <tbody id=\"tbodys\">\r\n");
@@ -137,36 +209,15 @@ public final class ConsultarProducto_jsp extends org.apache.jasper.runtime.HttpJ
       out.print( rs.getString("CodigoDeBarrasProducto"));
       out.write("</td>\r\n");
       out.write("\r\n");
-<<<<<<< HEAD
       out.write("                                                                        </tr>\r\n");
       out.write("                                                                        ");
-=======
-      out.write("                        <td class=\"text-center\">\r\n");
-      out.write("                                \r\n");
-      out.write("                                <!-- <input type=\"hidden\" value=\"<//%= rs.getInt(\"IdPedido\")%>\" id=\"Editar\"/>\r\n");
-      out.write("                                <input type=\"submit\" class=\"btn btn-warning\" data-toggle=\"modal\" data-target=\"#myModal1\" value=\"Editar\"/>  -->\r\n");
-      out.write("                                <a href=\"ActuaizarProducto.jsp?IdProducto=");
-      out.print( rs.getInt("IdProducto"));
-      out.write("\" ><img src=\"IMG/Actualizar.png\" width=\"60px\" height=\"60px\"/></a>\r\n");
-      out.write("                                \r\n");
-      out.write("                                <a href=\".jsp?IdProducto=");
-      out.print( rs.getInt("IdProducto"));
-      out.write("\"><img src=\"IMG/Eliminar.png\" width=\"60px\" height=\"60px\"/>\r\n");
-      out.write("                                </a>\r\n");
-      out.write("                            </td>\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("                            </tr>\r\n");
-      out.write("                            ");
->>>>>>> 4ef559569ef0ba8104b738277f2c23c5d715abce
 }
       out.write("\r\n");
       out.write("                                                                </table>    \r\n");
       out.write("                                                            </div>  \r\n");
       out.write("                                                        </div>\r\n");
       out.write("                                                        <div class=\"modal-footer\">\r\n");
-      out.write("                                                            <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Close</button>\r\n");
-      out.write("                                                            <button type=\"button\" class=\"btn btn-primary\">Save changes</button>\r\n");
+      out.write("                                                            <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Cerrar</button>\r\n");
       out.write("                                                        </div>\r\n");
       out.write("                                                    </div>\r\n");
       out.write("                                                </div>\r\n");
