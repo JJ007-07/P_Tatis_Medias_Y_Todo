@@ -40,7 +40,7 @@
                                 <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Consultar Información De Los Empleados</h3>
                                 <form method="post" action="Empleado">
                                     <div class="form-outline mb-4">
-                                        <input max="100000" type="number" name="textNumDoc" class="form-control" required>
+                                        <input type="number" name="textNumDoc" class="form-control" required>
                                         <label class="form-label" for="form3Example1q">Número De Documento Del Empleado</label>
                                     </div>
                                     <div>   
@@ -91,9 +91,13 @@
                                                 </div>
                                             </div>
                                         </div>
+                                         <button type="submit" class="btn btn-primary btn-lg" style="margin-bottom: 4px;"><a href="DatosEmpleado.jsp" style="color: #FFFFFF; text-decoration: none;">Consulta general</a></button>
+
                                         <button onclick="return confirm('¿Deseas consultar este Empleado?')" class="btn btn-primary btn-lg">Consultar</button>
+                                        
                                         <input type="hidden" value="3" name="opcion">
                                         </form>
+                                                                
                                         <%if (request.getAttribute("mensajeError") != null) {%>
                                         ${MensajeError}
                                         <% } else {%>

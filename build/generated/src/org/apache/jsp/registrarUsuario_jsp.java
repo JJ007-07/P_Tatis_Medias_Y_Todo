@@ -48,6 +48,7 @@ public final class registrarUsuario_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("\r\n");
       out.write("\r\n");
       out.write("\r\n");
+      out.write("\r\n");
       out.write("<!DOCTYPE html>\r\n");
       out.write("<html lang=\"en\">\r\n");
       out.write("    <head>\r\n");
@@ -127,7 +128,7 @@ public final class registrarUsuario_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("\r\n");
       out.write("                  <div class=\"d-flex justify-content-center mx-4 mb-3 mb-lg-4\">\r\n");
       out.write("                      <input type=\"hidden\" value=\"1\" name=\"opcion\" >\r\n");
-      out.write("                    <button type=\"submit\" class=\"btn btn-primary btn-lg\">Registrar</button>\r\n");
+      out.write("                    <button type=\"submit\" class=\"btn btn-primary btn-lg\" onclick=\"return confirm('¿Estas seguro de  registrar el usuario?')\" >Registrar</button>\r\n");
       out.write("                  </div>\r\n");
       out.write("\r\n");
       out.write("                </form>\r\n");

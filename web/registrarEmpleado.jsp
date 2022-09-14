@@ -7,75 +7,99 @@
 <%@page import="ModeloVO.UsuarioVO"%>
 <%@page import="ModeloDAO.UsuarioDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@include file="Sesiones.jsp"%>
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Registrar Empleado</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+        <script src="js/validarE.js" type="text/javascript"></script>
     </head>
     <body>
-    <!--Bootsrap 4 CDN-->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    
-    <!--Fontawesome CDN-->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-
-	<!--Custom styles-->
-      
-      <link href="Estilos/estilos2.css" rel="stylesheet" type="text/css"/>
-      <script src="js/validarE.js" type="text/javascript"></script>
 </head>
   
 <center>
 <body>
+ <section class=    "h-100 h-custom" style="background-color: #999999;">
+  <div class="container py-5 h-100">
+  <div class="row d-flex justify-content-center align-items-center h-100">
+  <div class="col-lg-8 col-xl-6">
+  <div class="card rounded-3">
+  <img src="https://www.trecebits.com/wp-content/uploads/2020/09/Catalogos-digitales.jpg"
+  class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;"
+   alt="Sample photo">
+   <div class="card-body p-4 p-md-5">
+   <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Información de Registro</h3>
 
     <div class="contenedor">      
 
         <center>
-            <h1 class="titulo">Registrar Empleado</h1>
-            <form method="post" action="Empleado" onsubmit="return validarE(); ">
+            
+         <form class="px-md-2"method=" post" action="Empleado">
             <table>
                 
                 <tr>
-                   
-                <div class="campos">Nombre Empleado</div>
-                <input type="text" id="NombreEmpleado" name="textNombre"><br><br>
-                        
-                    <div class="campos"> Apellido Empleado </div>
-                    <input type="text"  id="ApellidoEmpleado" name="textApellido"><br><br>
-                  
-                     <div class="campos">  Tipo Documento</div>
-                     <select name="textTipo"  id="TipoDocEmpleado">
-                        <option>Seleccione una opción</option>
-                       <option>CC</option>
-                       <option>CE</option>
-                    </select> <br> <br>
+                <div class="form-outline mb-4">     
+                <input type="text" id="NombreEmpleado" name="textNombre" class="form-control"/>
+                <label class="form-label" for="form3Example1q">Nombre Empleado</label>
+                </div>
+                
+                <div class="form-outline mb-4">
+                    <input type="text" id="ApellidoEmpleado" name="textApellido" class="form-control"/>
+                <label class="form-label" for="form3Example1q">Apellido Empleado</label>
+                </div>
+                
+                <div>
+                <div class="form-group">
+                    <select class="form-control" id="TipoDocEmpleado"name="textTipo">
+               <option value="1" disabled>Seleccionar una opción disponible</option>
+                        <option value="2">Seleccione una opción</option>
+                        <option value="3">CC</option>
+                        <option value="4">CE</option>
+                    </select>         
+                    <label class="form-label" for="form3Examole1q">Tipo DoC</label>
+                </div>
+                     
+                    <div class="form-outline mb-4"> 
+                        <input type="number"id="NumeroDocEmpleado" name="textNumDoc" class="form-control"/>
+                    <label class="form-label" form="form3Example1q">Numero Documento</label>
+                    </div>
                     
-                      <div class="campos">  Numero Documento</div>
-                      <input type="number"  id="NumeroDocEmpleado" name="textNumDoc"><br><br>
-                  
-                     <div class="campos">  Telefono Empleado</div>
-                     <input type="number" id="TelefonoCelularEmpleado" name="textTelefono"><br><br>
+                    <div class="form-outline mb-4"> 
+                    <input type="number" id="TelefonoCelularEmpleado"name="textTelefono" class="form-control"/>
+                     <label class="form-label" form="form3Example1q">Telefono Empleado</label>
+                    </div>
                     
-                     <div class="campos"> Direccion Empleado</div>
-                     <input type="text" id="DireccionEmpleado" name="textDireccion"><br><br>
+                    <div class="form-outline mb-4"> 
+                     <input type="text" id="DireccionEmpleado"name="textDireccion" class="form-control"/>
+                     <label class="form-label" form="form3Example1q">Direccion Empleado</label>
+                    </div>
                     
-                      <div class="campos">  Correo Empleado</div>
-                      <input type="email" id="CorreoEmpleado" name="textCorreo"><br><br>
+                    <div class="form-outline mb-4"> 
+                        <input type="email" id="CorreoEmpleado" name="textCorreo" class="form-control"/>
+                      <label class="form-label" form="form3Example1q">Correo Empleado</label>
+                    </div>
                     
-                      <div class="campos">  Estado Empleado</div>
-                      <input type="text" id="EstadoEmpleado" name="textEstado"><br><br>
+                    <div class="form-outline mb-4"> 
+                        <input type="text" id="EstadoEmpleado"name="textEstado" class="form-control"/>
+                      <label class="form-label" form="form3Example1q">Estado Empleado</label>
+                    </div>
                     
-                      <select name="textUsuario" id="IdUsuarioFK">
-                    <option>Seleccione Usuario</option>
-                    <%
+                    <div class="form-group">
+                        <select class="form-control" id="IdUsuarioFK" name="textUsuario">
+               <option value="1" disabled>Seleccionar una opción disponible</option>
+                        <option value="2">Seleccione usuario</option>
+                        <%
                         UsuarioDAO usuDAO = new UsuarioDAO();
                         for(UsuarioVO usuVO: usuDAO.listar()){
                     %> 
                     <option value="<%=usuVO.getIdUsuario()%>"><%=usuVO.getNombreUsuario()%></option>
                    <%}%>
-                    </select><br><br>
+                    </select>         
+                    <label class="form-label" for="form3Examole1q">Seleccionar Usuario </label>
+                </div>
+                   
                 </tr>
                 
                  </div>
@@ -84,9 +108,10 @@
             </table><br>
            
       
-        <div class="form-group">	
-        <input type="hidden" value="1" name="opcion" class="btn float-right login_btn">
-        <button type="submit" class="btn float-right login_btn"onclick="return confirm('¿Estas seguro de  hacer este registro?')" > Registrarse</button>
+        
+             <input type="hidden" value="1" name="opcion">
+        <button type="submit" class="btn btn-success btn-lg mb-1"onclick="return confirm('¿Estas seguro de  hacer este registro?')" > Registrar Empleado</button>
+         <button type="submit" class="btn btn-primary btn-lg" style="margin-bottom: 4px;"><a href="ConsultarEmpleado.jsp" style="color: #FFFFFF; text-decoration: none;">Ver empleados registrados</a></button>
         </div>
         </form>
                    

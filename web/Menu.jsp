@@ -3,9 +3,10 @@
     Created on : 9/08/2022, 07:01:38 PM
     Author     : jtgt2
 --%>
+
 <%@page import="ModeloVO.UsuarioVO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@include file='Sesiones.jsp' %>   
+
 <html>
     <head>
         <meta charset="UTF-8">
@@ -53,7 +54,7 @@
 
 
                         <li>
-                            <a href="ConsultarEmpleado.jsp">
+                            <a href="registrarEmpleado.jsp">
                                 <span class="icon"><i class="fa-solid fa-users"></i></i></span>
 
 
@@ -61,43 +62,44 @@
                             </a>
                         </li>
                         <li>
-                            <a href="ConsultarCliente.jsp">
+                            <a href="registrarCliente.jsp">
                                 <span class="icon"><i class="fa fa-user"></i></span>
                                 <span class="text">Cliente</span>
                             </a>
                         </li>
                         <li>
-                            <a href="ConsultarProveedor.jsp">
+                            <a href="registrarProveedor.jsp">
                                 <span class="icon"><i class="fa-solid fa-truck-field"></i></i></span>
                                 <span class="text">Proveedor</span>
                             </a>
                         </li>
                         <li>
-                            <a href="ConsultarCategoria.jsp">
+                            <a href="RegistrarCategoria.jsp">
                                 <span class="icon"><i class="fa-solid fa-list"></i></i></span>
                                 <span class="text">Categoria</span>
                             </a>
                         </li>
                         <li>
-                            <a href="ConsultarVentas.jsp">
+                            <a href="RegistrarVenta.jsp">
                                 <span class="icon"><i class="fa-solid fa-receipt"></i></span>
                                 <span class="text">Ventas</span>
                             </a>
                         </li>
                         <li>
-                            <a href="ConsultarPedido.jsp">
+                            <a href="registrarPedido.jsp">
                                 <span class="icon"><i class="fa-solid fa-box"></i></span>
                                 <span class="text">Pedido</span>
                             </a>
                         </li>
                         <li>
-                            <a href="ConsultarProducto.jsp">
+                            <a href="registrarProducto.jsp">
                                 <span class="icon"><i class="fa-solid fa-bag-shopping"></i></span>
                                 <span class="text">Producto</span>
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            
+                            <a href="../src/java/Reportes/Ventas.jrxml">
                                 <span class="icon"><i class="fa-solid fa-file"></i></span>
                                 <span class="text">Reportes</span>
                             </a>

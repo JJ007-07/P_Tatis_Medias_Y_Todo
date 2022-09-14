@@ -92,7 +92,7 @@ public final class ConsultarEmpleado_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("                                <h3 class=\"mb-4 pb-2 pb-md-0 mb-md-5 px-md-2\">Consultar Información De Los Empleados</h3>\r\n");
       out.write("                                <form method=\"post\" action=\"Empleado\">\r\n");
       out.write("                                    <div class=\"form-outline mb-4\">\r\n");
-      out.write("                                        <input max=\"100000\" type=\"text\" name=\"textNumDoc\" class=\"form-control\" required>\r\n");
+      out.write("                                        <input max=\"100000\" type=\"number\" name=\"textNumDoc\" class=\"form-control\" required>\r\n");
       out.write("                                        <label class=\"form-label\" for=\"form3Example1q\">Número De Documento Del Empleado</label>\r\n");
       out.write("                                    </div>\r\n");
       out.write("                                    <div>   \r\n");

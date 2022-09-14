@@ -41,7 +41,7 @@
                                 <form method="post" action="Pedido">
                                     <div class="form-outline mb-4">
                                         <input max="100000" type="number" name="txtPedido" class="form-control" required>
-                                        <label class="form-label" for="form3Example1q">Id Del Producto</label>
+                                        <label class="form-label" for="form3Example1q">Id pedido</label>
                                     </div>
                                     <div>   
                                         <div class="form-outline mb-4">
@@ -92,7 +92,10 @@
                                             </div>
                                         </div>
                                         <button onclick="return confirm('¿Deseas consultar este pedido?')" class="btn btn-primary btn-lg">Consultar</button>
-                                        <input type="hidden" value="4" name="opcion">
+                                         <input type="hidden" value="4" name="opcion">
+                                         <button type="submit" class="btn btn-primary btn-lg" style="margin-bottom: 4px;"><a href="DatosPedido.jsp" style="color: #FFFFFF; text-decoration: none;">Ver Productos registrados</a></button>
+
+                                       
                                         </form>
                                         <%if (request.getAttribute("MensajeError") != null) {%>
                                         ${MensajeError}

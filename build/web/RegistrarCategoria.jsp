@@ -11,64 +11,62 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Login Page</title>
-        <!--Made with love by Mutiullah Samim -->
-
-        <!--Bootsrap 4 CDN-->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-        <!--Fontawesome CDN-->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-        <link href="Estilos/estilos2.css" rel="stylesheet" type="text/css"/>
+        <title>Registrar Categoria</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
         <script src="js/validarC.js" type="text/javascript"></script>
-       
     </head>
-
+<section class="h-100 h-custom" style="background-color: #999999;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-8 col-xl-6">
+        <div class="card rounded-3">
+          <img src="https://previews.123rf.com/images/vectorikart/vectorikart1606/vectorikart160600015/58198941-maniqu%C3%ADes-femeninos-muestran-la-ropa-interior-de-moda-estilo-de-ilustraci%C3%B3n-plana-diferentes-modelos.jpg"
+            class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;"
+            alt="Sample photo">
+            <div class="card-body p-4 p-md-5">
+                <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Información de Registrar Categoria</h3>
     <center>
         <body>
 
             <div class="contenedor">      
 
                 <center>
-                    <h1 class="titulo">Registrar Categorías productos</h1>
-                    <form method="post" action="Categoria" onsubmit="return validarC();">
+                    
+                    <form class="px-md-2" method="post" action="Categoria" onsubmit="return validarC();">
                         <table>
 
                             <tr>
-
-                            <div class="campos"> Nombre Categoría </div>
-
-                            <input type="text" id="NombreCategoria" name="txtNombre"><br><br>
-                            </select> <br> <br>
-
-                            </tr>
+                           <div class="form-outline mb-4">
+                            <input type="text" id="NombreCategoria" name="txtNombre" class="form-control"/>
+                            <label class="form-label" for="form3Example1q">Nombre categoría</label>
+                                </tr>
 
                             </div>
 
 
                         </table><br>
                         <div class="form-group">	
-                            <input type="hidden" value="1" name="opcion" class="btn float-right login_btn">
-                            <button type="submit" class="btn float-right login_btn" >Registrar Categoría</button>
+                            <input type="hidden" value="1" name="opcion" >
+                            <button type="submit" class="btn btn-success btn-lg mb-1" onclick="return confirm('¿Estas seguro de registrar esta categoría?')"  > Registrar Proveedor</button>
+                            <button type="submit" class="btn btn-primary btn-lg" style="margin-bottom: 4px;"><a href="ConsultarCategoria.jsp" style="color: #FFFFFF; text-decoration: none;">Ver categorias registradas</a></button>
+                            
 
 
-                            <button type="submit"  class="btn float-right login_btn"> <a href="ConsultarCategoria.jsp"> Ver Categorias Regitradas</a> </button>
+                            
                         </div>
                     </form>
                     <div class="tres"> 
 
                         <%
-                        if (request.getAttribute("MensajeError") !=null) {%>
+                                             if (request.getAttribute("MensajeError") != null) {%>
                         ${MensajeError}           
 
-                        <% }else {%>
+                        <%}else {%>
                         ${MensajeExito}  
                         <%}%>
                     </div>
                 </center>
             </div>
-             
-             
         </body>
     </center>
 </html>

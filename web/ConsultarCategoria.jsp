@@ -37,7 +37,7 @@
                         <div class="card rounded-3">
                             <img src="https://www.lucushost.com/blog/wp-content/uploads/2019/06/a%C3%B1adir-categor%C3%ADas-en-WordPress.png" class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;" alt="Sample photo">
                             <div class="card-body p-4 p-md-5">
-                                <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Consultar Información De Las Cateogiras</h3>
+                                <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Consultar Información De Las Categorias</h3>
                                 <form method="post" action="Categoria">
                                     <div class="form-outline mb-4">
                                         <input max="100000" type="number" name="txtid" class="form-control" required>
@@ -66,7 +66,7 @@
                                                                 <table class="table table-bordered"  id="tablaDatos">
                                                                     <thead>
                                                                         <tr>
-                                                                            <th class="text-center">ID DE LA CATEGORIA</th>
+                                                                            <th class="text-center">ID DE LA CATEGORÍA</th>
                                                                         </tr>
                                                                     </thead>
                                                                     <tbody id="tbodys">
@@ -91,6 +91,8 @@
                                                 </div>
                                             </div>
                                         </div>
+                                          <button type="submit" class="btn btn-primary btn-lg" style="margin-bottom: 4px;"><a href="DatosCategoria.jsp" style="color: #FFFFFF; text-decoration: none;">Ver categorías registrados</a></button>
+
                                         <button onclick="return confirm('¿Deseas consultar esta Categoria?')" class="btn btn-primary btn-lg">Consultar</button>
                                         <input type="hidden" value="4" name="opcion">
                                         </form>

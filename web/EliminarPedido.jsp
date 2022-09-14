@@ -19,7 +19,7 @@
             <table>
                 <tr>
                     <th>Pedido
-                        <input type="text" name="txtPedido" >
+                        <input type="text" name="txtNumeroFacturaPedido" >
                         <button onclick="return confirm('Estas seguro de Eliminar este Pedido')">Eliminar</button>
                     </th>
                 </tr>

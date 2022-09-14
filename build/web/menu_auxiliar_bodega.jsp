@@ -1,6 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@include file="Sesiones.jsp"%>
-<!DOCTYPE html>
+
 <!DOCTYPE html>
 <html lang="en">
  <head>
@@ -45,13 +44,13 @@
 
 
                         <li>
-                            <a href="ConsultarPedido.jsp">
+                            <a href="registrarPedido.jsp">
                                 <span class="icon"><i class="fa-solid fa-box"></i></span>
                                 <span class="text">Pedido</span>
                             </a>
                         </li>
                         <li>
-                            <a href="ConsultarProducto.jsp">
+                            <a href="registrarProducto.jsp">
                                 <span class="icon"><i class="fa-solid fa-bag-shopping"></i></span>
                                 <span class="text">Producto</span>
                             </a>

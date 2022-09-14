@@ -150,7 +150,10 @@ public final class ConsultarUsuario_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("                                                </div>\r\n");
       out.write("                                            </div>\r\n");
       out.write("                                        </div>\r\n");
+      out.write("                                                                 <button type=\"submit\" class=\"btn btn-primary btn-lg\" style=\"margin-bottom: 4px;\"><a href=\"DatosUsuario.jsp\" style=\"color: #FFFFFF; text-decoration: none;\">Ver usuarios registrados</a></button>\r\n");
+      out.write("\r\n");
       out.write("                                        <button onclick=\"return confirm('¿Deseas consultar este Usuario?')\" class=\"btn btn-primary btn-lg\">Consultar</button>\r\n");
+      out.write("                                        \r\n");
       out.write("                                        <input type=\"hidden\" value=\"3\" name=\"opcion\">\r\n");
       out.write("                                        </form>\r\n");
       out.write("                                        ");
@@ -159,6 +162,7 @@ if (request.getAttribute("mensajeError") != null) {
       out.write("                                        ");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${mensajeError}", java.lang.String.class, (PageContext)_jspx_page_context, null));
       out.write("\r\n");
+      out.write("                             \r\n");
       out.write("                                        ");
  } else {
       out.write("\r\n");

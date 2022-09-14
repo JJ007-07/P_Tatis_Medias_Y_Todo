@@ -4,7 +4,6 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 import ModeloVO.UsuarioVO;
-import ModeloVO.UsuarioVO;
 
 public final class Menu_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -12,11 +11,6 @@ public final class Menu_jsp extends org.apache.jasper.runtime.HttpJspBase
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
 
   private static java.util.List<String> _jspx_dependants;
-
-  static {
-    _jspx_dependants = new java.util.ArrayList<String>(1);
-    _jspx_dependants.add("/Sesiones.jsp");
-  }
 
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
 
@@ -53,70 +47,6 @@ public final class Menu_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("\r\n");
       out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("<!DOCTYPE html>\r\n");
-      out.write("\r\n");
-      out.write("<html>\r\n");
-      out.write("    <head>\r\n");
-      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
-      out.write("        <title>JSP Page</title>\r\n");
-      out.write("        <link href=\"https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap\" rel=\"stylesheet\"> \r\n");
-      out.write("        <link href=\"Estilos/Estilos3.css\" rel=\"stylesheet\" type=\"text/css\"/>\r\n");
-      out.write("        <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css\" integrity=\"sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==\" crossorigin=\"anonymous\" referrerpolicy=\"no-referrer\" />\r\n");
-      out.write("\r\n");
-      out.write("        <script src=\"js/nav.js\" type=\"text/javascript\"></script>\r\n");
-      out.write("        <link href=\"Estilos/boton.css\" rel=\"stylesheet\" type=\"text/css\"/>\r\n");
-      out.write("        <script src=\"https://kit.fontawesome.com/b99e675b6e.js\"></script>\r\n");
-      out.write("    </head>\r\n");
-      out.write("    \r\n");
-      out.write("    ");
-
-        response.setHeader("Pragma", "No-cache");
-        response.setHeader("Cache-control", "no-cache, no-store,must-revalidate");
-        response.setDateHeader("Expires", 0);
-       
-        
-        
-      out.write("\r\n");
-      out.write("    \r\n");
-      out.write("    \r\n");
-      out.write("     ");
- 
-     HttpSession sesion =(HttpSession)request.getSession();
-     String Usuario="";
-    if (sesion.getAttribute("datosUsuario")==null) {
-         request.getRequestDispatcher("Login.jsp").forward(request, response);
-            
-        }else{
-        
-        UsuarioVO usuVO= (UsuarioVO)sesion.getAttribute("datosUsuario");
-        Usuario = usuVO.getNombreUsuario();
-        
-    
-    
-    }
-        
-        
-        
-        
-      out.write("\r\n");
-      out.write("        \r\n");
-      out.write("        \r\n");
-      out.write("    <body>\r\n");
-      out.write("        <div class=\"card-header\">\r\n");
-      out.write("            \r\n");
-      out.write("        <h1>Bienvenido: ");
-      out.print(Usuario);
-      out.write("</h1>\r\n");
-      out.write("        </div>\r\n");
-      out.write("      \r\n");
-      out.write("        </div><br><br>\r\n");
-      out.write("        \r\n");
-      out.write("        \r\n");
-      out.write("    </body>\r\n");
-      out.write("</html>\r\n");
-      out.write("   \r\n");
       out.write("<html>\r\n");
       out.write("    <head>\r\n");
       out.write("        <meta charset=\"UTF-8\">\r\n");
@@ -165,7 +95,7 @@ public final class Menu_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\r\n");
       out.write("\r\n");
       out.write("                        <li>\r\n");
-      out.write("                            <a href=\"ConsultarEmpleado.jsp\">\r\n");
+      out.write("                            <a href=\"registrarEmpleado.jsp\">\r\n");
       out.write("                                <span class=\"icon\"><i class=\"fa-solid fa-users\"></i></i></span>\r\n");
       out.write("\r\n");
       out.write("\r\n");
@@ -173,45 +103,52 @@ public final class Menu_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                            </a>\r\n");
       out.write("                        </li>\r\n");
       out.write("                        <li>\r\n");
-      out.write("                            <a href=\"ConsultarCliente.jsp\">\r\n");
+      out.write("                            <a href=\"registrarCliente.jsp\">\r\n");
       out.write("                                <span class=\"icon\"><i class=\"fa fa-user\"></i></span>\r\n");
       out.write("                                <span class=\"text\">Cliente</span>\r\n");
       out.write("                            </a>\r\n");
       out.write("                        </li>\r\n");
       out.write("                        <li>\r\n");
-      out.write("                            <a href=\"ConsultarProveedor.jsp\">\r\n");
+      out.write("                            <a href=\"registrarProveedor.jsp\">\r\n");
       out.write("                                <span class=\"icon\"><i class=\"fa-solid fa-truck-field\"></i></i></span>\r\n");
       out.write("                                <span class=\"text\">Proveedor</span>\r\n");
       out.write("                            </a>\r\n");
       out.write("                        </li>\r\n");
       out.write("                        <li>\r\n");
-      out.write("                            <a href=\"ConsultarCategoria.jsp\">\r\n");
+      out.write("                            <a href=\"RegistrarCategoria.jsp\">\r\n");
       out.write("                                <span class=\"icon\"><i class=\"fa-solid fa-list\"></i></i></span>\r\n");
       out.write("                                <span class=\"text\">Categoria</span>\r\n");
       out.write("                            </a>\r\n");
       out.write("                        </li>\r\n");
       out.write("                        <li>\r\n");
-      out.write("                            <a href=\"ConsultarVentas.jsp\">\r\n");
+      out.write("                            <a href=\"RegistrarVenta.jsp\">\r\n");
       out.write("                                <span class=\"icon\"><i class=\"fa-solid fa-receipt\"></i></span>\r\n");
       out.write("                                <span class=\"text\">Ventas</span>\r\n");
       out.write("                            </a>\r\n");
       out.write("                        </li>\r\n");
       out.write("                        <li>\r\n");
-      out.write("                            <a href=\"ConsultarPedido.jsp\">\r\n");
+      out.write("                            <a href=\"registrarPedido.jsp\">\r\n");
       out.write("                                <span class=\"icon\"><i class=\"fa-solid fa-box\"></i></span>\r\n");
       out.write("                                <span class=\"text\">Pedido</span>\r\n");
       out.write("                            </a>\r\n");
       out.write("                        </li>\r\n");
       out.write("                        <li>\r\n");
-      out.write("                            <a href=\"ConsultarProducto.jsp\">\r\n");
+      out.write("                            <a href=\"registrarProducto.jsp\">\r\n");
       out.write("                                <span class=\"icon\"><i class=\"fa-solid fa-bag-shopping\"></i></span>\r\n");
       out.write("                                <span class=\"text\">Producto</span>\r\n");
       out.write("                            </a>\r\n");
       out.write("                        </li>\r\n");
       out.write("                        <li>\r\n");
-      out.write("                            <a href=\"#\">\r\n");
+      out.write("                            \r\n");
+      out.write("                            <a href=\"../src/java/Reportes/Ventas.jrxml\">\r\n");
       out.write("                                <span class=\"icon\"><i class=\"fa-solid fa-file\"></i></span>\r\n");
       out.write("                                <span class=\"text\">Reportes</span>\r\n");
+      out.write("                            </a>\r\n");
+      out.write("                        </li>\r\n");
+      out.write("                         <li>\r\n");
+      out.write("                            <a href=\"Registroasig.jsp\">\r\n");
+      out.write("                                <span class=\"icon\"><i class=\"fa-user-plus\"></i></span>\r\n");
+      out.write("                                <span class=\"text\">Asignar rol</span>\r\n");
       out.write("                            </a>\r\n");
       out.write("                        </li>\r\n");
       out.write("                        <li>\r\n");

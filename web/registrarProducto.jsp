@@ -3,6 +3,7 @@
 <%@page import="ModeloVO.CategoriaVO"%>
 <%@page import="ModeloDAO.CategoriaDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -87,13 +88,13 @@
             <br>
             <div>   
                 <input type="hidden" value="1" name="opcion">
-<<<<<<< HEAD
-                <button type="submit" class="btn btn-success btn-lg mb-1">Registrar Producto</button>
-                <button type="submit" class="btn btn-primary btn-lg" style="margin-bottom: 4px;"><a href="ConsultarProducto.jsp" style="color: #FFFFFF; text-decoration: none;">Ver Productos Registrados</a></button>
-=======
+
+                
                 <button type="submit" class="btn btn-success btn-lg mb-1" onclick="return confirm('¿Estas seguro de  registrar el producto?')" >Registrar Producto</button>
-                <button type="submit" class="btn btn-primary btn-lg" style="margin-bottom: 4px;"><a href="ConsultarProducto.jsp" style="color: #FFFFFF; text-decoration: none;">Ver Productos registrados</a></button>
->>>>>>> 4ef559569ef0ba8104b738277f2c23c5d715abce
+              <button type="submit" class="btn btn-primary btn-lg" style="margin-bottom: 4px;"><a href="ConsultarProducto.jsp" style="color: #FFFFFF; text-decoration: none;">Consultar Proveedor</a></button>
+
+
+
             </div>
 
         </form>

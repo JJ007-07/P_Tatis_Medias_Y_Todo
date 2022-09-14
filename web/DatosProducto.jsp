@@ -51,23 +51,6 @@
             <body>
             <center>
 
-                <div style="padding-left: 800px">    
-                    <div  class="container buscar">
-                        <center>
-                            <form class="form">
-                                <input type="text" name="txtbuscar">
-                                <input type="submit" value="Buscar">
-                            </form></center></center>
-                            <%
-                                String nombuscar = request.getParameter("txtbuscar");
-                                if (nombuscar != null) {
-                                    smt = con.obtenerConexion().createStatement();
-                                    rs = smt.executeQuery("select* from producto where CodigoDeBarrasProducto LIKE" + "'%" + nombuscar + "%' OR ReferenciaProducto  LIKE" + "'%" + nombuscar + "%' OR DescripcionProducto LIKE" + "'%" + nombuscar + "%' OR StockProducto  LIKE" + "'%" + nombuscar + "%' OR  PrecioUnitario LIKE" + "'%" + nombuscar + "%'");
-
-                                } else {
-                                    System.err.print("Error");
-                                }
-                            %>
 
 
 
@@ -104,7 +87,7 @@
                                         <input type="submit" class="btn btn-warning" data-toggle="modal" data-target="#myModal1" value="Editar"/>  -->
                                         <a href="ActualizarProducto.jsp?IdProducto=<%=rs.getInt("IdProducto")%>" ><img src="IMG/Actualizar.png" width="60px" height="60px"/></a>
 
-                                        <a href=".jsp?IdProducto=<%= rs.getInt("IdProducto")%>"><img src="IMG/Eliminar.png" width="60px" height="60px"/>
+                                        <a href="EliminarProducto.jsp?IdProducto=<%= rs.getInt("IdProducto")%>"><img src="IMG/Eliminar.png" width="60px" height="60px"/>
                                         </a>
                                     </td>
 
@@ -135,6 +118,13 @@
 
             </center>
             </body>
-            <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-            <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+                   <script src="js/jquery.js" type="text/javascript"></script>             
+        <script src="js/bootstrap.min.js" type="text/javascript"></script>   
+        <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script> 
+<script>
+    $(document).ready(function () {
+    $('#tablaDatos').DataTable();
+});
+</script>
             </html>

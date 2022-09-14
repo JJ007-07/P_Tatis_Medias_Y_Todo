@@ -91,6 +91,8 @@
                                                 </div>
                                             </div>
                                         </div>
+                                         <button type="submit" class="btn btn-primary btn-lg" style="margin-bottom: 4px;"><a href="DatosProveedor.jsp" style="color: #FFFFFF; text-decoration: none;">Ver proveedores registrados</a></button>
+                         
                                         <button onclick="return confirm('¿Deseas consultar esta Empresa Proveedora?')" class="btn btn-primary btn-lg">Consultar</button>
                                         <input type="hidden" value="4" name="opcion">
                                         </form>

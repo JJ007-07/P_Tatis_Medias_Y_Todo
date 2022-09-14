@@ -92,7 +92,7 @@ public final class ConsultarPedido_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("                                <h3 class=\"mb-4 pb-2 pb-md-0 mb-md-5 px-md-2\">Consultar Información De Los Pedidos</h3>\r\n");
       out.write("                                <form method=\"post\" action=\"Pedido\">\r\n");
       out.write("                                    <div class=\"form-outline mb-4\">\r\n");
-      out.write("                                        <input max=\"100000\" type=\"text\" name=\"txtPedido\" class=\"form-control\" required>\r\n");
+      out.write("                                        <input max=\"100000\" type=\"number\" name=\"txtPedido\" class=\"form-control\" required>\r\n");
       out.write("                                        <label class=\"form-label\" for=\"form3Example1q\">Id Del Producto</label>\r\n");
       out.write("                                    </div>\r\n");
       out.write("                                    <div>   \r\n");
@@ -150,6 +150,8 @@ public final class ConsultarPedido_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("                                            </div>\r\n");
       out.write("                                        </div>\r\n");
       out.write("                                        <button onclick=\"return confirm('¿Deseas consultar este pedido?')\" class=\"btn btn-primary btn-lg\">Consultar</button>\r\n");
+      out.write("                                         <button type=\"submit\" class=\"btn btn-primary btn-lg\" style=\"margin-bottom: 4px;\"><a href=\"DatosPedido.jsp\" style=\"color: #FFFFFF; text-decoration: none;\">Ver Productos registrados</a></button>\r\n");
+      out.write("\r\n");
       out.write("                                        <input type=\"hidden\" value=\"4\" name=\"opcion\">\r\n");
       out.write("                                        </form>\r\n");
       out.write("                                        ");

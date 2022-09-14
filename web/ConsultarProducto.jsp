@@ -95,6 +95,8 @@
                                             <!--<a aria-current="page" href="" data-toggle="modal" data-target="#editarPerfilModal">Ver Datos Generales</a>-->
                                         </div>
                                         <button class="btn btn-primary btn-lg">Consultar</button>
+ <button type="submit" class="btn btn-primary btn-lg" style="margin-bottom: 4px;"><a href="DatosProducto.jsp" style="color: #FFFFFF; text-decoration: none;">Ver Productos registrados</a></button>
+
                                         <input type="hidden" value="4" name="opcion">
                                         </form>
                                         <%if (request.getAttribute("MensajeError") != null) {%>

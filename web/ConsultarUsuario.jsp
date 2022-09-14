@@ -91,11 +91,15 @@
                                                 </div>
                                             </div>
                                         </div>
+                                                                 <button type="submit" class="btn btn-primary btn-lg" style="margin-bottom: 4px;"><a href="DatosUsuario.jsp" style="color: #FFFFFF; text-decoration: none;">Ver usuarios registrados</a></button>
+
                                         <button onclick="return confirm('¿Deseas consultar este Usuario?')" class="btn btn-primary btn-lg">Consultar</button>
+                                        
                                         <input type="hidden" value="3" name="opcion">
                                         </form>
                                         <%if (request.getAttribute("mensajeError") != null) {%>
                                         ${mensajeError}
+                             
                                         <% } else {%>
                                         ${mensajeExito}
                                         <%}%>        

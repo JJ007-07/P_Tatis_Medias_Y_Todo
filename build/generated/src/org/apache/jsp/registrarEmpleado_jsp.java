@@ -5,7 +5,6 @@ import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 import ModeloVO.UsuarioVO;
 import ModeloDAO.UsuarioDAO;
-import ModeloVO.UsuarioVO;
 
 public final class registrarEmpleado_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
@@ -13,11 +12,6 @@ public final class registrarEmpleado_jsp extends org.apache.jasper.runtime.HttpJ
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
 
   private static java.util.List<String> _jspx_dependants;
-
-  static {
-    _jspx_dependants = new java.util.ArrayList<String>(1);
-    _jspx_dependants.add("/Sesiones.jsp");
-  }
 
   private org.glassfish.jsp.api.ResourceInjector _jspx_resourceInjector;
 
@@ -55,138 +49,89 @@ public final class registrarEmpleado_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("\r\n");
       out.write("\r\n");
       out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("\r\n");
-      out.write("<!DOCTYPE html>\r\n");
-      out.write("\r\n");
-      out.write("<html>\r\n");
-      out.write("    <head>\r\n");
-      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
-      out.write("        <title>JSP Page</title>\r\n");
-      out.write("    </head>\r\n");
-      out.write("    \r\n");
-      out.write("    ");
-
-        response.setHeader("Pragma", "No-cache");
-        response.setHeader("Cache-control", "no-cache, no-store,must-revalidate");
-        response.setDateHeader("Expires", 0);
-       
-        
-        
-      out.write("\r\n");
-      out.write("    \r\n");
-      out.write("    \r\n");
-      out.write("     ");
- 
-     HttpSession sesion =(HttpSession)request.getSession();
-     String Usuario="";
-    if (sesion.getAttribute("datosUsuario")==null) {
-         request.getRequestDispatcher("Login.jsp").forward(request, response);
-            
-        }else{
-        
-        UsuarioVO usuVO= (UsuarioVO)sesion.getAttribute("datosUsuario");
-        Usuario = usuVO.getNombreUsuario();
-        
-    
-    
-    }
-        
-        
-        
-        
-      out.write("\r\n");
-      out.write("        \r\n");
-      out.write("        \r\n");
-      out.write("    <body>\r\n");
-      out.write("        <div class=\"card-header\">\r\n");
-      out.write("            \r\n");
-      out.write("        <h1>Bienvenido: ");
-      out.print(Usuario);
-      out.write("</h1>\r\n");
-      out.write("        <form method=\"post\" action=\"Sesiones\">\r\n");
-      out.write("            \r\n");
-      out.write("        </div>\r\n");
-      out.write("            \r\n");
-      out.write("            \r\n");
-      out.write("            \r\n");
-      out.write("           <div class=\"botones\">                       \r\n");
-      out.write("            <input type=\"submit\" value=\"Cerrar Sesion\">  \r\n");
-      out.write("            </div>\r\n");
-      out.write("            \r\n");
-      out.write("            \r\n");
-      out.write("            \r\n");
-      out.write("        </form>\r\n");
-      out.write("        \r\n");
-      out.write("        </div><br><br>\r\n");
-      out.write("        \r\n");
-      out.write("        \r\n");
-      out.write("    </body>\r\n");
-      out.write("</html>\r\n");
-      out.write("\r\n");
       out.write("<!DOCTYPE html>\r\n");
       out.write("<html>\r\n");
       out.write("    <head>\r\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
-      out.write("        <title>JSP Page</title>\r\n");
+      out.write("        <title>Registrar Empleado</title>\r\n");
+      out.write("        <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT\" crossorigin=\"anonymous\">\r\n");
+      out.write("        <script src=\"js/validarE.js\" type=\"text/javascript\"></script>\r\n");
       out.write("    </head>\r\n");
       out.write("    <body>\r\n");
-      out.write("    <!--Bootsrap 4 CDN-->\r\n");
-      out.write("\t<link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css\" integrity=\"sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO\" crossorigin=\"anonymous\">\r\n");
-      out.write("    \r\n");
-      out.write("    <!--Fontawesome CDN-->\r\n");
-      out.write("\t<link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.3.1/css/all.css\" integrity=\"sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU\" crossorigin=\"anonymous\">\r\n");
-      out.write("\r\n");
-      out.write("\t<!--Custom styles-->\r\n");
-      out.write("      \r\n");
-      out.write("      <link href=\"Estilos/estilos2.css\" rel=\"stylesheet\" type=\"text/css\"/>\r\n");
-      out.write("      <script src=\"js/validarE.js\" type=\"text/javascript\"></script>\r\n");
       out.write("</head>\r\n");
       out.write("  \r\n");
       out.write("<center>\r\n");
       out.write("<body>\r\n");
+      out.write(" <section class=    \"h-100 h-custom\" style=\"background-color: #999999;\">\r\n");
+      out.write("  <div class=\"container py-5 h-100\">\r\n");
+      out.write("  <div class=\"row d-flex justify-content-center align-items-center h-100\">\r\n");
+      out.write("  <div class=\"col-lg-8 col-xl-6\">\r\n");
+      out.write("  <div class=\"card rounded-3\">\r\n");
+      out.write("  <img src=\"https://www.trecebits.com/wp-content/uploads/2020/09/Catalogos-digitales.jpg\"\r\n");
+      out.write("  class=\"w-100\" style=\"border-top-left-radius: .3rem; border-top-right-radius: .3rem;\"\r\n");
+      out.write("   alt=\"Sample photo\">\r\n");
+      out.write("   <div class=\"card-body p-4 p-md-5\">\r\n");
+      out.write("   <h3 class=\"mb-4 pb-2 pb-md-0 mb-md-5 px-md-2\">Información de Registro</h3>\r\n");
       out.write("\r\n");
       out.write("    <div class=\"contenedor\">      \r\n");
       out.write("\r\n");
       out.write("        <center>\r\n");
-      out.write("            <h1 class=\"titulo\">Registrar Empleado</h1>\r\n");
-      out.write("            <form method=\"post\" action=\"Empleado\" onsubmit=\"return validarE(); \">\r\n");
+      out.write("            \r\n");
+      out.write("         <form class=\"px-md-2\"method=\" post\" action=\"Empleado\">\r\n");
       out.write("            <table>\r\n");
       out.write("                \r\n");
       out.write("                <tr>\r\n");
-      out.write("                   \r\n");
-      out.write("                <div class=\"campos\">Nombre Empleado</div>\r\n");
-      out.write("                <input type=\"text\" id=\"NombreEmpleado\" name=\"textNombre\"><br><br>\r\n");
-      out.write("                        \r\n");
-      out.write("                    <div class=\"campos\"> Apellido Empleado </div>\r\n");
-      out.write("                    <input type=\"text\"  id=\"ApellidoEmpleado\" name=\"textApellido\"><br><br>\r\n");
-      out.write("                  \r\n");
-      out.write("                     <div class=\"campos\">  Tipo Documento</div>\r\n");
-      out.write("                     <select name=\"textTipo\"  id=\"TipoDocEmpleado\">\r\n");
-      out.write("                        <option>Seleccione una opción</option>\r\n");
-      out.write("                       <option>CC</option>\r\n");
-      out.write("                       <option>CE</option>\r\n");
-      out.write("                    </select> <br> <br>\r\n");
+      out.write("                <div class=\"form-outline mb-4\">     \r\n");
+      out.write("                <input type=\"text\" id=\"NombreEmpleado\" name=\"textNombre\" class=\"form-control\"/>\r\n");
+      out.write("                <label class=\"form-label\" for=\"form3Example1q\">Nombre Empleado</label>\r\n");
+      out.write("                </div>\r\n");
+      out.write("                \r\n");
+      out.write("                <div class=\"form-outline mb-4\">\r\n");
+      out.write("                    <input type=\"text\" id=\"ApellidoEmpleado\" name=\"textApellido\" class=\"form-control\"/>\r\n");
+      out.write("                <label class=\"form-label\" for=\"form3Example1q\">Apellido Empleado</label>\r\n");
+      out.write("                </div>\r\n");
+      out.write("                \r\n");
+      out.write("                <div>\r\n");
+      out.write("                <div class=\"form-group\">\r\n");
+      out.write("                    <select class=\"form-control\" id=\"TipoDocEmpleado\"name=\"textTipo\">\r\n");
+      out.write("               <option value=\"1\" disabled>Seleccionar una opción disponible</option>\r\n");
+      out.write("                        <option value=\"2\">Seleccione una opción</option>\r\n");
+      out.write("                        <option value=\"3\">CC</option>\r\n");
+      out.write("                        <option value=\"4\">CE</option>\r\n");
+      out.write("                    </select>         \r\n");
+      out.write("                    <label class=\"form-label\" for=\"form3Examole1q\">Tipo DoC</label>\r\n");
+      out.write("                </div>\r\n");
+      out.write("                     \r\n");
+      out.write("                    <div class=\"form-outline mb-4\"> \r\n");
+      out.write("                        <input type=\"number\"id=\"NumeroDocEmpleado\" name=\"textNumDoc\" class=\"form-control\"/>\r\n");
+      out.write("                    <label class=\"form-label\" form=\"form3Example1q\">Numero Documento</label>\r\n");
+      out.write("                    </div>\r\n");
       out.write("                    \r\n");
-      out.write("                      <div class=\"campos\">  Numero Documento</div>\r\n");
-      out.write("                      <input type=\"number\"  id=\"NumeroDocEmpleado\" name=\"textNumDoc\"><br><br>\r\n");
-      out.write("                  \r\n");
-      out.write("                     <div class=\"campos\">  Telefono Empleado</div>\r\n");
-      out.write("                     <input type=\"number\" id=\"TelefonoCelularEmpleado\" name=\"textTelefono\"><br><br>\r\n");
+      out.write("                    <div class=\"form-outline mb-4\"> \r\n");
+      out.write("                    <input type=\"number\" id=\"TelefonoCelularEmpleado\"name=\"textTelefono\" class=\"form-control\"/>\r\n");
+      out.write("                     <label class=\"form-label\" form=\"form3Example1q\">Telefono Empleado</label>\r\n");
+      out.write("                    </div>\r\n");
       out.write("                    \r\n");
-      out.write("                     <div class=\"campos\"> Direccion Empleado</div>\r\n");
-      out.write("                     <input type=\"text\" id=\"DireccionEmpleado\" name=\"textDireccion\"><br><br>\r\n");
+      out.write("                    <div class=\"form-outline mb-4\"> \r\n");
+      out.write("                     <input type=\"text\" id=\"DireccionEmpleado\"name=\"textDireccion\" class=\"form-control\"/>\r\n");
+      out.write("                     <label class=\"form-label\" form=\"form3Example1q\">Direccion Empleado</label>\r\n");
+      out.write("                    </div>\r\n");
       out.write("                    \r\n");
-      out.write("                      <div class=\"campos\">  Correo Empleado</div>\r\n");
-      out.write("                      <input type=\"email\" id=\"CorreoEmpleado\" name=\"textCorreo\"><br><br>\r\n");
+      out.write("                    <div class=\"form-outline mb-4\"> \r\n");
+      out.write("                        <input type=\"email\" id=\"CorreoEmpleado\" name=\"textCorreo\" class=\"form-control\"/>\r\n");
+      out.write("                      <label class=\"form-label\" form=\"form3Example1q\">Correo Empleado</label>\r\n");
+      out.write("                    </div>\r\n");
       out.write("                    \r\n");
-      out.write("                      <div class=\"campos\">  Estado Empleado</div>\r\n");
-      out.write("                      <input type=\"text\" id=\"EstadoEmpleado\" name=\"textEstado\"><br><br>\r\n");
+      out.write("                    <div class=\"form-outline mb-4\"> \r\n");
+      out.write("                        <input type=\"text\" id=\"EstadoEmpleado\"name=\"textEstado\" class=\"form-control\"/>\r\n");
+      out.write("                      <label class=\"form-label\" form=\"form3Example1q\">Estado Empleado</label>\r\n");
+      out.write("                    </div>\r\n");
       out.write("                    \r\n");
-      out.write("                      <select name=\"textUsuario\" id=\"IdUsuarioFK\">\r\n");
-      out.write("                    <option>Seleccione Usuario</option>\r\n");
-      out.write("                    ");
+      out.write("                    <div class=\"form-group\">\r\n");
+      out.write("                        <select class=\"form-control\" id=\"IdUsuarioFK\" name=\"textUsuario\">\r\n");
+      out.write("               <option value=\"1\" disabled>Seleccionar una opción disponible</option>\r\n");
+      out.write("                        <option value=\"2\">Seleccione usuario</option>\r\n");
+      out.write("                        ");
 
                         UsuarioDAO usuDAO = new UsuarioDAO();
                         for(UsuarioVO usuVO: usuDAO.listar()){
@@ -201,7 +146,10 @@ public final class registrarEmpleado_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("                   ");
 }
       out.write("\r\n");
-      out.write("                    </select><br><br>\r\n");
+      out.write("                    </select>         \r\n");
+      out.write("                    <label class=\"form-label\" for=\"form3Examole1q\">Seleccionar Usuario </label>\r\n");
+      out.write("                </div>\r\n");
+      out.write("                   \r\n");
       out.write("                </tr>\r\n");
       out.write("                \r\n");
       out.write("                 </div>\r\n");
@@ -210,9 +158,10 @@ public final class registrarEmpleado_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("            </table><br>\r\n");
       out.write("           \r\n");
       out.write("      \r\n");
-      out.write("        <div class=\"form-group\">\t\r\n");
-      out.write("        <input type=\"hidden\" value=\"1\" name=\"opcion\" class=\"btn float-right login_btn\">\r\n");
-      out.write("        <button type=\"submit\" class=\"btn float-right login_btn\" > Registrarse</button>\r\n");
+      out.write("        \r\n");
+      out.write("             <input type=\"hidden\" value=\"1\" name=\"opcion\">\r\n");
+      out.write("        <button type=\"submit\" class=\"btn btn-success btn-lg mb-1\"onclick=\"return confirm('¿Estas seguro de  hacer este registro?')\" > Registrar Empleado</button>\r\n");
+      out.write("         <button type=\"submit\" class=\"btn btn-primary btn-lg\" style=\"margin-bottom: 4px;\"><a href=\"ConsultarEmpleado.jsp\" style=\"color: #FFFFFF; text-decoration: none;\">Ver empleados registrados</a></button>\r\n");
       out.write("        </div>\r\n");
       out.write("        </form>\r\n");
       out.write("                   \r\n");

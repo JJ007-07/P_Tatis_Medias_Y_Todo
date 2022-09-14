@@ -149,6 +149,8 @@ public final class ConsultarProveedor_jsp extends org.apache.jasper.runtime.Http
       out.write("                                                </div>\r\n");
       out.write("                                            </div>\r\n");
       out.write("                                        </div>\r\n");
+      out.write("                                         <button type=\"submit\" class=\"btn btn-primary btn-lg\" style=\"margin-bottom: 4px;\"><a href=\"DatosProveedor.jsp\" style=\"color: #FFFFFF; text-decoration: none;\">Ver proveedores registrados</a></button>\r\n");
+      out.write("                         \r\n");
       out.write("                                        <button onclick=\"return confirm('¿Deseas consultar esta Empresa Proveedora?')\" class=\"btn btn-primary btn-lg\">Consultar</button>\r\n");
       out.write("                                        <input type=\"hidden\" value=\"4\" name=\"opcion\">\r\n");
       out.write("                                        </form>\r\n");

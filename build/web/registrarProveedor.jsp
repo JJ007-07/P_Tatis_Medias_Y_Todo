@@ -5,94 +5,91 @@
 --%>
 
 <%@page import="ModeloVO.EmpresaProveedoraVO"%>
-<%@page import="ModeloDAO.EmpresaProveedoraDAO"%>z
+<%@page import="ModeloDAO.EmpresaProveedoraDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <html>
 <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Login Page</title>
-   <!--Made with love by Mutiullah Samim -->
-   
-	<!--Bootsrap 4 CDN-->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    
-    <!--Fontawesome CDN-->
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-
-	<!--Custom styles-->
-      
-      <link href="Estilos/estilos2.css" rel="stylesheet" type="text/css"/>
-      <script src="js/validarPR.js" type="text/javascript"></script>
+	<title>Proveedor</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+       <script src="js/validarPR.js" type="text/javascript"></script>
 </head>
   
 <center>
 <body>
+    
+     <section class="h-100 h-custom" style="background-color: #999999;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-8 col-xl-6">
+        <div class="card rounded-3">
+            <img src="https://www.emagister.com/blog/wp-content/uploads/2020/01/proveedor-empresa-kraken.jpg "
+            class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;"
+            alt="Sample photo">
+            <div class="card-body p-4 p-md-5">
+                <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Información de Registro Proveedor</h3>
 
     <div class="contenedor">      
 
         <center>
-            <h1 class="titulo">Registrar Empresas Proveedoras</h1>
-            <form method="post" action="EmpresaProveedora" onsubmit="return validarPR();">
+           
+            <form class="px-md-2" method="post" action="EmpresaProveedora" onsubmit="return validarPR();">
             <table>
                 
                 <tr>
-                   
-                <div class="campos">Nit Empresa</div>
-                <input type="number"  id="NitEmpresaProveedora" name="txtNit"><br><br>
-                        
-                    <div class="campos"> Razon social Empresa </div>
-                    
-                    <input type="text" id="RazonSocialEmpresaProveedora" name="txtRazon"><br><br>
-                    
-                    <div class="campos">Nombre Comercial Empresa</div>
-                    
-                    <input type="text" id="NombreComercialEmpresaProveedora" name="txtNombreC"><br><br>
-                    
-                    <div class="campos">Direccion De empresa</div>
-                    
-                    <input type="text" id="DireccionEmpresaProveedora" name="txtDireccion"><br><br>
-                    
-                    
-                      <div class="campos">Telefono Empresa</div>
-                      <input type="number" id="TelefonoEmpresaProveedora" name="txtTelefono"><br><br>
-                   
-                <div class="campos">Numero de pago</div>
-                <input type="text" id="Numeropago" name="txtNumero"><br><br>
+                <div class="form-outline mb-4"> 
+                <input type="number"  id="NitEmpresaProveedora" name="txtNit" class="form-control"/>
+                <label class="form-label" for="form3Example1q">Nit Empresa</label>
+                </div>        
                 
-                <div class="campos"> Estado del Provedor</div>
-                <select name="txtEstado" id="EstadoEmpresaProveedora">
-                        <option>Seleccione una opción</option>
-                       <option>Activo</option>
-                       <option>Inactivo</option>
-                    </select> <br> <br>
-                   
-
+                <div class="form-outline mb-4">
+                    <input type="text" id="RazonSocialEmpresaProveedora" name="txtRazon" class="form-control"/>
+                     <label class="form-label" for="form3Example1q">Razon social Empresa</label>
+                </div>
                 
-                    </select> <br> <br>
-
-                   
-
-                    
-                    
+                <div class="form-outline mb-4">
+                    <input type="text" id="NombreComercialEmpresaProveedora" name="txtNombreC" class="form-control"/>
+                    <label class="form-label" for="form3Example1q">Nombre Comercial</label>
+                </div>
+                
+                <div class="form-outline mb-4">
+                    <input type="text" id="DireccionEmpresaProveedora" name="txtDireccion" class="form-control"/>
+                    <label class="form-label" for="form3Example1q">Direccion De empresa</label>
+                </div>
+               
+                <div class="form-outline mb-4">
+                    <input type="number" id="TelefonoEmpresaProveedora" name="txtTelefono" class="form-control">
+                    <label class="form-label" for="form3Example1q">Telefono empresa</label>
+                </div>
+                
+                <div class="form-outline mb-4">
+                <input type="text" id="Numeropago" name="txtNumero" class="form-control">
+                <label class="form-label" for="form3Example1q">Numero de pago</label>
+                </div>
+                
+                <div class="form-group">
+               <select class="form-control" name="txtEstado" id="EstadoEmpresaProveedora">
+                        <option value="1" disabled>Seleccionar una opción disponible</option>
+                        <option value="2">Activo</option>
+                        <option value="3">Inactivo</option>
+                    </select> 
+                    <label class="form-label" for="form3Example1q">Estado del Proveedor</label>
+                </div>
+                <br>
                 </tr>
-                
-                 </div>
-                    
-                
-            </table><br>
-                                         <div class="form-group">	
-                                         <input type="hidden" value="1" name="opcion" class="btn float-right login_btn">
-                                         <button type="submit" class="btn float-right login_btn" onclick="return confirm('¿Estas seguro de registrar este proveedor?')"  > Registrar Producto</button>
-            
+                  </table><br>
+                  <div>
+                                         <input type="hidden" value="1" name="opcion">
+                                         <button type="submit" class="btn btn-success btn-lg mb-1" onclick="return confirm('¿Estas seguro de registrar este proveedor?')"  > Registrar Proveedor</button>
+                                         <button type="submit" class="btn btn-primary btn-lg" style="margin-bottom: 4px;"><a href="ConsultarProveedor.jsp" style="color: #FFFFFF; text-decoration: none;">Ver proveedores registrados</a></button>
                                          
-                                         <button type="submit"  class="btn float-right login_btn"> <a href="ConsultarProveedor.jsp"> Ver Empresas registrados </a> </button>
-                                         <button type="submit"  class="btn float-right login_btn"> <a href="Menu.jsp"> Volver al menú </a> </button>
+                                        
                                         
                                         </div>
         </form>
-                    <div class="tres"> 
+                    
                          
                                          <% 
                                          if  (request.getAttribute("MensajeError") !=null) {%>
@@ -107,7 +104,7 @@
         </center>
       
         </div>
-      
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
     </body>
     </center>
 </html>

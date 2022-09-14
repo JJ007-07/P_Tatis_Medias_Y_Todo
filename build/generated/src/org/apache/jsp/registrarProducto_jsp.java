@@ -50,6 +50,7 @@ public final class registrarProducto_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("\r\n");
       out.write("\r\n");
       out.write("\r\n");
+      out.write("\r\n");
       out.write("<!DOCTYPE html>\r\n");
       out.write("<html>\r\n");
       out.write("    <head>\r\n");
@@ -152,13 +153,13 @@ public final class registrarProducto_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("            <br>\r\n");
       out.write("            <div>   \r\n");
       out.write("                <input type=\"hidden\" value=\"1\" name=\"opcion\">\r\n");
-      out.write("<<<<<<< HEAD\r\n");
-      out.write("                <button type=\"submit\" class=\"btn btn-success btn-lg mb-1\">Registrar Producto</button>\r\n");
-      out.write("                <button type=\"submit\" class=\"btn btn-primary btn-lg\" style=\"margin-bottom: 4px;\"><a href=\"ConsultarProducto.jsp\" style=\"color: #FFFFFF; text-decoration: none;\">Ver Productos Registrados</a></button>\r\n");
-      out.write("=======\r\n");
+      out.write("\r\n");
+      out.write("                \r\n");
       out.write("                <button type=\"submit\" class=\"btn btn-success btn-lg mb-1\" onclick=\"return confirm('¿Estas seguro de  registrar el producto?')\" >Registrar Producto</button>\r\n");
-      out.write("                <button type=\"submit\" class=\"btn btn-primary btn-lg\" style=\"margin-bottom: 4px;\"><a href=\"ConsultarProducto.jsp\" style=\"color: #FFFFFF; text-decoration: none;\">Ver Productos registrados</a></button>\r\n");
-      out.write(">>>>>>> 4ef559569ef0ba8104b738277f2c23c5d715abce\r\n");
+      out.write("                <button type=\"submit\" class=\"btn btn-primary btn-lg\" style=\"margin-bottom: 4px;\"><a href=\"DatosProducto.jsp\" style=\"color: #FFFFFF; text-decoration: none;\">Ver Productos registrados</a></button>\r\n");
+      out.write("            \r\n");
+      out.write("\r\n");
+      out.write("\r\n");
       out.write("            </div>\r\n");
       out.write("\r\n");
       out.write("        </form>\r\n");

@@ -1,5 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@include file="Sesiones.jsp"%>
+
 <!DOCTYPE html>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,20 +45,20 @@
 
 
                         <li>
-                            <a href="ConsultarCliente.jsp">
+                            <a href="registrarCliente.jsp">
                                 <span class="icon"><i class="fa fa-user"></i></span>
                                 <span class="text">Cliente</span>
                             </a>
                         </li>
                        
                         <li>
-                            <a href="ConsultarVentas.jsp">
+                            <a href="RegistrarVenta.jsp">
                                 <span class="icon"><i class="fa-solid fa-receipt"></i></span>
                                 <span class="text">Ventas</span>
                             </a>
                         </li>
                         <li>
-                            <a href="ConsultarPedido.jsp">
+                            <a href="registrarPedido.jsp">
                                 <span class="icon"><i class="fa-solid fa-box"></i></span>
                                 <span class="text">Pedido</span>
                             </a>
