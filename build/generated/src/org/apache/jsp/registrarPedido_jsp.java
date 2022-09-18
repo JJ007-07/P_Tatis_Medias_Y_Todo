@@ -72,7 +72,7 @@ public final class registrarPedido_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("            <div class=\"card-body p-4 p-md-5\">\r\n");
       out.write("                <h3 class=\"mb-4 pb-2 pb-md-0 mb-md-5 px-md-2\">Información de Registro Pedidos</h3>\r\n");
       out.write("\r\n");
-      out.write("        <form class=\"px-md-2\" method=\"post\" action=\"Pedido\" onsubmit=\"return validar();\">\r\n");
+      out.write("        <form class=\"px-md-2\" method=\"post\" id=\"Formulario\" action=\"Pedido\" onsubmit=\"return validar();\">\r\n");
       out.write("\r\n");
       out.write("            <div class=\"form-outline mb-4\">\r\n");
       out.write("                <input class=\"form-control\"  type=\"text\"  id=\"NumeroFacturaPedido\" name=\"txtNumeroFacturaPedido\" >\r\n");

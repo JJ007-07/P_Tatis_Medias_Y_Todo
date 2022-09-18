@@ -42,14 +42,14 @@ FROM
 				</textElement>
 				<text><![CDATA[Local Comercial Tatis Medias & Todo]]></text>
 			</staticText>
-			<image>
-				<reportElement x="26" y="0" width="90" height="79" uuid="d62c367b-aa12-4afc-8ff0-ddb1e177cb4e"/>
-				<imageExpression><![CDATA["C:\\Users\\Alexis\\Desktop\\Repo\\Proyecto_2022\\web\\IMG\\Logo.png"]]></imageExpression>
-			</image>
 			<textField pattern="EEEEE dd MMMMM yyyy">
 				<reportElement x="439" y="0" width="115" height="20" uuid="775d7709-fff9-489c-8f17-b58c4945c34b"/>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
+			<image>
+				<reportElement x="18" y="0" width="71" height="64" uuid="d0c03e46-3221-4ed4-b2bc-c10c1dc23c17"/>
+				<imageExpression><![CDATA["C:\\Users\\User\\Desktop\\Pro\\P_Tatis_Medias_Y_Todo\\web\\IMG\\Logo.png"]]></imageExpression>
+			</image>
 		</band>
 	</title>
 	<pageHeader>

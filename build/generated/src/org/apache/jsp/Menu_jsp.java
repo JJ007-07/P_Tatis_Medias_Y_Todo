@@ -140,7 +140,8 @@ public final class Menu_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                        </li>\r\n");
       out.write("                        <li>\r\n");
       out.write("                            \r\n");
-      out.write("                            <a href=\"../src/java/Reportes/Ventas.jrxml\">\r\n");
+      out.write("                           \r\n");
+      out.write("                                <a href=\"RepoVenta.jsp\">\r\n");
       out.write("                                <span class=\"icon\"><i class=\"fa-solid fa-file\"></i></span>\r\n");
       out.write("                                <span class=\"text\">Reportes</span>\r\n");
       out.write("                            </a>\r\n");

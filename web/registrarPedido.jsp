@@ -31,7 +31,7 @@
             <div class="card-body p-4 p-md-5">
                 <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Información de Registro Pedidos</h3>
 
-        <form class="px-md-2" method="post" action="Pedido" onsubmit="return validar();">
+        <form class="px-md-2" method="post" id="Formulario" action="Pedido" onsubmit="return validar();">
 
             <div class="form-outline mb-4">
                 <input class="form-control"  type="text"  id="NumeroFacturaPedido" name="txtNumeroFacturaPedido" >
