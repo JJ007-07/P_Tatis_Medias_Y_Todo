@@ -21,10 +21,19 @@ public class UsuarioVO {
       
     }
 
-  
+
+
+    
 
     public UsuarioVO() {
     }
+
+  
+
+
+
+    
+
 
     public String getIdUsuario() {
         return IdUsuario;
