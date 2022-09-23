@@ -11,6 +11,7 @@
         <title>Cliente</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
           <script src="js/validarCl.js" type="text/javascript"></script>
+          <link href="Estilos/2.css" rel="stylesheet" type="text/css"/>
     </head>
 
     <body style="background: #999999;">
@@ -20,7 +21,7 @@
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-lg-8 col-xl-6">
         <div class="card rounded-3">
-          <img src="https://concepto.de/wp-content/uploads/2013/08/cliente-e1551799486636.jpg"
+          <img src="https://www.microtech.es/hubfs/Fotos%20blog/retener_clientes.jpg"
             class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;"
             alt="Sample photo">
             <div class="card-body p-4 p-md-5">
@@ -29,45 +30,56 @@
         <form class="px-md-2" method="post" action="Cliente" onsubmit="return validarCl();">
 
             <div class="form-outline mb-4">
-                <input type="text" id="Nombrecliente" name="TextNombre" class="form-control" />
                 <label class="form-label" for="form3Example1q">Nombres</label>
+                <input type="text" id="Nombrecliente" name="TextNombre" class="form-control" />
+               
             </div>
 
             <div class="form-outline mb-4">
-                <input type="text" id="ApellidoCliente" name="TextApellido" class="form-control" />
                 <label class="form-label" for="form3Example1q">Apellidos</label>
+                <input type="text" id="ApellidoCliente" name="TextApellido" class="form-control" />
+                
             </div>
             
             <div class="form-group">
+                <label class="form-label" for="form3Example1q">Tipo Documento</label>
                 <select class="form-control" name="TextTipo" id="TipoDocCliente">
                         <option>Seleccione una opción</option>
                        <option>CC</option>
                        <option>CE</option>
                     </select>
-                <label class="form-label" for="form3Example1q">Tipo Documento</label>
+             
             </div>
              <div class="form-outline mb-4">
+                 <label class="form-label" for="form3Example1q">Numero Documento</label>
                  <input type="number"  id="NumeroDocCliente" name="TextNumDoc" class="form-control" />
-                <label class="form-label" for="form3Example1q">Numero Documento</label>
+                
             </div>
             <div class="form-outline mb-4">
-                 <input type="number" id="TelefonoCliente" name="TextTelefono" class="form-control" />
                 <label class="form-label" for="form3Example1q">Telefono</label>
+                 <input type="number" id="TelefonoCliente" name="TextTelefono" class="form-control" />
+                
             </div>
              <div class="form-outline mb-4">
+                 <label class="form-label" for="form3Example1q">Direccion </label>
                  <input type="text" id="Direccioncliente" name="TextDir" class="form-control" />
-                <label class="form-label" for="form3Example1q">Direccion </label>
+                
             </div>
               <div class="form-outline mb-4">
+                  <label class="form-label" for="form3Example1q">Correo Electronico </label>
                  <input type="email" id="CorreoCliente" name="TextCorreo" class="form-control" />
-                <label class="form-label" for="form3Example1q">Correo Electronico </label>
+                
             </div>
              <div class="form-outline mb-4">
+                  <label class="form-label" for="form3Example1q">Estado Cliente </label>
                  <input type="text" id="EstadoCliente" name="TextEstado" class="form-control" />
-                <label class="form-label" for="form3Example1q">Estado Cliente </label>
+               
             </div>
             <br>
-            <div>   
+          
+
+        </form>
+                  <div>   
                 <input type="hidden" value="1" name="opcion">
 
                 <button type="submit" class="btn btn-success btn-lg mb-1" onclick="return confirm('¿Estas seguro de  registrar el cliente')"> Registrarse</button>
@@ -75,8 +87,6 @@
                 <button type="submit" class="btn btn-primary btn-lg" style="margin-bottom: 4px;"><a href="ConsultarCliente.jsp" style="color: #FFFFFF; text-decoration: none;">Ver Clientes registrados</a></button>
 
             </div>
-
-        </form>
             </div>
         </div>
       </div>

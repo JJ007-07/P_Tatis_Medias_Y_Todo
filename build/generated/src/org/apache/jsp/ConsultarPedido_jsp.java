@@ -93,7 +93,7 @@ public final class ConsultarPedido_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("                                <form method=\"post\" action=\"Pedido\">\r\n");
       out.write("                                    <div class=\"form-outline mb-4\">\r\n");
       out.write("                                        <input max=\"100000\" type=\"number\" name=\"txtPedido\" class=\"form-control\" required>\r\n");
-      out.write("                                        <label class=\"form-label\" for=\"form3Example1q\">Id Del Producto</label>\r\n");
+      out.write("                                        <label class=\"form-label\" for=\"form3Example1q\">Id pedido</label>\r\n");
       out.write("                                    </div>\r\n");
       out.write("                                    <div>   \r\n");
       out.write("                                        <div class=\"form-outline mb-4\">\r\n");
@@ -150,9 +150,10 @@ public final class ConsultarPedido_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("                                            </div>\r\n");
       out.write("                                        </div>\r\n");
       out.write("                                        <button onclick=\"return confirm('¿Deseas consultar este pedido?')\" class=\"btn btn-primary btn-lg\">Consultar</button>\r\n");
+      out.write("                                         <input type=\"hidden\" value=\"4\" name=\"opcion\">\r\n");
       out.write("                                         <button type=\"submit\" class=\"btn btn-primary btn-lg\" style=\"margin-bottom: 4px;\"><a href=\"DatosPedido.jsp\" style=\"color: #FFFFFF; text-decoration: none;\">Ver Productos registrados</a></button>\r\n");
       out.write("\r\n");
-      out.write("                                        <input type=\"hidden\" value=\"4\" name=\"opcion\">\r\n");
+      out.write("                                       \r\n");
       out.write("                                        </form>\r\n");
       out.write("                                        ");
 if (request.getAttribute("MensajeError") != null) {

@@ -7,7 +7,7 @@
 <%@page import="ModeloVO.ProductoVO"%>
 <%@page import="ModeloDAO.ProductoDAO"%>
 <%@page import="java.sql.*"%>
-<%@include file='Sesiones.jsp' %>   
+
 <%
     Connection con;
     String url = "jdbc:mysql://localhost:3306/tatis_media_y_todo";
@@ -31,19 +31,20 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     </head>
-    <body style="background-color: #8fc4b7;">
+    <body style="background-color: #999999;">
         <section class="h-100 h-custom">
             <div class="container py-5 h-100">
                 <div class="row d-flex justify-content-center align-items-center h-100">
                     <div class="col-lg-8 col-xl-6">
                         <div class="card rounded-3">
-                            <img src="https://www.ecommercenews.pe/wp-content/uploads/2017/07/tienda-online.png" class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;" alt="Sample photo">
+                            <img src="https://www.trecebits.com/wp-content/uploads/2020/09/Catalogos-digitales.jpg" class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;" alt="Sample photo">
                             <div class="card-body p-4 p-md-5">
                                 <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Consultar Información De Los Productos</h3>
                                 <form method="post" action="Producto">
                                     <div class="form-outline mb-4">
+                                         <label class="form-label" for="form3Example1q">Codigo De Barras Del Producto</label>
                                         <input max="100000" type="text" name="txtcodigoB" class="form-control" required>
-                                        <label class="form-label" for="form3Example1q">Codigo De Barras Del Producto</label>
+                                       
                                     </div>
                                     <div>   
                                         <div class="form-outline mb-4">

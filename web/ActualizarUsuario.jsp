@@ -13,69 +13,77 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Jsp Page</title>
-        <!--Made with love by Mutiullah Samim -->
-
-        <!--Bootsrap 4 CDN-->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-        <!--Fontawesome CDN-->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-
-        <!--Custom styles-->
-
-        <link href="Estilos/estilos2.css" rel="stylesheet" type="text/css"/>
-        <link href="Estilos/estilos2.css" rel="stylesheet" type="text/css"/>
+   <body style="background-color: #999999;">
+             <section class="h-100 h-custom" >
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-8 col-xl-6">
+        <div class="card rounded-3">
+            <img src="https://i0.wp.com/www.nachomadrid.com/wp-content/uploads/2020/03/perfiles_usuario.jpg?fit=1024%2C478&ssl=1 "
+            class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;"
+            alt="Sample photo">
+            <div class="card-body p-4 p-md-5">
+                <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Actualizar Usuario</h3>
     </head>
 
     <%
         if (request.getAttribute("usuarioConsultado") != null) {
             UsuarioVO usuVO = (UsuarioVO) request.getAttribute("usuarioConsultado");
-            RolVO roVO =(RolVO) request.getAttribute("usuarioConsultado");
+          
 
     %>
     <center>
         <body>
-            <h1>Actualizar Usuario</h1>
+            
             <form method="post" action="Usuario">
                 <table>
 
                     <tr>
-                        Id Usuario<br>
-                    <input type="text" readonly name="textId" value="<%=usuVO.getIdUsuario()%>"><br><br>
+                <div class="form-outline mb-4"> 
+                <label class="form-label" for="form3Example1q">Id Usuario</label>
+                <input type="text" readonly name="textId" value="<%=usuVO.getIdUsuario()%>" class="form-control">
+                </div>
 
 
-                    Nombre Usuario<br>
-                    <input type="text" name="textUsuario" value="<%=usuVO.getNombreUsuario()%>"><br><br>
+                <div class="form-outline mb-4"> 
+                <label class="form-label" for="form3Example1q">Nombre Usuario</label>
+                <input type="text" name="textUsuario" value="<%=usuVO.getNombreUsuario()%>"class="form-control"></div>
 
 
-                    Contraseña<br>
+                   
+                <div class="form-outline mb-4"> 
+                <label class="form-label" for="form3Example1q">Contraseña</label>
+                <input type="password" name="textClave" value="<%=usuVO.getPasswordUsuario()%>" class="form-control">
+                </div>
 
-                    <input type="password" name="textClave" value="<%=usuVO.getPasswordUsuario()%>"><br><br>
-
-                    Estado Usuario<br>
-
-                    <input type="Text" name="textEstado" value="<%=usuVO.getEstadoUsuario()%>"><br><br>
+                   
+                   <div class="form-outline mb-4"> 
+                <label class="form-label" for="form3Example1q">Estado Usuario</label>
+                <input type="Text" name="textEstado" value="<%=usuVO.getEstadoUsuario()%>" class="form-control">
+                   </div>
                     
-                    <div class="campos">Categoría</div>
-                    
-                    <select name="txtrol">
+                     <div class="form-group">
+                     <label class="form-label" for="form3Example1q">Rol</label>
+                    <select name="txtrol" class="form-control"  >
                         <option>Seleccione una opción</option>
                         <%
                             RolDAO roDAO = new RolDAO();
                             for(RolVO rolVO : roDAO.listar()) {
                          %>
                          <option value="<%=rolVO.getIdRol()%>"><%=rolVO.getTipoRol()%></option>
+                   
+                    
                                  
                                  
                           <%}%>       
                     </select> <br> <br>
                    
-                    </select><br><br>
+                    </select><br><br> </div>
                     </tr>
 
 
                 </table><br>
-                <button onclick="return confirm('¿Estas seguro de actualizar el usuario?')"> Actualizar Usuario</button>
+                <button type="submit" class="btn btn-success btn-lg mb-1"  onclick="return confirm('¿Estas seguro de actualizar el usuario?')"> Actualizar Usuario</button>
                 <input type="hidden" value="2" name="opcion">
 
 

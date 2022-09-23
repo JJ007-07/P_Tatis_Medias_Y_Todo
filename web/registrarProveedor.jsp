@@ -15,6 +15,8 @@
 	<title>Proveedor</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
        <script src="js/validarPR.js" type="text/javascript"></script>
+       <link href="Estilos/2.css" rel="stylesheet" type="text/css"/>
+      
 </head>
   
 <center>
@@ -39,48 +41,57 @@
             <table>
                 
                 <tr>
-                <div class="form-outline mb-4"> 
+               <div class="form-label-group"> 
+                <label class="form-label" for="NitEmpresaProveedora">Nit Empresa</label>
                 <input type="number"  id="NitEmpresaProveedora" name="txtNit" class="form-control"/>
-                <label class="form-label" for="form3Example1q">Nit Empresa</label>
+                
                 </div>        
                 
-                <div class="form-outline mb-4">
+                <div class="form-label-group">
+                    <label class="form-label" for="RazonSocialEmpresaProveedora">Razon social Empresa</label>
                     <input type="text" id="RazonSocialEmpresaProveedora" name="txtRazon" class="form-control"/>
-                     <label class="form-label" for="form3Example1q">Razon social Empresa</label>
+                     
                 </div>
                 
-                <div class="form-outline mb-4">
-                    <input type="text" id="NombreComercialEmpresaProveedora" name="txtNombreC" class="form-control"/>
+                <div class="form-label-group">
                     <label class="form-label" for="form3Example1q">Nombre Comercial</label>
+                    <input type="text" id="NombreComercialEmpresaProveedora" name="txtNombreC" class="form-control"/>
+                    
                 </div>
                 
-                <div class="form-outline mb-4">
-                    <input type="text" id="DireccionEmpresaProveedora" name="txtDireccion" class="form-control"/>
+                <div class="form-label-group">
                     <label class="form-label" for="form3Example1q">Direccion De empresa</label>
+                    <input type="text" id="DireccionEmpresaProveedora" name="txtDireccion" class="form-control"/>
+                    
                 </div>
                
                 <div class="form-outline mb-4">
+                     <label class="form-label" for="TelefonoEmpresaProveedora">Telefono empresa</label>
                     <input type="number" id="TelefonoEmpresaProveedora" name="txtTelefono" class="form-control">
-                    <label class="form-label" for="form3Example1q">Telefono empresa</label>
+                   
                 </div>
                 
-                <div class="form-outline mb-4">
+              <div class="form-label-group">
+                     <label class="form-label" for="Numeropago">Numero de pago</label>
                 <input type="text" id="Numeropago" name="txtNumero" class="form-control">
-                <label class="form-label" for="form3Example1q">Numero de pago</label>
+               
                 </div>
                 
-                <div class="form-group">
-               <select class="form-control" name="txtEstado" id="EstadoEmpresaProveedora">
+                <div class="form-label-group">
+                     <label class="form-label" for="EstadoEmpresaProveedora">Estado del Proveedor</label>
+               <select  name="txtEstado" id="EstadoEmpresaProveedora" class="form-control">
                         <option value="1" disabled>Seleccionar una opción disponible</option>
                         <option value="2">Activo</option>
                         <option value="3">Inactivo</option>
                     </select> 
-                    <label class="form-label" for="form3Example1q">Estado del Proveedor</label>
+                   
                 </div>
                 <br>
                 </tr>
                   </table><br>
-                  <div>
+                 
+        </form>
+                     <div>
                                          <input type="hidden" value="1" name="opcion">
                                          <button type="submit" class="btn btn-success btn-lg mb-1" onclick="return confirm('¿Estas seguro de registrar este proveedor?')"  > Registrar Proveedor</button>
                                          <button type="submit" class="btn btn-primary btn-lg" style="margin-bottom: 4px;"><a href="ConsultarProveedor.jsp" style="color: #FFFFFF; text-decoration: none;">Ver proveedores registrados</a></button>
@@ -88,8 +99,6 @@
                                         
                                         
                                         </div>
-        </form>
-                    
                          
                                          <% 
                                          if  (request.getAttribute("MensajeError") !=null) {%>

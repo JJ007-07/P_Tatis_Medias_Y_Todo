@@ -59,7 +59,7 @@ public final class EliminarCliente_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("                <tr>\r\n");
       out.write("                    <th>No.Documento\r\n");
       out.write("                        <input type=\"text\" name=\"TextNumDoc\" >\r\n");
-      out.write("                        <button>Eliminar</button>\r\n");
+      out.write("                        <button onclick=\"return confirm('¿Estas seguro de eliminar el cliente?')\" >Eliminar</button>\r\n");
       out.write("                        <input type=\"hidden\"value=\"4\"  name=\"opcion\">\r\n");
       out.write("                    </th>\r\n");
       out.write("                </tr>\r\n");

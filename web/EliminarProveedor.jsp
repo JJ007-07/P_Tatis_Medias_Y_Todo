@@ -5,6 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -19,19 +20,22 @@
                 <div class="row d-flex justify-content-center align-items-center h-100">
                     <div class="col-lg-8 col-xl-6">
                         <div class="card rounded-3">
-                            <img src="https://www.trecebits.com/wp-content/uploads/2020/09/Catalogos-digitales.jpg" class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;" alt="Sample photo">
+                            <img src="https://www.emagister.com/blog/wp-content/uploads/2020/01/proveedor-empresa-kraken.jpg" class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;" alt="Sample photo">
                             <div class="card-body p-4 p-md-5">
-                                <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Eliminar Producto</h3>
+                                <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Eliminar Proveedor</h3>
                                
         
                 <center>
         
-        <form method="post" action="Producto">
+        <form method="post" action="EmpresaProveedora">
             <table>
                 <tr>
                     <div class="form-outline mb-4">
-                        <label class="form-label" for="form3Example1q">Codigo De Barras Del Producto</label>
-                        <input type="number" name="txtcodigoB" class="form-control" ><br>
+                        <label class="form-label" for="form3Example1q">Id Empresa</label>
+                        <input  name="txtid" class="form-control">
+                    </div>
+                        
+                        
                         <button type="submit" class="btn btn-success btn-lg mb-1"   onclick="return confirm('¿Estas seguro de  eliminar este producto')">Eliminar</button>
                     </th>
                 </tr>

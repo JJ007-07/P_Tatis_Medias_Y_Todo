@@ -79,9 +79,9 @@ public final class ConsultarCliente_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("        <meta charset=\"UTF-8\">\r\n");
       out.write("        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\r\n");
       out.write("        <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css\" integrity=\"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm\" crossorigin=\"anonymous\">\r\n");
-      out.write("\r\n");
+      out.write("        <link href=\"Estilos/2.css\" rel=\"stylesheet\" type=\"text/css\"/>\r\n");
       out.write("    </head>\r\n");
-      out.write("    <body style=\"background-color: #8fc4b7;\">\r\n");
+      out.write("    <body style=\"background-color: #999999;\">\r\n");
       out.write("        <section class=\"h-100 h-custom\">\r\n");
       out.write("            <div class=\"container py-5 h-100\">\r\n");
       out.write("                <div class=\"row d-flex justify-content-center align-items-center h-100\">\r\n");
@@ -90,10 +90,11 @@ public final class ConsultarCliente_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("                            <img src=\"https://www.microtech.es/hubfs/Fotos%20blog/retener_clientes.jpg\" class=\"w-100\" style=\"border-top-left-radius: .3rem; border-top-right-radius: .3rem;\" alt=\"Sample photo\">\r\n");
       out.write("                            <div class=\"card-body p-4 p-md-5\">\r\n");
       out.write("                                <h3 class=\"mb-4 pb-2 pb-md-0 mb-md-5 px-md-2\">Consultar Información De Los Clientes</h3>\r\n");
-      out.write("                                <form method=\"post\" action=\"Cliente\">\r\n");
+      out.write("                                <form class=\"px-md-2\" method=\"post\" action=\"Cliente\">\r\n");
       out.write("                                    <div class=\"form-outline mb-4\">\r\n");
-      out.write("                                        <input max=\"100000\" type=\"text\" name=\"TextNumDoc\" class=\"form-control\" required>\r\n");
-      out.write("                                        <label class=\"form-label\" for=\"form3Example1q\">Número De Documento Del Cliente</label>\r\n");
+      out.write("                                        <label class=\"form-label\" for=\"form3Example1q\">Número De Documento </label>\r\n");
+      out.write("                                        <input  type=\"number\" name=\"TextNumDoc\" class=\"form-control\" required>\r\n");
+      out.write("                                        \r\n");
       out.write("                                    </div>\r\n");
       out.write("                                    <div>   \r\n");
       out.write("                                        <div class=\"form-outline mb-4\">\r\n");
@@ -149,6 +150,8 @@ public final class ConsultarCliente_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("                                                </div>\r\n");
       out.write("                                            </div>\r\n");
       out.write("                                        </div>\r\n");
+      out.write("                                          <button type=\"submit\" class=\"btn btn-primary btn-lg\" style=\"margin-bottom: 4px;\"><a href=\"DatosCliente.jsp\" style=\"color: #FFFFFF; text-decoration: none;\">Ver usuarios registrados</a></button>\r\n");
+      out.write("\r\n");
       out.write("                                        <button onclick=\"return confirm('¿Deseas consultar este Cliente?')\" class=\"btn btn-primary btn-lg\">Consultar</button>\r\n");
       out.write("                                        <input type=\"hidden\" value=\"3\" name=\"opcion\">\r\n");
       out.write("                                        </form>\r\n");

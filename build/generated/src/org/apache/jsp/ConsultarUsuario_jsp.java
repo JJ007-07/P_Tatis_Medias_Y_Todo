@@ -82,7 +82,7 @@ public final class ConsultarUsuario_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("        <link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css\" integrity=\"sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm\" crossorigin=\"anonymous\">\r\n");
       out.write("\r\n");
       out.write("    </head>\r\n");
-      out.write("    <body style=\"background-color: #8fc4b7;\">\r\n");
+      out.write("    <body style=\"background-color: #999999;\">\r\n");
       out.write("        <section class=\"h-100 h-custom\">\r\n");
       out.write("            <div class=\"container py-5 h-100\">\r\n");
       out.write("                <div class=\"row d-flex justify-content-center align-items-center h-100\">\r\n");
@@ -93,8 +93,9 @@ public final class ConsultarUsuario_jsp extends org.apache.jasper.runtime.HttpJs
       out.write("                                <h3 class=\"mb-4 pb-2 pb-md-0 mb-md-5 px-md-2\">Consultar Información De Los Usuarios</h3>\r\n");
       out.write("                                <form method=\"post\" action=\"Usuario\">\r\n");
       out.write("                                    <div class=\"form-outline mb-4\">\r\n");
-      out.write("                                        <input max=\"100\" type=\"text\" name=\"textUsuario\" class=\"form-control\" required>\r\n");
       out.write("                                        <label class=\"form-label\" for=\"form3Example1q\">NOMBRE DEL USUARIO</label>\r\n");
+      out.write("                                        <input max=\"100\" type=\"text\" name=\"textUsuario\" class=\"form-control\" required>\r\n");
+      out.write("                                        \r\n");
       out.write("                                    </div>\r\n");
       out.write("                                    <div>   \r\n");
       out.write("                                        <div class=\"form-outline mb-4\">\r\n");

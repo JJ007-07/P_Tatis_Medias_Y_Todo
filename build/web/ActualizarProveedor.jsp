@@ -17,18 +17,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
         <title>Actualizar </title>
-        <!--Made with love by Mutiullah Samim -->
-
-        <!--Bootsrap 4 CDN-->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-        <!--Fontawesome CDN-->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-
-        <!--Custom styles-->
-
-        <link href="Estilos/estilos2.css" rel="stylesheet" type="text/css"/>
+        
 
     </head>
 
@@ -39,49 +30,71 @@
 
     %>
     <center>
-        <body>
-            <h1>Actualizar Proveredor</h1>
+        <body style="background-color: #999999;">
+             <section class="h-100 h-custom" >
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-8 col-xl-6">
+        <div class="card rounded-3">
+            <img src="https://www.emagister.com/blog/wp-content/uploads/2020/01/proveedor-empresa-kraken.jpg "
+            class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;"
+            alt="Sample photo">
+            <div class="card-body p-4 p-md-5">
+                <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Actualizar Proveedor</h3>
+            
             <form method="post" action="EmpresaProveedora">
                 <table>
                     
-                    <input type="hidden" readonly read name="txtid" value="<%=epVO.getIdEmpresaProveedora()%>"><br><br>
+                    <input type="hidden" readonly read name="txtid" value="<%=epVO.getIdEmpresaProveedora()%>"class="form-control">
 
                     
-                    <tr>
-                        NIT Empresa<br>
-                    <input type="text" readonly read name="txtNit" value="<%=epVO.getNitEmpresaProveedora()%>"><br><br>
+                    <div class="form-outline mb-4"> 
+                     <label class="form-label" for="form3Example1q">Nit Empresa</label>
+                    <input type="text" readonly read name="txtNit" value="<%=epVO.getNitEmpresaProveedora()%>"class="form-control">
+                    </div>
 
 
-                    Razon Social<br>
-                    <input type="text" readonly read name="txtRazon" value="<%=epVO.getRazonSocialEmpresaProveedora()%>"><br><br>
+                    <div class="form-outline mb-4">
+                    <label class="form-label" for="form3Example1q">Razon social Empresa</label>
+                    <input type="text" readonly read name="txtRazon" value="<%=epVO.getRazonSocialEmpresaProveedora()%>"class="form-control">
+                    </div>
 
 
-                    Nombre Comercial<br>
+                   
+                    <div class="form-outline mb-4">
+                    <label class="form-label" for="form3Example1q">Nombre Comercial</label>
+                    <input type="text"  name="txtNombreC" value="<%=epVO.getNombreComercialEmpresaProveedora()%>"class="form-control">
+                    </div>
 
-                    <input type="text"  name="txtNombreC" value="<%=epVO.getNombreComercialEmpresaProveedora()%>"><br><br>
+                    
+                      <div class="form-outline mb-4">
+                    <label class="form-label" for="form3Example1q">Direccion De empresa</label>
+                    <input type="text" name="txtDireccion" value="<%=epVO.getDireccionEmpresaProveedora()%>"class="form-control">
+                      </div>
 
-                    Dirección<br>
+                    <div class="form-outline mb-4">
+                     <label class="form-label" for="form3Example1q">Telefono empresa</label>
+                    <input type="number" name="txtTelefono" value="<%=epVO.getTelefonoEmpresaProveedora()%>"class="form-control">
+                    </div>
 
-                    <input type="text" name="txtDireccion" value="<%=epVO.getDireccionEmpresaProveedora()%>"><br><br>
-
-                    Telefono<br>
-                    <input type="number" name="txtTelefono" value="<%=epVO.getTelefonoEmpresaProveedora()%>"><br><br>
-
-                    Numero de pago<br>
-
-                    <input type="text" name="txtNumero" value="<%=epVO.getNumeropago()%>"><br><br>
+                     <div class="form-outline mb-4">
+                     <label class="form-label" for="form3Example1q">Numero de pago</label>
+                    <input type="text" name="txtNumero" value="<%=epVO.getNumeropago()%>"class="form-control">
+                     </div>
                    
                     
-                     Estado<br>
-
-                    <input type="text" name="txtEstado" value="<%=epVO.getEstadoEmpresaProveedora()%>"><br><br>
+                    
+                    <div class="form-group">
+                     <label class="form-label" for="form3Example1q">Estado del Proveedor</label>
+                    <input type="text" name="txtEstado" value="<%=epVO.getEstadoEmpresaProveedora()%>" class="form-control">
+                    </div>
                    
 
                     </tr>
 
 
                 </table><br>
-                <button onclick="return confirm('¿Estas seguro de actualizar este proveedor?')"> Actualizar Infomrmación</button>
+                <button type="submit" class="btn btn-success btn-lg mb-1"onclick="return confirm('¿Estas seguro de actualizar este proveedor?')"> Actualizar Infomrmación</button>
                 <input type="hidden" value="2" name="opcion">
 
 
