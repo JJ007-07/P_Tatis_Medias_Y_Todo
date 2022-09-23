@@ -1,93 +1,62 @@
-<%-- 
-    Document   : registrarUsuario
-    Created on : 11/08/2022, 09:06:37 PM
-    Author     : User
---%>
-
 <%@page import="ModeloDAO.RolDAO"%>
 <%@page import="ModeloVO.RolVO"%>
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="js/CheckPassword.js" type="text/javascript"></script>
+    
+    <link href="Estilos/CheckPassword.css" rel="stylesheet" type="text/css"/>
+      
+    <title>Registrarse</title>
+  </head>
 
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Registro</title>
-        <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
-
-        <link href="Estilos/estilos.css" rel="stylesheet" type="text/css"/>
-
-        <link href="css/default.min.css" rel="stylesheet" type="text/css"/>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-        <script src="js/CheckPassword.js" type="text/javascript"></script>
-        <link href="Estilos/CheckPassword.css" rel="stylesheet" type="text/css"/>
-
-</head>
-
-                
-<section class="vh-100" style="background-color: #eee;">
+  <body>
+    <section class="vh-100" style="background-color: #eee;">
   <div class="container h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-lg-12 col-xl-11">
         <div class="card text-black" style="border-radius: 25px;">
           <div class="card-body p-md-5">
-            <div class="row justify-content-center"> 
+            <div class="row justify-content-center">
               <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
 
-                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Registrarse </p>
+                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Registrarme</p>
 
-                <form class="mx-1 mx-md-4"  action="Parametros" action="Usuario"  method="post"  onSubmit="return validarfor(); checkForm(this); return false;"   >
+                <form class="mx-1 mx-md-4" method="post" action="Usuario">
 
                   <div class="d-flex flex-row align-items-center mb-4">
                     <div class="form-outline flex-fill mb-0">
-                        <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
-                        <label class="form-label correo" for="form3Example3c">Correo</label>
-                      <input type="email"  class="formulario__input" name="textUsuario" id="mail"placeholder="Correo@correo.com" />
-                      
+                      <label class="form-label" for="form3Example3c" >Tú Correo Electronico</label>
+                      <input type="email" name="textUsuario" id="mail" class="form-control" required>
                     </div>
                   </div>
 
                   <div class="d-flex flex-row align-items-center mb-4">
-                    
                     <div class="form-outline flex-fill mb-0">
-                        <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
-                        <label class="form-label" for="form3Example4c">ContraseÃ±a</label>
-                      <input type="password"  class="formulario__input password1"name="textClave" id="txtPassword" />
-                       <span class="fa fa-fw fa-eye password-icon show-password"></span>
+                      <label class="form-label" for="form3Example4c">Tú Contraseña</label>
+                      <input type="password" name="textClave" id="txtPassword" class="form-control password1" required>
+                      <span class="fa fa-fw fa-eye password-icon show-password"></span>
                       <div id="strengthMessage"></div>
-                      
-                      
-                                        
                     </div>
-                     
-                                    
                   </div>
-                     
-					
-                                       
-				
-                      <!-- Grupo: Estado oculto -->
-                         <input type="hidden" readonly read value="Activo" name="textEstado"><br><br>
-                         
 
-<input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
-                    <label class="form-check-label" for="form2Example3">
+                  <input type="hidden" readonly read value="Activo" name="textEstado">
+
                   <div class="form-check d-flex justify-content-center mb-5">
-                    
-                      Estoy de acuerdo con <a href="#!">los terminos y condiciones</a>
-                    
-                  </div></label>
-
-
+                    <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
+                    <label class="form-check-label" for="form2Example3">
+                      Estoy De Acuerdo Con Los <a href="#!">Terminos Y Condiciones</a>
+                    </label>
+                  </div>
 
                   <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                      <input type="hidden" value="1" name="opcion" >
-                    <button type="submit" class="btn btn-primary btn-lg" onclick="return confirm('Â¿Estas seguro de  registrar el usuario?')" >Registrar</button>
+                    <button type="submit" class="btn btn-primary btn-lg" onclick="return confirm('¿Estas seguro de registrar el usuario?')" >Registrarme</button>
+                  <input type="hidden" value="1" name="opcion" >
+
                   </div>
 
                 </form>
@@ -95,8 +64,7 @@
               </div>
               <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
 
-                  <img src="IMG/Logo.png"
-                  class="img-fluid" alt="Logo">
+                <img src="./IMG/Log.svg" style="padding-left: 25%; padding-right: 25%;" class="img-fluid" alt="Logo">
 
               </div>
             </div>
@@ -106,9 +74,9 @@
     </div>
   </div>
 </section>
- <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
     
-                     <script>
+                  <script>
   window.addEventListener("load", function() {
  
     // icono para poder interaccionar con el elemento
@@ -131,80 +99,31 @@
   })
 });
 </script> 
-<script> 
-function checkPassword(valor){
-    var myregex = /^(?=.\d)(?=.[a-z])(?=.*[A-Z]).{8,}$/; 
-   if(myregex.test(valor)){
-       alert(valor+" es valido :-) !");
-       return true;        
-   }else{
-      alert(valor+" NO es valido!");
-       return false;        
-   }   
-}
-function checkForm(form){
-if(form.textClave.length == 0 ) {
-      if(!checkPassword(form.textClave.value)) {
-        alert("La contraseÃ±a no es valida!");
-        form.textClave.focus();
-        return false;
-      }
-    } 
-    return true;
-  }
-</script>
+
 
                 <script>
-                    window.addEventListener("load", function () {
-
-// icono para poder interaccionar con el elemento
-                        showPassword = document.querySelector('.show-password');
-                        showPassword.addEventListener('click', () => {
-
-// elementos input de tipo password
-                            password1 = document.querySelector('.password1');
-
-
-                            if (password1.type === "text") {
-                                password1.type = "password"
-
-                                showPassword.classList.remove('fa-eye-slash');
-                            } else {
-                                password1.type = "text"
-
-                                showPassword.classList.toggle("fa-eye-slash");
+                    function checkPassword(valor) {
+                        var myregex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+                        if (myregex.test(valor)) {
+                            alert(valor + " es valido :-) !");
+                            return true;
+                        } else {
+                            alert(valor + " NO es valido!");
+                            return false;
+                        }
+                    }
+                    function checkForm(form) {
+                        if (form.textClave.length == 0) {
+                            if (!checkPassword(form.textClave.value)) {
+                                alert("La contraseña no es valida!");
+                                form.textClave.focus();
+                                return false;
                             }
-                        })
-                    });
-                </script> 
+                        }
+                        return true;
+                    }
+                </script>
                
-                
-                <!-- Grupo: Estado oculto -->
-                <input type="hidden" readonly read value="Activo" name="textEstado"><br><br>
-
-
-
-                
-    </form>
-
-</div>
-
-
-         
- <div class="tres"> 
-                         
-                                         <% 
-                                         if(request.getAttribute("MensajeError") !=null) {%>
-                                         ${MensajeError}           
-               
-                                         <%}else {%>
-                                        ${MensajeExito}  
-                                        <%}%>
-                                        
-     </div>
-
-
-
 <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
 <script>
                         function validarfor() {
@@ -214,7 +133,7 @@ if(form.textClave.length == 0 ) {
                             var expr = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
                             if (!expr.test(correo)) {                                                            //COMPRUEBA MAIL
-                                alert("Error: La direcciÃ³n de correo " + correo + " es incorrecta.");
+                                alert("Error: La dirección de correo " + correo + " es incorrecta.");
                                 return false;
                             }
                         }
@@ -222,7 +141,7 @@ if(form.textClave.length == 0 ) {
                             //obteniendo el valor que se puso en campo text del formulario
                             correo = document.getElementById("mail").value;
 
-                            //la condiciÃ³n
+                            //la condición
                             if (correo.length == 0) {
                                 return false;
                             }
@@ -235,7 +154,8 @@ if(form.textClave.length == 0 ) {
                             return true;
                         }
 
-</script>                            
+</script>  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 </body>
-</center>
 </html>

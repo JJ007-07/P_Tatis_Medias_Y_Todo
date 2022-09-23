@@ -1,143 +1,213 @@
+<%@page import="Controlador.Sesiones"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="ModeloVO.ClienteVO"%>
+<%@page import="ModeloDAO.ClienteDAO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="ModeloVO.UsuarioVO"%>
+<%@page import="ModeloVO.USUROLVO"%>
+<%@page import="ModeloDAO.USUROLDAO"%>
+<%@include file='Sesiones.jsp'%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
+<%
+    Connection con;
+    String url = "jdbc:mysql://localhost:3306/tatis_media_y_todo";
+    String Driver = "com.mysql.jdbc.Driver";
+    String user = "root";
+    String clave = "";
+    Class.forName(Driver);
+    con = DriverManager.getConnection(url, user, clave);
+    Statement smt;
+    Statement smt2;
+    Statement smt3;
+    Statement smt4;
+    Statement smt5;
+    ResultSet rs;
+    ResultSet rs2;
+    ResultSet rs3;
+    ResultSet rs4;
+    ResultSet rs5;
+    smt = con.createStatement();
+    smt2 = con.createStatement();
+    smt3 = con.createStatement();
+    smt4 = con.createStatement();
+    smt5 = con.createStatement();
+    rs = smt.executeQuery("select DescripcionProducto, C.NombreCategoria from producto inner join categoria as C on IdCategoriaFK = C.IdCategoria limit 12");
+    rs2 = smt2.executeQuery("select FechaventaMostrador, FormaventaMostrador, C.NombreCliente, C.ApellidoCliente from ventamostrador inner join cliente as C on IdClienteFK = C.IdCliente");
+    rs3 = smt3.executeQuery("select FechaventaMostrador, FormaventaMostrador, C.NombreCliente, C.ApellidoCliente from ventamostrador inner join cliente as C on IdClienteFK = C.IdCliente");
+    rs4 = smt4.executeQuery("select FechaventaMostrador, FormaventaMostrador, C.NombreCliente, C.ApellidoCliente from ventamostrador inner join cliente as C on IdClienteFK = C.IdCliente");
+    rs5 = smt5.executeQuery("select FechaventaMostrador, FormaventaMostrador, C.NombreCliente, C.ApellidoCliente from ventamostrador inner join cliente as C on IdClienteFK = C.IdCliente");
+%>
 <!DOCTYPE html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="es">
     <head>
-        <meta charset="UTF-8">
+        <link rel="stylesheet" href="./Estilos/StyleMenu.css">
+        <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Bienvenido</title>
-        <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> 
-        <link href="Estilos/Estilos3.css" rel="stylesheet" type="text/css"/>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-        <script src="js/nav.js" type="text/javascript"></script>
-        <link href="Estilos/boton.css" rel="stylesheet" type="text/css"/>
-        <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
-
+        <title>Menu Principal</title>
     </head>
-
     <body>
-
-        <div class="wrapper hover_collapse">
-            <div class="top_navbar">
-                <a class="logo" href="#">
-
-                    <img src="IMG/Log.svg" width="45" height="45" class="d-inline-block align-top" alt="">
-                    JyK 
-                </a>
-
-                <%--<div class="menu">
-                    <div class="hamburger">
-                        <i class="fas fa-bars"></i>
-                    </div>
-
-                </div>--%>
+        <div class="sidebar">
+            <div class="logo-details">
+                <i class=' bx bx-cog'></i>
+                <span class="logo_name">J&K</span>
             </div>
+            <ul class="nav-links">
+                <li>
+                    <a href="./registrarCliente.jsp">
+                        <i class='bx bxs-user'></i>
+                        <span class="links_name">Clientes</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="./RegistrarVenta.jsp">
+                        <i class=' bx bxs-cart'></i>
+                        <span class="links_name">Ventas</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="./registrarPedido.jsp">
+                        <i class=' bx bxs-calendar-week' ></i>
+                        <span class="links_name">Pedidos</span>
+                    </a>
+                </li>
+                <li class="log_out">
+                    <a href="">
+                        <i class='bx bx-log-out'></i>
+                        <form method="post" action="Sesiones">
+                            <button style="cursor: pointer; text-decoration: none; all: unset;"><span class="links_name">Cerrar Sesion</span></button>
+                        </form>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <section class="home-section">
+            <nav>
+                <div class="sidebar-button">
+                    <i class='bx bx-menu sidebarBtn' style="cursor: pointer;"></i>
+                    <span class="dashboard">Menu</span>
+                </div>
+                <div class="profile-details">
+                    <span class="admin_name"><%=Usuario%></span>
+                </div>
+            </nav>
 
-            <div class="sidebar">
+            <div class="home-content">
+                <div class="overview-boxes">
+                    <div class="box">
+                        <div class="right-side">
+                            <div class="box-topic">Total De Pedidos</div>
+                            <div class="number">10</div>
+                            <div class="indicator">
+                                <i class='bx bx-up-arrow-alt'></i>
+                                <span class="text">A partir de hoy</span>
+                            </div>
+                        </div>
+                        <i class='bx bx-cart-alt cart'></i>
+                    </div>
+                    <div class="box">
+                        <div class="right-side">
+                            <div class="box-topic">Total De Ventas</div>
+                            <div class="number">5</div>
+                            <div class="indicator">
+                                <i class='bx bx-up-arrow-alt'></i>
+                                <span class="text">A partir de hoy</span>
+                            </div>
+                        </div>
+                        <i class='bx bxs-cart-add cart two' ></i>
+                    </div>
+                    <div class="box">
+                        <div class="right-side">
+                            <div class="box-topic">Clientes Recientes</div>
+                            <div class="number">12</div>
+                            <div class="indicator">
+                                <i class='bx bx-up-arrow-alt'></i>
+                                <span class="text">A partir de hoy</span>
+                            </div>
+                        </div>
+                        <i class=' bx bx-user-plus cart four'></i>
+                    </div>
+                </div>
 
-                <div class="sidebar_inner">
+                <div class="sales-boxes">
+                    <div class="recent-sales box">
+                        <div class="title">Información Actual De Las Ventas</div>
+                        <div class="sales-details">
+                            <ul class="details">
+                                <li class="topic">Fecha De La Venta</li>
+                                    <%
+                                        while (rs2.next()) {
+                                    %>
+                                <li class="topic"><%= rs2.getString("FechaventaMostrador")%></li>
+                                    <%}%>
+                            </ul>
+                            <ul class="details">
+                                <li class="topic">Forma De Pago De La Venta</li>
+                                    <%
+                                        while (rs3.next()) {
+                                    %>
+                                <li class="topic"><%= rs3.getString("FormaventaMostrador")%></li>
+                                    <%}%>
+                            </ul>
+                            <ul class="details">
+                                <li class="topic">Nombre Del Cliente</li>
+                                    <%
+                                        while (rs4.next()) {
+                                    %>
+                                <li class="topic"><%= rs4.getString("NombreCliente")%></li>
+                                    <%}%>
+                            </ul>
+                            <ul class="details">
+                                <li class="topic">Apellido Del Cliente</li>
+                                    <%
+                                        while (rs5.next()) {
+                                    %>
+                                <li class="topic"><%= rs5.getString("ApellidoCliente")%></li>
+                                    <%}%>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="top-sales box">
+                        <div class="title">Productos Más Vendidos</div>
+                        <table class="table table-bordered"  id="tablaDatos">
+                            <thead>
+                                <tr>
+                                    <th>Producto</th>
+                                    <th>Categoria</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tbodys">
 
-                    <ul>    
+
+                                <%
+                                    while (rs.next()) {
+                                %>
+
+                                <tr>
+                                    <td class="text-center"><%= rs.getString("DescripcionProducto")%></td>
+                                    <td class="text-center"><%= rs.getString("NombreCategoria")%></td>
+                                </tr>
+                                <%}%>
 
 
-                        <li>
-                            <a href="registrarCliente.jsp">
-                                <span class="icon"><i class="fa fa-user"></i></span>
-                                <span class="text">Cliente</span>
-                            </a>
-                        </li>
-                       
-                        <li>
-                            <a href="RegistrarVenta.jsp">
-                                <span class="icon"><i class="fa-solid fa-receipt"></i></span>
-                                <span class="text">Ventas</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="registrarPedido.jsp">
-                                <span class="icon"><i class="fa-solid fa-box"></i></span>
-                                <span class="text">Pedido</span>
-                            </a>
-                        </li>
-                        
-                         <li>
-                            
-                                  <form method="post" action="Sesiones">
-                                
-                                      <a href="">    
-                                <span class="icon"><i class="fa fa-sign-out"></i></span>
-                                <span class="text"> 
-                                      <button >Cerrar</button></span>
-                                    </a>
-                               </form>
-       
-                        </li>
-
-
-                    </ul>
+                        </table>
+                    </div>
                 </div>
             </div>
-
-
-
-        </div>
-        <script type="text/javascript">
-            //I have determined the constant of some class function
-            var li_items = document.querySelectorAll(".sidebar ul li ");
-            var hamburger = document.querySelector(".hamburger");
-            var wrapper = document.querySelector(".wrapper");
-
-            //What will change if you move the mouse over the sidebar
-
-            li_items.forEach((li_item) => {
-                li_item.addEventListener("mouseenter", () => {
-
-
-                    li_item.closest(".wrapper").classList.remove("hover_collapse");
-                    //I have already added style information about hover_collapse
-
-                })
-                //In general, hover_collapse will be applied on the sidebar.
-
-                //Hover_collapse will be removed from the sidebar when the mouse is moved
-            })
-
-            li_items.forEach((li_item) => {
-                li_item.addEventListener("mouseleave", () => {
-
-                    li_item.closest(".wrapper").classList.add("hover_collapse");
-                    //Hover Collapse will be applied again when the mouse is removed
-
-                })
-            })
-
-
-            //Now I will execute the menu button
-
-            //I have instructed here that hover_collapse will be applied and removed when the menu button is clicked.
-
-            //This means that the first click will be applied and the second click will be removed
-            hamburger.addEventListener("click", () => {
-
-                hamburger.closest(".wrapper").classList.toggle("hover_collapse");
-            })
+        </section>
+        <script>
+            let sidebar = document.querySelector(".sidebar");
+            let sidebarBtn = document.querySelector(".sidebarBtn");
+            sidebarBtn.onclick = function () {
+                sidebar.classList.toggle("active");
+                if (sidebar.classList.contains("active")) {
+                    sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+                } else
+                    sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+            }
         </script>
-
-
-
-
-
-
-
-
-
-
-
-
-    </div><br><br>
-</body>
+    </body>
 </html>

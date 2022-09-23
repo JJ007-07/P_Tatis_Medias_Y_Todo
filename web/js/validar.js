@@ -31,7 +31,7 @@
          const IdEmpresaProveedoraFKValor = IdEmpresaProveedoraFK.value.trim()
         const IVAValor = IVA.value.trim()
         const DescuentoValor = Descuento.value.trim()
-        const EstadoPedido Valor = EstadoPedido.value.trim();
+        const EstadoPedidoValor = EstadoPedido.value.trim();
 
         
     if (!NumeroFacturaPedidoValor){
@@ -88,4 +88,5 @@
     }
       
 
-    
+    }
+
