@@ -13,46 +13,41 @@ import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  *
- * @author juanb
+ * @author karen_b
  */
 public class EnvioCorreo {
-
-    public static void enviarCorreo(String servidor, String puerto, final String usuario,
+     public static void envioCorreo(String host, String puerto, final String usuario,
             final String clave, String direccion, String asunto, String mensaje) throws AddressException, MessagingException {
 
-        //Configuración de protocolo SMTP
+        //Propiedades del Servidor SMTP
         Properties propiedades = new Properties();
-        propiedades.put("mail.smtp.host", servidor);//Servidor 
-        propiedades.put("mail.smtp.port", puerto);//Puerto
+        propiedades.put("mail.smtp.host", host);
+        propiedades.put("mail.smtp.port", puerto);
         propiedades.put("mail.smtp.auth", "true");
         propiedades.put("mail.smtp.starttls.enable", "true");
-        
-        Authenticator autenticar = new Authenticator(){
-        
-            public PasswordAuthentication getAuthentication(){
+         propiedades.put("mail.smtp.ssl.trust", "smtp.gmail.com");
+        propiedades.put("mail.smtp.EnableSSL.enable","true");
+
+        Authenticator autenticar = new Authenticator() {
             
+            public PasswordAuthentication gePasswordAuthentication(){
                 return new PasswordAuthentication(usuario, clave);
-            
             }
-        
         };
+
         Session sesion = Session.getInstance(propiedades, autenticar);
-        Message msg = new MimeMessage(sesion);
-        msg.setFrom(new InternetAddress(usuario));
         
+        Message msg = new MimeMessage(sesion);  
+        msg.setFrom(new InternetAddress(usuario));
         InternetAddress[] direcciones = {new InternetAddress(direccion)};
         msg.setRecipients(Message.RecipientType.TO, direcciones);
         msg.setSubject(asunto);
         msg.setSentDate(new Date());
         msg.setText(mensaje);
+        
         Transport.send(msg, usuario, clave);
+        
     }
 }

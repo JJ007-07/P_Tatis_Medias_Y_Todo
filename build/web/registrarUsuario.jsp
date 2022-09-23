@@ -41,7 +41,7 @@
 
                 <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Registrarse </p>
 
-                <form class="mx-1 mx-md-4"method="post" action="Usuario"  onSubmit="return validarfor(); checkForm(this); return false;"   >
+                <form class="mx-1 mx-md-4"  action="Parametros" action="Usuario"  method="post"  onSubmit="return validarfor(); checkForm(this); return false;"   >
 
                   <div class="d-flex flex-row align-items-center mb-4">
                     <div class="form-outline flex-fill mb-0">
@@ -177,28 +177,7 @@ if(form.textClave.length == 0 ) {
                         })
                     });
                 </script> 
-                <script>
-                    function checkPassword(valor) {
-                        var myregex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
-                        if (myregex.test(valor)) {
-                            alert(valor + " es valido :-) !");
-                            return true;
-                        } else {
-                            alert(valor + " NO es valido!");
-                            return false;
-                        }
-                    }
-                    function checkForm(form) {
-                        if (form.textClave.length == 0) {
-                            if (!checkPassword(form.textClave.value)) {
-                                alert("La contraseña no es valida!");
-                                form.textClave.focus();
-                                return false;
-                            }
-                        }
-                        return true;
-                    }
-                </script>
+               
                 
                 <!-- Grupo: Estado oculto -->
                 <input type="hidden" readonly read value="Activo" name="textEstado"><br><br>

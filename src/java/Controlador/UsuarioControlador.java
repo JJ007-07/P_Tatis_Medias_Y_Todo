@@ -5,11 +5,13 @@
  */
 package Controlador;
 
+import newpackage.EnvioCorreo;
 import ModeloDAO.RolDAO2;
 import ModeloDAO.UsuarioDAO;
 import ModeloVO.UsuarioVO;
 import java.io.IOException;
 import java.util.ArrayList;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,7 +25,6 @@ import javax.servlet.http.HttpSession;
  */
 @WebServlet(name = "UsuarioControlador", urlPatterns = {"/Usuario"})
 public class UsuarioControlador extends HttpServlet {
-
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -121,7 +122,6 @@ public class UsuarioControlador extends HttpServlet {
                 request.getRequestDispatcher("EliminarUsuario.jsp").forward(request, response);
                 break;
         }
-
+    }
     }
 
-}

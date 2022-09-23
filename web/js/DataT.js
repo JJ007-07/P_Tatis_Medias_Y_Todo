@@ -1,7 +1,7 @@
 $(document).ready(function() {
 	//Only needed for the filename of export files.
 	//Normally set in the title tag of your page.
-	document.title='Usuario';
+	document.title='Datos Generales';
 	// DataTable initialisation
 	$('#example').DataTable(
 		{
@@ -9,12 +9,11 @@ $(document).ready(function() {
 			"paging": true,
 			"autoWidth": false,
 			"columnDefs": [
-				{ "orderable": true, "targets": 3 }
+				{ "orderable": true, "targets": 2 }
 			],
 			"buttons": [
 				'colvis',
-				'copyHtml5',
-        'csvHtml5',
+				
 				'excelHtml5',
         'pdfHtml5',
 				'print'
@@ -42,7 +41,7 @@ $(document).ready(function() {
 			//for(var i=0; i < colCount; i++){			}
 			
 			//INSERT THE ROW
-			table.row.add(rowData).draw( true );
+			table.row.add(rowData).draw( false );
 			//REMOVE EDIT AND DELETE EVENTS FROM ALL BUTTONS
 			$('.dt-edit').off('click');
 			$('.dt-delete').off('click');
@@ -74,18 +73,18 @@ $(document).ready(function() {
 	});
 	//Edit row buttons
 	$('.dt-edit').each(function () {
-//		$(this).on('click', function(evt){
-//			$this = $(this);
-			//var dtRow = $this.parents('tr');
-			//$('div.modal-body').innerHTML='ActualizarUsuario.jsp';
-			//$('div.modal-body').append('Row index: '+dtRow[0].rowIndex+'<br/>');
-			//$('div.modal-body').append('Number of columns: '+dtRow[0].cells.length+'<br/>');
-		//	for(var i=0; i < dtRow[0].cells.length; i++){
-			//	$('div.modal-body').append('Cell (column, row) '+dtRow[0].cells[i]._DT_CellIndex.column+', '+dtRow[0].cells[i]._DT_CellIndex.row+' => innerHTML : '+dtRow[0].cells[i].innerHTML+'<br/>');
-			//}
-			//$('#myModal').modal('show');
+	$(this).on('click', function(evt){
+			$this = $(this);
+			var dtRow = $this.parents('tr');
+			$('div.modal-body').innerHTML='ActualizarUsuario.jsp';
+			$('div.modal-body').append('Row index: '+dtRow[0].rowIndex+'<br/>');
+			$('div.modal-body').append('Number of columns: '+dtRow[0].cells.length+'<br/>');
+			for(var i=0; i < dtRow[0].cells.length; i++){
+				$('div.modal-body').append('Cell (column, row) '+dtRow[0].cells[i]._DT_CellIndex.column+', '+dtRow[0].cells[i]._DT_CellIndex.row+' => innerHTML : '+dtRow[0].cells[i].innerHTML+'<br/>');
+			}
+			$('#myModal').modal('show');
 		});
-	//});
+	});
 	//Delete buttons
 	$('.dt-delete').each(function () {
 		$(this).on('click', function(evt){

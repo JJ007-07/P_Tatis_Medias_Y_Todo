@@ -30,7 +30,7 @@
     <%
         if (request.getAttribute("usuarioConsultado") != null) {
             UsuarioVO usuVO = (UsuarioVO) request.getAttribute("usuarioConsultado");
-            RolVO roVO =(RolVO) request.getAttribute("usuarioConsultado");
+           
 
     %>
     <center>

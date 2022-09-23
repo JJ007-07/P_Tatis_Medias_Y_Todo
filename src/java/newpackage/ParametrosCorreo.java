@@ -18,48 +18,52 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author juanb
  */
-@WebServlet(urlPatterns = {"/ParametrosCorreo"})
+@WebServlet(urlPatterns = {"/Parametros"})
 public class ParametrosCorreo extends HttpServlet {
 
-    private String servidor, puerto, usuario, clave;
-
-    public void init() {
-
-        ServletContext contex = getServletContext();
-        servidor = contex.getInitParameter("servidor");
-        puerto = contex.getInitParameter("puerto");
-        usuario = contex.getInitParameter("usuario");
-        clave = contex.getInitParameter("clave");
-
+   
+    
+    private String host;
+    private String puerto;
+    private String usuario;
+    private String clave;
+    
+    public void init(){
+        
+        ServletContext context = getServletContext();
+        
+        host = context.getInitParameter("host");
+        puerto = context.getInitParameter("puerto");
+        usuario = context.getInitParameter("suario");
+        clave = context.getInitParameter("clave");
+        
     }
 
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+    
+
+   
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String destinatario = request.getParameter("destinatario");
-        String asunto = request.getParameter("asunto");
-        String contenido = request.getParameter("contenido");
         
-        String resultado = "";
+        
+        String Usu = request.getParameter("textUsuario");
+        String Cla = request.getParameter("textClave");
+        String Est = request.getParameter("textEstado");
+        String resultadoMensaje = "";
         
         try {
-            EnvioCorreo.enviarCorreo(servidor, puerto, usuario, clave, destinatario, asunto, contenido);
-            resultado = "El mensaje se envió correctamente";
+            
+            EnvioCorreo.envioCorreo(host, puerto, usuario, clave, Usu, Cla, Est);
+            resultadoMensaje="El mensaje se envio de forma correcta";
         } catch (Exception e) {
             e.printStackTrace();
-            resultado = "Error de envió " + e.getMessage();
+            resultadoMensaje="Error al enviar el mensaje "+e.getMessage();
         }finally{
-        request.setAttribute("resultado", resultado);
-        getServletContext().getRequestDispatcher("/resultado.jsp").forward(request, response);
+            request.setAttribute("mensaje", resultadoMensaje);
+            getServletContext().getRequestDispatcher("/resultado.jsp").forward(request, response);
         }
     }
 
+  
 }

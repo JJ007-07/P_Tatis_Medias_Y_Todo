@@ -15,7 +15,16 @@
 
     </head>
     
-    <body>
+    <body>    <%
+            //CONECTANOD A LA BASE DE DATOS:
+                  
+    ConexionDB con = new ConexionDB();
+    Statement smt;
+    ResultSet rs;
+    smt = con.obtenerConexion().createStatement();
+    rs = smt.executeQuery("select * from Usuario");
+%>
+        
         <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
             <thead>
                 <tr>
@@ -28,19 +37,21 @@
                         </button></th>
                 </tr>
             </thead>
-             <%
+             <%--<%
                                 UsuarioVO usuVO = new UsuarioVO();
                                  UsuarioDAO usuDAO = new UsuarioDAO();
                                 ArrayList<UsuarioVO> listaUsuarios = usuDAO.listar();
                                 for (int i = 0; i < listaUsuarios.size(); i++) {
                                        usuVO = listaUsuarios.get(i);
-                            %>  
+                            %>  --%>
             <tbody>
-             
+             <%
+                                    while (rs.next()) {
+                                %>
                 <tr>
-                    <td><%= usuVO.getIdUsuario()%></td>
-                             <td><%= usuVO.getNombreUsuario()%></td>                                                
-                            <td><%= usuVO.getEstadoUsuario()%></td>
+                    <td ><%= rs.getInt("IdUsuario")%></td>
+                             <td ><%= rs.getString("NombreUsuario")%></td>                                                
+                            <td ><%= rs.getString("EstadoUsuario")%></td>
                           
                     <td>
                         <button type="button"  class="btn btn-primary btn-xs dt-edit" style="margin-right:16px; ">
@@ -54,13 +65,13 @@
                       
                  
                 </tr>
-                
+                <%}%> 
                 
 
             </tbody>
            
         </table>
-<%}%>   
+  
         <!-- Modal -->
         <div id="myModal" class="modal fade" role="dialog">
             <div class="modal-dialog">
@@ -69,11 +80,9 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Row information</h4>
+                        <h4 class="modal-title">Actualizar Información</h4>
                     </div>
-                    <div class="modal-body">
-
-                    </div>
+                  
                     <div class="modal-footer">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>

@@ -17,16 +17,14 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link href="Estilos/estilos2.css" rel="stylesheet" type="text/css"/>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-            
-           <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-            <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css"/>
-        <link href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css"/>
-        <title>Consultar</title>
+           <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+        <link rel='stylesheet' href='https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css'>
+        <link rel='stylesheet' href='https://cdn.datatables.net/buttons/1.2.2/css/buttons.bootstrap.min.css'><link rel="stylesheet" href="./css/DataT.css">
+
+        <title>Cliente General</title>
     </head>
   <body>
-  <center>   <h1>Cliente</h1></center>
+
            <%
             //CONECTANOD A LA BASE DE DATOS:
                   
@@ -35,57 +33,78 @@
     ResultSet rs;
     smt = con.obtenerConexion().createStatement();
     rs = smt.executeQuery("select * from Cliente");
-%>
-    
-            
-
-        </div>  
-              
-        <br>
-        <div class="container">               
-            <!--<a  class="btn btn-success" href="Agregar.jsp">Nuevo Registro</a> Esto es Cuando se Crea un nuevo Archivo Agregar.jsp -->         
-             <table class="table table-bordered"  id="tablaDatos">
+%>                 
+             <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
                     <thead>
                         <tr>
-                            <th class="text-center">Id</th>
-                            <th class="text-center">Nombres</th>
-                            <th class="text-center">Apellidos</th>
-                            <th class="text-center">Numero Documento</th>
-                            <th class="text-center">Estado</th>
-                            <th class="text-center">Acciones</th>
+                            <th>Id</th>
+                            <th>Nombres</th>
+                            <th>Apellidos</th>
+                            <th>Numero Documento</th>
+                            <th>Estado</th>
+                          <th style="text-align:center;width:100px;">add<button type="button" data-func="dt-add" class="btn btn-success btn-xs dt-add">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                        </button></th>
                         </tr>
                     </thead>
-                    <tbody id="tbodys">
+                    <tbody >
                         <%
                             while (rs.next()) {
                         %>
                         <tr>
-                            <td class="text-center"><%= rs.getInt("IdCliente")%></td>
-                             <td class="text-center"><%= rs.getString("NombreCliente")%></td>
-                             <td class="text-center"><%= rs.getString("ApellidoCliente")%></td>
+                            <td><%= rs.getInt("IdCliente")%></td>
+                             <td><%= rs.getString("NombreCliente")%></td>
+                             <td><%= rs.getString("ApellidoCliente")%></td>
                             <td><%= rs.getString("NumeroDocCliente")%></td>
-                            <td class="text-center"><%= rs.getString("EstadoCliente")%></td>
-                            <td class="text-center">
-                                
-                                <!-- <input type="hidden" value="<//%= rs.getInt("Id_Usuario")%>" id="Editar"/>
-                                <input type="submit" class="btn btn-warning" data-toggle="modal" data-target="#myModal1" value="Editar"/>  -->
-                                <a href="EliminarCliente.jsp"><%= rs.getInt("IdCliente")%>" ><img src="IMG/Eliminar.png" width="60px" height="60px"/></a>
-                                <a href="ActualizarCliente.jsp?IdCliente=<%= rs.getInt("IdCliente")%>" ><img src="IMG/Actualizar.png" width="60px" height="60px"/></a>
-                             
-                            </td>
+                            <td><%= rs.getString("EstadoCliente")%></td>
+<td>
+                        <button type="button"  class="btn btn-primary btn-xs dt-edit" style="margin-right:16px; ">
+                            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                            
+                        </button>
+                        <button type="button" class="btn btn-danger btn-xs dt-delete">
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                        </button>
+                    </td>
                         </tr>
                         <%}%>
                 </table>
                        
-        <script src="js/jquery.js" type="text/javascript"></script>             
-        <script src="js/bootstrap.min.js" type="text/javascript"></script>  
-        <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script> 
-<script>
-    $(document).ready(function () {
-    $('#tablaDatos').DataTable();
-});
-</script>
+               <!-- Modal -->
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Row information</h4>
+                    </div>
+                    <div class="modal-body">
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+
+            </div>
+            
+        </div>
+        <!-- partial -->
+          <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+        <script src='https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js'></script>
+        <script src='https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js'></script>
+        <script src='https://cdn.datatables.net/buttons/1.2.2/js/buttons.colVis.min.js'></script>
+        <script src='https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js'></script>
+        <script src='https://cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js'></script>
+        <script src='https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js'></script>
+        <script src='https://cdn.datatables.net/buttons/1.2.2/js/buttons.bootstrap.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js'></script>
+        <script src='https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js'></script>
+        <script src='https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script><script  src="./js/DataT.js"></script>
+
                     
     </body>
 </html>

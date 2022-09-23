@@ -7,97 +7,100 @@
 <%@page import="ModeloVO.EmpresaProveedoraVO"%>
 <%@page import="ModeloDAO.EmpresaProveedoraDAO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-
-<!------ Include the above in your HEAD tag ---------->
- <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css"/>
-        <link href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css"/>
-<!DOCTYPE html>
-<html>
+<html lang="es" >
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Consultar Proveedor</title>
-        <!--Made with love by Mutiullah Samim -->
-
-        <!--Bootsrap 4 CDN-->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-        <!--Fontawesome CDN-->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-
-        <!--Custom styles-->
-        <link href="Estilos/estilos2.css" rel="stylesheet" type="text/css"/>
-        
+        <meta charset="UTF-8">
+        <title>Proveedor general</title>
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+        <link rel='stylesheet' href='https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css'>
+        <link rel='stylesheet' href='https://cdn.datatables.net/buttons/1.2.2/css/buttons.bootstrap.min.css'><link rel="stylesheet" href="./css/DataT.css">
 
     </head>
-
-    <body>
-
-    <center>
-        <div>
-
-            <h1>Consultar Empresa</h1>
-   <%
+    
+    <body>      <%
     ConexionDB con = new ConexionDB();
     Statement smt;
     ResultSet rs;
     smt = con.obtenerConexion().createStatement();
     rs = smt.executeQuery("select * from empresaproveedora");
 %>
-    </head>
-    <body>
-    <center>
-         
-  
-                  <div class="container">               
-            <a  class="btn btn-success" href="registrarProveedor.jsp">Nuevo Registro</a>         
-             <table class="table table-bordered"  id="tablaDatos">
-                    <thead>
-                        <tr>
+        
+        <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+            <thead>
+                <tr>
+                    <th>Razon Social</th>
+                            <th >Nombre Empresa</th>
+                            <th >Estado Empresa</th>
+                    
+                    <th style="text-align:center;width:100px;">add<button type="button" data-func="dt-add" class="btn btn-success btn-xs dt-add">
+                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                        </button></th>
+                </tr>
+            </thead>
+            <tbody>
+             <%
+                                    while (rs.next()) {
+                                %>
+                <tr>
+                     <td><%= rs.getString("RazonSocialEmpresaProveedora")%></td>
+                             <td><%= rs.getString("NombreComercialEmpresaProveedora")%></td>
+                             <td><%= rs.getString("EstadoEmpresaProveedora")%></td>
+                          
+                    <td>
+                        <button type="button"  class="btn btn-primary btn-xs dt-edit" style="margin-right:16px; ">
+                            <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
                             
-                           <th class="text-center">Razon Social</th>
-                            <th class="text-center">Nombre Empresa</th>
-                            <th class="text-center">Estado Empresa</th>
-                            <th class="text-center">Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tbodys">
-                        <%
-                            while (rs.next()) {
-                        %>
-                        <tr>
-                             <td class="text-center"><%= rs.getString("RazonSocialEmpresaProveedora")%></td>
-                             <td class="text-center"><%= rs.getString("NombreComercialEmpresaProveedora")%></td>
-                             <td class="text-center"><%= rs.getString("EstadoEmpresaProveedora")%></td>
-                             <td class="text-center">
-                                
-                                <!-- <input type="hidden" value="<//%= rs.getInt("IdPedido")%>" id="Editar"/>
-                                <input type="submit" class="btn btn-warning" data-toggle="modal" data-target="#myModal1" value="Editar"/>  -->
-                                <a href="ActualizarProveedor.jsp?IdEmpresaProveedora=<%= rs.getInt("IdEmpresaProveedora")%>" ><img src="IMG/Actualizar.png" width="60px" height="60px"/></a>
-                                <a href="Eliminar.jsp?IdEmpresaProveedora=<%= rs.getInt("IdEmpresaProveedora")%>" ><img src="IMG/Eliminar.png" width="60px" height="60px"/></a>
-                            </td>
-                        </tr>
-                        <%}%>
-                </table>
-                       
-        <script src="js/jquery.js" type="text/javascript"></script>             
-        <script src="js/bootstrap.min.js" type="text/javascript"></script>   
-        <script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script> 
-<script>
-    $(document).ready(function () {
-    $('#tablaDatos').DataTable();
-});
-</script>
+                        </button>
+                        <button type="button" class="btn btn-danger btn-xs dt-delete">
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                        </button>
+                    </td>
+                      
+                 
+                </tr>
+                <%}%> 
+                
 
-          
+            </tbody>
+           
+        </table>
+  
+        <!-- Modal -->
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
 
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Row information</h4>
+                    </div>
+                    <div class="modal-body">
 
-    </center>
-</body>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
 
+            </div>
+            
+        </div>
+        <!-- partial -->
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+        <script src='https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js'></script>
+        <script src='https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js'></script>
+        <script src='https://cdn.datatables.net/buttons/1.2.2/js/buttons.colVis.min.js'></script>
+        <script src='https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js'></script>
+        <script src='https://cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js'></script>
+        <script src='https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js'></script>
+        <script src='https://cdn.datatables.net/buttons/1.2.2/js/buttons.bootstrap.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js'></script>
+        <script src='https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js'></script>
+        <script src='https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script><script  src="./js/DataT.js"></script>
+
+    </body>
+    
 </html>
