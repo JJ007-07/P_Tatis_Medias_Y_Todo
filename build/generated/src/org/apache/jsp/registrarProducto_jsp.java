@@ -160,7 +160,10 @@ public final class registrarProducto_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("                \r\n");
       out.write("            </div>  \r\n");
       out.write("            <br>\r\n");
-      out.write("            <div>   \r\n");
+      out.write("            \r\n");
+      out.write("\r\n");
+      out.write("        </form><br>\r\n");
+      out.write("                <div>   \r\n");
       out.write("                <input type=\"hidden\" value=\"1\" name=\"opcion\">\r\n");
       out.write("\r\n");
       out.write("                \r\n");
@@ -170,8 +173,6 @@ public final class registrarProducto_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("\r\n");
       out.write("\r\n");
       out.write("            </div>\r\n");
-      out.write("\r\n");
-      out.write("        </form>\r\n");
       out.write("            </div>\r\n");
       out.write("        </div>\r\n");
       out.write("      </div>\r\n");

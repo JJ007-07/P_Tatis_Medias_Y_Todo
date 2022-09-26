@@ -57,7 +57,7 @@ public final class registrarProveedor_jsp extends org.apache.jasper.runtime.Http
       out.write("        <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT\" crossorigin=\"anonymous\">\r\n");
       out.write("       <script src=\"js/validarPR.js\" type=\"text/javascript\"></script>\r\n");
       out.write("       <link href=\"Estilos/2.css\" rel=\"stylesheet\" type=\"text/css\"/>\r\n");
-      out.write("       <link href=\"Estilos/floating-labels.css\" rel=\"stylesheet\" type=\"text/css\"/>\r\n");
+      out.write("      \r\n");
       out.write("</head>\r\n");
       out.write("  \r\n");
       out.write("<center>\r\n");

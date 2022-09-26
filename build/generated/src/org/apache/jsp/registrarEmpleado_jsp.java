@@ -172,10 +172,11 @@ public final class registrarEmpleado_jsp extends org.apache.jasper.runtime.HttpJ
       out.write("\r\n");
       out.write("        </div>\r\n");
       out.write("        </form>\r\n");
+      out.write("                    <div>\r\n");
       out.write("                     <input type=\"hidden\" value=\"1\" name=\"opcion\">\r\n");
       out.write("        <button type=\"submit\" class=\"btn btn-success btn-lg mb-1\"onclick=\"return confirm('¿Estas seguro de  hacer este registro?')\" > Registrar Empleado</button>\r\n");
       out.write("         <button type=\"submit\" class=\"btn btn-primary btn-lg\" style=\"margin-bottom: 4px;\"><a href=\"ConsultarEmpleado.jsp\" style=\"color: #FFFFFF; text-decoration: none;\">Ver empleados registrados</a></button>\r\n");
-      out.write("                   \r\n");
+      out.write("                    </div>    \r\n");
       out.write("        </center>\r\n");
       out.write("      \r\n");
       out.write("        </div>\r\n");

@@ -146,7 +146,10 @@ public final class registrarPedido_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("            </div>\r\n");
       out.write("                \r\n");
       out.write("            <br>\r\n");
-      out.write("            <div>   \r\n");
+      out.write("          \r\n");
+      out.write("\r\n");
+      out.write("        </form>  \r\n");
+      out.write("                    <div>   \r\n");
       out.write("                <input type=\"hidden\" value=\"1\" name=\"opcion\">\r\n");
       out.write("\r\n");
       out.write("                \r\n");
@@ -155,8 +158,6 @@ public final class registrarPedido_jsp extends org.apache.jasper.runtime.HttpJsp
       out.write("                <button type=\"submit\" class=\"btn btn-primary btn-lg\" style=\"margin-bottom: 4px;\"><a href=\"registrarDP.jsp\" style=\"color: #FFFFFF; text-decoration: none;\">registrar productos</a></button>\r\n");
       out.write("\r\n");
       out.write("            </div>\r\n");
-      out.write("\r\n");
-      out.write("        </form>\r\n");
       out.write("            </div>\r\n");
       out.write("        </div>\r\n");
       out.write("      </div>\r\n");

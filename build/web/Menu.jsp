@@ -99,7 +99,9 @@
                         </li>
                         <li>
                             
-                            <a href="../src/java/Reportes/Ventas.jrxml">
+                        
+                                
+                                    <a href="Reportes/RPT1.jsp">
                                 <span class="icon"><i class="fa-solid fa-file"></i></span>
                                 <span class="text">Reportes</span>
                             </a>
