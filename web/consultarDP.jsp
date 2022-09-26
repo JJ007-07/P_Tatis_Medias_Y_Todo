@@ -28,7 +28,7 @@
                 <tr>
                     <th> Id detalle pedido FK
                         <input type="number" name="textIdPedidoFK" >
-                        <button onclick="return confirm('¿Estas seguro de  consultar el detalle pedido ?')">Consultar Detalle Pedido</button>
+                        <button type="submit" class="btn btn-success btn-lg mb-1" class="btn float-right login_btn" onclick="return confirm('¿Estas seguro de  consultar el detalle pedido ?')">Consultar Detalle Pedido</button>
                     </th>
                 </tr>
                  

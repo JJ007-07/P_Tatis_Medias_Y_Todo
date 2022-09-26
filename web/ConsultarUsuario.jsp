@@ -29,7 +29,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     </head>
-    <body style="background-color: #8fc4b7;">
+    <body style="background-color: #999999;">
         <section class="h-100 h-custom">
             <div class="container py-5 h-100">
                 <div class="row d-flex justify-content-center align-items-center h-100">
@@ -40,8 +40,9 @@
                                 <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Consultar Información De Los Usuarios</h3>
                                 <form method="post" action="Usuario">
                                     <div class="form-outline mb-4">
-                                        <input max="100" type="text" name="textUsuario" class="form-control" required>
                                         <label class="form-label" for="form3Example1q">NOMBRE DEL USUARIO</label>
+                                        <input max="100" type="text" name="textUsuario" class="form-control" required>
+                                        
                                     </div>
                                     <div>   
                                         <div class="form-outline mb-4">

@@ -29,7 +29,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     </head>
-    <body style="background-color: #8fc4b7;">
+    <body style="background-color: #999999;">
         <section class="h-100 h-custom">
             <div class="container py-5 h-100">
                 <div class="row d-flex justify-content-center align-items-center h-100">
@@ -40,8 +40,9 @@
                                 <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Consultar Información De Las Categorias</h3>
                                 <form method="post" action="Categoria">
                                     <div class="form-outline mb-4">
+                                         <label class="form-label" for="form3Example1q">Id De La Categoría</label>
                                         <input max="100000" type="number" name="txtid" class="form-control" required>
-                                        <label class="form-label" for="form3Example1q">Id De La Cateogria</label>
+                                      
                                     </div>
                                     <div>   
                                         <div class="form-outline mb-4">
@@ -93,7 +94,7 @@
                                         </div>
                                           <button type="submit" class="btn btn-primary btn-lg" style="margin-bottom: 4px;"><a href="DatosCategoria.jsp" style="color: #FFFFFF; text-decoration: none;">Ver categorías registrados</a></button>
 
-                                        <button onclick="return confirm('¿Deseas consultar esta Categoria?')" class="btn btn-primary btn-lg">Consultar</button>
+                                        <button type="submit" class="btn btn-success btn-lg mb-1" class="btn float-right login_btn" onclick="return confirm('¿Deseas consultar esta Categoria?')" class="btn btn-primary btn-lg">Consultar</button>
                                         <input type="hidden" value="4" name="opcion">
                                         </form>
                                         <%if (request.getAttribute("mensajeError") != null) {%>

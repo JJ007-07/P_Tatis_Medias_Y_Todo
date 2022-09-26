@@ -75,7 +75,7 @@ public final class consultarDP_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                <tr>\r\n");
       out.write("                    <th> Id detalle pedido FK\r\n");
       out.write("                        <input type=\"number\" name=\"textIdPedidoFK\" >\r\n");
-      out.write("                        <button>Consultar Detalle Pedido</button>\r\n");
+      out.write("                        <button type=\"submit\" class=\"btn btn-success btn-lg mb-1\" class=\"btn float-right login_btn\" onclick=\"return confirm('¿Estas seguro de  consultar el detalle pedido ?')\">Consultar Detalle Pedido</button>\r\n");
       out.write("                    </th>\r\n");
       out.write("                </tr>\r\n");
       out.write("                 \r\n");

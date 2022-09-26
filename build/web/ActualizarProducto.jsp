@@ -7,9 +7,7 @@
 <%@page import="ModeloDAO.ProductoDAO"%>
 <%@page import="ModeloVO.ProductoVO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 
 <!------ Include the above in your HEAD tag ---------->
 
@@ -17,18 +15,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Jsp Page</title>
-        <!--Made with love by Mutiullah Samim -->
-
-        <!--Bootsrap 4 CDN-->
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
-        <!--Fontawesome CDN-->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-
-        <!--Custom styles-->
-
-        <link href="Estilos/estilos2.css" rel="stylesheet" type="text/css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+        <title>Actualizar</title>
+        
 
     </head>
 
@@ -39,42 +28,60 @@
 
     %>
     <center>
-        <body>
-            <h1>Actualizar Producto</h1>
+        <body style="background-color: #999999;">
+    <section class="h-100 h-custom">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-8 col-xl-6">
+        <div class="card rounded-3">
+          <img src="https://www.trecebits.com/wp-content/uploads/2020/09/Catalogos-digitales.jpg"
+            class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;"
+            alt="Sample photo">
             <form method="post" action="Producto">
                 <table>
-                    
-                    <input type="hidden" readonly read name="txtid" value="<%=proVO.getIdProducto()%>"><br><br>
+                    <div class="form-outline mb-4">
+                    <label class="form-label"  for="form3Example1q">Id Producto</label>
+                    <input  readonly read name="txtid" value="<%=proVO.getIdProducto()%>"class="form-control">
+                    </div>
 
                     <tr>
-                        Codigo de barras<br>
-                    <input type="text" readonly read name="txtcodigoB" value="<%=proVO.getCodigoDeBarrasProducto()%>"><br><br>
+                    <div class="form-outline mb-4">
+                    <label class="form-label" for="form3Example1q">Codigo De Barras</label>
+                    <input type="text" readonly read name="txtcodigoB" value="<%=proVO.getCodigoDeBarrasProducto()%>"class="form-control">
+                    </div>
 
 
-                    Referencia<br>
-                    <input type="text" name="txtreferencia" value="<%=proVO.getReferenciaProducto()%>"><br><br>
+                    <div class="form-outline mb-4">
+                    <label class="form-label" for="form3Example1q">Referencia</label>
+                    <input type="text" name="txtreferencia" value="<%=proVO.getReferenciaProducto()%>"class="form-control">
+                    </div>
+                    
 
 
-                    Descripción<br>
-
-                    <input type="text" name="txtdescripcion" value="<%=proVO.getDescripcionProducto()%>"><br><br>
-
-                    Stock Disponible<br>
-
-                    <input type="number" name="txtstock" value="<%=proVO.getStockProducto()%>"><br><br>
-
-                    Precio Por unidad<br>
-                    <input type="number" name="txtprecio" value="<%=proVO.getPrecioUnitario()%>"><br><br>
-
-                    Estado Producto<br>
-
-                    <input type="text" name="txtestado" value="<%=proVO.getEstadoProducto()%>"><br><br>
+                   <div class="form-outline mb-4">
+                   <label class="form-label" for="form3Example1q">Descripción</label>
+                    <input type="text" name="txtdescripcion" value="<%=proVO.getDescripcionProducto()%>"class="form-control">
+                   </div>
+                    
+                    <div class="form-outline mb-4">
+                   <label class="form-label" for="form3Example1q">Stock Disponible</label>
+                   <input type="number" name="txtstock" value="<%=proVO.getStockProducto()%>"class="form-control"></div>
+                    
+                    <div class="form-outline mb-4">
+                    <label class="form-label" for="form3Example1q">Precio por unidad</label>
+                    <input type="number" name="txtprecio" value="<%=proVO.getPrecioUnitario()%>"class="form-control">
+                    </div>
+                    
+                    <div class="form-outline mb-4">
+                    <label class="form-label" for="form3Example1q">Estado Producto</label>
+                    <input type="text" name="txtestado" value="<%=proVO.getEstadoProducto()%>"class="form-control">
+                    </div>
 
                     </tr>
 
 
                 </table><br>
-                <button onclick="return confirm('¿Estas seguro de actualizar este producto?')"> Actualizar Producto</button>
+                <button type="submit" class="btn btn-success btn-lg mb-1" onclick="return confirm('¿Estas seguro de actualizar este producto?')"> Actualizar Producto</button>
                 <input type="hidden" value="2" name="opcion">
 
 

@@ -8,6 +8,7 @@ Menu.jsp
 + 1 Sesiones.jsp
 Sesiones.jsp
 *L
+<<<<<<< HEAD
 1,12:61
 5#1,20:72
 25,6:93
@@ -43,4 +44,9 @@ Sesiones.jsp
 238:396
 239:397,3
 240,18:400
+=======
+5,35:45
+40:80,2
+41,151:82
+>>>>>>> origin/Jessika
 *E

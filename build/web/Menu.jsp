@@ -109,6 +109,7 @@
                     </a>
                 </li>
 
+<<<<<<< HEAD
                 <li class="log_out">
                     <a href="">
                         <i class='bx bx-log-out'></i>
@@ -118,6 +119,94 @@
                     </a>
                 </li>
             </ul>
+=======
+            <div class="sidebar">
+
+                <div class="sidebar_inner">
+
+                    <ul>    
+
+
+                        <li>
+                            <a href="registrarEmpleado.jsp">
+                                <span class="icon"><i class="fa-solid fa-users"></i></i></span>
+
+
+                                <span class="text">Empleado</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="registrarCliente.jsp">
+                                <span class="icon"><i class="fa fa-user"></i></span>
+                                <span class="text">Cliente</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="registrarProveedor.jsp">
+                                <span class="icon"><i class="fa-solid fa-truck-field"></i></i></span>
+                                <span class="text">Proveedor</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="RegistrarCategoria.jsp">
+                                <span class="icon"><i class="fa-solid fa-list"></i></i></span>
+                                <span class="text">Categoria</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="RegistrarVenta.jsp">
+                                <span class="icon"><i class="fa-solid fa-receipt"></i></span>
+                                <span class="text">Ventas</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="registrarPedido.jsp">
+                                <span class="icon"><i class="fa-solid fa-box"></i></span>
+                                <span class="text">Pedido</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="registrarProducto.jsp">
+                                <span class="icon"><i class="fa-solid fa-bag-shopping"></i></span>
+                                <span class="text">Producto</span>
+                            </a>
+                        </li>
+                        <li>
+                            
+                        
+                                
+                                    <a href="Reportes/RPT1.jsp">
+                                <span class="icon"><i class="fa-solid fa-file"></i></span>
+                                <span class="text">Reportes</span>
+                            </a>
+                        </li>
+                         <li>
+                            <a href="Registroasig.jsp">
+                                <span class="icon"><i class="fa-user-plus"></i></span>
+                                <span class="text">Asignar rol</span>
+                            </a>
+                        </li>
+                        <li>
+                            
+                                  <form method="post" action="Sesiones">
+                                
+                                      <a href="">    
+                                <span class="icon"><i class="fa fa-sign-out"></i></span>
+                                <span class="text"> 
+                                      <button >Cerrar</button></span>
+                                    </a>
+                               </form>
+       
+                        </li>
+                             
+
+                    </ul>
+                </div>
+            </div>
+
+
+
+>>>>>>> origin/Jessika
         </div>
         <section class="home-section">
             <nav>

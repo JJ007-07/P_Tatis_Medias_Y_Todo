@@ -8,6 +8,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="Estilos/2.css" rel="stylesheet" type="text/css"/>
         <title>Productos</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
         <script src="js/validarP.js" type="text/javascript"></script>
@@ -15,7 +16,7 @@
 
     <body>
 
-        <section class="h-100 h-custom" style="background-color: #8fc4b7;">
+        <section class="h-100 h-custom" style="background-color: #999999;">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-lg-8 col-xl-6">
@@ -29,36 +30,43 @@
         <form class="px-md-2" method="post" action="Producto" onsubmit="return validarP();">
 
             <div class="form-outline mb-4">
-                <input type="text" id="CodigoDeBarrasProducto" name="txtcodigoB" class="form-control" />
                 <label class="form-label" for="form3Example1q">CodigoDeBarras</label>
+                <input type="text" id="CodigoDeBarrasProducto" name="txtcodigoB" class="form-control" />
+                
             </div>
 
             <div class="form-outline mb-4">
-                <input maxlength="15" type="text" id="ReferenciaProducto" name="txtreferencia" class="form-control" />
                 <label class="form-label" for="form3Example1q">Referencia</label>
+                <input maxlength="15" type="text" id="ReferenciaProducto" name="txtreferencia" class="form-control" />
+                
             </div>
 
             <div class="form-outline mb-4">
-                <input maxlength="80" type="text" id="DescripcionProducto" name="txtdescripcion" class="form-control" />
                 <label class="form-label" for="form3Example1q">Descripción</label>
+                <input maxlength="80" type="text" id="DescripcionProducto" name="txtdescripcion" class="form-control" />
+                
             </div>
 
             <div class="form-outline mb-4">
-                <input max="200" type="number" id="StockProducto" name="txtstock" class="form-control" />
                 <label class="form-label" for="form3Example1q">Stock Disponible</label>
+                <input max="200" type="number" id="StockProducto" name="txtstock" class="form-control" />
+                
             </div>
 
             <div class="form-outline mb-4">
-                <input max="100000" type="number" id="PrecioUnitario" name="txtprecio" class="form-control" />
                 <label class="form-label" for="form3Example1q">Precio Unitario Producto</label>
+                <input  type="number" id="PrecioUnitario" name="txtprecio" class="form-control" />
+                
             </div>
 
             <div class="form-outline mb-4">
+                 <label class="form-label" for="form3Example1q">Estado del producto</label>
                 <input maxlength="20" type="text" id="EstadoProducto" name="txtestado" class="form-control" />
-                <label class="form-label" for="form3Example1q">Estado del producto</label>
+               
             </div>
 
             <div class="form-group">
+                   <label class="form-label" for="form3Example1q">Categoria</label>
                 <select class="form-control" name="txtcategoria" id="IdCategoriaFK">
                   <option value="1" disabled>Seleccionar una opción disponible</option>
                   <option value="2">Selecciona una opción</option>
@@ -69,10 +77,11 @@
                   <option value="<%=catVO.getIdCategoria()%>"><%=catVO.getNombreCategoria()%></option>
                    <%}%>  
                 </select>
-                <label class="form-label" for="form3Example1q">Categoria</label>
+             
             </div>
             <br>
             <div class="form-group">
+                <label class="form-label" for="form3Example1q">Empresa</label>
                 <select class="form-control" name="txtempresa" id="IdEmpresaProveedoraFK">
                   <option value="1" disabled>Seleccionar una opción disponible</option>
                   <option value="2">Selecciona una opción</option>
@@ -83,21 +92,22 @@
                 <option value="<%=epVO.getIdEmpresaProveedora()%>"><%=epVO.getRazonSocialEmpresaProveedora()%></option>
                 <%}%> 
                 </select>
-                <label class="form-label" for="form3Example1q">Empresa</label>
+                
             </div>  
             <br>
-            <div>   
+            
+
+        </form><br>
+                <div>   
                 <input type="hidden" value="1" name="opcion">
 
                 
                 <button type="submit" class="btn btn-success btn-lg mb-1" onclick="return confirm('¿Estas seguro de  registrar el producto?')" >Registrar Producto</button>
-              <button type="submit" class="btn btn-primary btn-lg" style="margin-bottom: 4px;"><a href="ConsultarProducto.jsp" style="color: #FFFFFF; text-decoration: none;">Consultar Proveedor</a></button>
+              <button type="submit" class="btn btn-primary btn-lg" style="margin-bottom: 4px;"><a href="ConsultarProducto.jsp" style="color: #FFFFFF; text-decoration: none;">Consultar Producto</a></button>
 
 
 
             </div>
-
-        </form>
             </div>
         </div>
       </div>
