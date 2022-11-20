@@ -98,7 +98,6 @@ public class VentaControlador extends HttpServlet {
         String FormaventaMostrador = request.getParameter("textformaventa");
         String EstadoVentaMostrador = request.getParameter("textestadoventa");
         String IdVentaMostradorFK = request.getParameter("texidventaFK");
-   
 
         Venta venta = new Venta();
 
@@ -107,7 +106,7 @@ public class VentaControlador extends HttpServlet {
         float PrecioPorUnidad;
         int Cantidad;
         double Subtotal;
-       
+
         double totalpagar = 0;
 
         String Numerodeventafacturaventa = request.getParameter("textnumven");
@@ -120,6 +119,7 @@ public class VentaControlador extends HttpServlet {
                 sesion = request.getSession();
                 ClVO.setNumeroDocCliente(NumeroDocCliente);
                 ClVO = ClDAO.consultarDocumento(NumeroDocCliente);
+                System.out.println("Cliente VO" + ClVO.getNumeroDocCliente());
                 sesion.setAttribute("ClVO", ClVO);
                 //sesion.setAttribute("proVO", proVO);
                 //sesion.setAttribute("listaVentas", listaVentas);
@@ -127,9 +127,6 @@ public class VentaControlador extends HttpServlet {
                 request.getRequestDispatcher("RegistrarVentas.jsp").forward(request, response);
 
                 break;
-                
-                
-           
 
             case 2: // Consultarproducto
                 sesion = request.getSession();
@@ -145,7 +142,7 @@ public class VentaControlador extends HttpServlet {
 
             case 3:
                 sesion = request.getSession();
-                request.setAttribute("ClVO", ClVO);
+                //request.setAttribute("ClVO", ClVO);
                 totalpagar = 0.0;
                 item = item + 1;
                 //CodigoDeBarrasProductofk=proVO.getCodigoDeBarrasProducto();
@@ -168,12 +165,11 @@ public class VentaControlador extends HttpServlet {
                     totalpagar = totalpagar + listaVentas.get(i).getSubtotal();
                 }
 
-                    sesion.setAttribute("totalpagar", totalpagar);
-                    sesion.setAttribute("listaVentas", listaVentas);
-                    request.getRequestDispatcher("RegistrarVentas.jsp").forward(request, response);
-                    break;
-                    
-                    
+                sesion.setAttribute("totalpagar", totalpagar);
+                sesion.setAttribute("listaVentas", listaVentas);
+                request.getRequestDispatcher("RegistrarVentas.jsp").forward(request, response);
+                break;
+
             case 4:
                 sesion = request.getSession();
                 empVO.setIdEmpleado(IdEmpleado);
@@ -185,42 +181,39 @@ public class VentaControlador extends HttpServlet {
                 request.getRequestDispatcher("RegistrarVentas.jsp").forward(request, response);
 
                 break;
-                
-                
+
             case 5:
                 //GUARDAR VENTA 
+                sesion = request.getSession();
+                ProductoVO prov = (ProductoVO)sesion.getAttribute("proVO") ;
+                ClienteVO Cli = (ClienteVO)sesion.getAttribute("ClVO");
                 venta.setNumerodeventafacturaventa(Numerodeventafacturaventa);
                 venta.setFechaventaMostrador("textFecha");
                 venta.setIdEmpleadoFK(1);
-                venta.setNumDocClienteFK(ClVO.getNumeroDocCliente());     
-                venta.setFormaventaMostrador("textformaventa");
+                System.out.println("Numero Cliente: " + Cli.getNumeroDocCliente());
+                venta.setNumDocClienteFK(Cli.getNumeroDocCliente());
+                venta.setFormaventaMostrador(request.getParameter("textformaventa"));
                 venta.setTotalventaMostrador(totalpagar);
                 venta.setEstadoVentaMostrador("Activo");
                 ventaDAO.RegistrarVenta(venta);
-                
+
                 //GUARDAR DETALLE VENTA 
-               
-                    ventaDAO.ObtenerNumeroDeFactura();
+                ventaDAO.ObtenerNumeroDeFactura();
                 for (int i = 0; i < listaVentas.size(); i++) {
-                     venta = new Venta();
-                     venta.setNumerodeventafacturaventa(Numerodeventafacturaventa);
-                     venta.setCodigoDeBarrasProducto(listaVentas.get(i).getCodigoDeBarrasProducto());
-                     venta.setPrecioPorUnidad(listaVentas.get(i).getPrecioPorUnidad());
-                     venta.setCantidad(listaVentas.get(i).getCantidad());
-                     venta.setSubtotal(listaVentas.get(i).getSubtotal());
-                     ventaDAO.GuardarDetalleVenta(venta);
+                    venta = new Venta();
+                    venta.setNumerodeventafacturaventa(request.getParameter("textnumven"));
+                    //venta.setNumerodeventafacturaventa(Numerodeventafacturaventa);
+                    venta.setCodigoDeBarrasProducto(prov.getCodigoDeBarrasProducto());
+                    venta.setFormaventaMostrador(request.getParameter("textformaventa"));
+                    //venta.setCodigoDeBarrasProducto(listaVentas.get(i).getCodigoDeBarrasProducto());
+                    venta.setPrecioPorUnidad(listaVentas.get(i).getPrecioPorUnidad());
+                    venta.setCantidad(listaVentas.get(i).getCantidad());
+                    venta.setSubtotal(listaVentas.get(i).getSubtotal());
+                    ventaDAO.GuardarDetalleVenta(venta);
                 }
-               
+
                 request.getRequestDispatcher("RegistrarVentas.jsp").forward(request, response);
                 break;
-                
-                
-               
-                
-                
-                
-             
-                
 
             default:
                 Numerodeventafacturaventa = ventaDAO.ObtenerNumeroDeFactura();
@@ -238,7 +231,7 @@ public class VentaControlador extends HttpServlet {
 
         }
 
-        }
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

@@ -40,9 +40,9 @@
                                 <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Consultar Información De Las Categorias</h3>
                                 <form method="post" action="Categoria">
                                     <div class="form-outline mb-4">
-                                         <label class="form-label" for="form3Example1q">Id De La Categoría</label>
+                                        <label class="form-label" for="form3Example1q">Id De La Categoría</label>
                                         <input max="100000" type="number" name="txtid" class="form-control" required>
-                                      
+
                                     </div>
                                     <div>   
                                         <div class="form-outline mb-4">
@@ -92,7 +92,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                          <button type="submit" class="btn btn-primary btn-lg" style="margin-bottom: 4px;"><a href="DatosCategoria.jsp" style="color: #FFFFFF; text-decoration: none;">Ver categorías registrados</a></button>
+                                        <button type="submit" class="btn btn-primary btn-lg" style="margin-bottom: 4px;"><a href="DatosCategoria.jsp" style="color: #FFFFFF; text-decoration: none;">Ver categorías registrados</a></button>
 
                                         <button type="submit" class="btn btn-success btn-lg mb-1" class="btn float-right login_btn" onclick="return confirm('¿Deseas consultar esta Categoria?')" class="btn btn-primary btn-lg">Consultar</button>
                                         <input type="hidden" value="4" name="opcion">
