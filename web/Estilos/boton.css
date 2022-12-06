@@ -1,0 +1,38 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 11/09/2022, 11:58:08 AM
+    Author     : User
+*/
+button{
+     border: 2px solid transparent; /*anchura, estilo y color borde*/
+    padding: 0; /*espacio alrededor texto*/
+    background-color: transparent; 
+    color: #FFFFFF; /*color texto*/
+
+}
+.hover_collapse .sidebar button{
+
+ display: none; 
+}
+
+.sidebar button .icon{
+	font-size: 18px;
+  color: white;
+	vertical-align: middle;
+
+}
+.sidebar button .text{
+	margin-left: 19px;
+	color: #fff;
+  font-family: sans-serif;
+  font-size: 18px;
+	letter-spacing: 2px;
+}
+.sidebar button:hover{
+    background: #3399ff ;
+	color: #fff;
+}
